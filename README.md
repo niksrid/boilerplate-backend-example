@@ -33,6 +33,8 @@ Diving into our directory structure,
 
 The above command automatically initializes the folder listed below based on the path and settings defined in .sequelizerc file in the root of the project.    
 
+**Database**
+
 ```1. config```: Holds the ```config.json``` file
         This folder and file is automatically generated. Holds your database server login info and URL for all your environments.
 
