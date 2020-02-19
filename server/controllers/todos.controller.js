@@ -1,7 +1,5 @@
-const Todo = require('../../database/models').Todo;
-const TodoService = require('../services/todo.service');
+const TodoService = require('../services/todos.service');
 const STATUS_CODES = require('../../utils/statusCodes');
-module.exports = {
 
   /**
    *? Todo Controller 
@@ -9,7 +7,9 @@ module.exports = {
    *  Used to define Todo specific actions / functions
    */
 
+module.exports = {
   /**
+   * @function list -> Lists all Todo objects
    * @function create -> Creates a Todo object
    * 
    * @param {*} req -> Intercept request from app 
@@ -29,7 +29,7 @@ module.exports = {
   list(req, res) {
 
     // This TodoService.list is an injectable service and returns a Promise
-    return TodoService.list()
+    return TodoService.listAllTodo()
       .then(todos => res.status(STATUS_CODES.SUCCESS).send(todos))
       .catch(error => res.status(STATUS_CODES.INTERNAL_FAILURE).send(error));
   },

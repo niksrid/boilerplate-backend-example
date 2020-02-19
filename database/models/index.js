@@ -1,3 +1,14 @@
+/**
+ * Automatically Generated with Sequelize-CLI
+ * 
+ * CLI Command Used in root folder (same directory as package.json)
+ * 
+ * * sequelize init
+ * 
+ * ? Note that this example has ES6 based code but the package generates ES5 code, hardly matters but for consistency's sakes.
+ *
+ */
+
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');

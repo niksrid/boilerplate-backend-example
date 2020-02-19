@@ -1,4 +1,16 @@
 'use strict';
+
+/**
+ * Automatically Generated with Sequelize-CLI
+ * 
+ * CLI Command Used in root folder (same directory as package.json)
+ * 
+ * * sequelize model:create --name TodoItem --attributes content:string,complete:boolean
+ * 
+ * ? Migrations can only be edited before you pass db:migrate, after which point new migrations will have to be created.
+ *
+ */
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('Todos', {

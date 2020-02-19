@@ -8,6 +8,7 @@
 
  // Import todoController to directly pass into routes
 const todosController = require('../controllers').todos;
+const todoItemsController = require('../controllers').todoitems;
 
 
 
@@ -41,4 +42,12 @@ module.exports = (app) => {
    * @returns {status: 200, data: LIST_OF_TODO_DATA}
    */
   app.get('/api/todos', todosController.list);
+
+  /**
+   * /api/todos/:todoId/items, POST
+   * Route to add content (TodoItem) to a Todo
+   * 
+   * @returns {status: 200, data: CREATED_TODO_DATA_WITH_CONTENT}
+   */
+  app.post('/api/todos/:todoId/items', todoItemsController.create);
 };
