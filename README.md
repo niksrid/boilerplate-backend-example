@@ -33,10 +33,10 @@ Diving into our directory structure,
 
 The above command automatically initializes the folder listed below based on the path and settings defined in .sequelizerc file in the root of the project.    
 
-```config```: Holds the config.json file
+```1. config```: Holds the ```config.json``` file
         This folder and file is automatically generated. Holds your database server login info and URL for all your environments.
 
- ```migrations```: Holds generated migrations. Migrations are a set of commands to perform operations on your tables / columns or fields in your database. Migrations are automatically generated with 
+ ```2. migrations```: Holds generated migrations. Migrations are a set of commands to perform operations on your tables / columns or fields in your database. Migrations are automatically generated with 
 
     sequelize generate:model
 
