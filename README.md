@@ -27,17 +27,16 @@ Using [PostgresSQL](https://node-postgres.com/), [Sequelize](https://sequelize.o
 
 Diving into our directory structure,
 
-
-├── database: Holds sequelize based automatically generated data. Please change the config.json file in order to link it to your server.
+```database```: Holds sequelize based automatically generated data. Please change the config.json file in order to link it to your server.
 
     sequelize init
 
 The above command automatically initializes the folder listed below based on the path and settings defined in .sequelizerc file in the root of the project.    
 
-`1` ├── config: Holds the config.json file
+```config```: Holds the config.json file
         This folder and file is automatically generated. Holds your database server login info and URL for all your environments.
 
-`2` ├── migrations: Holds generated migrations. Migrations are a set of commands to perform operations on your tables / columns or fields in your database. Migrations are automatically generated with 
+ ```migrations```: Holds generated migrations. Migrations are a set of commands to perform operations on your tables / columns or fields in your database. Migrations are automatically generated with 
 
     sequelize generate:model
 
