@@ -3,13 +3,13 @@
  <img width=80px src="https://boilerplate.in/webassets/images/logo.gif" alt="Project logo"></a>
 </p>
 
-<h3 align="center">Boilerplate Backend Templates</h3>
+<h3 align="center">Boilerplate Backend Template</h3>
 
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](pulls)
+[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](/pulls)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 </div>
@@ -25,6 +25,9 @@ Backend API Boilerplates using PostgreSQL, Node.js, Sequelize and Express.js
 
 - [About](#about)
 - [Getting Started](#getting_started)
+    - [Prerequisites](#prerequisites)
+    - [Optional Prerequisites](#optional)
+    - [Installation and Running the Server](#installation)
 - [Deployment](#deployment)
 - [Usage](#usage)
 - [Built Using](#built_using)
@@ -37,42 +40,48 @@ Backend API Boilerplates using PostgreSQL, Node.js, Sequelize and Express.js
 
 This project acts as a basic Boilerplate for our API-based applications, allowing us to rapidly prototype our systems.
 
------
 
 ##  Getting Started <a name = "getting_started"></a>
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
 
-------
+This template is heavily inspired from [Getting Started with Node, Express and Postgres Using Sequelize by jmuturi](https://scotch.io/tutorials/getting-started-with-node-express-and-postgres-using-sequelize) 
 
-### Prerequisites
+If you have problems, feel freecheck the above link for reference as well.
+
+
+### Prerequisites <a name = "prerequisites"></a>
 
 * [PostgreSQL (v12.x)](https://www.postgresql.org/docs/12/tutorial-install.html)
 * [Node.js (v12.x)](https://nodejs.org/en/download/)
 * [npm (Node Package Manager) (v6.x.x)](https://nodejs.org/en/download/) 
+* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) 
 * [Sequelize](https://www.npmjs.com/package/sequelize)
-* [Sequelize CLI](https://www.npmjs.com/package/sequelize-cli)
+* [Sequelize CLI (recommend globally)](https://www.npmjs.com/package/sequelize-cli)
 
  Sequelize CLI can be installed locally for the project, however that will require you call any command using  ```./node_modules/.bin/sequelize``` so I would suggest installing sequelize-cli globally with the ```-g``` flag. 
 ```
 npm i -g sequelize-cli
 ```
 
-#### Optional
+#### Optional <a name = "optional"></a>
 
-You may also chose to install [nodemon](https://www.npmjs.com/package/nodemon), a package that will automatically restart your server (in this case your ```index.js``` file) whenever a change is saved in the project. To do this, run
+* [nodemon](https://www.npmjs.com/package/nodemon)
+
+You may also chose to install ```nodemon```, a package that will automatically restart your server (in this case your ```index.js``` file) whenever a change is saved in the project. To do this, run
 ```
 npm i -g nodemon
 ```
 Installing it globally allows you to call ```nodemon``` on any Node.js file for it to listen to changes.
 
------
-### Installing
+### Installing and Running the Server <a name = "installation"></a>
 
 A step by step series of examples that tell you how to get a development environment running.
 
 
-1. Clone the git repo
+1. Clone this repository using the Git CLI.
+    
+        git clone https://github.com/niksrid/boilerplate-backend-example.git
 
 2. Install all the dependencies for the project
 
@@ -82,7 +91,18 @@ A step by step series of examples that tell you how to get a development environ
 
     You can check out the necessary steps to do this [here](https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/). Only follow this up till the CREATE DATABASE step.
 
-4. Once you have PostgreSQL up and running, make sure you change your ```config.json``` file located [here](database/config/config.json) to reflect your appropriate URL, usrename, password and database name.
+4. Once you have PostgreSQL up and running, make sure you change your ```config.json``` file located [here](database/config/config.json) to reflect your appropriate URL, usrename, password and database name. Make sure the ```dialect``` is set to ```postgres```. Your ideal configuration should look a little something like
+
+    ```
+      "development": {
+        "username": "nikhil",
+        "password": "password",
+        "database": "todos-dev",
+        "host": "127.0.0.1",
+        "port":5432,
+        "dialect": "postgres"
+      },
+    ```
 
 5. To update the relevant tables and associations in your database, you will have to run
     ```
@@ -95,7 +115,7 @@ A step by step series of examples that tell you how to get a development environ
     npm start
     ```
 
-    This will start the server on localhost:3000. You should be able to open this in your browser to see the following
+    This will start the server on [localhost:3000](http://localhost:3000). You should be able to open this in your browser to see the following
     ```
     {
         "data": {
@@ -109,12 +129,10 @@ A step by step series of examples that tell you how to get a development environ
     }
     ```
 
-    You have succesfully run the app! Please make sure you follow the below guidelines before you begin development.
+ You have succesfully run the app! Please make sure you follow the below guidelines before you begin development.
 
 
-End with an example of getting some data out of the system or using it for a little demo.
-
-## Running the tests <a name = "tests"></a>
+<!-- ## Running the tests <a name = "tests"></a>
 
 Explain how to run the automated tests for this system.
 
@@ -131,10 +149,9 @@ Give an example
 Explain what these tests test and why
 
 ```
-Give an example
-```
+Give an example -->
 
-##  Usage <a name="usage"></a>
+##  Development Guidelines / Usage <a name="usage"></a>
 
 Add notes about how to use the system.
 
