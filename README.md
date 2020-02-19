@@ -16,7 +16,8 @@
 
 ---
 
-<p align="center"> Few lines describing your project.
+<p align="center"> 
+Backend API Boilerplates using PostgresSQL, Node.js, Sequelize and Express.js
     <br> 
 </p>
 
@@ -34,7 +35,7 @@
 
 ## 🧐 About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
+This project acts as a basic Boilerplate for our API-based applications, allowing us to rapidly prototype our systems.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
@@ -42,10 +43,15 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them.
+* [PostgresSQL (v12.x)](https://www.postgresql.org/docs/12/tutorial-install.html)
+* [Node.js (v12.x)](https://nodejs.org/en/download/)
+* [npm (Node Package Manager) (v6.x.x)](https://nodejs.org/en/download/) 
+* [Sequelize](https://www.npmjs.com/package/sequelize)
+* [Sequelize CLI](https://www.npmjs.com/package/sequelize-cli)
 
+ Sequelize CLI can be installed locally for the project, however that will require you call sequelize using  ```./node_modules/.bin/sequelize``` so I would suggest installing sequelize-cli globally with the ```-g``` flag. 
 ```
-Give examples
+npm i -g sequelize-cli
 ```
 
 ### Installing
