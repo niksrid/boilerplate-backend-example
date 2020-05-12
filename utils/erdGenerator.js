@@ -2,7 +2,7 @@ const {writeFileSync} = require('fs');
 const Sequelize = require('sequelize');
 const sequelizeErd = require('sequelize-erd');
 const db = require(`${__dirname}/../database/models`)['sequelize'];
-  (async function(){
+(async function() {
   // Import DB models here
   console.log(db);
   const svg = await sequelizeErd({
