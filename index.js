@@ -1,31 +1,70 @@
-const express = require('express');
-const logger = require('morgan');
-const bodyParser = require('body-parser');
-
-// Set up the express app
-const app = express();
-
-// Log requests to the console.
-app.use(logger('dev'));
-
-// Parse incoming requests data (https://github.com/expressjs/body-parser)
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(require('./utils/customResSend'));
-
-// Setup a default catch-all route that sends back a welcome message in JSON format.
-require('./server/routes')(app);
-app.get('*', (req, res) => res.status(200).send({
-  message: 'Welcome to the beginning of nothingness.',
+var express = require('express');
+var express_graphql = require('express-graphql');
+var { buildSchema } = require('graphql');
+// GraphQL schema
+var schema = buildSchema(`
+    type Query {
+        course(id: Int!): Course
+        courses(topic: String): [Course]
+    },
+    type Course {
+        id: Int
+        title: String
+        author: String
+        description: String
+        topic: String
+        url: String
+    }
+`);
+var coursesData = [
+    {
+        id: 1,
+        title: 'The Complete Node.js Developer Course',
+        author: 'Andrew Mead, Rob Percival',
+        description: 'Learn Node.js by building real-world applications with Node, Express, MongoDB, Mocha, and more!',
+        topic: 'Node.js',
+        url: 'https://codingthesmartway.com/courses/nodejs/'
+    },
+    {
+        id: 2,
+        title: 'Node.js, Express & MongoDB Dev to Deployment',
+        author: 'Brad Traversy',
+        description: 'Learn by example building & deploying real-world Node.js applications from absolute scratch',
+        topic: 'Node.js',
+        url: 'https://codingthesmartway.com/courses/nodejs-express-mongodb/'
+    },
+    {
+        id: 3,
+        title: 'JavaScript: Understanding The Weird Parts',
+        author: 'Anthony Alicea',
+        description: 'An advanced JavaScript course for everyone! Scope, closures, prototypes, this, build your own framework, and more.',
+        topic: 'JavaScript',
+        url: 'https://codingthesmartway.com/courses/understand-javascript/'
+    }
+]
+var getCourse = function(args) { 
+    var id = args.id;
+    return coursesData.filter(course => {
+        return course.id == id;
+    })[0];
+}
+var getCourses = function(args) {
+    if (args.topic) {
+        var topic = args.topic;
+        return coursesData.filter(course => course.topic === topic);
+    } else {
+        return coursesData;
+    }
+}
+var root = {
+    course: getCourse,
+    courses: getCourses
+};
+// Create an express server and a GraphQL endpoint
+var app = express();
+app.use('/graphql', express_graphql({
+    schema: schema,
+    rootValue: root,
+    graphiql: true
 }));
-
-app.set('port',3000)
-
-app.listen(app.get('port'), function() {
-    console.log('Node app is running on port', app.get('port'));
-});
-
-module.exports = app;
-
-
-// https://scotch.io/tutorials/getting-started-with-node-express-and-postgres-using-sequelize
+app.listen(4000, () => console.log('Express GraphQL Server Now Running On localhost:4000/graphql'));
