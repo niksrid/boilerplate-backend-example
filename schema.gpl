@@ -11,6 +11,11 @@ type CreatePokemonDto {
 
 type Query {
   pokemon: [CreatePokemonDto!]!
+  singlePokemon(data: singlePokemon!): CreatePokemonDto!
+}
+
+input singlePokemon {
+  name: String!
 }
 
 type Mutation {

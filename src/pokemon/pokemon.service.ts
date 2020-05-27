@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm'
 import { PokemonEntity } from './pokemon.entity'
 import { Repository } from 'typeorm'
 import { CreatePokemonDto } from './dto/create-pokemon.dto'
+import { singlePokemon } from './input/pokemon.input'
 
 @Injectable()
 export class PokemonService {
@@ -19,5 +20,10 @@ export class PokemonService {
 
 	async getPokemons () {
 		return await this.PokemonRepository.find()
+	}
+
+
+	async getSinglePokemon (data: singlePokemon): Promise<PokemonEntity> {
+		return await this.PokemonRepository.findOne({name:data.name})
 	}
 }

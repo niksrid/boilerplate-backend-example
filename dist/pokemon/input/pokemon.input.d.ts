@@ -3,3 +3,6 @@ export declare class inputPokemon {
     readonly type: string;
     readonly pokedex: number;
 }
+export declare class singlePokemon {
+    readonly name: string;
+}

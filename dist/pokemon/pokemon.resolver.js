@@ -26,6 +26,9 @@ let PokemonResolver = (() => {
         async pokemon() {
             return this.pokemonService.getPokemons();
         }
+        async singlePokemon(data) {
+            return this.pokemonService.getSinglePokemon(data);
+        }
         async createPokemon(data) {
             return this.pokemonService.createPokemon(data);
         }
@@ -36,6 +39,13 @@ let PokemonResolver = (() => {
         __metadata("design:paramtypes", []),
         __metadata("design:returntype", Promise)
     ], PokemonResolver.prototype, "pokemon", null);
+    __decorate([
+        graphql_1.Query(() => create_pokemon_dto_1.CreatePokemonDto),
+        __param(0, graphql_1.Args('data')),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [pokemon_input_1.singlePokemon]),
+        __metadata("design:returntype", Promise)
+    ], PokemonResolver.prototype, "singlePokemon", null);
     __decorate([
         graphql_1.Mutation(() => create_pokemon_dto_1.CreatePokemonDto),
         __param(0, graphql_1.Args('data')),

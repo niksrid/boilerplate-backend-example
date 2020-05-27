@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.inputPokemon = void 0;
+exports.singlePokemon = exports.inputPokemon = void 0;
 const graphql_1 = require("@nestjs/graphql");
 let inputPokemon = (() => {
     let inputPokemon = class inputPokemon {
@@ -32,4 +32,17 @@ let inputPokemon = (() => {
     return inputPokemon;
 })();
 exports.inputPokemon = inputPokemon;
+let singlePokemon = (() => {
+    let singlePokemon = class singlePokemon {
+    };
+    __decorate([
+        graphql_1.Field(),
+        __metadata("design:type", String)
+    ], singlePokemon.prototype, "name", void 0);
+    singlePokemon = __decorate([
+        graphql_1.InputType()
+    ], singlePokemon);
+    return singlePokemon;
+})();
+exports.singlePokemon = singlePokemon;
 //# sourceMappingURL=pokemon.input.js.map

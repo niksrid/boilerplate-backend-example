@@ -33,6 +33,9 @@ let PokemonService = (() => {
         async getPokemons() {
             return await this.PokemonRepository.find();
         }
+        async getSinglePokemon(data) {
+            return await this.PokemonRepository.findOne({ name: data.name });
+        }
     };
     PokemonService = __decorate([
         common_1.Injectable(),

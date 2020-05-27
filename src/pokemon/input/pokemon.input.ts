@@ -6,3 +6,8 @@ export class inputPokemon {
 	@Field() readonly type: string
 	@Field() readonly pokedex: number
 }
+
+@InputType()
+export class singlePokemon {
+	@Field() readonly name: string
+}
