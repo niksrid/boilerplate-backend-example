@@ -1,6 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import {TypeOrmModule} from '@nestjs/typeorm';
 import { GraphQLModule} from '@nestjs/graphql';
 import {PokemonModule} from './pokemon/pokemon.module';
@@ -13,7 +11,7 @@ import {PokemonModule} from './pokemon/pokemon.module';
       autoSchemaFile:'schema.gpl'
     })
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}

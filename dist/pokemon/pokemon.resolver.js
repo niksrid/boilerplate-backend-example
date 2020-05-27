@@ -44,7 +44,7 @@ let PokemonResolver = (() => {
         __metadata("design:returntype", Promise)
     ], PokemonResolver.prototype, "createPokemon", null);
     PokemonResolver = __decorate([
-        graphql_1.Resolver((of) => pokemon_entity_1.PokemonEntity),
+        graphql_1.Resolver(() => pokemon_entity_1.PokemonEntity),
         __metadata("design:paramtypes", [pokemon_service_1.PokemonService])
     ], PokemonResolver);
     return PokemonResolver;

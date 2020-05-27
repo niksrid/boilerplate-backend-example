@@ -1141,16 +1141,6 @@
         "signature": "20ee20a65a201299c1f4ba6fe931f3ad46d67e8a8cc2a52b9d162bb77aca23e6",
         "affectsGlobalScope": false
       },
-      "../src/app.service.ts": {
-        "version": "eaf8514ce110fa428a93a27408df4d06d133dbd9ed0a775c315ddfdd507853a9",
-        "signature": "653711fba8904aa27fd8911b63cf526e7b334e13a292da4cefdbbe179ac3f3f2",
-        "affectsGlobalScope": false
-      },
-      "../src/app.controller.ts": {
-        "version": "260f889b9e2b69f77be1155348eb345166aec664b3efff6720053c6844a41f28",
-        "signature": "ef022c91ea9e75ab4082f2e881f9c4db7b346be2da706e876b253bebce5e6140",
-        "affectsGlobalScope": false
-      },
       "../node_modules/typeorm/schema-builder/options/TableColumnOptions.d.ts": {
         "version": "222ebf19b1260582fd2023a65c5b7da77f730021f05afb9c4ead4b0b339a8c98",
         "signature": "222ebf19b1260582fd2023a65c5b7da77f730021f05afb9c4ead4b0b339a8c98",
@@ -5441,7 +5431,7 @@
         "affectsGlobalScope": false
       },
       "../src/pokemon/pokemon.resolver.ts": {
-        "version": "e67081d52c02110f59e1bb00f984e7e28e112dfbc6a8e7d65796cf2ad6a61627",
+        "version": "0e99451bbfd57b41618fb8beea68780123b76886cd7619ceac350506d553f399",
         "signature": "bcfe30fa6affa98c06109e3204a1043f52daeb1bccf3d7487aea3b3547230404",
         "affectsGlobalScope": false
       },
@@ -5451,7 +5441,7 @@
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "e6c4b3efed4ebd74bf5e8c3765eaa7772389f984d2d84ac77d82eebe30f9a797",
+        "version": "61305281be29288dcb1ff866fba417a8ccb032a02914cd6b4e20316c0328619b",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
         "affectsGlobalScope": false
       },
@@ -17074,15 +17064,6 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/zen-observable-ts/lib/types.d.ts"
       ],
-      "../src/app.controller.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../src/app.service.ts"
-      ],
       "../src/app.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/graphql/index.d.ts",
@@ -17092,17 +17073,7 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
-        "../src/app.controller.ts",
-        "../src/app.service.ts",
         "../src/pokemon/pokemon.module.ts"
-      ],
-      "../src/app.service.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts"
       ],
       "../src/main.ts": [
         "../node_modules/@nestjs/core/index.d.ts",
@@ -28353,9 +28324,6 @@
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/zen-observable-ts/lib/types.d.ts"
-      ],
-      "../src/app.controller.ts": [
-        "../src/app.service.ts"
       ],
       "../src/pokemon/pokemon.resolver.ts": [
         "../src/pokemon/input/pokemon.input.ts",
