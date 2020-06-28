@@ -3,7 +3,7 @@
  * Do not make changes to this file directly
  */
 
-import * as ctx from "../types"
+
 
 
 
@@ -86,9 +86,6 @@ export interface NexusGenEnums {
 }
 
 export interface NexusGenRootTypes {
-  BatchPayload: { // root type
-    count: number; // Int!
-  }
   Mutation: {};
   Query: {};
   Subscription: {};
@@ -118,14 +115,11 @@ export interface NexusGenAllTypes extends NexusGenRootTypes {
 }
 
 export interface NexusGenFieldTypes {
-  BatchPayload: { // field return type
-    count: number; // Int!
-  }
   Mutation: { // field return type
     createPokemon: NexusGenRootTypes['pokemon']; // pokemon!
-    deleteMany: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    deleteMany: NexusGenRootTypes['pokemon']; // pokemon!
     deleteOnepokemon: NexusGenRootTypes['pokemon'] | null; // pokemon
-    updateMany: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    updateMany: NexusGenRootTypes['pokemon']; // pokemon!
     updateOnepokemon: NexusGenRootTypes['pokemon'] | null; // pokemon
     upsertOnepokemon: NexusGenRootTypes['pokemon']; // pokemon!
   }
@@ -184,7 +178,7 @@ export interface NexusGenAbstractResolveReturnTypes {
 
 export interface NexusGenInheritedFields {}
 
-export type NexusGenObjectNames = "BatchPayload" | "Mutation" | "Query" | "Subscription" | "pokemon";
+export type NexusGenObjectNames = "Mutation" | "Query" | "Subscription" | "pokemon";
 
 export type NexusGenInputNames = "IntFilter" | "StringFilter" | "pokemonCreateInput" | "pokemonOrderByInput" | "pokemonUpdateInput" | "pokemonUpdateManyMutationInput" | "pokemonWhereInput" | "pokemonWhereUniqueInput";
 
@@ -197,7 +191,7 @@ export type NexusGenScalarNames = "Boolean" | "Float" | "ID" | "Int" | "String";
 export type NexusGenUnionNames = never;
 
 export interface NexusGenTypes {
-  context: ctx.Context;
+  context: Context.Context;
   inputTypes: NexusGenInputs;
   rootTypes: NexusGenRootTypes;
   argTypes: NexusGenArgTypes;

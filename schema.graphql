@@ -2,15 +2,15 @@
 ### Do not make changes to this file directly
 
 
-input FloatFilter {
-  equals: Float
-  gt: Float
-  gte: Float
-  in: [Float!]
-  lt: Float
-  lte: Float
-  not: Float
-  notIn: [Float!]
+input IntFilter {
+  equals: Int
+  gt: Int
+  gte: Int
+  in: [Int!]
+  lt: Int
+  lte: Int
+  not: Int
+  notIn: [Int!]
 }
 
 type Mutation {
@@ -28,16 +28,15 @@ enum OrderByArg {
 }
 
 type pokemon {
-  id: String!
+  id: Int!
   name: String!
-  pokedex: Float!
+  pokedex: Int!
   type: String!
 }
 
 input pokemonCreateInput {
-  id: String
   name: String!
-  pokedex: Float!
+  pokedex: Int!
   type: String!
 }
 
@@ -49,32 +48,33 @@ input pokemonOrderByInput {
 }
 
 input pokemonUpdateInput {
-  id: String
+  id: Int
   name: String
-  pokedex: Float
+  pokedex: Int
   type: String
 }
 
 input pokemonUpdateManyMutationInput {
-  id: String
+  id: Int
   name: String
-  pokedex: Float
+  pokedex: Int
   type: String
 }
 
 input pokemonWhereInput {
   AND: [pokemonWhereInput!]
-  id: StringFilter
+  id: IntFilter
   name: StringFilter
   NOT: [pokemonWhereInput!]
   OR: [pokemonWhereInput!]
-  pokedex: FloatFilter
+  pokedex: IntFilter
   type: StringFilter
 }
 
 input pokemonWhereUniqueInput {
-  id: String
+  id: Int
   name: String
+  pokedex: Int
 }
 
 type Query {

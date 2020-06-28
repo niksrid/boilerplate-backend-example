@@ -8,8 +8,8 @@ datasource db {
 }
 
 model pokemon {
-  id      String @default(dbgenerated()) @id
+  id      Int    @default(autoincrement()) @id
   name    String @unique
-  pokedex Float
+  pokedex Int    @unique
   type    String
 }
