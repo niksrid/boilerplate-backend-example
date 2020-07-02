@@ -29,7 +29,41 @@ export interface NexusGenInputs {
     not?: number | null; // Int
     notIn?: number[] | null; // [Int!]
   }
-  StringFilter: { // input type
+  NullableBooleanFilter: { // input type
+    equals?: boolean | null; // Boolean
+    not?: boolean | null; // Boolean
+  }
+  NullableDateTimeFilter: { // input type
+    equals?: any | null; // DateTime
+    gt?: any | null; // DateTime
+    gte?: any | null; // DateTime
+    in?: any[] | null; // [DateTime!]
+    lt?: any | null; // DateTime
+    lte?: any | null; // DateTime
+    not?: any | null; // DateTime
+    notIn?: any[] | null; // [DateTime!]
+  }
+  NullableFloatFilter: { // input type
+    equals?: number | null; // Float
+    gt?: number | null; // Float
+    gte?: number | null; // Float
+    in?: number[] | null; // [Float!]
+    lt?: number | null; // Float
+    lte?: number | null; // Float
+    not?: number | null; // Float
+    notIn?: number[] | null; // [Float!]
+  }
+  NullableIntFilter: { // input type
+    equals?: number | null; // Int
+    gt?: number | null; // Int
+    gte?: number | null; // Int
+    in?: number[] | null; // [Int!]
+    lt?: number | null; // Int
+    lte?: number | null; // Int
+    not?: number | null; // Int
+    notIn?: number[] | null; // [Int!]
+  }
+  NullableStringFilter: { // input type
     contains?: string | null; // String
     endsWith?: string | null; // String
     equals?: string | null; // String
@@ -42,47 +76,2819 @@ export interface NexusGenInputs {
     notIn?: string[] | null; // [String!]
     startsWith?: string | null; // String
   }
-  pokemonCreateInput: { // input type
-    name: string; // String!
-    pokedex: number; // Int!
-    type: string; // String!
+  cartCreateInput: { // input type
+    product_quantity?: NexusGenInputs['product_quantityCreateOneWithoutCartInput'] | null; // product_quantityCreateOneWithoutCartInput
+    shipping_cost?: number | null; // Int
+    total_cost?: number | null; // Int
+    total_discount?: number | null; // Int
+    user: NexusGenInputs['userCreateOneWithoutCartInput']; // userCreateOneWithoutCartInput!
+    voucher?: NexusGenInputs['voucherCreateOneWithoutCartInput'] | null; // voucherCreateOneWithoutCartInput
   }
-  pokemonOrderByInput: { // input type
+  cartCreateManyWithoutProduct_quantityInput: { // input type
+    connect?: NexusGenInputs['cartWhereUniqueInput'][] | null; // [cartWhereUniqueInput!]
+    create?: NexusGenInputs['cartCreateWithoutProduct_quantityInput'][] | null; // [cartCreateWithoutProduct_quantityInput!]
+  }
+  cartCreateManyWithoutUserInput: { // input type
+    connect?: NexusGenInputs['cartWhereUniqueInput'][] | null; // [cartWhereUniqueInput!]
+    create?: NexusGenInputs['cartCreateWithoutUserInput'][] | null; // [cartCreateWithoutUserInput!]
+  }
+  cartCreateManyWithoutVoucherInput: { // input type
+    connect?: NexusGenInputs['cartWhereUniqueInput'][] | null; // [cartWhereUniqueInput!]
+    create?: NexusGenInputs['cartCreateWithoutVoucherInput'][] | null; // [cartCreateWithoutVoucherInput!]
+  }
+  cartCreateWithoutProduct_quantityInput: { // input type
+    shipping_cost?: number | null; // Int
+    total_cost?: number | null; // Int
+    total_discount?: number | null; // Int
+    user: NexusGenInputs['userCreateOneWithoutCartInput']; // userCreateOneWithoutCartInput!
+    voucher?: NexusGenInputs['voucherCreateOneWithoutCartInput'] | null; // voucherCreateOneWithoutCartInput
+  }
+  cartCreateWithoutUserInput: { // input type
+    product_quantity?: NexusGenInputs['product_quantityCreateOneWithoutCartInput'] | null; // product_quantityCreateOneWithoutCartInput
+    shipping_cost?: number | null; // Int
+    total_cost?: number | null; // Int
+    total_discount?: number | null; // Int
+    voucher?: NexusGenInputs['voucherCreateOneWithoutCartInput'] | null; // voucherCreateOneWithoutCartInput
+  }
+  cartCreateWithoutVoucherInput: { // input type
+    product_quantity?: NexusGenInputs['product_quantityCreateOneWithoutCartInput'] | null; // product_quantityCreateOneWithoutCartInput
+    shipping_cost?: number | null; // Int
+    total_cost?: number | null; // Int
+    total_discount?: number | null; // Int
+    user: NexusGenInputs['userCreateOneWithoutCartInput']; // userCreateOneWithoutCartInput!
+  }
+  cartFilter: { // input type
+    every?: NexusGenInputs['cartWhereInput'] | null; // cartWhereInput
+    none?: NexusGenInputs['cartWhereInput'] | null; // cartWhereInput
+    some?: NexusGenInputs['cartWhereInput'] | null; // cartWhereInput
+  }
+  cartOrderByInput: { // input type
+    id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    product?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    shipping_cost?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    total_cost?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    total_discount?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    user_id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    vouchers?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+  }
+  cartScalarWhereInput: { // input type
+    AND?: NexusGenInputs['cartScalarWhereInput'][] | null; // [cartScalarWhereInput!]
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    NOT?: NexusGenInputs['cartScalarWhereInput'][] | null; // [cartScalarWhereInput!]
+    OR?: NexusGenInputs['cartScalarWhereInput'][] | null; // [cartScalarWhereInput!]
+    product?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+    shipping_cost?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+    total_cost?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+    total_discount?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+    user_id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    vouchers?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+  }
+  cartUpdateInput: { // input type
+    id?: number | null; // Int
+    product_quantity?: NexusGenInputs['product_quantityUpdateOneWithoutCartInput'] | null; // product_quantityUpdateOneWithoutCartInput
+    shipping_cost?: number | null; // Int
+    total_cost?: number | null; // Int
+    total_discount?: number | null; // Int
+    user?: NexusGenInputs['userUpdateOneRequiredWithoutCartInput'] | null; // userUpdateOneRequiredWithoutCartInput
+    voucher?: NexusGenInputs['voucherUpdateOneWithoutCartInput'] | null; // voucherUpdateOneWithoutCartInput
+  }
+  cartUpdateManyDataInput: { // input type
+    id?: number | null; // Int
+    shipping_cost?: number | null; // Int
+    total_cost?: number | null; // Int
+    total_discount?: number | null; // Int
+  }
+  cartUpdateManyMutationInput: { // input type
+    id?: number | null; // Int
+    shipping_cost?: number | null; // Int
+    total_cost?: number | null; // Int
+    total_discount?: number | null; // Int
+  }
+  cartUpdateManyWithWhereNestedInput: { // input type
+    data: NexusGenInputs['cartUpdateManyDataInput']; // cartUpdateManyDataInput!
+    where: NexusGenInputs['cartScalarWhereInput']; // cartScalarWhereInput!
+  }
+  cartUpdateManyWithoutProduct_quantityInput: { // input type
+    connect?: NexusGenInputs['cartWhereUniqueInput'][] | null; // [cartWhereUniqueInput!]
+    create?: NexusGenInputs['cartCreateWithoutProduct_quantityInput'][] | null; // [cartCreateWithoutProduct_quantityInput!]
+    delete?: NexusGenInputs['cartWhereUniqueInput'][] | null; // [cartWhereUniqueInput!]
+    deleteMany?: NexusGenInputs['cartScalarWhereInput'][] | null; // [cartScalarWhereInput!]
+    disconnect?: NexusGenInputs['cartWhereUniqueInput'][] | null; // [cartWhereUniqueInput!]
+    set?: NexusGenInputs['cartWhereUniqueInput'][] | null; // [cartWhereUniqueInput!]
+    update?: NexusGenInputs['cartUpdateWithWhereUniqueWithoutProduct_quantityInput'][] | null; // [cartUpdateWithWhereUniqueWithoutProduct_quantityInput!]
+    updateMany?: NexusGenInputs['cartUpdateManyWithWhereNestedInput'][] | null; // [cartUpdateManyWithWhereNestedInput!]
+    upsert?: NexusGenInputs['cartUpsertWithWhereUniqueWithoutProduct_quantityInput'][] | null; // [cartUpsertWithWhereUniqueWithoutProduct_quantityInput!]
+  }
+  cartUpdateManyWithoutUserInput: { // input type
+    connect?: NexusGenInputs['cartWhereUniqueInput'][] | null; // [cartWhereUniqueInput!]
+    create?: NexusGenInputs['cartCreateWithoutUserInput'][] | null; // [cartCreateWithoutUserInput!]
+    delete?: NexusGenInputs['cartWhereUniqueInput'][] | null; // [cartWhereUniqueInput!]
+    deleteMany?: NexusGenInputs['cartScalarWhereInput'][] | null; // [cartScalarWhereInput!]
+    disconnect?: NexusGenInputs['cartWhereUniqueInput'][] | null; // [cartWhereUniqueInput!]
+    set?: NexusGenInputs['cartWhereUniqueInput'][] | null; // [cartWhereUniqueInput!]
+    update?: NexusGenInputs['cartUpdateWithWhereUniqueWithoutUserInput'][] | null; // [cartUpdateWithWhereUniqueWithoutUserInput!]
+    updateMany?: NexusGenInputs['cartUpdateManyWithWhereNestedInput'][] | null; // [cartUpdateManyWithWhereNestedInput!]
+    upsert?: NexusGenInputs['cartUpsertWithWhereUniqueWithoutUserInput'][] | null; // [cartUpsertWithWhereUniqueWithoutUserInput!]
+  }
+  cartUpdateManyWithoutVoucherInput: { // input type
+    connect?: NexusGenInputs['cartWhereUniqueInput'][] | null; // [cartWhereUniqueInput!]
+    create?: NexusGenInputs['cartCreateWithoutVoucherInput'][] | null; // [cartCreateWithoutVoucherInput!]
+    delete?: NexusGenInputs['cartWhereUniqueInput'][] | null; // [cartWhereUniqueInput!]
+    deleteMany?: NexusGenInputs['cartScalarWhereInput'][] | null; // [cartScalarWhereInput!]
+    disconnect?: NexusGenInputs['cartWhereUniqueInput'][] | null; // [cartWhereUniqueInput!]
+    set?: NexusGenInputs['cartWhereUniqueInput'][] | null; // [cartWhereUniqueInput!]
+    update?: NexusGenInputs['cartUpdateWithWhereUniqueWithoutVoucherInput'][] | null; // [cartUpdateWithWhereUniqueWithoutVoucherInput!]
+    updateMany?: NexusGenInputs['cartUpdateManyWithWhereNestedInput'][] | null; // [cartUpdateManyWithWhereNestedInput!]
+    upsert?: NexusGenInputs['cartUpsertWithWhereUniqueWithoutVoucherInput'][] | null; // [cartUpsertWithWhereUniqueWithoutVoucherInput!]
+  }
+  cartUpdateWithWhereUniqueWithoutProduct_quantityInput: { // input type
+    data: NexusGenInputs['cartUpdateWithoutProduct_quantityDataInput']; // cartUpdateWithoutProduct_quantityDataInput!
+    where: NexusGenInputs['cartWhereUniqueInput']; // cartWhereUniqueInput!
+  }
+  cartUpdateWithWhereUniqueWithoutUserInput: { // input type
+    data: NexusGenInputs['cartUpdateWithoutUserDataInput']; // cartUpdateWithoutUserDataInput!
+    where: NexusGenInputs['cartWhereUniqueInput']; // cartWhereUniqueInput!
+  }
+  cartUpdateWithWhereUniqueWithoutVoucherInput: { // input type
+    data: NexusGenInputs['cartUpdateWithoutVoucherDataInput']; // cartUpdateWithoutVoucherDataInput!
+    where: NexusGenInputs['cartWhereUniqueInput']; // cartWhereUniqueInput!
+  }
+  cartUpdateWithoutProduct_quantityDataInput: { // input type
+    id?: number | null; // Int
+    shipping_cost?: number | null; // Int
+    total_cost?: number | null; // Int
+    total_discount?: number | null; // Int
+    user?: NexusGenInputs['userUpdateOneRequiredWithoutCartInput'] | null; // userUpdateOneRequiredWithoutCartInput
+    voucher?: NexusGenInputs['voucherUpdateOneWithoutCartInput'] | null; // voucherUpdateOneWithoutCartInput
+  }
+  cartUpdateWithoutUserDataInput: { // input type
+    id?: number | null; // Int
+    product_quantity?: NexusGenInputs['product_quantityUpdateOneWithoutCartInput'] | null; // product_quantityUpdateOneWithoutCartInput
+    shipping_cost?: number | null; // Int
+    total_cost?: number | null; // Int
+    total_discount?: number | null; // Int
+    voucher?: NexusGenInputs['voucherUpdateOneWithoutCartInput'] | null; // voucherUpdateOneWithoutCartInput
+  }
+  cartUpdateWithoutVoucherDataInput: { // input type
+    id?: number | null; // Int
+    product_quantity?: NexusGenInputs['product_quantityUpdateOneWithoutCartInput'] | null; // product_quantityUpdateOneWithoutCartInput
+    shipping_cost?: number | null; // Int
+    total_cost?: number | null; // Int
+    total_discount?: number | null; // Int
+    user?: NexusGenInputs['userUpdateOneRequiredWithoutCartInput'] | null; // userUpdateOneRequiredWithoutCartInput
+  }
+  cartUpsertWithWhereUniqueWithoutProduct_quantityInput: { // input type
+    create: NexusGenInputs['cartCreateWithoutProduct_quantityInput']; // cartCreateWithoutProduct_quantityInput!
+    update: NexusGenInputs['cartUpdateWithoutProduct_quantityDataInput']; // cartUpdateWithoutProduct_quantityDataInput!
+    where: NexusGenInputs['cartWhereUniqueInput']; // cartWhereUniqueInput!
+  }
+  cartUpsertWithWhereUniqueWithoutUserInput: { // input type
+    create: NexusGenInputs['cartCreateWithoutUserInput']; // cartCreateWithoutUserInput!
+    update: NexusGenInputs['cartUpdateWithoutUserDataInput']; // cartUpdateWithoutUserDataInput!
+    where: NexusGenInputs['cartWhereUniqueInput']; // cartWhereUniqueInput!
+  }
+  cartUpsertWithWhereUniqueWithoutVoucherInput: { // input type
+    create: NexusGenInputs['cartCreateWithoutVoucherInput']; // cartCreateWithoutVoucherInput!
+    update: NexusGenInputs['cartUpdateWithoutVoucherDataInput']; // cartUpdateWithoutVoucherDataInput!
+    where: NexusGenInputs['cartWhereUniqueInput']; // cartWhereUniqueInput!
+  }
+  cartWhereInput: { // input type
+    AND?: NexusGenInputs['cartWhereInput'][] | null; // [cartWhereInput!]
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    NOT?: NexusGenInputs['cartWhereInput'][] | null; // [cartWhereInput!]
+    OR?: NexusGenInputs['cartWhereInput'][] | null; // [cartWhereInput!]
+    product?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+    product_quantity?: NexusGenInputs['product_quantityWhereInput'] | null; // product_quantityWhereInput
+    shipping_cost?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+    total_cost?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+    total_discount?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+    user?: NexusGenInputs['userWhereInput'] | null; // userWhereInput
+    user_id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    voucher?: NexusGenInputs['voucherWhereInput'] | null; // voucherWhereInput
+    vouchers?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+  }
+  cartWhereUniqueInput: { // input type
+    id?: number | null; // Int
+  }
+  categoryCreateInput: { // input type
+    grouped_under?: string | null; // String
+    icon?: string | null; // String
+    name?: string | null; // String
+    product_categories_junction?: NexusGenInputs['product_categories_junctionCreateManyWithoutCategoryInput'] | null; // product_categories_junctionCreateManyWithoutCategoryInput
+  }
+  categoryCreateOneWithoutProduct_categories_junctionInput: { // input type
+    connect?: NexusGenInputs['categoryWhereUniqueInput'] | null; // categoryWhereUniqueInput
+    create?: NexusGenInputs['categoryCreateWithoutProduct_categories_junctionInput'] | null; // categoryCreateWithoutProduct_categories_junctionInput
+  }
+  categoryCreateWithoutProduct_categories_junctionInput: { // input type
+    grouped_under?: string | null; // String
+    icon?: string | null; // String
+    name?: string | null; // String
+  }
+  categoryOrderByInput: { // input type
+    grouped_under?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    icon?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
     id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
     name?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
-    pokedex?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
-    type?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
   }
-  pokemonUpdateInput: { // input type
+  categoryUpdateInput: { // input type
+    grouped_under?: string | null; // String
+    icon?: string | null; // String
     id?: number | null; // Int
     name?: string | null; // String
-    pokedex?: number | null; // Int
-    type?: string | null; // String
+    product_categories_junction?: NexusGenInputs['product_categories_junctionUpdateManyWithoutCategoryInput'] | null; // product_categories_junctionUpdateManyWithoutCategoryInput
   }
-  pokemonUpdateManyMutationInput: { // input type
+  categoryUpdateManyMutationInput: { // input type
+    grouped_under?: string | null; // String
+    icon?: string | null; // String
     id?: number | null; // Int
     name?: string | null; // String
-    pokedex?: number | null; // Int
-    type?: string | null; // String
   }
-  pokemonWhereInput: { // input type
-    AND?: NexusGenInputs['pokemonWhereInput'][] | null; // [pokemonWhereInput!]
+  categoryUpdateOneRequiredWithoutProduct_categories_junctionInput: { // input type
+    connect?: NexusGenInputs['categoryWhereUniqueInput'] | null; // categoryWhereUniqueInput
+    create?: NexusGenInputs['categoryCreateWithoutProduct_categories_junctionInput'] | null; // categoryCreateWithoutProduct_categories_junctionInput
+    update?: NexusGenInputs['categoryUpdateWithoutProduct_categories_junctionDataInput'] | null; // categoryUpdateWithoutProduct_categories_junctionDataInput
+    upsert?: NexusGenInputs['categoryUpsertWithoutProduct_categories_junctionInput'] | null; // categoryUpsertWithoutProduct_categories_junctionInput
+  }
+  categoryUpdateWithoutProduct_categories_junctionDataInput: { // input type
+    grouped_under?: string | null; // String
+    icon?: string | null; // String
+    id?: number | null; // Int
+    name?: string | null; // String
+  }
+  categoryUpsertWithoutProduct_categories_junctionInput: { // input type
+    create: NexusGenInputs['categoryCreateWithoutProduct_categories_junctionInput']; // categoryCreateWithoutProduct_categories_junctionInput!
+    update: NexusGenInputs['categoryUpdateWithoutProduct_categories_junctionDataInput']; // categoryUpdateWithoutProduct_categories_junctionDataInput!
+  }
+  categoryWhereInput: { // input type
+    AND?: NexusGenInputs['categoryWhereInput'][] | null; // [categoryWhereInput!]
+    grouped_under?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    icon?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
     id?: NexusGenInputs['IntFilter'] | null; // IntFilter
-    name?: NexusGenInputs['StringFilter'] | null; // StringFilter
-    NOT?: NexusGenInputs['pokemonWhereInput'][] | null; // [pokemonWhereInput!]
-    OR?: NexusGenInputs['pokemonWhereInput'][] | null; // [pokemonWhereInput!]
-    pokedex?: NexusGenInputs['IntFilter'] | null; // IntFilter
-    type?: NexusGenInputs['StringFilter'] | null; // StringFilter
+    name?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    NOT?: NexusGenInputs['categoryWhereInput'][] | null; // [categoryWhereInput!]
+    OR?: NexusGenInputs['categoryWhereInput'][] | null; // [categoryWhereInput!]
+    product_categories_junction?: NexusGenInputs['product_categories_junctionFilter'] | null; // product_categories_junctionFilter
   }
-  pokemonWhereUniqueInput: { // input type
+  categoryWhereUniqueInput: { // input type
     id?: number | null; // Int
+  }
+  driverCreateInput: { // input type
+    approved?: boolean | null; // Boolean
+    blocked?: boolean | null; // Boolean
+    currently_delivering?: boolean | null; // Boolean
+    driver_document?: NexusGenInputs['driver_documentCreateManyWithoutDriverInput'] | null; // driver_documentCreateManyWithoutDriverInput
+    full_name?: string | null; // String
+    mobile_no?: number | null; // Int
+    order?: NexusGenInputs['orderCreateManyWithoutDriverInput'] | null; // orderCreateManyWithoutDriverInput
+  }
+  driverCreateOneWithoutDriver_documentInput: { // input type
+    connect?: NexusGenInputs['driverWhereUniqueInput'] | null; // driverWhereUniqueInput
+    create?: NexusGenInputs['driverCreateWithoutDriver_documentInput'] | null; // driverCreateWithoutDriver_documentInput
+  }
+  driverCreateOneWithoutOrderInput: { // input type
+    connect?: NexusGenInputs['driverWhereUniqueInput'] | null; // driverWhereUniqueInput
+    create?: NexusGenInputs['driverCreateWithoutOrderInput'] | null; // driverCreateWithoutOrderInput
+  }
+  driverCreateWithoutDriver_documentInput: { // input type
+    approved?: boolean | null; // Boolean
+    blocked?: boolean | null; // Boolean
+    currently_delivering?: boolean | null; // Boolean
+    full_name?: string | null; // String
+    mobile_no?: number | null; // Int
+    order?: NexusGenInputs['orderCreateManyWithoutDriverInput'] | null; // orderCreateManyWithoutDriverInput
+  }
+  driverCreateWithoutOrderInput: { // input type
+    approved?: boolean | null; // Boolean
+    blocked?: boolean | null; // Boolean
+    currently_delivering?: boolean | null; // Boolean
+    driver_document?: NexusGenInputs['driver_documentCreateManyWithoutDriverInput'] | null; // driver_documentCreateManyWithoutDriverInput
+    full_name?: string | null; // String
+    mobile_no?: number | null; // Int
+  }
+  driverOrderByInput: { // input type
+    approved?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    blocked?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    currently_delivering?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    full_name?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    mobile_no?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+  }
+  driverUpdateInput: { // input type
+    approved?: boolean | null; // Boolean
+    blocked?: boolean | null; // Boolean
+    currently_delivering?: boolean | null; // Boolean
+    driver_document?: NexusGenInputs['driver_documentUpdateManyWithoutDriverInput'] | null; // driver_documentUpdateManyWithoutDriverInput
+    full_name?: string | null; // String
+    id?: number | null; // Int
+    mobile_no?: number | null; // Int
+    order?: NexusGenInputs['orderUpdateManyWithoutDriverInput'] | null; // orderUpdateManyWithoutDriverInput
+  }
+  driverUpdateManyMutationInput: { // input type
+    approved?: boolean | null; // Boolean
+    blocked?: boolean | null; // Boolean
+    currently_delivering?: boolean | null; // Boolean
+    full_name?: string | null; // String
+    id?: number | null; // Int
+    mobile_no?: number | null; // Int
+  }
+  driverUpdateOneRequiredWithoutDriver_documentInput: { // input type
+    connect?: NexusGenInputs['driverWhereUniqueInput'] | null; // driverWhereUniqueInput
+    create?: NexusGenInputs['driverCreateWithoutDriver_documentInput'] | null; // driverCreateWithoutDriver_documentInput
+    update?: NexusGenInputs['driverUpdateWithoutDriver_documentDataInput'] | null; // driverUpdateWithoutDriver_documentDataInput
+    upsert?: NexusGenInputs['driverUpsertWithoutDriver_documentInput'] | null; // driverUpsertWithoutDriver_documentInput
+  }
+  driverUpdateOneRequiredWithoutOrderInput: { // input type
+    connect?: NexusGenInputs['driverWhereUniqueInput'] | null; // driverWhereUniqueInput
+    create?: NexusGenInputs['driverCreateWithoutOrderInput'] | null; // driverCreateWithoutOrderInput
+    update?: NexusGenInputs['driverUpdateWithoutOrderDataInput'] | null; // driverUpdateWithoutOrderDataInput
+    upsert?: NexusGenInputs['driverUpsertWithoutOrderInput'] | null; // driverUpsertWithoutOrderInput
+  }
+  driverUpdateWithoutDriver_documentDataInput: { // input type
+    approved?: boolean | null; // Boolean
+    blocked?: boolean | null; // Boolean
+    currently_delivering?: boolean | null; // Boolean
+    full_name?: string | null; // String
+    id?: number | null; // Int
+    mobile_no?: number | null; // Int
+    order?: NexusGenInputs['orderUpdateManyWithoutDriverInput'] | null; // orderUpdateManyWithoutDriverInput
+  }
+  driverUpdateWithoutOrderDataInput: { // input type
+    approved?: boolean | null; // Boolean
+    blocked?: boolean | null; // Boolean
+    currently_delivering?: boolean | null; // Boolean
+    driver_document?: NexusGenInputs['driver_documentUpdateManyWithoutDriverInput'] | null; // driver_documentUpdateManyWithoutDriverInput
+    full_name?: string | null; // String
+    id?: number | null; // Int
+    mobile_no?: number | null; // Int
+  }
+  driverUpsertWithoutDriver_documentInput: { // input type
+    create: NexusGenInputs['driverCreateWithoutDriver_documentInput']; // driverCreateWithoutDriver_documentInput!
+    update: NexusGenInputs['driverUpdateWithoutDriver_documentDataInput']; // driverUpdateWithoutDriver_documentDataInput!
+  }
+  driverUpsertWithoutOrderInput: { // input type
+    create: NexusGenInputs['driverCreateWithoutOrderInput']; // driverCreateWithoutOrderInput!
+    update: NexusGenInputs['driverUpdateWithoutOrderDataInput']; // driverUpdateWithoutOrderDataInput!
+  }
+  driverWhereInput: { // input type
+    AND?: NexusGenInputs['driverWhereInput'][] | null; // [driverWhereInput!]
+    approved?: NexusGenInputs['NullableBooleanFilter'] | null; // NullableBooleanFilter
+    blocked?: NexusGenInputs['NullableBooleanFilter'] | null; // NullableBooleanFilter
+    currently_delivering?: NexusGenInputs['NullableBooleanFilter'] | null; // NullableBooleanFilter
+    driver_document?: NexusGenInputs['driver_documentFilter'] | null; // driver_documentFilter
+    full_name?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    mobile_no?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+    NOT?: NexusGenInputs['driverWhereInput'][] | null; // [driverWhereInput!]
+    OR?: NexusGenInputs['driverWhereInput'][] | null; // [driverWhereInput!]
+    order?: NexusGenInputs['orderFilter'] | null; // orderFilter
+  }
+  driverWhereUniqueInput: { // input type
+    id?: number | null; // Int
+    mobile_no?: number | null; // Int
+  }
+  driver_documentCreateInput: { // input type
+    document?: string | null; // String
+    driver: NexusGenInputs['driverCreateOneWithoutDriver_documentInput']; // driverCreateOneWithoutDriver_documentInput!
+  }
+  driver_documentCreateManyWithoutDriverInput: { // input type
+    connect?: NexusGenInputs['driver_documentWhereUniqueInput'][] | null; // [driver_documentWhereUniqueInput!]
+    create?: NexusGenInputs['driver_documentCreateWithoutDriverInput'][] | null; // [driver_documentCreateWithoutDriverInput!]
+  }
+  driver_documentCreateWithoutDriverInput: { // input type
+    document?: string | null; // String
+  }
+  driver_documentFilter: { // input type
+    every?: NexusGenInputs['driver_documentWhereInput'] | null; // driver_documentWhereInput
+    none?: NexusGenInputs['driver_documentWhereInput'] | null; // driver_documentWhereInput
+    some?: NexusGenInputs['driver_documentWhereInput'] | null; // driver_documentWhereInput
+  }
+  driver_documentOrderByInput: { // input type
+    document?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    driver_id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+  }
+  driver_documentScalarWhereInput: { // input type
+    AND?: NexusGenInputs['driver_documentScalarWhereInput'][] | null; // [driver_documentScalarWhereInput!]
+    document?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    driver_id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    NOT?: NexusGenInputs['driver_documentScalarWhereInput'][] | null; // [driver_documentScalarWhereInput!]
+    OR?: NexusGenInputs['driver_documentScalarWhereInput'][] | null; // [driver_documentScalarWhereInput!]
+  }
+  driver_documentUpdateInput: { // input type
+    document?: string | null; // String
+    driver?: NexusGenInputs['driverUpdateOneRequiredWithoutDriver_documentInput'] | null; // driverUpdateOneRequiredWithoutDriver_documentInput
+    id?: number | null; // Int
+  }
+  driver_documentUpdateManyDataInput: { // input type
+    document?: string | null; // String
+    id?: number | null; // Int
+  }
+  driver_documentUpdateManyMutationInput: { // input type
+    document?: string | null; // String
+    id?: number | null; // Int
+  }
+  driver_documentUpdateManyWithWhereNestedInput: { // input type
+    data: NexusGenInputs['driver_documentUpdateManyDataInput']; // driver_documentUpdateManyDataInput!
+    where: NexusGenInputs['driver_documentScalarWhereInput']; // driver_documentScalarWhereInput!
+  }
+  driver_documentUpdateManyWithoutDriverInput: { // input type
+    connect?: NexusGenInputs['driver_documentWhereUniqueInput'][] | null; // [driver_documentWhereUniqueInput!]
+    create?: NexusGenInputs['driver_documentCreateWithoutDriverInput'][] | null; // [driver_documentCreateWithoutDriverInput!]
+    delete?: NexusGenInputs['driver_documentWhereUniqueInput'][] | null; // [driver_documentWhereUniqueInput!]
+    deleteMany?: NexusGenInputs['driver_documentScalarWhereInput'][] | null; // [driver_documentScalarWhereInput!]
+    disconnect?: NexusGenInputs['driver_documentWhereUniqueInput'][] | null; // [driver_documentWhereUniqueInput!]
+    set?: NexusGenInputs['driver_documentWhereUniqueInput'][] | null; // [driver_documentWhereUniqueInput!]
+    update?: NexusGenInputs['driver_documentUpdateWithWhereUniqueWithoutDriverInput'][] | null; // [driver_documentUpdateWithWhereUniqueWithoutDriverInput!]
+    updateMany?: NexusGenInputs['driver_documentUpdateManyWithWhereNestedInput'][] | null; // [driver_documentUpdateManyWithWhereNestedInput!]
+    upsert?: NexusGenInputs['driver_documentUpsertWithWhereUniqueWithoutDriverInput'][] | null; // [driver_documentUpsertWithWhereUniqueWithoutDriverInput!]
+  }
+  driver_documentUpdateWithWhereUniqueWithoutDriverInput: { // input type
+    data: NexusGenInputs['driver_documentUpdateWithoutDriverDataInput']; // driver_documentUpdateWithoutDriverDataInput!
+    where: NexusGenInputs['driver_documentWhereUniqueInput']; // driver_documentWhereUniqueInput!
+  }
+  driver_documentUpdateWithoutDriverDataInput: { // input type
+    document?: string | null; // String
+    id?: number | null; // Int
+  }
+  driver_documentUpsertWithWhereUniqueWithoutDriverInput: { // input type
+    create: NexusGenInputs['driver_documentCreateWithoutDriverInput']; // driver_documentCreateWithoutDriverInput!
+    update: NexusGenInputs['driver_documentUpdateWithoutDriverDataInput']; // driver_documentUpdateWithoutDriverDataInput!
+    where: NexusGenInputs['driver_documentWhereUniqueInput']; // driver_documentWhereUniqueInput!
+  }
+  driver_documentWhereInput: { // input type
+    AND?: NexusGenInputs['driver_documentWhereInput'][] | null; // [driver_documentWhereInput!]
+    document?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    driver?: NexusGenInputs['driverWhereInput'] | null; // driverWhereInput
+    driver_id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    NOT?: NexusGenInputs['driver_documentWhereInput'][] | null; // [driver_documentWhereInput!]
+    OR?: NexusGenInputs['driver_documentWhereInput'][] | null; // [driver_documentWhereInput!]
+  }
+  driver_documentWhereUniqueInput: { // input type
+    id?: number | null; // Int
+  }
+  orderCreateInput: { // input type
+    approved?: boolean | null; // Boolean
+    driver: NexusGenInputs['driverCreateOneWithoutOrderInput']; // driverCreateOneWithoutOrderInput!
+    order_date?: any | null; // DateTime
+    product: NexusGenInputs['productCreateOneWithoutOrderInput']; // productCreateOneWithoutOrderInput!
+    shipping_cost?: number | null; // Int
+    shipping_provider?: string | null; // String
+    shipping_ref_no?: string | null; // String
+    status?: NexusGenEnums['orders_status'] | null; // orders_status
+    store: NexusGenInputs['storeCreateOneWithoutOrderInput']; // storeCreateOneWithoutOrderInput!
+    total_cost?: number | null; // Int
+    total_discount?: number | null; // Int
+    total_tax?: number | null; // Int
+    user: NexusGenInputs['userCreateOneWithoutOrderInput']; // userCreateOneWithoutOrderInput!
+    user_address?: string | null; // String
+  }
+  orderCreateManyWithoutDriverInput: { // input type
+    connect?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
+    create?: NexusGenInputs['orderCreateWithoutDriverInput'][] | null; // [orderCreateWithoutDriverInput!]
+  }
+  orderCreateManyWithoutProductInput: { // input type
+    connect?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
+    create?: NexusGenInputs['orderCreateWithoutProductInput'][] | null; // [orderCreateWithoutProductInput!]
+  }
+  orderCreateManyWithoutStoreInput: { // input type
+    connect?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
+    create?: NexusGenInputs['orderCreateWithoutStoreInput'][] | null; // [orderCreateWithoutStoreInput!]
+  }
+  orderCreateManyWithoutUserInput: { // input type
+    connect?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
+    create?: NexusGenInputs['orderCreateWithoutUserInput'][] | null; // [orderCreateWithoutUserInput!]
+  }
+  orderCreateWithoutDriverInput: { // input type
+    approved?: boolean | null; // Boolean
+    order_date?: any | null; // DateTime
+    product: NexusGenInputs['productCreateOneWithoutOrderInput']; // productCreateOneWithoutOrderInput!
+    shipping_cost?: number | null; // Int
+    shipping_provider?: string | null; // String
+    shipping_ref_no?: string | null; // String
+    status?: NexusGenEnums['orders_status'] | null; // orders_status
+    store: NexusGenInputs['storeCreateOneWithoutOrderInput']; // storeCreateOneWithoutOrderInput!
+    total_cost?: number | null; // Int
+    total_discount?: number | null; // Int
+    total_tax?: number | null; // Int
+    user: NexusGenInputs['userCreateOneWithoutOrderInput']; // userCreateOneWithoutOrderInput!
+    user_address?: string | null; // String
+  }
+  orderCreateWithoutProductInput: { // input type
+    approved?: boolean | null; // Boolean
+    driver: NexusGenInputs['driverCreateOneWithoutOrderInput']; // driverCreateOneWithoutOrderInput!
+    order_date?: any | null; // DateTime
+    shipping_cost?: number | null; // Int
+    shipping_provider?: string | null; // String
+    shipping_ref_no?: string | null; // String
+    status?: NexusGenEnums['orders_status'] | null; // orders_status
+    store: NexusGenInputs['storeCreateOneWithoutOrderInput']; // storeCreateOneWithoutOrderInput!
+    total_cost?: number | null; // Int
+    total_discount?: number | null; // Int
+    total_tax?: number | null; // Int
+    user: NexusGenInputs['userCreateOneWithoutOrderInput']; // userCreateOneWithoutOrderInput!
+    user_address?: string | null; // String
+  }
+  orderCreateWithoutStoreInput: { // input type
+    approved?: boolean | null; // Boolean
+    driver: NexusGenInputs['driverCreateOneWithoutOrderInput']; // driverCreateOneWithoutOrderInput!
+    order_date?: any | null; // DateTime
+    product: NexusGenInputs['productCreateOneWithoutOrderInput']; // productCreateOneWithoutOrderInput!
+    shipping_cost?: number | null; // Int
+    shipping_provider?: string | null; // String
+    shipping_ref_no?: string | null; // String
+    status?: NexusGenEnums['orders_status'] | null; // orders_status
+    total_cost?: number | null; // Int
+    total_discount?: number | null; // Int
+    total_tax?: number | null; // Int
+    user: NexusGenInputs['userCreateOneWithoutOrderInput']; // userCreateOneWithoutOrderInput!
+    user_address?: string | null; // String
+  }
+  orderCreateWithoutUserInput: { // input type
+    approved?: boolean | null; // Boolean
+    driver: NexusGenInputs['driverCreateOneWithoutOrderInput']; // driverCreateOneWithoutOrderInput!
+    order_date?: any | null; // DateTime
+    product: NexusGenInputs['productCreateOneWithoutOrderInput']; // productCreateOneWithoutOrderInput!
+    shipping_cost?: number | null; // Int
+    shipping_provider?: string | null; // String
+    shipping_ref_no?: string | null; // String
+    status?: NexusGenEnums['orders_status'] | null; // orders_status
+    store: NexusGenInputs['storeCreateOneWithoutOrderInput']; // storeCreateOneWithoutOrderInput!
+    total_cost?: number | null; // Int
+    total_discount?: number | null; // Int
+    total_tax?: number | null; // Int
+    user_address?: string | null; // String
+  }
+  orderFilter: { // input type
+    every?: NexusGenInputs['orderWhereInput'] | null; // orderWhereInput
+    none?: NexusGenInputs['orderWhereInput'] | null; // orderWhereInput
+    some?: NexusGenInputs['orderWhereInput'] | null; // orderWhereInput
+  }
+  orderOrderByInput: { // input type
+    approved?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    driver_id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    order_date?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    products?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    shipping_cost?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    shipping_provider?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    shipping_ref_no?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    status?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    store_ids?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    total_cost?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    total_discount?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    total_tax?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    user_address?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    user_id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+  }
+  orderScalarWhereInput: { // input type
+    AND?: NexusGenInputs['orderScalarWhereInput'][] | null; // [orderScalarWhereInput!]
+    approved?: NexusGenInputs['NullableBooleanFilter'] | null; // NullableBooleanFilter
+    driver_id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    NOT?: NexusGenInputs['orderScalarWhereInput'][] | null; // [orderScalarWhereInput!]
+    OR?: NexusGenInputs['orderScalarWhereInput'][] | null; // [orderScalarWhereInput!]
+    order_date?: NexusGenInputs['NullableDateTimeFilter'] | null; // NullableDateTimeFilter
+    products?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    shipping_cost?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+    shipping_provider?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    shipping_ref_no?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    status?: NexusGenEnums['orders_status'] | null; // orders_status
+    store_ids?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    total_cost?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+    total_discount?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+    total_tax?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+    user_address?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    user_id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+  }
+  orderUpdateInput: { // input type
+    approved?: boolean | null; // Boolean
+    driver?: NexusGenInputs['driverUpdateOneRequiredWithoutOrderInput'] | null; // driverUpdateOneRequiredWithoutOrderInput
+    id?: number | null; // Int
+    order_date?: any | null; // DateTime
+    product?: NexusGenInputs['productUpdateOneRequiredWithoutOrderInput'] | null; // productUpdateOneRequiredWithoutOrderInput
+    shipping_cost?: number | null; // Int
+    shipping_provider?: string | null; // String
+    shipping_ref_no?: string | null; // String
+    status?: NexusGenEnums['orders_status'] | null; // orders_status
+    store?: NexusGenInputs['storeUpdateOneRequiredWithoutOrderInput'] | null; // storeUpdateOneRequiredWithoutOrderInput
+    total_cost?: number | null; // Int
+    total_discount?: number | null; // Int
+    total_tax?: number | null; // Int
+    user?: NexusGenInputs['userUpdateOneRequiredWithoutOrderInput'] | null; // userUpdateOneRequiredWithoutOrderInput
+    user_address?: string | null; // String
+  }
+  orderUpdateManyDataInput: { // input type
+    approved?: boolean | null; // Boolean
+    id?: number | null; // Int
+    order_date?: any | null; // DateTime
+    shipping_cost?: number | null; // Int
+    shipping_provider?: string | null; // String
+    shipping_ref_no?: string | null; // String
+    status?: NexusGenEnums['orders_status'] | null; // orders_status
+    total_cost?: number | null; // Int
+    total_discount?: number | null; // Int
+    total_tax?: number | null; // Int
+    user_address?: string | null; // String
+  }
+  orderUpdateManyMutationInput: { // input type
+    approved?: boolean | null; // Boolean
+    id?: number | null; // Int
+    order_date?: any | null; // DateTime
+    shipping_cost?: number | null; // Int
+    shipping_provider?: string | null; // String
+    shipping_ref_no?: string | null; // String
+    status?: NexusGenEnums['orders_status'] | null; // orders_status
+    total_cost?: number | null; // Int
+    total_discount?: number | null; // Int
+    total_tax?: number | null; // Int
+    user_address?: string | null; // String
+  }
+  orderUpdateManyWithWhereNestedInput: { // input type
+    data: NexusGenInputs['orderUpdateManyDataInput']; // orderUpdateManyDataInput!
+    where: NexusGenInputs['orderScalarWhereInput']; // orderScalarWhereInput!
+  }
+  orderUpdateManyWithoutDriverInput: { // input type
+    connect?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
+    create?: NexusGenInputs['orderCreateWithoutDriverInput'][] | null; // [orderCreateWithoutDriverInput!]
+    delete?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
+    deleteMany?: NexusGenInputs['orderScalarWhereInput'][] | null; // [orderScalarWhereInput!]
+    disconnect?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
+    set?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
+    update?: NexusGenInputs['orderUpdateWithWhereUniqueWithoutDriverInput'][] | null; // [orderUpdateWithWhereUniqueWithoutDriverInput!]
+    updateMany?: NexusGenInputs['orderUpdateManyWithWhereNestedInput'][] | null; // [orderUpdateManyWithWhereNestedInput!]
+    upsert?: NexusGenInputs['orderUpsertWithWhereUniqueWithoutDriverInput'][] | null; // [orderUpsertWithWhereUniqueWithoutDriverInput!]
+  }
+  orderUpdateManyWithoutProductInput: { // input type
+    connect?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
+    create?: NexusGenInputs['orderCreateWithoutProductInput'][] | null; // [orderCreateWithoutProductInput!]
+    delete?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
+    deleteMany?: NexusGenInputs['orderScalarWhereInput'][] | null; // [orderScalarWhereInput!]
+    disconnect?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
+    set?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
+    update?: NexusGenInputs['orderUpdateWithWhereUniqueWithoutProductInput'][] | null; // [orderUpdateWithWhereUniqueWithoutProductInput!]
+    updateMany?: NexusGenInputs['orderUpdateManyWithWhereNestedInput'][] | null; // [orderUpdateManyWithWhereNestedInput!]
+    upsert?: NexusGenInputs['orderUpsertWithWhereUniqueWithoutProductInput'][] | null; // [orderUpsertWithWhereUniqueWithoutProductInput!]
+  }
+  orderUpdateManyWithoutStoreInput: { // input type
+    connect?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
+    create?: NexusGenInputs['orderCreateWithoutStoreInput'][] | null; // [orderCreateWithoutStoreInput!]
+    delete?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
+    deleteMany?: NexusGenInputs['orderScalarWhereInput'][] | null; // [orderScalarWhereInput!]
+    disconnect?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
+    set?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
+    update?: NexusGenInputs['orderUpdateWithWhereUniqueWithoutStoreInput'][] | null; // [orderUpdateWithWhereUniqueWithoutStoreInput!]
+    updateMany?: NexusGenInputs['orderUpdateManyWithWhereNestedInput'][] | null; // [orderUpdateManyWithWhereNestedInput!]
+    upsert?: NexusGenInputs['orderUpsertWithWhereUniqueWithoutStoreInput'][] | null; // [orderUpsertWithWhereUniqueWithoutStoreInput!]
+  }
+  orderUpdateManyWithoutUserInput: { // input type
+    connect?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
+    create?: NexusGenInputs['orderCreateWithoutUserInput'][] | null; // [orderCreateWithoutUserInput!]
+    delete?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
+    deleteMany?: NexusGenInputs['orderScalarWhereInput'][] | null; // [orderScalarWhereInput!]
+    disconnect?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
+    set?: NexusGenInputs['orderWhereUniqueInput'][] | null; // [orderWhereUniqueInput!]
+    update?: NexusGenInputs['orderUpdateWithWhereUniqueWithoutUserInput'][] | null; // [orderUpdateWithWhereUniqueWithoutUserInput!]
+    updateMany?: NexusGenInputs['orderUpdateManyWithWhereNestedInput'][] | null; // [orderUpdateManyWithWhereNestedInput!]
+    upsert?: NexusGenInputs['orderUpsertWithWhereUniqueWithoutUserInput'][] | null; // [orderUpsertWithWhereUniqueWithoutUserInput!]
+  }
+  orderUpdateWithWhereUniqueWithoutDriverInput: { // input type
+    data: NexusGenInputs['orderUpdateWithoutDriverDataInput']; // orderUpdateWithoutDriverDataInput!
+    where: NexusGenInputs['orderWhereUniqueInput']; // orderWhereUniqueInput!
+  }
+  orderUpdateWithWhereUniqueWithoutProductInput: { // input type
+    data: NexusGenInputs['orderUpdateWithoutProductDataInput']; // orderUpdateWithoutProductDataInput!
+    where: NexusGenInputs['orderWhereUniqueInput']; // orderWhereUniqueInput!
+  }
+  orderUpdateWithWhereUniqueWithoutStoreInput: { // input type
+    data: NexusGenInputs['orderUpdateWithoutStoreDataInput']; // orderUpdateWithoutStoreDataInput!
+    where: NexusGenInputs['orderWhereUniqueInput']; // orderWhereUniqueInput!
+  }
+  orderUpdateWithWhereUniqueWithoutUserInput: { // input type
+    data: NexusGenInputs['orderUpdateWithoutUserDataInput']; // orderUpdateWithoutUserDataInput!
+    where: NexusGenInputs['orderWhereUniqueInput']; // orderWhereUniqueInput!
+  }
+  orderUpdateWithoutDriverDataInput: { // input type
+    approved?: boolean | null; // Boolean
+    id?: number | null; // Int
+    order_date?: any | null; // DateTime
+    product?: NexusGenInputs['productUpdateOneRequiredWithoutOrderInput'] | null; // productUpdateOneRequiredWithoutOrderInput
+    shipping_cost?: number | null; // Int
+    shipping_provider?: string | null; // String
+    shipping_ref_no?: string | null; // String
+    status?: NexusGenEnums['orders_status'] | null; // orders_status
+    store?: NexusGenInputs['storeUpdateOneRequiredWithoutOrderInput'] | null; // storeUpdateOneRequiredWithoutOrderInput
+    total_cost?: number | null; // Int
+    total_discount?: number | null; // Int
+    total_tax?: number | null; // Int
+    user?: NexusGenInputs['userUpdateOneRequiredWithoutOrderInput'] | null; // userUpdateOneRequiredWithoutOrderInput
+    user_address?: string | null; // String
+  }
+  orderUpdateWithoutProductDataInput: { // input type
+    approved?: boolean | null; // Boolean
+    driver?: NexusGenInputs['driverUpdateOneRequiredWithoutOrderInput'] | null; // driverUpdateOneRequiredWithoutOrderInput
+    id?: number | null; // Int
+    order_date?: any | null; // DateTime
+    shipping_cost?: number | null; // Int
+    shipping_provider?: string | null; // String
+    shipping_ref_no?: string | null; // String
+    status?: NexusGenEnums['orders_status'] | null; // orders_status
+    store?: NexusGenInputs['storeUpdateOneRequiredWithoutOrderInput'] | null; // storeUpdateOneRequiredWithoutOrderInput
+    total_cost?: number | null; // Int
+    total_discount?: number | null; // Int
+    total_tax?: number | null; // Int
+    user?: NexusGenInputs['userUpdateOneRequiredWithoutOrderInput'] | null; // userUpdateOneRequiredWithoutOrderInput
+    user_address?: string | null; // String
+  }
+  orderUpdateWithoutStoreDataInput: { // input type
+    approved?: boolean | null; // Boolean
+    driver?: NexusGenInputs['driverUpdateOneRequiredWithoutOrderInput'] | null; // driverUpdateOneRequiredWithoutOrderInput
+    id?: number | null; // Int
+    order_date?: any | null; // DateTime
+    product?: NexusGenInputs['productUpdateOneRequiredWithoutOrderInput'] | null; // productUpdateOneRequiredWithoutOrderInput
+    shipping_cost?: number | null; // Int
+    shipping_provider?: string | null; // String
+    shipping_ref_no?: string | null; // String
+    status?: NexusGenEnums['orders_status'] | null; // orders_status
+    total_cost?: number | null; // Int
+    total_discount?: number | null; // Int
+    total_tax?: number | null; // Int
+    user?: NexusGenInputs['userUpdateOneRequiredWithoutOrderInput'] | null; // userUpdateOneRequiredWithoutOrderInput
+    user_address?: string | null; // String
+  }
+  orderUpdateWithoutUserDataInput: { // input type
+    approved?: boolean | null; // Boolean
+    driver?: NexusGenInputs['driverUpdateOneRequiredWithoutOrderInput'] | null; // driverUpdateOneRequiredWithoutOrderInput
+    id?: number | null; // Int
+    order_date?: any | null; // DateTime
+    product?: NexusGenInputs['productUpdateOneRequiredWithoutOrderInput'] | null; // productUpdateOneRequiredWithoutOrderInput
+    shipping_cost?: number | null; // Int
+    shipping_provider?: string | null; // String
+    shipping_ref_no?: string | null; // String
+    status?: NexusGenEnums['orders_status'] | null; // orders_status
+    store?: NexusGenInputs['storeUpdateOneRequiredWithoutOrderInput'] | null; // storeUpdateOneRequiredWithoutOrderInput
+    total_cost?: number | null; // Int
+    total_discount?: number | null; // Int
+    total_tax?: number | null; // Int
+    user_address?: string | null; // String
+  }
+  orderUpsertWithWhereUniqueWithoutDriverInput: { // input type
+    create: NexusGenInputs['orderCreateWithoutDriverInput']; // orderCreateWithoutDriverInput!
+    update: NexusGenInputs['orderUpdateWithoutDriverDataInput']; // orderUpdateWithoutDriverDataInput!
+    where: NexusGenInputs['orderWhereUniqueInput']; // orderWhereUniqueInput!
+  }
+  orderUpsertWithWhereUniqueWithoutProductInput: { // input type
+    create: NexusGenInputs['orderCreateWithoutProductInput']; // orderCreateWithoutProductInput!
+    update: NexusGenInputs['orderUpdateWithoutProductDataInput']; // orderUpdateWithoutProductDataInput!
+    where: NexusGenInputs['orderWhereUniqueInput']; // orderWhereUniqueInput!
+  }
+  orderUpsertWithWhereUniqueWithoutStoreInput: { // input type
+    create: NexusGenInputs['orderCreateWithoutStoreInput']; // orderCreateWithoutStoreInput!
+    update: NexusGenInputs['orderUpdateWithoutStoreDataInput']; // orderUpdateWithoutStoreDataInput!
+    where: NexusGenInputs['orderWhereUniqueInput']; // orderWhereUniqueInput!
+  }
+  orderUpsertWithWhereUniqueWithoutUserInput: { // input type
+    create: NexusGenInputs['orderCreateWithoutUserInput']; // orderCreateWithoutUserInput!
+    update: NexusGenInputs['orderUpdateWithoutUserDataInput']; // orderUpdateWithoutUserDataInput!
+    where: NexusGenInputs['orderWhereUniqueInput']; // orderWhereUniqueInput!
+  }
+  orderWhereInput: { // input type
+    AND?: NexusGenInputs['orderWhereInput'][] | null; // [orderWhereInput!]
+    approved?: NexusGenInputs['NullableBooleanFilter'] | null; // NullableBooleanFilter
+    driver?: NexusGenInputs['driverWhereInput'] | null; // driverWhereInput
+    driver_id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    NOT?: NexusGenInputs['orderWhereInput'][] | null; // [orderWhereInput!]
+    OR?: NexusGenInputs['orderWhereInput'][] | null; // [orderWhereInput!]
+    order_date?: NexusGenInputs['NullableDateTimeFilter'] | null; // NullableDateTimeFilter
+    product?: NexusGenInputs['productWhereInput'] | null; // productWhereInput
+    products?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    shipping_cost?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+    shipping_provider?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    shipping_ref_no?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    status?: NexusGenEnums['orders_status'] | null; // orders_status
+    store?: NexusGenInputs['storeWhereInput'] | null; // storeWhereInput
+    store_ids?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    total_cost?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+    total_discount?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+    total_tax?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+    user?: NexusGenInputs['userWhereInput'] | null; // userWhereInput
+    user_address?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    user_id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+  }
+  orderWhereUniqueInput: { // input type
+    id?: number | null; // Int
+  }
+  productCreateInput: { // input type
+    cost?: number | null; // Float
+    description?: string | null; // String
+    discount?: number | null; // Float
+    discounted_cost?: number | null; // Float
+    mrp?: number | null; // Float
+    order?: NexusGenInputs['orderCreateManyWithoutProductInput'] | null; // orderCreateManyWithoutProductInput
+    product_categories_junction?: NexusGenInputs['product_categories_junctionCreateManyWithoutProductInput'] | null; // product_categories_junctionCreateManyWithoutProductInput
+    product_image?: NexusGenInputs['product_imageCreateManyWithoutProductInput'] | null; // product_imageCreateManyWithoutProductInput
+    product_quantity?: NexusGenInputs['product_quantityCreateManyWithoutProductInput'] | null; // product_quantityCreateManyWithoutProductInput
+    product_rating?: NexusGenInputs['product_ratingCreateManyWithoutProductInput'] | null; // product_ratingCreateManyWithoutProductInput
+    product_types_junction?: NexusGenInputs['product_types_junctionCreateManyWithoutProductInput'] | null; // product_types_junctionCreateManyWithoutProductInput
+    store: NexusGenInputs['storeCreateOneWithoutProductInput']; // storeCreateOneWithoutProductInput!
+    tax?: number | null; // Float
+    title?: string | null; // String
+    total_cost?: number | null; // Float
+  }
+  productCreateManyWithoutStoreInput: { // input type
+    connect?: NexusGenInputs['productWhereUniqueInput'][] | null; // [productWhereUniqueInput!]
+    create?: NexusGenInputs['productCreateWithoutStoreInput'][] | null; // [productCreateWithoutStoreInput!]
+  }
+  productCreateOneWithoutOrderInput: { // input type
+    connect?: NexusGenInputs['productWhereUniqueInput'] | null; // productWhereUniqueInput
+    create?: NexusGenInputs['productCreateWithoutOrderInput'] | null; // productCreateWithoutOrderInput
+  }
+  productCreateOneWithoutProduct_categories_junctionInput: { // input type
+    connect?: NexusGenInputs['productWhereUniqueInput'] | null; // productWhereUniqueInput
+    create?: NexusGenInputs['productCreateWithoutProduct_categories_junctionInput'] | null; // productCreateWithoutProduct_categories_junctionInput
+  }
+  productCreateOneWithoutProduct_imageInput: { // input type
+    connect?: NexusGenInputs['productWhereUniqueInput'] | null; // productWhereUniqueInput
+    create?: NexusGenInputs['productCreateWithoutProduct_imageInput'] | null; // productCreateWithoutProduct_imageInput
+  }
+  productCreateOneWithoutProduct_quantityInput: { // input type
+    connect?: NexusGenInputs['productWhereUniqueInput'] | null; // productWhereUniqueInput
+    create?: NexusGenInputs['productCreateWithoutProduct_quantityInput'] | null; // productCreateWithoutProduct_quantityInput
+  }
+  productCreateOneWithoutProduct_ratingInput: { // input type
+    connect?: NexusGenInputs['productWhereUniqueInput'] | null; // productWhereUniqueInput
+    create?: NexusGenInputs['productCreateWithoutProduct_ratingInput'] | null; // productCreateWithoutProduct_ratingInput
+  }
+  productCreateOneWithoutProduct_types_junctionInput: { // input type
+    connect?: NexusGenInputs['productWhereUniqueInput'] | null; // productWhereUniqueInput
+    create?: NexusGenInputs['productCreateWithoutProduct_types_junctionInput'] | null; // productCreateWithoutProduct_types_junctionInput
+  }
+  productCreateWithoutOrderInput: { // input type
+    cost?: number | null; // Float
+    description?: string | null; // String
+    discount?: number | null; // Float
+    discounted_cost?: number | null; // Float
+    mrp?: number | null; // Float
+    product_categories_junction?: NexusGenInputs['product_categories_junctionCreateManyWithoutProductInput'] | null; // product_categories_junctionCreateManyWithoutProductInput
+    product_image?: NexusGenInputs['product_imageCreateManyWithoutProductInput'] | null; // product_imageCreateManyWithoutProductInput
+    product_quantity?: NexusGenInputs['product_quantityCreateManyWithoutProductInput'] | null; // product_quantityCreateManyWithoutProductInput
+    product_rating?: NexusGenInputs['product_ratingCreateManyWithoutProductInput'] | null; // product_ratingCreateManyWithoutProductInput
+    product_types_junction?: NexusGenInputs['product_types_junctionCreateManyWithoutProductInput'] | null; // product_types_junctionCreateManyWithoutProductInput
+    store: NexusGenInputs['storeCreateOneWithoutProductInput']; // storeCreateOneWithoutProductInput!
+    tax?: number | null; // Float
+    title?: string | null; // String
+    total_cost?: number | null; // Float
+  }
+  productCreateWithoutProduct_categories_junctionInput: { // input type
+    cost?: number | null; // Float
+    description?: string | null; // String
+    discount?: number | null; // Float
+    discounted_cost?: number | null; // Float
+    mrp?: number | null; // Float
+    order?: NexusGenInputs['orderCreateManyWithoutProductInput'] | null; // orderCreateManyWithoutProductInput
+    product_image?: NexusGenInputs['product_imageCreateManyWithoutProductInput'] | null; // product_imageCreateManyWithoutProductInput
+    product_quantity?: NexusGenInputs['product_quantityCreateManyWithoutProductInput'] | null; // product_quantityCreateManyWithoutProductInput
+    product_rating?: NexusGenInputs['product_ratingCreateManyWithoutProductInput'] | null; // product_ratingCreateManyWithoutProductInput
+    product_types_junction?: NexusGenInputs['product_types_junctionCreateManyWithoutProductInput'] | null; // product_types_junctionCreateManyWithoutProductInput
+    store: NexusGenInputs['storeCreateOneWithoutProductInput']; // storeCreateOneWithoutProductInput!
+    tax?: number | null; // Float
+    title?: string | null; // String
+    total_cost?: number | null; // Float
+  }
+  productCreateWithoutProduct_imageInput: { // input type
+    cost?: number | null; // Float
+    description?: string | null; // String
+    discount?: number | null; // Float
+    discounted_cost?: number | null; // Float
+    mrp?: number | null; // Float
+    order?: NexusGenInputs['orderCreateManyWithoutProductInput'] | null; // orderCreateManyWithoutProductInput
+    product_categories_junction?: NexusGenInputs['product_categories_junctionCreateManyWithoutProductInput'] | null; // product_categories_junctionCreateManyWithoutProductInput
+    product_quantity?: NexusGenInputs['product_quantityCreateManyWithoutProductInput'] | null; // product_quantityCreateManyWithoutProductInput
+    product_rating?: NexusGenInputs['product_ratingCreateManyWithoutProductInput'] | null; // product_ratingCreateManyWithoutProductInput
+    product_types_junction?: NexusGenInputs['product_types_junctionCreateManyWithoutProductInput'] | null; // product_types_junctionCreateManyWithoutProductInput
+    store: NexusGenInputs['storeCreateOneWithoutProductInput']; // storeCreateOneWithoutProductInput!
+    tax?: number | null; // Float
+    title?: string | null; // String
+    total_cost?: number | null; // Float
+  }
+  productCreateWithoutProduct_quantityInput: { // input type
+    cost?: number | null; // Float
+    description?: string | null; // String
+    discount?: number | null; // Float
+    discounted_cost?: number | null; // Float
+    mrp?: number | null; // Float
+    order?: NexusGenInputs['orderCreateManyWithoutProductInput'] | null; // orderCreateManyWithoutProductInput
+    product_categories_junction?: NexusGenInputs['product_categories_junctionCreateManyWithoutProductInput'] | null; // product_categories_junctionCreateManyWithoutProductInput
+    product_image?: NexusGenInputs['product_imageCreateManyWithoutProductInput'] | null; // product_imageCreateManyWithoutProductInput
+    product_rating?: NexusGenInputs['product_ratingCreateManyWithoutProductInput'] | null; // product_ratingCreateManyWithoutProductInput
+    product_types_junction?: NexusGenInputs['product_types_junctionCreateManyWithoutProductInput'] | null; // product_types_junctionCreateManyWithoutProductInput
+    store: NexusGenInputs['storeCreateOneWithoutProductInput']; // storeCreateOneWithoutProductInput!
+    tax?: number | null; // Float
+    title?: string | null; // String
+    total_cost?: number | null; // Float
+  }
+  productCreateWithoutProduct_ratingInput: { // input type
+    cost?: number | null; // Float
+    description?: string | null; // String
+    discount?: number | null; // Float
+    discounted_cost?: number | null; // Float
+    mrp?: number | null; // Float
+    order?: NexusGenInputs['orderCreateManyWithoutProductInput'] | null; // orderCreateManyWithoutProductInput
+    product_categories_junction?: NexusGenInputs['product_categories_junctionCreateManyWithoutProductInput'] | null; // product_categories_junctionCreateManyWithoutProductInput
+    product_image?: NexusGenInputs['product_imageCreateManyWithoutProductInput'] | null; // product_imageCreateManyWithoutProductInput
+    product_quantity?: NexusGenInputs['product_quantityCreateManyWithoutProductInput'] | null; // product_quantityCreateManyWithoutProductInput
+    product_types_junction?: NexusGenInputs['product_types_junctionCreateManyWithoutProductInput'] | null; // product_types_junctionCreateManyWithoutProductInput
+    store: NexusGenInputs['storeCreateOneWithoutProductInput']; // storeCreateOneWithoutProductInput!
+    tax?: number | null; // Float
+    title?: string | null; // String
+    total_cost?: number | null; // Float
+  }
+  productCreateWithoutProduct_types_junctionInput: { // input type
+    cost?: number | null; // Float
+    description?: string | null; // String
+    discount?: number | null; // Float
+    discounted_cost?: number | null; // Float
+    mrp?: number | null; // Float
+    order?: NexusGenInputs['orderCreateManyWithoutProductInput'] | null; // orderCreateManyWithoutProductInput
+    product_categories_junction?: NexusGenInputs['product_categories_junctionCreateManyWithoutProductInput'] | null; // product_categories_junctionCreateManyWithoutProductInput
+    product_image?: NexusGenInputs['product_imageCreateManyWithoutProductInput'] | null; // product_imageCreateManyWithoutProductInput
+    product_quantity?: NexusGenInputs['product_quantityCreateManyWithoutProductInput'] | null; // product_quantityCreateManyWithoutProductInput
+    product_rating?: NexusGenInputs['product_ratingCreateManyWithoutProductInput'] | null; // product_ratingCreateManyWithoutProductInput
+    store: NexusGenInputs['storeCreateOneWithoutProductInput']; // storeCreateOneWithoutProductInput!
+    tax?: number | null; // Float
+    title?: string | null; // String
+    total_cost?: number | null; // Float
+  }
+  productCreateWithoutStoreInput: { // input type
+    cost?: number | null; // Float
+    description?: string | null; // String
+    discount?: number | null; // Float
+    discounted_cost?: number | null; // Float
+    mrp?: number | null; // Float
+    order?: NexusGenInputs['orderCreateManyWithoutProductInput'] | null; // orderCreateManyWithoutProductInput
+    product_categories_junction?: NexusGenInputs['product_categories_junctionCreateManyWithoutProductInput'] | null; // product_categories_junctionCreateManyWithoutProductInput
+    product_image?: NexusGenInputs['product_imageCreateManyWithoutProductInput'] | null; // product_imageCreateManyWithoutProductInput
+    product_quantity?: NexusGenInputs['product_quantityCreateManyWithoutProductInput'] | null; // product_quantityCreateManyWithoutProductInput
+    product_rating?: NexusGenInputs['product_ratingCreateManyWithoutProductInput'] | null; // product_ratingCreateManyWithoutProductInput
+    product_types_junction?: NexusGenInputs['product_types_junctionCreateManyWithoutProductInput'] | null; // product_types_junctionCreateManyWithoutProductInput
+    tax?: number | null; // Float
+    title?: string | null; // String
+    total_cost?: number | null; // Float
+  }
+  productFilter: { // input type
+    every?: NexusGenInputs['productWhereInput'] | null; // productWhereInput
+    none?: NexusGenInputs['productWhereInput'] | null; // productWhereInput
+    some?: NexusGenInputs['productWhereInput'] | null; // productWhereInput
+  }
+  productOrderByInput: { // input type
+    cost?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    description?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    discount?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    discounted_cost?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    mrp?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    store_id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    tax?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    title?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    total_cost?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+  }
+  productScalarWhereInput: { // input type
+    AND?: NexusGenInputs['productScalarWhereInput'][] | null; // [productScalarWhereInput!]
+    cost?: NexusGenInputs['NullableFloatFilter'] | null; // NullableFloatFilter
+    description?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    discount?: NexusGenInputs['NullableFloatFilter'] | null; // NullableFloatFilter
+    discounted_cost?: NexusGenInputs['NullableFloatFilter'] | null; // NullableFloatFilter
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    mrp?: NexusGenInputs['NullableFloatFilter'] | null; // NullableFloatFilter
+    NOT?: NexusGenInputs['productScalarWhereInput'][] | null; // [productScalarWhereInput!]
+    OR?: NexusGenInputs['productScalarWhereInput'][] | null; // [productScalarWhereInput!]
+    order?: NexusGenInputs['orderFilter'] | null; // orderFilter
+    product_categories_junction?: NexusGenInputs['product_categories_junctionFilter'] | null; // product_categories_junctionFilter
+    product_image?: NexusGenInputs['product_imageFilter'] | null; // product_imageFilter
+    product_quantity?: NexusGenInputs['product_quantityFilter'] | null; // product_quantityFilter
+    product_rating?: NexusGenInputs['product_ratingFilter'] | null; // product_ratingFilter
+    product_types_junction?: NexusGenInputs['product_types_junctionFilter'] | null; // product_types_junctionFilter
+    store_id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    tax?: NexusGenInputs['NullableFloatFilter'] | null; // NullableFloatFilter
+    title?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    total_cost?: NexusGenInputs['NullableFloatFilter'] | null; // NullableFloatFilter
+  }
+  productUpdateInput: { // input type
+    cost?: number | null; // Float
+    description?: string | null; // String
+    discount?: number | null; // Float
+    discounted_cost?: number | null; // Float
+    id?: number | null; // Int
+    mrp?: number | null; // Float
+    order?: NexusGenInputs['orderUpdateManyWithoutProductInput'] | null; // orderUpdateManyWithoutProductInput
+    product_categories_junction?: NexusGenInputs['product_categories_junctionUpdateManyWithoutProductInput'] | null; // product_categories_junctionUpdateManyWithoutProductInput
+    product_image?: NexusGenInputs['product_imageUpdateManyWithoutProductInput'] | null; // product_imageUpdateManyWithoutProductInput
+    product_quantity?: NexusGenInputs['product_quantityUpdateManyWithoutProductInput'] | null; // product_quantityUpdateManyWithoutProductInput
+    product_rating?: NexusGenInputs['product_ratingUpdateManyWithoutProductInput'] | null; // product_ratingUpdateManyWithoutProductInput
+    product_types_junction?: NexusGenInputs['product_types_junctionUpdateManyWithoutProductInput'] | null; // product_types_junctionUpdateManyWithoutProductInput
+    store?: NexusGenInputs['storeUpdateOneRequiredWithoutProductInput'] | null; // storeUpdateOneRequiredWithoutProductInput
+    tax?: number | null; // Float
+    title?: string | null; // String
+    total_cost?: number | null; // Float
+  }
+  productUpdateManyDataInput: { // input type
+    cost?: number | null; // Float
+    description?: string | null; // String
+    discount?: number | null; // Float
+    discounted_cost?: number | null; // Float
+    id?: number | null; // Int
+    mrp?: number | null; // Float
+    tax?: number | null; // Float
+    title?: string | null; // String
+    total_cost?: number | null; // Float
+  }
+  productUpdateManyMutationInput: { // input type
+    cost?: number | null; // Float
+    description?: string | null; // String
+    discount?: number | null; // Float
+    discounted_cost?: number | null; // Float
+    id?: number | null; // Int
+    mrp?: number | null; // Float
+    tax?: number | null; // Float
+    title?: string | null; // String
+    total_cost?: number | null; // Float
+  }
+  productUpdateManyWithWhereNestedInput: { // input type
+    data: NexusGenInputs['productUpdateManyDataInput']; // productUpdateManyDataInput!
+    where: NexusGenInputs['productScalarWhereInput']; // productScalarWhereInput!
+  }
+  productUpdateManyWithoutStoreInput: { // input type
+    connect?: NexusGenInputs['productWhereUniqueInput'][] | null; // [productWhereUniqueInput!]
+    create?: NexusGenInputs['productCreateWithoutStoreInput'][] | null; // [productCreateWithoutStoreInput!]
+    delete?: NexusGenInputs['productWhereUniqueInput'][] | null; // [productWhereUniqueInput!]
+    deleteMany?: NexusGenInputs['productScalarWhereInput'][] | null; // [productScalarWhereInput!]
+    disconnect?: NexusGenInputs['productWhereUniqueInput'][] | null; // [productWhereUniqueInput!]
+    set?: NexusGenInputs['productWhereUniqueInput'][] | null; // [productWhereUniqueInput!]
+    update?: NexusGenInputs['productUpdateWithWhereUniqueWithoutStoreInput'][] | null; // [productUpdateWithWhereUniqueWithoutStoreInput!]
+    updateMany?: NexusGenInputs['productUpdateManyWithWhereNestedInput'][] | null; // [productUpdateManyWithWhereNestedInput!]
+    upsert?: NexusGenInputs['productUpsertWithWhereUniqueWithoutStoreInput'][] | null; // [productUpsertWithWhereUniqueWithoutStoreInput!]
+  }
+  productUpdateOneRequiredWithoutOrderInput: { // input type
+    connect?: NexusGenInputs['productWhereUniqueInput'] | null; // productWhereUniqueInput
+    create?: NexusGenInputs['productCreateWithoutOrderInput'] | null; // productCreateWithoutOrderInput
+    update?: NexusGenInputs['productUpdateWithoutOrderDataInput'] | null; // productUpdateWithoutOrderDataInput
+    upsert?: NexusGenInputs['productUpsertWithoutOrderInput'] | null; // productUpsertWithoutOrderInput
+  }
+  productUpdateOneRequiredWithoutProduct_categories_junctionInput: { // input type
+    connect?: NexusGenInputs['productWhereUniqueInput'] | null; // productWhereUniqueInput
+    create?: NexusGenInputs['productCreateWithoutProduct_categories_junctionInput'] | null; // productCreateWithoutProduct_categories_junctionInput
+    update?: NexusGenInputs['productUpdateWithoutProduct_categories_junctionDataInput'] | null; // productUpdateWithoutProduct_categories_junctionDataInput
+    upsert?: NexusGenInputs['productUpsertWithoutProduct_categories_junctionInput'] | null; // productUpsertWithoutProduct_categories_junctionInput
+  }
+  productUpdateOneRequiredWithoutProduct_imageInput: { // input type
+    connect?: NexusGenInputs['productWhereUniqueInput'] | null; // productWhereUniqueInput
+    create?: NexusGenInputs['productCreateWithoutProduct_imageInput'] | null; // productCreateWithoutProduct_imageInput
+    update?: NexusGenInputs['productUpdateWithoutProduct_imageDataInput'] | null; // productUpdateWithoutProduct_imageDataInput
+    upsert?: NexusGenInputs['productUpsertWithoutProduct_imageInput'] | null; // productUpsertWithoutProduct_imageInput
+  }
+  productUpdateOneRequiredWithoutProduct_quantityInput: { // input type
+    connect?: NexusGenInputs['productWhereUniqueInput'] | null; // productWhereUniqueInput
+    create?: NexusGenInputs['productCreateWithoutProduct_quantityInput'] | null; // productCreateWithoutProduct_quantityInput
+    update?: NexusGenInputs['productUpdateWithoutProduct_quantityDataInput'] | null; // productUpdateWithoutProduct_quantityDataInput
+    upsert?: NexusGenInputs['productUpsertWithoutProduct_quantityInput'] | null; // productUpsertWithoutProduct_quantityInput
+  }
+  productUpdateOneRequiredWithoutProduct_ratingInput: { // input type
+    connect?: NexusGenInputs['productWhereUniqueInput'] | null; // productWhereUniqueInput
+    create?: NexusGenInputs['productCreateWithoutProduct_ratingInput'] | null; // productCreateWithoutProduct_ratingInput
+    update?: NexusGenInputs['productUpdateWithoutProduct_ratingDataInput'] | null; // productUpdateWithoutProduct_ratingDataInput
+    upsert?: NexusGenInputs['productUpsertWithoutProduct_ratingInput'] | null; // productUpsertWithoutProduct_ratingInput
+  }
+  productUpdateOneRequiredWithoutProduct_types_junctionInput: { // input type
+    connect?: NexusGenInputs['productWhereUniqueInput'] | null; // productWhereUniqueInput
+    create?: NexusGenInputs['productCreateWithoutProduct_types_junctionInput'] | null; // productCreateWithoutProduct_types_junctionInput
+    update?: NexusGenInputs['productUpdateWithoutProduct_types_junctionDataInput'] | null; // productUpdateWithoutProduct_types_junctionDataInput
+    upsert?: NexusGenInputs['productUpsertWithoutProduct_types_junctionInput'] | null; // productUpsertWithoutProduct_types_junctionInput
+  }
+  productUpdateWithWhereUniqueWithoutStoreInput: { // input type
+    data: NexusGenInputs['productUpdateWithoutStoreDataInput']; // productUpdateWithoutStoreDataInput!
+    where: NexusGenInputs['productWhereUniqueInput']; // productWhereUniqueInput!
+  }
+  productUpdateWithoutOrderDataInput: { // input type
+    cost?: number | null; // Float
+    description?: string | null; // String
+    discount?: number | null; // Float
+    discounted_cost?: number | null; // Float
+    id?: number | null; // Int
+    mrp?: number | null; // Float
+    product_categories_junction?: NexusGenInputs['product_categories_junctionUpdateManyWithoutProductInput'] | null; // product_categories_junctionUpdateManyWithoutProductInput
+    product_image?: NexusGenInputs['product_imageUpdateManyWithoutProductInput'] | null; // product_imageUpdateManyWithoutProductInput
+    product_quantity?: NexusGenInputs['product_quantityUpdateManyWithoutProductInput'] | null; // product_quantityUpdateManyWithoutProductInput
+    product_rating?: NexusGenInputs['product_ratingUpdateManyWithoutProductInput'] | null; // product_ratingUpdateManyWithoutProductInput
+    product_types_junction?: NexusGenInputs['product_types_junctionUpdateManyWithoutProductInput'] | null; // product_types_junctionUpdateManyWithoutProductInput
+    store?: NexusGenInputs['storeUpdateOneRequiredWithoutProductInput'] | null; // storeUpdateOneRequiredWithoutProductInput
+    tax?: number | null; // Float
+    title?: string | null; // String
+    total_cost?: number | null; // Float
+  }
+  productUpdateWithoutProduct_categories_junctionDataInput: { // input type
+    cost?: number | null; // Float
+    description?: string | null; // String
+    discount?: number | null; // Float
+    discounted_cost?: number | null; // Float
+    id?: number | null; // Int
+    mrp?: number | null; // Float
+    order?: NexusGenInputs['orderUpdateManyWithoutProductInput'] | null; // orderUpdateManyWithoutProductInput
+    product_image?: NexusGenInputs['product_imageUpdateManyWithoutProductInput'] | null; // product_imageUpdateManyWithoutProductInput
+    product_quantity?: NexusGenInputs['product_quantityUpdateManyWithoutProductInput'] | null; // product_quantityUpdateManyWithoutProductInput
+    product_rating?: NexusGenInputs['product_ratingUpdateManyWithoutProductInput'] | null; // product_ratingUpdateManyWithoutProductInput
+    product_types_junction?: NexusGenInputs['product_types_junctionUpdateManyWithoutProductInput'] | null; // product_types_junctionUpdateManyWithoutProductInput
+    store?: NexusGenInputs['storeUpdateOneRequiredWithoutProductInput'] | null; // storeUpdateOneRequiredWithoutProductInput
+    tax?: number | null; // Float
+    title?: string | null; // String
+    total_cost?: number | null; // Float
+  }
+  productUpdateWithoutProduct_imageDataInput: { // input type
+    cost?: number | null; // Float
+    description?: string | null; // String
+    discount?: number | null; // Float
+    discounted_cost?: number | null; // Float
+    id?: number | null; // Int
+    mrp?: number | null; // Float
+    order?: NexusGenInputs['orderUpdateManyWithoutProductInput'] | null; // orderUpdateManyWithoutProductInput
+    product_categories_junction?: NexusGenInputs['product_categories_junctionUpdateManyWithoutProductInput'] | null; // product_categories_junctionUpdateManyWithoutProductInput
+    product_quantity?: NexusGenInputs['product_quantityUpdateManyWithoutProductInput'] | null; // product_quantityUpdateManyWithoutProductInput
+    product_rating?: NexusGenInputs['product_ratingUpdateManyWithoutProductInput'] | null; // product_ratingUpdateManyWithoutProductInput
+    product_types_junction?: NexusGenInputs['product_types_junctionUpdateManyWithoutProductInput'] | null; // product_types_junctionUpdateManyWithoutProductInput
+    store?: NexusGenInputs['storeUpdateOneRequiredWithoutProductInput'] | null; // storeUpdateOneRequiredWithoutProductInput
+    tax?: number | null; // Float
+    title?: string | null; // String
+    total_cost?: number | null; // Float
+  }
+  productUpdateWithoutProduct_quantityDataInput: { // input type
+    cost?: number | null; // Float
+    description?: string | null; // String
+    discount?: number | null; // Float
+    discounted_cost?: number | null; // Float
+    id?: number | null; // Int
+    mrp?: number | null; // Float
+    order?: NexusGenInputs['orderUpdateManyWithoutProductInput'] | null; // orderUpdateManyWithoutProductInput
+    product_categories_junction?: NexusGenInputs['product_categories_junctionUpdateManyWithoutProductInput'] | null; // product_categories_junctionUpdateManyWithoutProductInput
+    product_image?: NexusGenInputs['product_imageUpdateManyWithoutProductInput'] | null; // product_imageUpdateManyWithoutProductInput
+    product_rating?: NexusGenInputs['product_ratingUpdateManyWithoutProductInput'] | null; // product_ratingUpdateManyWithoutProductInput
+    product_types_junction?: NexusGenInputs['product_types_junctionUpdateManyWithoutProductInput'] | null; // product_types_junctionUpdateManyWithoutProductInput
+    store?: NexusGenInputs['storeUpdateOneRequiredWithoutProductInput'] | null; // storeUpdateOneRequiredWithoutProductInput
+    tax?: number | null; // Float
+    title?: string | null; // String
+    total_cost?: number | null; // Float
+  }
+  productUpdateWithoutProduct_ratingDataInput: { // input type
+    cost?: number | null; // Float
+    description?: string | null; // String
+    discount?: number | null; // Float
+    discounted_cost?: number | null; // Float
+    id?: number | null; // Int
+    mrp?: number | null; // Float
+    order?: NexusGenInputs['orderUpdateManyWithoutProductInput'] | null; // orderUpdateManyWithoutProductInput
+    product_categories_junction?: NexusGenInputs['product_categories_junctionUpdateManyWithoutProductInput'] | null; // product_categories_junctionUpdateManyWithoutProductInput
+    product_image?: NexusGenInputs['product_imageUpdateManyWithoutProductInput'] | null; // product_imageUpdateManyWithoutProductInput
+    product_quantity?: NexusGenInputs['product_quantityUpdateManyWithoutProductInput'] | null; // product_quantityUpdateManyWithoutProductInput
+    product_types_junction?: NexusGenInputs['product_types_junctionUpdateManyWithoutProductInput'] | null; // product_types_junctionUpdateManyWithoutProductInput
+    store?: NexusGenInputs['storeUpdateOneRequiredWithoutProductInput'] | null; // storeUpdateOneRequiredWithoutProductInput
+    tax?: number | null; // Float
+    title?: string | null; // String
+    total_cost?: number | null; // Float
+  }
+  productUpdateWithoutProduct_types_junctionDataInput: { // input type
+    cost?: number | null; // Float
+    description?: string | null; // String
+    discount?: number | null; // Float
+    discounted_cost?: number | null; // Float
+    id?: number | null; // Int
+    mrp?: number | null; // Float
+    order?: NexusGenInputs['orderUpdateManyWithoutProductInput'] | null; // orderUpdateManyWithoutProductInput
+    product_categories_junction?: NexusGenInputs['product_categories_junctionUpdateManyWithoutProductInput'] | null; // product_categories_junctionUpdateManyWithoutProductInput
+    product_image?: NexusGenInputs['product_imageUpdateManyWithoutProductInput'] | null; // product_imageUpdateManyWithoutProductInput
+    product_quantity?: NexusGenInputs['product_quantityUpdateManyWithoutProductInput'] | null; // product_quantityUpdateManyWithoutProductInput
+    product_rating?: NexusGenInputs['product_ratingUpdateManyWithoutProductInput'] | null; // product_ratingUpdateManyWithoutProductInput
+    store?: NexusGenInputs['storeUpdateOneRequiredWithoutProductInput'] | null; // storeUpdateOneRequiredWithoutProductInput
+    tax?: number | null; // Float
+    title?: string | null; // String
+    total_cost?: number | null; // Float
+  }
+  productUpdateWithoutStoreDataInput: { // input type
+    cost?: number | null; // Float
+    description?: string | null; // String
+    discount?: number | null; // Float
+    discounted_cost?: number | null; // Float
+    id?: number | null; // Int
+    mrp?: number | null; // Float
+    order?: NexusGenInputs['orderUpdateManyWithoutProductInput'] | null; // orderUpdateManyWithoutProductInput
+    product_categories_junction?: NexusGenInputs['product_categories_junctionUpdateManyWithoutProductInput'] | null; // product_categories_junctionUpdateManyWithoutProductInput
+    product_image?: NexusGenInputs['product_imageUpdateManyWithoutProductInput'] | null; // product_imageUpdateManyWithoutProductInput
+    product_quantity?: NexusGenInputs['product_quantityUpdateManyWithoutProductInput'] | null; // product_quantityUpdateManyWithoutProductInput
+    product_rating?: NexusGenInputs['product_ratingUpdateManyWithoutProductInput'] | null; // product_ratingUpdateManyWithoutProductInput
+    product_types_junction?: NexusGenInputs['product_types_junctionUpdateManyWithoutProductInput'] | null; // product_types_junctionUpdateManyWithoutProductInput
+    tax?: number | null; // Float
+    title?: string | null; // String
+    total_cost?: number | null; // Float
+  }
+  productUpsertWithWhereUniqueWithoutStoreInput: { // input type
+    create: NexusGenInputs['productCreateWithoutStoreInput']; // productCreateWithoutStoreInput!
+    update: NexusGenInputs['productUpdateWithoutStoreDataInput']; // productUpdateWithoutStoreDataInput!
+    where: NexusGenInputs['productWhereUniqueInput']; // productWhereUniqueInput!
+  }
+  productUpsertWithoutOrderInput: { // input type
+    create: NexusGenInputs['productCreateWithoutOrderInput']; // productCreateWithoutOrderInput!
+    update: NexusGenInputs['productUpdateWithoutOrderDataInput']; // productUpdateWithoutOrderDataInput!
+  }
+  productUpsertWithoutProduct_categories_junctionInput: { // input type
+    create: NexusGenInputs['productCreateWithoutProduct_categories_junctionInput']; // productCreateWithoutProduct_categories_junctionInput!
+    update: NexusGenInputs['productUpdateWithoutProduct_categories_junctionDataInput']; // productUpdateWithoutProduct_categories_junctionDataInput!
+  }
+  productUpsertWithoutProduct_imageInput: { // input type
+    create: NexusGenInputs['productCreateWithoutProduct_imageInput']; // productCreateWithoutProduct_imageInput!
+    update: NexusGenInputs['productUpdateWithoutProduct_imageDataInput']; // productUpdateWithoutProduct_imageDataInput!
+  }
+  productUpsertWithoutProduct_quantityInput: { // input type
+    create: NexusGenInputs['productCreateWithoutProduct_quantityInput']; // productCreateWithoutProduct_quantityInput!
+    update: NexusGenInputs['productUpdateWithoutProduct_quantityDataInput']; // productUpdateWithoutProduct_quantityDataInput!
+  }
+  productUpsertWithoutProduct_ratingInput: { // input type
+    create: NexusGenInputs['productCreateWithoutProduct_ratingInput']; // productCreateWithoutProduct_ratingInput!
+    update: NexusGenInputs['productUpdateWithoutProduct_ratingDataInput']; // productUpdateWithoutProduct_ratingDataInput!
+  }
+  productUpsertWithoutProduct_types_junctionInput: { // input type
+    create: NexusGenInputs['productCreateWithoutProduct_types_junctionInput']; // productCreateWithoutProduct_types_junctionInput!
+    update: NexusGenInputs['productUpdateWithoutProduct_types_junctionDataInput']; // productUpdateWithoutProduct_types_junctionDataInput!
+  }
+  productWhereInput: { // input type
+    AND?: NexusGenInputs['productWhereInput'][] | null; // [productWhereInput!]
+    cost?: NexusGenInputs['NullableFloatFilter'] | null; // NullableFloatFilter
+    description?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    discount?: NexusGenInputs['NullableFloatFilter'] | null; // NullableFloatFilter
+    discounted_cost?: NexusGenInputs['NullableFloatFilter'] | null; // NullableFloatFilter
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    mrp?: NexusGenInputs['NullableFloatFilter'] | null; // NullableFloatFilter
+    NOT?: NexusGenInputs['productWhereInput'][] | null; // [productWhereInput!]
+    OR?: NexusGenInputs['productWhereInput'][] | null; // [productWhereInput!]
+    order?: NexusGenInputs['orderFilter'] | null; // orderFilter
+    product_categories_junction?: NexusGenInputs['product_categories_junctionFilter'] | null; // product_categories_junctionFilter
+    product_image?: NexusGenInputs['product_imageFilter'] | null; // product_imageFilter
+    product_quantity?: NexusGenInputs['product_quantityFilter'] | null; // product_quantityFilter
+    product_rating?: NexusGenInputs['product_ratingFilter'] | null; // product_ratingFilter
+    product_types_junction?: NexusGenInputs['product_types_junctionFilter'] | null; // product_types_junctionFilter
+    store?: NexusGenInputs['storeWhereInput'] | null; // storeWhereInput
+    store_id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    tax?: NexusGenInputs['NullableFloatFilter'] | null; // NullableFloatFilter
+    title?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    total_cost?: NexusGenInputs['NullableFloatFilter'] | null; // NullableFloatFilter
+  }
+  productWhereUniqueInput: { // input type
+    id?: number | null; // Int
+  }
+  product_categories_junctionCreateInput: { // input type
+    category: NexusGenInputs['categoryCreateOneWithoutProduct_categories_junctionInput']; // categoryCreateOneWithoutProduct_categories_junctionInput!
+    product: NexusGenInputs['productCreateOneWithoutProduct_categories_junctionInput']; // productCreateOneWithoutProduct_categories_junctionInput!
+  }
+  product_categories_junctionCreateManyWithoutCategoryInput: { // input type
+    connect?: NexusGenInputs['product_categories_junctionWhereUniqueInput'][] | null; // [product_categories_junctionWhereUniqueInput!]
+    create?: NexusGenInputs['product_categories_junctionCreateWithoutCategoryInput'][] | null; // [product_categories_junctionCreateWithoutCategoryInput!]
+  }
+  product_categories_junctionCreateManyWithoutProductInput: { // input type
+    connect?: NexusGenInputs['product_categories_junctionWhereUniqueInput'][] | null; // [product_categories_junctionWhereUniqueInput!]
+    create?: NexusGenInputs['product_categories_junctionCreateWithoutProductInput'][] | null; // [product_categories_junctionCreateWithoutProductInput!]
+  }
+  product_categories_junctionCreateWithoutCategoryInput: { // input type
+    product: NexusGenInputs['productCreateOneWithoutProduct_categories_junctionInput']; // productCreateOneWithoutProduct_categories_junctionInput!
+  }
+  product_categories_junctionCreateWithoutProductInput: { // input type
+    category: NexusGenInputs['categoryCreateOneWithoutProduct_categories_junctionInput']; // categoryCreateOneWithoutProduct_categories_junctionInput!
+  }
+  product_categories_junctionFilter: { // input type
+    every?: NexusGenInputs['product_categories_junctionWhereInput'] | null; // product_categories_junctionWhereInput
+    none?: NexusGenInputs['product_categories_junctionWhereInput'] | null; // product_categories_junctionWhereInput
+    some?: NexusGenInputs['product_categories_junctionWhereInput'] | null; // product_categories_junctionWhereInput
+  }
+  product_categories_junctionOrderByInput: { // input type
+    category_id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    product_id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+  }
+  product_categories_junctionScalarWhereInput: { // input type
+    AND?: NexusGenInputs['product_categories_junctionScalarWhereInput'][] | null; // [product_categories_junctionScalarWhereInput!]
+    category_id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    NOT?: NexusGenInputs['product_categories_junctionScalarWhereInput'][] | null; // [product_categories_junctionScalarWhereInput!]
+    OR?: NexusGenInputs['product_categories_junctionScalarWhereInput'][] | null; // [product_categories_junctionScalarWhereInput!]
+    product_id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+  }
+  product_categories_junctionUpdateInput: { // input type
+    category?: NexusGenInputs['categoryUpdateOneRequiredWithoutProduct_categories_junctionInput'] | null; // categoryUpdateOneRequiredWithoutProduct_categories_junctionInput
+    id?: number | null; // Int
+    product?: NexusGenInputs['productUpdateOneRequiredWithoutProduct_categories_junctionInput'] | null; // productUpdateOneRequiredWithoutProduct_categories_junctionInput
+  }
+  product_categories_junctionUpdateManyDataInput: { // input type
+    id?: number | null; // Int
+  }
+  product_categories_junctionUpdateManyMutationInput: { // input type
+    id?: number | null; // Int
+  }
+  product_categories_junctionUpdateManyWithWhereNestedInput: { // input type
+    data: NexusGenInputs['product_categories_junctionUpdateManyDataInput']; // product_categories_junctionUpdateManyDataInput!
+    where: NexusGenInputs['product_categories_junctionScalarWhereInput']; // product_categories_junctionScalarWhereInput!
+  }
+  product_categories_junctionUpdateManyWithoutCategoryInput: { // input type
+    connect?: NexusGenInputs['product_categories_junctionWhereUniqueInput'][] | null; // [product_categories_junctionWhereUniqueInput!]
+    create?: NexusGenInputs['product_categories_junctionCreateWithoutCategoryInput'][] | null; // [product_categories_junctionCreateWithoutCategoryInput!]
+    delete?: NexusGenInputs['product_categories_junctionWhereUniqueInput'][] | null; // [product_categories_junctionWhereUniqueInput!]
+    deleteMany?: NexusGenInputs['product_categories_junctionScalarWhereInput'][] | null; // [product_categories_junctionScalarWhereInput!]
+    disconnect?: NexusGenInputs['product_categories_junctionWhereUniqueInput'][] | null; // [product_categories_junctionWhereUniqueInput!]
+    set?: NexusGenInputs['product_categories_junctionWhereUniqueInput'][] | null; // [product_categories_junctionWhereUniqueInput!]
+    update?: NexusGenInputs['product_categories_junctionUpdateWithWhereUniqueWithoutCategoryInput'][] | null; // [product_categories_junctionUpdateWithWhereUniqueWithoutCategoryInput!]
+    updateMany?: NexusGenInputs['product_categories_junctionUpdateManyWithWhereNestedInput'][] | null; // [product_categories_junctionUpdateManyWithWhereNestedInput!]
+    upsert?: NexusGenInputs['product_categories_junctionUpsertWithWhereUniqueWithoutCategoryInput'][] | null; // [product_categories_junctionUpsertWithWhereUniqueWithoutCategoryInput!]
+  }
+  product_categories_junctionUpdateManyWithoutProductInput: { // input type
+    connect?: NexusGenInputs['product_categories_junctionWhereUniqueInput'][] | null; // [product_categories_junctionWhereUniqueInput!]
+    create?: NexusGenInputs['product_categories_junctionCreateWithoutProductInput'][] | null; // [product_categories_junctionCreateWithoutProductInput!]
+    delete?: NexusGenInputs['product_categories_junctionWhereUniqueInput'][] | null; // [product_categories_junctionWhereUniqueInput!]
+    deleteMany?: NexusGenInputs['product_categories_junctionScalarWhereInput'][] | null; // [product_categories_junctionScalarWhereInput!]
+    disconnect?: NexusGenInputs['product_categories_junctionWhereUniqueInput'][] | null; // [product_categories_junctionWhereUniqueInput!]
+    set?: NexusGenInputs['product_categories_junctionWhereUniqueInput'][] | null; // [product_categories_junctionWhereUniqueInput!]
+    update?: NexusGenInputs['product_categories_junctionUpdateWithWhereUniqueWithoutProductInput'][] | null; // [product_categories_junctionUpdateWithWhereUniqueWithoutProductInput!]
+    updateMany?: NexusGenInputs['product_categories_junctionUpdateManyWithWhereNestedInput'][] | null; // [product_categories_junctionUpdateManyWithWhereNestedInput!]
+    upsert?: NexusGenInputs['product_categories_junctionUpsertWithWhereUniqueWithoutProductInput'][] | null; // [product_categories_junctionUpsertWithWhereUniqueWithoutProductInput!]
+  }
+  product_categories_junctionUpdateWithWhereUniqueWithoutCategoryInput: { // input type
+    data: NexusGenInputs['product_categories_junctionUpdateWithoutCategoryDataInput']; // product_categories_junctionUpdateWithoutCategoryDataInput!
+    where: NexusGenInputs['product_categories_junctionWhereUniqueInput']; // product_categories_junctionWhereUniqueInput!
+  }
+  product_categories_junctionUpdateWithWhereUniqueWithoutProductInput: { // input type
+    data: NexusGenInputs['product_categories_junctionUpdateWithoutProductDataInput']; // product_categories_junctionUpdateWithoutProductDataInput!
+    where: NexusGenInputs['product_categories_junctionWhereUniqueInput']; // product_categories_junctionWhereUniqueInput!
+  }
+  product_categories_junctionUpdateWithoutCategoryDataInput: { // input type
+    id?: number | null; // Int
+    product?: NexusGenInputs['productUpdateOneRequiredWithoutProduct_categories_junctionInput'] | null; // productUpdateOneRequiredWithoutProduct_categories_junctionInput
+  }
+  product_categories_junctionUpdateWithoutProductDataInput: { // input type
+    category?: NexusGenInputs['categoryUpdateOneRequiredWithoutProduct_categories_junctionInput'] | null; // categoryUpdateOneRequiredWithoutProduct_categories_junctionInput
+    id?: number | null; // Int
+  }
+  product_categories_junctionUpsertWithWhereUniqueWithoutCategoryInput: { // input type
+    create: NexusGenInputs['product_categories_junctionCreateWithoutCategoryInput']; // product_categories_junctionCreateWithoutCategoryInput!
+    update: NexusGenInputs['product_categories_junctionUpdateWithoutCategoryDataInput']; // product_categories_junctionUpdateWithoutCategoryDataInput!
+    where: NexusGenInputs['product_categories_junctionWhereUniqueInput']; // product_categories_junctionWhereUniqueInput!
+  }
+  product_categories_junctionUpsertWithWhereUniqueWithoutProductInput: { // input type
+    create: NexusGenInputs['product_categories_junctionCreateWithoutProductInput']; // product_categories_junctionCreateWithoutProductInput!
+    update: NexusGenInputs['product_categories_junctionUpdateWithoutProductDataInput']; // product_categories_junctionUpdateWithoutProductDataInput!
+    where: NexusGenInputs['product_categories_junctionWhereUniqueInput']; // product_categories_junctionWhereUniqueInput!
+  }
+  product_categories_junctionWhereInput: { // input type
+    AND?: NexusGenInputs['product_categories_junctionWhereInput'][] | null; // [product_categories_junctionWhereInput!]
+    category?: NexusGenInputs['categoryWhereInput'] | null; // categoryWhereInput
+    category_id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    NOT?: NexusGenInputs['product_categories_junctionWhereInput'][] | null; // [product_categories_junctionWhereInput!]
+    OR?: NexusGenInputs['product_categories_junctionWhereInput'][] | null; // [product_categories_junctionWhereInput!]
+    product?: NexusGenInputs['productWhereInput'] | null; // productWhereInput
+    product_id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+  }
+  product_categories_junctionWhereUniqueInput: { // input type
+    id?: number | null; // Int
+  }
+  product_imageCreateInput: { // input type
+    image?: string | null; // String
+    product: NexusGenInputs['productCreateOneWithoutProduct_imageInput']; // productCreateOneWithoutProduct_imageInput!
+  }
+  product_imageCreateManyWithoutProductInput: { // input type
+    connect?: NexusGenInputs['product_imageWhereUniqueInput'][] | null; // [product_imageWhereUniqueInput!]
+    create?: NexusGenInputs['product_imageCreateWithoutProductInput'][] | null; // [product_imageCreateWithoutProductInput!]
+  }
+  product_imageCreateWithoutProductInput: { // input type
+    image?: string | null; // String
+  }
+  product_imageFilter: { // input type
+    every?: NexusGenInputs['product_imageWhereInput'] | null; // product_imageWhereInput
+    none?: NexusGenInputs['product_imageWhereInput'] | null; // product_imageWhereInput
+    some?: NexusGenInputs['product_imageWhereInput'] | null; // product_imageWhereInput
+  }
+  product_imageOrderByInput: { // input type
+    id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    image?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    product_id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+  }
+  product_imageScalarWhereInput: { // input type
+    AND?: NexusGenInputs['product_imageScalarWhereInput'][] | null; // [product_imageScalarWhereInput!]
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    image?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    NOT?: NexusGenInputs['product_imageScalarWhereInput'][] | null; // [product_imageScalarWhereInput!]
+    OR?: NexusGenInputs['product_imageScalarWhereInput'][] | null; // [product_imageScalarWhereInput!]
+    product_id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+  }
+  product_imageUpdateInput: { // input type
+    id?: number | null; // Int
+    image?: string | null; // String
+    product?: NexusGenInputs['productUpdateOneRequiredWithoutProduct_imageInput'] | null; // productUpdateOneRequiredWithoutProduct_imageInput
+  }
+  product_imageUpdateManyDataInput: { // input type
+    id?: number | null; // Int
+    image?: string | null; // String
+  }
+  product_imageUpdateManyMutationInput: { // input type
+    id?: number | null; // Int
+    image?: string | null; // String
+  }
+  product_imageUpdateManyWithWhereNestedInput: { // input type
+    data: NexusGenInputs['product_imageUpdateManyDataInput']; // product_imageUpdateManyDataInput!
+    where: NexusGenInputs['product_imageScalarWhereInput']; // product_imageScalarWhereInput!
+  }
+  product_imageUpdateManyWithoutProductInput: { // input type
+    connect?: NexusGenInputs['product_imageWhereUniqueInput'][] | null; // [product_imageWhereUniqueInput!]
+    create?: NexusGenInputs['product_imageCreateWithoutProductInput'][] | null; // [product_imageCreateWithoutProductInput!]
+    delete?: NexusGenInputs['product_imageWhereUniqueInput'][] | null; // [product_imageWhereUniqueInput!]
+    deleteMany?: NexusGenInputs['product_imageScalarWhereInput'][] | null; // [product_imageScalarWhereInput!]
+    disconnect?: NexusGenInputs['product_imageWhereUniqueInput'][] | null; // [product_imageWhereUniqueInput!]
+    set?: NexusGenInputs['product_imageWhereUniqueInput'][] | null; // [product_imageWhereUniqueInput!]
+    update?: NexusGenInputs['product_imageUpdateWithWhereUniqueWithoutProductInput'][] | null; // [product_imageUpdateWithWhereUniqueWithoutProductInput!]
+    updateMany?: NexusGenInputs['product_imageUpdateManyWithWhereNestedInput'][] | null; // [product_imageUpdateManyWithWhereNestedInput!]
+    upsert?: NexusGenInputs['product_imageUpsertWithWhereUniqueWithoutProductInput'][] | null; // [product_imageUpsertWithWhereUniqueWithoutProductInput!]
+  }
+  product_imageUpdateWithWhereUniqueWithoutProductInput: { // input type
+    data: NexusGenInputs['product_imageUpdateWithoutProductDataInput']; // product_imageUpdateWithoutProductDataInput!
+    where: NexusGenInputs['product_imageWhereUniqueInput']; // product_imageWhereUniqueInput!
+  }
+  product_imageUpdateWithoutProductDataInput: { // input type
+    id?: number | null; // Int
+    image?: string | null; // String
+  }
+  product_imageUpsertWithWhereUniqueWithoutProductInput: { // input type
+    create: NexusGenInputs['product_imageCreateWithoutProductInput']; // product_imageCreateWithoutProductInput!
+    update: NexusGenInputs['product_imageUpdateWithoutProductDataInput']; // product_imageUpdateWithoutProductDataInput!
+    where: NexusGenInputs['product_imageWhereUniqueInput']; // product_imageWhereUniqueInput!
+  }
+  product_imageWhereInput: { // input type
+    AND?: NexusGenInputs['product_imageWhereInput'][] | null; // [product_imageWhereInput!]
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    image?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    NOT?: NexusGenInputs['product_imageWhereInput'][] | null; // [product_imageWhereInput!]
+    OR?: NexusGenInputs['product_imageWhereInput'][] | null; // [product_imageWhereInput!]
+    product?: NexusGenInputs['productWhereInput'] | null; // productWhereInput
+    product_id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+  }
+  product_imageWhereUniqueInput: { // input type
+    id?: number | null; // Int
+  }
+  product_quantityCreateInput: { // input type
+    cart?: NexusGenInputs['cartCreateManyWithoutProduct_quantityInput'] | null; // cartCreateManyWithoutProduct_quantityInput
+    product: NexusGenInputs['productCreateOneWithoutProduct_quantityInput']; // productCreateOneWithoutProduct_quantityInput!
+    product_qty?: number | null; // Int
+    wishlist?: NexusGenInputs['wishlistCreateManyWithoutProduct_quantityInput'] | null; // wishlistCreateManyWithoutProduct_quantityInput
+  }
+  product_quantityCreateManyWithoutProductInput: { // input type
+    connect?: NexusGenInputs['product_quantityWhereUniqueInput'][] | null; // [product_quantityWhereUniqueInput!]
+    create?: NexusGenInputs['product_quantityCreateWithoutProductInput'][] | null; // [product_quantityCreateWithoutProductInput!]
+  }
+  product_quantityCreateOneWithoutCartInput: { // input type
+    connect?: NexusGenInputs['product_quantityWhereUniqueInput'] | null; // product_quantityWhereUniqueInput
+    create?: NexusGenInputs['product_quantityCreateWithoutCartInput'] | null; // product_quantityCreateWithoutCartInput
+  }
+  product_quantityCreateOneWithoutWishlistInput: { // input type
+    connect?: NexusGenInputs['product_quantityWhereUniqueInput'] | null; // product_quantityWhereUniqueInput
+    create?: NexusGenInputs['product_quantityCreateWithoutWishlistInput'] | null; // product_quantityCreateWithoutWishlistInput
+  }
+  product_quantityCreateWithoutCartInput: { // input type
+    product: NexusGenInputs['productCreateOneWithoutProduct_quantityInput']; // productCreateOneWithoutProduct_quantityInput!
+    product_qty?: number | null; // Int
+    wishlist?: NexusGenInputs['wishlistCreateManyWithoutProduct_quantityInput'] | null; // wishlistCreateManyWithoutProduct_quantityInput
+  }
+  product_quantityCreateWithoutProductInput: { // input type
+    cart?: NexusGenInputs['cartCreateManyWithoutProduct_quantityInput'] | null; // cartCreateManyWithoutProduct_quantityInput
+    product_qty?: number | null; // Int
+    wishlist?: NexusGenInputs['wishlistCreateManyWithoutProduct_quantityInput'] | null; // wishlistCreateManyWithoutProduct_quantityInput
+  }
+  product_quantityCreateWithoutWishlistInput: { // input type
+    cart?: NexusGenInputs['cartCreateManyWithoutProduct_quantityInput'] | null; // cartCreateManyWithoutProduct_quantityInput
+    product: NexusGenInputs['productCreateOneWithoutProduct_quantityInput']; // productCreateOneWithoutProduct_quantityInput!
+    product_qty?: number | null; // Int
+  }
+  product_quantityFilter: { // input type
+    every?: NexusGenInputs['product_quantityWhereInput'] | null; // product_quantityWhereInput
+    none?: NexusGenInputs['product_quantityWhereInput'] | null; // product_quantityWhereInput
+    some?: NexusGenInputs['product_quantityWhereInput'] | null; // product_quantityWhereInput
+  }
+  product_quantityOrderByInput: { // input type
+    id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    product_id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    product_qty?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+  }
+  product_quantityScalarWhereInput: { // input type
+    AND?: NexusGenInputs['product_quantityScalarWhereInput'][] | null; // [product_quantityScalarWhereInput!]
+    cart?: NexusGenInputs['cartFilter'] | null; // cartFilter
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    NOT?: NexusGenInputs['product_quantityScalarWhereInput'][] | null; // [product_quantityScalarWhereInput!]
+    OR?: NexusGenInputs['product_quantityScalarWhereInput'][] | null; // [product_quantityScalarWhereInput!]
+    product_id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    product_qty?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+    wishlist?: NexusGenInputs['wishlistFilter'] | null; // wishlistFilter
+  }
+  product_quantityUpdateInput: { // input type
+    cart?: NexusGenInputs['cartUpdateManyWithoutProduct_quantityInput'] | null; // cartUpdateManyWithoutProduct_quantityInput
+    id?: number | null; // Int
+    product?: NexusGenInputs['productUpdateOneRequiredWithoutProduct_quantityInput'] | null; // productUpdateOneRequiredWithoutProduct_quantityInput
+    product_qty?: number | null; // Int
+    wishlist?: NexusGenInputs['wishlistUpdateManyWithoutProduct_quantityInput'] | null; // wishlistUpdateManyWithoutProduct_quantityInput
+  }
+  product_quantityUpdateManyDataInput: { // input type
+    id?: number | null; // Int
+    product_qty?: number | null; // Int
+  }
+  product_quantityUpdateManyMutationInput: { // input type
+    id?: number | null; // Int
+    product_qty?: number | null; // Int
+  }
+  product_quantityUpdateManyWithWhereNestedInput: { // input type
+    data: NexusGenInputs['product_quantityUpdateManyDataInput']; // product_quantityUpdateManyDataInput!
+    where: NexusGenInputs['product_quantityScalarWhereInput']; // product_quantityScalarWhereInput!
+  }
+  product_quantityUpdateManyWithoutProductInput: { // input type
+    connect?: NexusGenInputs['product_quantityWhereUniqueInput'][] | null; // [product_quantityWhereUniqueInput!]
+    create?: NexusGenInputs['product_quantityCreateWithoutProductInput'][] | null; // [product_quantityCreateWithoutProductInput!]
+    delete?: NexusGenInputs['product_quantityWhereUniqueInput'][] | null; // [product_quantityWhereUniqueInput!]
+    deleteMany?: NexusGenInputs['product_quantityScalarWhereInput'][] | null; // [product_quantityScalarWhereInput!]
+    disconnect?: NexusGenInputs['product_quantityWhereUniqueInput'][] | null; // [product_quantityWhereUniqueInput!]
+    set?: NexusGenInputs['product_quantityWhereUniqueInput'][] | null; // [product_quantityWhereUniqueInput!]
+    update?: NexusGenInputs['product_quantityUpdateWithWhereUniqueWithoutProductInput'][] | null; // [product_quantityUpdateWithWhereUniqueWithoutProductInput!]
+    updateMany?: NexusGenInputs['product_quantityUpdateManyWithWhereNestedInput'][] | null; // [product_quantityUpdateManyWithWhereNestedInput!]
+    upsert?: NexusGenInputs['product_quantityUpsertWithWhereUniqueWithoutProductInput'][] | null; // [product_quantityUpsertWithWhereUniqueWithoutProductInput!]
+  }
+  product_quantityUpdateOneWithoutCartInput: { // input type
+    connect?: NexusGenInputs['product_quantityWhereUniqueInput'] | null; // product_quantityWhereUniqueInput
+    create?: NexusGenInputs['product_quantityCreateWithoutCartInput'] | null; // product_quantityCreateWithoutCartInput
+    delete?: boolean | null; // Boolean
+    disconnect?: boolean | null; // Boolean
+    update?: NexusGenInputs['product_quantityUpdateWithoutCartDataInput'] | null; // product_quantityUpdateWithoutCartDataInput
+    upsert?: NexusGenInputs['product_quantityUpsertWithoutCartInput'] | null; // product_quantityUpsertWithoutCartInput
+  }
+  product_quantityUpdateOneWithoutWishlistInput: { // input type
+    connect?: NexusGenInputs['product_quantityWhereUniqueInput'] | null; // product_quantityWhereUniqueInput
+    create?: NexusGenInputs['product_quantityCreateWithoutWishlistInput'] | null; // product_quantityCreateWithoutWishlistInput
+    delete?: boolean | null; // Boolean
+    disconnect?: boolean | null; // Boolean
+    update?: NexusGenInputs['product_quantityUpdateWithoutWishlistDataInput'] | null; // product_quantityUpdateWithoutWishlistDataInput
+    upsert?: NexusGenInputs['product_quantityUpsertWithoutWishlistInput'] | null; // product_quantityUpsertWithoutWishlistInput
+  }
+  product_quantityUpdateWithWhereUniqueWithoutProductInput: { // input type
+    data: NexusGenInputs['product_quantityUpdateWithoutProductDataInput']; // product_quantityUpdateWithoutProductDataInput!
+    where: NexusGenInputs['product_quantityWhereUniqueInput']; // product_quantityWhereUniqueInput!
+  }
+  product_quantityUpdateWithoutCartDataInput: { // input type
+    id?: number | null; // Int
+    product?: NexusGenInputs['productUpdateOneRequiredWithoutProduct_quantityInput'] | null; // productUpdateOneRequiredWithoutProduct_quantityInput
+    product_qty?: number | null; // Int
+    wishlist?: NexusGenInputs['wishlistUpdateManyWithoutProduct_quantityInput'] | null; // wishlistUpdateManyWithoutProduct_quantityInput
+  }
+  product_quantityUpdateWithoutProductDataInput: { // input type
+    cart?: NexusGenInputs['cartUpdateManyWithoutProduct_quantityInput'] | null; // cartUpdateManyWithoutProduct_quantityInput
+    id?: number | null; // Int
+    product_qty?: number | null; // Int
+    wishlist?: NexusGenInputs['wishlistUpdateManyWithoutProduct_quantityInput'] | null; // wishlistUpdateManyWithoutProduct_quantityInput
+  }
+  product_quantityUpdateWithoutWishlistDataInput: { // input type
+    cart?: NexusGenInputs['cartUpdateManyWithoutProduct_quantityInput'] | null; // cartUpdateManyWithoutProduct_quantityInput
+    id?: number | null; // Int
+    product?: NexusGenInputs['productUpdateOneRequiredWithoutProduct_quantityInput'] | null; // productUpdateOneRequiredWithoutProduct_quantityInput
+    product_qty?: number | null; // Int
+  }
+  product_quantityUpsertWithWhereUniqueWithoutProductInput: { // input type
+    create: NexusGenInputs['product_quantityCreateWithoutProductInput']; // product_quantityCreateWithoutProductInput!
+    update: NexusGenInputs['product_quantityUpdateWithoutProductDataInput']; // product_quantityUpdateWithoutProductDataInput!
+    where: NexusGenInputs['product_quantityWhereUniqueInput']; // product_quantityWhereUniqueInput!
+  }
+  product_quantityUpsertWithoutCartInput: { // input type
+    create: NexusGenInputs['product_quantityCreateWithoutCartInput']; // product_quantityCreateWithoutCartInput!
+    update: NexusGenInputs['product_quantityUpdateWithoutCartDataInput']; // product_quantityUpdateWithoutCartDataInput!
+  }
+  product_quantityUpsertWithoutWishlistInput: { // input type
+    create: NexusGenInputs['product_quantityCreateWithoutWishlistInput']; // product_quantityCreateWithoutWishlistInput!
+    update: NexusGenInputs['product_quantityUpdateWithoutWishlistDataInput']; // product_quantityUpdateWithoutWishlistDataInput!
+  }
+  product_quantityWhereInput: { // input type
+    AND?: NexusGenInputs['product_quantityWhereInput'][] | null; // [product_quantityWhereInput!]
+    cart?: NexusGenInputs['cartFilter'] | null; // cartFilter
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    NOT?: NexusGenInputs['product_quantityWhereInput'][] | null; // [product_quantityWhereInput!]
+    OR?: NexusGenInputs['product_quantityWhereInput'][] | null; // [product_quantityWhereInput!]
+    product?: NexusGenInputs['productWhereInput'] | null; // productWhereInput
+    product_id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    product_qty?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+    wishlist?: NexusGenInputs['wishlistFilter'] | null; // wishlistFilter
+  }
+  product_quantityWhereUniqueInput: { // input type
+    id?: number | null; // Int
+  }
+  product_ratingCreateInput: { // input type
+    product: NexusGenInputs['productCreateOneWithoutProduct_ratingInput']; // productCreateOneWithoutProduct_ratingInput!
+    rating?: number | null; // Float
+    user?: NexusGenInputs['userCreateOneWithoutProduct_ratingInput'] | null; // userCreateOneWithoutProduct_ratingInput
+  }
+  product_ratingCreateManyWithoutProductInput: { // input type
+    connect?: NexusGenInputs['product_ratingWhereUniqueInput'][] | null; // [product_ratingWhereUniqueInput!]
+    create?: NexusGenInputs['product_ratingCreateWithoutProductInput'][] | null; // [product_ratingCreateWithoutProductInput!]
+  }
+  product_ratingCreateManyWithoutUserInput: { // input type
+    connect?: NexusGenInputs['product_ratingWhereUniqueInput'][] | null; // [product_ratingWhereUniqueInput!]
+    create?: NexusGenInputs['product_ratingCreateWithoutUserInput'][] | null; // [product_ratingCreateWithoutUserInput!]
+  }
+  product_ratingCreateWithoutProductInput: { // input type
+    rating?: number | null; // Float
+    user?: NexusGenInputs['userCreateOneWithoutProduct_ratingInput'] | null; // userCreateOneWithoutProduct_ratingInput
+  }
+  product_ratingCreateWithoutUserInput: { // input type
+    product: NexusGenInputs['productCreateOneWithoutProduct_ratingInput']; // productCreateOneWithoutProduct_ratingInput!
+    rating?: number | null; // Float
+  }
+  product_ratingFilter: { // input type
+    every?: NexusGenInputs['product_ratingWhereInput'] | null; // product_ratingWhereInput
+    none?: NexusGenInputs['product_ratingWhereInput'] | null; // product_ratingWhereInput
+    some?: NexusGenInputs['product_ratingWhereInput'] | null; // product_ratingWhereInput
+  }
+  product_ratingOrderByInput: { // input type
+    id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    product_id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    rating?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    user_id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+  }
+  product_ratingScalarWhereInput: { // input type
+    AND?: NexusGenInputs['product_ratingScalarWhereInput'][] | null; // [product_ratingScalarWhereInput!]
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    NOT?: NexusGenInputs['product_ratingScalarWhereInput'][] | null; // [product_ratingScalarWhereInput!]
+    OR?: NexusGenInputs['product_ratingScalarWhereInput'][] | null; // [product_ratingScalarWhereInput!]
+    product_id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    rating?: NexusGenInputs['NullableFloatFilter'] | null; // NullableFloatFilter
+    user_id?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+  }
+  product_ratingUpdateInput: { // input type
+    id?: number | null; // Int
+    product?: NexusGenInputs['productUpdateOneRequiredWithoutProduct_ratingInput'] | null; // productUpdateOneRequiredWithoutProduct_ratingInput
+    rating?: number | null; // Float
+    user?: NexusGenInputs['userUpdateOneWithoutProduct_ratingInput'] | null; // userUpdateOneWithoutProduct_ratingInput
+  }
+  product_ratingUpdateManyDataInput: { // input type
+    id?: number | null; // Int
+    rating?: number | null; // Float
+  }
+  product_ratingUpdateManyMutationInput: { // input type
+    id?: number | null; // Int
+    rating?: number | null; // Float
+  }
+  product_ratingUpdateManyWithWhereNestedInput: { // input type
+    data: NexusGenInputs['product_ratingUpdateManyDataInput']; // product_ratingUpdateManyDataInput!
+    where: NexusGenInputs['product_ratingScalarWhereInput']; // product_ratingScalarWhereInput!
+  }
+  product_ratingUpdateManyWithoutProductInput: { // input type
+    connect?: NexusGenInputs['product_ratingWhereUniqueInput'][] | null; // [product_ratingWhereUniqueInput!]
+    create?: NexusGenInputs['product_ratingCreateWithoutProductInput'][] | null; // [product_ratingCreateWithoutProductInput!]
+    delete?: NexusGenInputs['product_ratingWhereUniqueInput'][] | null; // [product_ratingWhereUniqueInput!]
+    deleteMany?: NexusGenInputs['product_ratingScalarWhereInput'][] | null; // [product_ratingScalarWhereInput!]
+    disconnect?: NexusGenInputs['product_ratingWhereUniqueInput'][] | null; // [product_ratingWhereUniqueInput!]
+    set?: NexusGenInputs['product_ratingWhereUniqueInput'][] | null; // [product_ratingWhereUniqueInput!]
+    update?: NexusGenInputs['product_ratingUpdateWithWhereUniqueWithoutProductInput'][] | null; // [product_ratingUpdateWithWhereUniqueWithoutProductInput!]
+    updateMany?: NexusGenInputs['product_ratingUpdateManyWithWhereNestedInput'][] | null; // [product_ratingUpdateManyWithWhereNestedInput!]
+    upsert?: NexusGenInputs['product_ratingUpsertWithWhereUniqueWithoutProductInput'][] | null; // [product_ratingUpsertWithWhereUniqueWithoutProductInput!]
+  }
+  product_ratingUpdateManyWithoutUserInput: { // input type
+    connect?: NexusGenInputs['product_ratingWhereUniqueInput'][] | null; // [product_ratingWhereUniqueInput!]
+    create?: NexusGenInputs['product_ratingCreateWithoutUserInput'][] | null; // [product_ratingCreateWithoutUserInput!]
+    delete?: NexusGenInputs['product_ratingWhereUniqueInput'][] | null; // [product_ratingWhereUniqueInput!]
+    deleteMany?: NexusGenInputs['product_ratingScalarWhereInput'][] | null; // [product_ratingScalarWhereInput!]
+    disconnect?: NexusGenInputs['product_ratingWhereUniqueInput'][] | null; // [product_ratingWhereUniqueInput!]
+    set?: NexusGenInputs['product_ratingWhereUniqueInput'][] | null; // [product_ratingWhereUniqueInput!]
+    update?: NexusGenInputs['product_ratingUpdateWithWhereUniqueWithoutUserInput'][] | null; // [product_ratingUpdateWithWhereUniqueWithoutUserInput!]
+    updateMany?: NexusGenInputs['product_ratingUpdateManyWithWhereNestedInput'][] | null; // [product_ratingUpdateManyWithWhereNestedInput!]
+    upsert?: NexusGenInputs['product_ratingUpsertWithWhereUniqueWithoutUserInput'][] | null; // [product_ratingUpsertWithWhereUniqueWithoutUserInput!]
+  }
+  product_ratingUpdateWithWhereUniqueWithoutProductInput: { // input type
+    data: NexusGenInputs['product_ratingUpdateWithoutProductDataInput']; // product_ratingUpdateWithoutProductDataInput!
+    where: NexusGenInputs['product_ratingWhereUniqueInput']; // product_ratingWhereUniqueInput!
+  }
+  product_ratingUpdateWithWhereUniqueWithoutUserInput: { // input type
+    data: NexusGenInputs['product_ratingUpdateWithoutUserDataInput']; // product_ratingUpdateWithoutUserDataInput!
+    where: NexusGenInputs['product_ratingWhereUniqueInput']; // product_ratingWhereUniqueInput!
+  }
+  product_ratingUpdateWithoutProductDataInput: { // input type
+    id?: number | null; // Int
+    rating?: number | null; // Float
+    user?: NexusGenInputs['userUpdateOneWithoutProduct_ratingInput'] | null; // userUpdateOneWithoutProduct_ratingInput
+  }
+  product_ratingUpdateWithoutUserDataInput: { // input type
+    id?: number | null; // Int
+    product?: NexusGenInputs['productUpdateOneRequiredWithoutProduct_ratingInput'] | null; // productUpdateOneRequiredWithoutProduct_ratingInput
+    rating?: number | null; // Float
+  }
+  product_ratingUpsertWithWhereUniqueWithoutProductInput: { // input type
+    create: NexusGenInputs['product_ratingCreateWithoutProductInput']; // product_ratingCreateWithoutProductInput!
+    update: NexusGenInputs['product_ratingUpdateWithoutProductDataInput']; // product_ratingUpdateWithoutProductDataInput!
+    where: NexusGenInputs['product_ratingWhereUniqueInput']; // product_ratingWhereUniqueInput!
+  }
+  product_ratingUpsertWithWhereUniqueWithoutUserInput: { // input type
+    create: NexusGenInputs['product_ratingCreateWithoutUserInput']; // product_ratingCreateWithoutUserInput!
+    update: NexusGenInputs['product_ratingUpdateWithoutUserDataInput']; // product_ratingUpdateWithoutUserDataInput!
+    where: NexusGenInputs['product_ratingWhereUniqueInput']; // product_ratingWhereUniqueInput!
+  }
+  product_ratingWhereInput: { // input type
+    AND?: NexusGenInputs['product_ratingWhereInput'][] | null; // [product_ratingWhereInput!]
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    NOT?: NexusGenInputs['product_ratingWhereInput'][] | null; // [product_ratingWhereInput!]
+    OR?: NexusGenInputs['product_ratingWhereInput'][] | null; // [product_ratingWhereInput!]
+    product?: NexusGenInputs['productWhereInput'] | null; // productWhereInput
+    product_id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    rating?: NexusGenInputs['NullableFloatFilter'] | null; // NullableFloatFilter
+    user?: NexusGenInputs['userWhereInput'] | null; // userWhereInput
+    user_id?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+  }
+  product_ratingWhereUniqueInput: { // input type
+    id?: number | null; // Int
+  }
+  product_typeCreateInput: { // input type
+    product_types_junction?: NexusGenInputs['product_types_junctionCreateManyWithoutProduct_typeInput'] | null; // product_types_junctionCreateManyWithoutProduct_typeInput
+    type?: string | null; // String
+    type_name?: string | null; // String
+  }
+  product_typeCreateOneWithoutProduct_types_junctionInput: { // input type
+    connect?: NexusGenInputs['product_typeWhereUniqueInput'] | null; // product_typeWhereUniqueInput
+    create?: NexusGenInputs['product_typeCreateWithoutProduct_types_junctionInput'] | null; // product_typeCreateWithoutProduct_types_junctionInput
+  }
+  product_typeCreateWithoutProduct_types_junctionInput: { // input type
+    type?: string | null; // String
+    type_name?: string | null; // String
+  }
+  product_typeOrderByInput: { // input type
+    id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    type?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    type_name?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+  }
+  product_typeUpdateInput: { // input type
+    id?: number | null; // Int
+    product_types_junction?: NexusGenInputs['product_types_junctionUpdateManyWithoutProduct_typeInput'] | null; // product_types_junctionUpdateManyWithoutProduct_typeInput
+    type?: string | null; // String
+    type_name?: string | null; // String
+  }
+  product_typeUpdateManyMutationInput: { // input type
+    id?: number | null; // Int
+    type?: string | null; // String
+    type_name?: string | null; // String
+  }
+  product_typeUpdateOneRequiredWithoutProduct_types_junctionInput: { // input type
+    connect?: NexusGenInputs['product_typeWhereUniqueInput'] | null; // product_typeWhereUniqueInput
+    create?: NexusGenInputs['product_typeCreateWithoutProduct_types_junctionInput'] | null; // product_typeCreateWithoutProduct_types_junctionInput
+    update?: NexusGenInputs['product_typeUpdateWithoutProduct_types_junctionDataInput'] | null; // product_typeUpdateWithoutProduct_types_junctionDataInput
+    upsert?: NexusGenInputs['product_typeUpsertWithoutProduct_types_junctionInput'] | null; // product_typeUpsertWithoutProduct_types_junctionInput
+  }
+  product_typeUpdateWithoutProduct_types_junctionDataInput: { // input type
+    id?: number | null; // Int
+    type?: string | null; // String
+    type_name?: string | null; // String
+  }
+  product_typeUpsertWithoutProduct_types_junctionInput: { // input type
+    create: NexusGenInputs['product_typeCreateWithoutProduct_types_junctionInput']; // product_typeCreateWithoutProduct_types_junctionInput!
+    update: NexusGenInputs['product_typeUpdateWithoutProduct_types_junctionDataInput']; // product_typeUpdateWithoutProduct_types_junctionDataInput!
+  }
+  product_typeWhereInput: { // input type
+    AND?: NexusGenInputs['product_typeWhereInput'][] | null; // [product_typeWhereInput!]
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    NOT?: NexusGenInputs['product_typeWhereInput'][] | null; // [product_typeWhereInput!]
+    OR?: NexusGenInputs['product_typeWhereInput'][] | null; // [product_typeWhereInput!]
+    product_types_junction?: NexusGenInputs['product_types_junctionFilter'] | null; // product_types_junctionFilter
+    type?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    type_name?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+  }
+  product_typeWhereUniqueInput: { // input type
+    id?: number | null; // Int
+  }
+  product_types_junctionCreateInput: { // input type
+    product: NexusGenInputs['productCreateOneWithoutProduct_types_junctionInput']; // productCreateOneWithoutProduct_types_junctionInput!
+    product_type: NexusGenInputs['product_typeCreateOneWithoutProduct_types_junctionInput']; // product_typeCreateOneWithoutProduct_types_junctionInput!
+  }
+  product_types_junctionCreateManyWithoutProductInput: { // input type
+    connect?: NexusGenInputs['product_types_junctionWhereUniqueInput'][] | null; // [product_types_junctionWhereUniqueInput!]
+    create?: NexusGenInputs['product_types_junctionCreateWithoutProductInput'][] | null; // [product_types_junctionCreateWithoutProductInput!]
+  }
+  product_types_junctionCreateManyWithoutProduct_typeInput: { // input type
+    connect?: NexusGenInputs['product_types_junctionWhereUniqueInput'][] | null; // [product_types_junctionWhereUniqueInput!]
+    create?: NexusGenInputs['product_types_junctionCreateWithoutProduct_typeInput'][] | null; // [product_types_junctionCreateWithoutProduct_typeInput!]
+  }
+  product_types_junctionCreateWithoutProductInput: { // input type
+    product_type: NexusGenInputs['product_typeCreateOneWithoutProduct_types_junctionInput']; // product_typeCreateOneWithoutProduct_types_junctionInput!
+  }
+  product_types_junctionCreateWithoutProduct_typeInput: { // input type
+    product: NexusGenInputs['productCreateOneWithoutProduct_types_junctionInput']; // productCreateOneWithoutProduct_types_junctionInput!
+  }
+  product_types_junctionFilter: { // input type
+    every?: NexusGenInputs['product_types_junctionWhereInput'] | null; // product_types_junctionWhereInput
+    none?: NexusGenInputs['product_types_junctionWhereInput'] | null; // product_types_junctionWhereInput
+    some?: NexusGenInputs['product_types_junctionWhereInput'] | null; // product_types_junctionWhereInput
+  }
+  product_types_junctionOrderByInput: { // input type
+    id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    product_id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    product_type_id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+  }
+  product_types_junctionScalarWhereInput: { // input type
+    AND?: NexusGenInputs['product_types_junctionScalarWhereInput'][] | null; // [product_types_junctionScalarWhereInput!]
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    NOT?: NexusGenInputs['product_types_junctionScalarWhereInput'][] | null; // [product_types_junctionScalarWhereInput!]
+    OR?: NexusGenInputs['product_types_junctionScalarWhereInput'][] | null; // [product_types_junctionScalarWhereInput!]
+    product_id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    product_type_id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+  }
+  product_types_junctionUpdateInput: { // input type
+    id?: number | null; // Int
+    product?: NexusGenInputs['productUpdateOneRequiredWithoutProduct_types_junctionInput'] | null; // productUpdateOneRequiredWithoutProduct_types_junctionInput
+    product_type?: NexusGenInputs['product_typeUpdateOneRequiredWithoutProduct_types_junctionInput'] | null; // product_typeUpdateOneRequiredWithoutProduct_types_junctionInput
+  }
+  product_types_junctionUpdateManyDataInput: { // input type
+    id?: number | null; // Int
+  }
+  product_types_junctionUpdateManyMutationInput: { // input type
+    id?: number | null; // Int
+  }
+  product_types_junctionUpdateManyWithWhereNestedInput: { // input type
+    data: NexusGenInputs['product_types_junctionUpdateManyDataInput']; // product_types_junctionUpdateManyDataInput!
+    where: NexusGenInputs['product_types_junctionScalarWhereInput']; // product_types_junctionScalarWhereInput!
+  }
+  product_types_junctionUpdateManyWithoutProductInput: { // input type
+    connect?: NexusGenInputs['product_types_junctionWhereUniqueInput'][] | null; // [product_types_junctionWhereUniqueInput!]
+    create?: NexusGenInputs['product_types_junctionCreateWithoutProductInput'][] | null; // [product_types_junctionCreateWithoutProductInput!]
+    delete?: NexusGenInputs['product_types_junctionWhereUniqueInput'][] | null; // [product_types_junctionWhereUniqueInput!]
+    deleteMany?: NexusGenInputs['product_types_junctionScalarWhereInput'][] | null; // [product_types_junctionScalarWhereInput!]
+    disconnect?: NexusGenInputs['product_types_junctionWhereUniqueInput'][] | null; // [product_types_junctionWhereUniqueInput!]
+    set?: NexusGenInputs['product_types_junctionWhereUniqueInput'][] | null; // [product_types_junctionWhereUniqueInput!]
+    update?: NexusGenInputs['product_types_junctionUpdateWithWhereUniqueWithoutProductInput'][] | null; // [product_types_junctionUpdateWithWhereUniqueWithoutProductInput!]
+    updateMany?: NexusGenInputs['product_types_junctionUpdateManyWithWhereNestedInput'][] | null; // [product_types_junctionUpdateManyWithWhereNestedInput!]
+    upsert?: NexusGenInputs['product_types_junctionUpsertWithWhereUniqueWithoutProductInput'][] | null; // [product_types_junctionUpsertWithWhereUniqueWithoutProductInput!]
+  }
+  product_types_junctionUpdateManyWithoutProduct_typeInput: { // input type
+    connect?: NexusGenInputs['product_types_junctionWhereUniqueInput'][] | null; // [product_types_junctionWhereUniqueInput!]
+    create?: NexusGenInputs['product_types_junctionCreateWithoutProduct_typeInput'][] | null; // [product_types_junctionCreateWithoutProduct_typeInput!]
+    delete?: NexusGenInputs['product_types_junctionWhereUniqueInput'][] | null; // [product_types_junctionWhereUniqueInput!]
+    deleteMany?: NexusGenInputs['product_types_junctionScalarWhereInput'][] | null; // [product_types_junctionScalarWhereInput!]
+    disconnect?: NexusGenInputs['product_types_junctionWhereUniqueInput'][] | null; // [product_types_junctionWhereUniqueInput!]
+    set?: NexusGenInputs['product_types_junctionWhereUniqueInput'][] | null; // [product_types_junctionWhereUniqueInput!]
+    update?: NexusGenInputs['product_types_junctionUpdateWithWhereUniqueWithoutProduct_typeInput'][] | null; // [product_types_junctionUpdateWithWhereUniqueWithoutProduct_typeInput!]
+    updateMany?: NexusGenInputs['product_types_junctionUpdateManyWithWhereNestedInput'][] | null; // [product_types_junctionUpdateManyWithWhereNestedInput!]
+    upsert?: NexusGenInputs['product_types_junctionUpsertWithWhereUniqueWithoutProduct_typeInput'][] | null; // [product_types_junctionUpsertWithWhereUniqueWithoutProduct_typeInput!]
+  }
+  product_types_junctionUpdateWithWhereUniqueWithoutProductInput: { // input type
+    data: NexusGenInputs['product_types_junctionUpdateWithoutProductDataInput']; // product_types_junctionUpdateWithoutProductDataInput!
+    where: NexusGenInputs['product_types_junctionWhereUniqueInput']; // product_types_junctionWhereUniqueInput!
+  }
+  product_types_junctionUpdateWithWhereUniqueWithoutProduct_typeInput: { // input type
+    data: NexusGenInputs['product_types_junctionUpdateWithoutProduct_typeDataInput']; // product_types_junctionUpdateWithoutProduct_typeDataInput!
+    where: NexusGenInputs['product_types_junctionWhereUniqueInput']; // product_types_junctionWhereUniqueInput!
+  }
+  product_types_junctionUpdateWithoutProductDataInput: { // input type
+    id?: number | null; // Int
+    product_type?: NexusGenInputs['product_typeUpdateOneRequiredWithoutProduct_types_junctionInput'] | null; // product_typeUpdateOneRequiredWithoutProduct_types_junctionInput
+  }
+  product_types_junctionUpdateWithoutProduct_typeDataInput: { // input type
+    id?: number | null; // Int
+    product?: NexusGenInputs['productUpdateOneRequiredWithoutProduct_types_junctionInput'] | null; // productUpdateOneRequiredWithoutProduct_types_junctionInput
+  }
+  product_types_junctionUpsertWithWhereUniqueWithoutProductInput: { // input type
+    create: NexusGenInputs['product_types_junctionCreateWithoutProductInput']; // product_types_junctionCreateWithoutProductInput!
+    update: NexusGenInputs['product_types_junctionUpdateWithoutProductDataInput']; // product_types_junctionUpdateWithoutProductDataInput!
+    where: NexusGenInputs['product_types_junctionWhereUniqueInput']; // product_types_junctionWhereUniqueInput!
+  }
+  product_types_junctionUpsertWithWhereUniqueWithoutProduct_typeInput: { // input type
+    create: NexusGenInputs['product_types_junctionCreateWithoutProduct_typeInput']; // product_types_junctionCreateWithoutProduct_typeInput!
+    update: NexusGenInputs['product_types_junctionUpdateWithoutProduct_typeDataInput']; // product_types_junctionUpdateWithoutProduct_typeDataInput!
+    where: NexusGenInputs['product_types_junctionWhereUniqueInput']; // product_types_junctionWhereUniqueInput!
+  }
+  product_types_junctionWhereInput: { // input type
+    AND?: NexusGenInputs['product_types_junctionWhereInput'][] | null; // [product_types_junctionWhereInput!]
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    NOT?: NexusGenInputs['product_types_junctionWhereInput'][] | null; // [product_types_junctionWhereInput!]
+    OR?: NexusGenInputs['product_types_junctionWhereInput'][] | null; // [product_types_junctionWhereInput!]
+    product?: NexusGenInputs['productWhereInput'] | null; // productWhereInput
+    product_id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    product_type?: NexusGenInputs['product_typeWhereInput'] | null; // product_typeWhereInput
+    product_type_id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+  }
+  product_types_junctionWhereUniqueInput: { // input type
+    id?: number | null; // Int
+  }
+  storeCreateInput: { // input type
+    address?: string | null; // String
+    approved?: boolean | null; // Boolean
+    blocked?: boolean | null; // Boolean
+    lat?: number | null; // Int
+    lng?: number | null; // Int
     name?: string | null; // String
-    pokedex?: number | null; // Int
+    order?: NexusGenInputs['orderCreateManyWithoutStoreInput'] | null; // orderCreateManyWithoutStoreInput
+    product?: NexusGenInputs['productCreateManyWithoutStoreInput'] | null; // productCreateManyWithoutStoreInput
+    store_document?: NexusGenInputs['store_documentCreateManyWithoutStoreInput'] | null; // store_documentCreateManyWithoutStoreInput
+  }
+  storeCreateOneWithoutOrderInput: { // input type
+    connect?: NexusGenInputs['storeWhereUniqueInput'] | null; // storeWhereUniqueInput
+    create?: NexusGenInputs['storeCreateWithoutOrderInput'] | null; // storeCreateWithoutOrderInput
+  }
+  storeCreateOneWithoutProductInput: { // input type
+    connect?: NexusGenInputs['storeWhereUniqueInput'] | null; // storeWhereUniqueInput
+    create?: NexusGenInputs['storeCreateWithoutProductInput'] | null; // storeCreateWithoutProductInput
+  }
+  storeCreateOneWithoutStore_documentInput: { // input type
+    connect?: NexusGenInputs['storeWhereUniqueInput'] | null; // storeWhereUniqueInput
+    create?: NexusGenInputs['storeCreateWithoutStore_documentInput'] | null; // storeCreateWithoutStore_documentInput
+  }
+  storeCreateWithoutOrderInput: { // input type
+    address?: string | null; // String
+    approved?: boolean | null; // Boolean
+    blocked?: boolean | null; // Boolean
+    lat?: number | null; // Int
+    lng?: number | null; // Int
+    name?: string | null; // String
+    product?: NexusGenInputs['productCreateManyWithoutStoreInput'] | null; // productCreateManyWithoutStoreInput
+    store_document?: NexusGenInputs['store_documentCreateManyWithoutStoreInput'] | null; // store_documentCreateManyWithoutStoreInput
+  }
+  storeCreateWithoutProductInput: { // input type
+    address?: string | null; // String
+    approved?: boolean | null; // Boolean
+    blocked?: boolean | null; // Boolean
+    lat?: number | null; // Int
+    lng?: number | null; // Int
+    name?: string | null; // String
+    order?: NexusGenInputs['orderCreateManyWithoutStoreInput'] | null; // orderCreateManyWithoutStoreInput
+    store_document?: NexusGenInputs['store_documentCreateManyWithoutStoreInput'] | null; // store_documentCreateManyWithoutStoreInput
+  }
+  storeCreateWithoutStore_documentInput: { // input type
+    address?: string | null; // String
+    approved?: boolean | null; // Boolean
+    blocked?: boolean | null; // Boolean
+    lat?: number | null; // Int
+    lng?: number | null; // Int
+    name?: string | null; // String
+    order?: NexusGenInputs['orderCreateManyWithoutStoreInput'] | null; // orderCreateManyWithoutStoreInput
+    product?: NexusGenInputs['productCreateManyWithoutStoreInput'] | null; // productCreateManyWithoutStoreInput
+  }
+  storeOrderByInput: { // input type
+    address?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    approved?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    blocked?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    lat?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    lng?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    name?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+  }
+  storeUpdateInput: { // input type
+    address?: string | null; // String
+    approved?: boolean | null; // Boolean
+    blocked?: boolean | null; // Boolean
+    id?: number | null; // Int
+    lat?: number | null; // Int
+    lng?: number | null; // Int
+    name?: string | null; // String
+    order?: NexusGenInputs['orderUpdateManyWithoutStoreInput'] | null; // orderUpdateManyWithoutStoreInput
+    product?: NexusGenInputs['productUpdateManyWithoutStoreInput'] | null; // productUpdateManyWithoutStoreInput
+    store_document?: NexusGenInputs['store_documentUpdateManyWithoutStoreInput'] | null; // store_documentUpdateManyWithoutStoreInput
+  }
+  storeUpdateManyMutationInput: { // input type
+    address?: string | null; // String
+    approved?: boolean | null; // Boolean
+    blocked?: boolean | null; // Boolean
+    id?: number | null; // Int
+    lat?: number | null; // Int
+    lng?: number | null; // Int
+    name?: string | null; // String
+  }
+  storeUpdateOneRequiredWithoutOrderInput: { // input type
+    connect?: NexusGenInputs['storeWhereUniqueInput'] | null; // storeWhereUniqueInput
+    create?: NexusGenInputs['storeCreateWithoutOrderInput'] | null; // storeCreateWithoutOrderInput
+    update?: NexusGenInputs['storeUpdateWithoutOrderDataInput'] | null; // storeUpdateWithoutOrderDataInput
+    upsert?: NexusGenInputs['storeUpsertWithoutOrderInput'] | null; // storeUpsertWithoutOrderInput
+  }
+  storeUpdateOneRequiredWithoutProductInput: { // input type
+    connect?: NexusGenInputs['storeWhereUniqueInput'] | null; // storeWhereUniqueInput
+    create?: NexusGenInputs['storeCreateWithoutProductInput'] | null; // storeCreateWithoutProductInput
+    update?: NexusGenInputs['storeUpdateWithoutProductDataInput'] | null; // storeUpdateWithoutProductDataInput
+    upsert?: NexusGenInputs['storeUpsertWithoutProductInput'] | null; // storeUpsertWithoutProductInput
+  }
+  storeUpdateOneRequiredWithoutStore_documentInput: { // input type
+    connect?: NexusGenInputs['storeWhereUniqueInput'] | null; // storeWhereUniqueInput
+    create?: NexusGenInputs['storeCreateWithoutStore_documentInput'] | null; // storeCreateWithoutStore_documentInput
+    update?: NexusGenInputs['storeUpdateWithoutStore_documentDataInput'] | null; // storeUpdateWithoutStore_documentDataInput
+    upsert?: NexusGenInputs['storeUpsertWithoutStore_documentInput'] | null; // storeUpsertWithoutStore_documentInput
+  }
+  storeUpdateWithoutOrderDataInput: { // input type
+    address?: string | null; // String
+    approved?: boolean | null; // Boolean
+    blocked?: boolean | null; // Boolean
+    id?: number | null; // Int
+    lat?: number | null; // Int
+    lng?: number | null; // Int
+    name?: string | null; // String
+    product?: NexusGenInputs['productUpdateManyWithoutStoreInput'] | null; // productUpdateManyWithoutStoreInput
+    store_document?: NexusGenInputs['store_documentUpdateManyWithoutStoreInput'] | null; // store_documentUpdateManyWithoutStoreInput
+  }
+  storeUpdateWithoutProductDataInput: { // input type
+    address?: string | null; // String
+    approved?: boolean | null; // Boolean
+    blocked?: boolean | null; // Boolean
+    id?: number | null; // Int
+    lat?: number | null; // Int
+    lng?: number | null; // Int
+    name?: string | null; // String
+    order?: NexusGenInputs['orderUpdateManyWithoutStoreInput'] | null; // orderUpdateManyWithoutStoreInput
+    store_document?: NexusGenInputs['store_documentUpdateManyWithoutStoreInput'] | null; // store_documentUpdateManyWithoutStoreInput
+  }
+  storeUpdateWithoutStore_documentDataInput: { // input type
+    address?: string | null; // String
+    approved?: boolean | null; // Boolean
+    blocked?: boolean | null; // Boolean
+    id?: number | null; // Int
+    lat?: number | null; // Int
+    lng?: number | null; // Int
+    name?: string | null; // String
+    order?: NexusGenInputs['orderUpdateManyWithoutStoreInput'] | null; // orderUpdateManyWithoutStoreInput
+    product?: NexusGenInputs['productUpdateManyWithoutStoreInput'] | null; // productUpdateManyWithoutStoreInput
+  }
+  storeUpsertWithoutOrderInput: { // input type
+    create: NexusGenInputs['storeCreateWithoutOrderInput']; // storeCreateWithoutOrderInput!
+    update: NexusGenInputs['storeUpdateWithoutOrderDataInput']; // storeUpdateWithoutOrderDataInput!
+  }
+  storeUpsertWithoutProductInput: { // input type
+    create: NexusGenInputs['storeCreateWithoutProductInput']; // storeCreateWithoutProductInput!
+    update: NexusGenInputs['storeUpdateWithoutProductDataInput']; // storeUpdateWithoutProductDataInput!
+  }
+  storeUpsertWithoutStore_documentInput: { // input type
+    create: NexusGenInputs['storeCreateWithoutStore_documentInput']; // storeCreateWithoutStore_documentInput!
+    update: NexusGenInputs['storeUpdateWithoutStore_documentDataInput']; // storeUpdateWithoutStore_documentDataInput!
+  }
+  storeWhereInput: { // input type
+    address?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    AND?: NexusGenInputs['storeWhereInput'][] | null; // [storeWhereInput!]
+    approved?: NexusGenInputs['NullableBooleanFilter'] | null; // NullableBooleanFilter
+    blocked?: NexusGenInputs['NullableBooleanFilter'] | null; // NullableBooleanFilter
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    lat?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+    lng?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+    name?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    NOT?: NexusGenInputs['storeWhereInput'][] | null; // [storeWhereInput!]
+    OR?: NexusGenInputs['storeWhereInput'][] | null; // [storeWhereInput!]
+    order?: NexusGenInputs['orderFilter'] | null; // orderFilter
+    product?: NexusGenInputs['productFilter'] | null; // productFilter
+    store_document?: NexusGenInputs['store_documentFilter'] | null; // store_documentFilter
+  }
+  storeWhereUniqueInput: { // input type
+    id?: number | null; // Int
+  }
+  store_documentCreateInput: { // input type
+    document?: string | null; // String
+    store: NexusGenInputs['storeCreateOneWithoutStore_documentInput']; // storeCreateOneWithoutStore_documentInput!
+  }
+  store_documentCreateManyWithoutStoreInput: { // input type
+    connect?: NexusGenInputs['store_documentWhereUniqueInput'][] | null; // [store_documentWhereUniqueInput!]
+    create?: NexusGenInputs['store_documentCreateWithoutStoreInput'][] | null; // [store_documentCreateWithoutStoreInput!]
+  }
+  store_documentCreateWithoutStoreInput: { // input type
+    document?: string | null; // String
+  }
+  store_documentFilter: { // input type
+    every?: NexusGenInputs['store_documentWhereInput'] | null; // store_documentWhereInput
+    none?: NexusGenInputs['store_documentWhereInput'] | null; // store_documentWhereInput
+    some?: NexusGenInputs['store_documentWhereInput'] | null; // store_documentWhereInput
+  }
+  store_documentOrderByInput: { // input type
+    document?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    store_id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+  }
+  store_documentScalarWhereInput: { // input type
+    AND?: NexusGenInputs['store_documentScalarWhereInput'][] | null; // [store_documentScalarWhereInput!]
+    document?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    NOT?: NexusGenInputs['store_documentScalarWhereInput'][] | null; // [store_documentScalarWhereInput!]
+    OR?: NexusGenInputs['store_documentScalarWhereInput'][] | null; // [store_documentScalarWhereInput!]
+    store_id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+  }
+  store_documentUpdateInput: { // input type
+    document?: string | null; // String
+    id?: number | null; // Int
+    store?: NexusGenInputs['storeUpdateOneRequiredWithoutStore_documentInput'] | null; // storeUpdateOneRequiredWithoutStore_documentInput
+  }
+  store_documentUpdateManyDataInput: { // input type
+    document?: string | null; // String
+    id?: number | null; // Int
+  }
+  store_documentUpdateManyMutationInput: { // input type
+    document?: string | null; // String
+    id?: number | null; // Int
+  }
+  store_documentUpdateManyWithWhereNestedInput: { // input type
+    data: NexusGenInputs['store_documentUpdateManyDataInput']; // store_documentUpdateManyDataInput!
+    where: NexusGenInputs['store_documentScalarWhereInput']; // store_documentScalarWhereInput!
+  }
+  store_documentUpdateManyWithoutStoreInput: { // input type
+    connect?: NexusGenInputs['store_documentWhereUniqueInput'][] | null; // [store_documentWhereUniqueInput!]
+    create?: NexusGenInputs['store_documentCreateWithoutStoreInput'][] | null; // [store_documentCreateWithoutStoreInput!]
+    delete?: NexusGenInputs['store_documentWhereUniqueInput'][] | null; // [store_documentWhereUniqueInput!]
+    deleteMany?: NexusGenInputs['store_documentScalarWhereInput'][] | null; // [store_documentScalarWhereInput!]
+    disconnect?: NexusGenInputs['store_documentWhereUniqueInput'][] | null; // [store_documentWhereUniqueInput!]
+    set?: NexusGenInputs['store_documentWhereUniqueInput'][] | null; // [store_documentWhereUniqueInput!]
+    update?: NexusGenInputs['store_documentUpdateWithWhereUniqueWithoutStoreInput'][] | null; // [store_documentUpdateWithWhereUniqueWithoutStoreInput!]
+    updateMany?: NexusGenInputs['store_documentUpdateManyWithWhereNestedInput'][] | null; // [store_documentUpdateManyWithWhereNestedInput!]
+    upsert?: NexusGenInputs['store_documentUpsertWithWhereUniqueWithoutStoreInput'][] | null; // [store_documentUpsertWithWhereUniqueWithoutStoreInput!]
+  }
+  store_documentUpdateWithWhereUniqueWithoutStoreInput: { // input type
+    data: NexusGenInputs['store_documentUpdateWithoutStoreDataInput']; // store_documentUpdateWithoutStoreDataInput!
+    where: NexusGenInputs['store_documentWhereUniqueInput']; // store_documentWhereUniqueInput!
+  }
+  store_documentUpdateWithoutStoreDataInput: { // input type
+    document?: string | null; // String
+    id?: number | null; // Int
+  }
+  store_documentUpsertWithWhereUniqueWithoutStoreInput: { // input type
+    create: NexusGenInputs['store_documentCreateWithoutStoreInput']; // store_documentCreateWithoutStoreInput!
+    update: NexusGenInputs['store_documentUpdateWithoutStoreDataInput']; // store_documentUpdateWithoutStoreDataInput!
+    where: NexusGenInputs['store_documentWhereUniqueInput']; // store_documentWhereUniqueInput!
+  }
+  store_documentWhereInput: { // input type
+    AND?: NexusGenInputs['store_documentWhereInput'][] | null; // [store_documentWhereInput!]
+    document?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    NOT?: NexusGenInputs['store_documentWhereInput'][] | null; // [store_documentWhereInput!]
+    OR?: NexusGenInputs['store_documentWhereInput'][] | null; // [store_documentWhereInput!]
+    store?: NexusGenInputs['storeWhereInput'] | null; // storeWhereInput
+    store_id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+  }
+  store_documentWhereUniqueInput: { // input type
+    id?: number | null; // Int
+  }
+  userCreateInput: { // input type
+    blocked?: boolean | null; // Boolean
+    cart?: NexusGenInputs['cartCreateManyWithoutUserInput'] | null; // cartCreateManyWithoutUserInput
+    full_name?: string | null; // String
+    mobile_no?: number | null; // Int
+    order?: NexusGenInputs['orderCreateManyWithoutUserInput'] | null; // orderCreateManyWithoutUserInput
+    product_rating?: NexusGenInputs['product_ratingCreateManyWithoutUserInput'] | null; // product_ratingCreateManyWithoutUserInput
+    user_address?: NexusGenInputs['user_addressCreateManyWithoutUserInput'] | null; // user_addressCreateManyWithoutUserInput
+    voucher?: NexusGenInputs['voucherCreateManyWithoutUserInput'] | null; // voucherCreateManyWithoutUserInput
+    wishlist?: NexusGenInputs['wishlistCreateManyWithoutUserInput'] | null; // wishlistCreateManyWithoutUserInput
+  }
+  userCreateOneWithoutCartInput: { // input type
+    connect?: NexusGenInputs['userWhereUniqueInput'] | null; // userWhereUniqueInput
+    create?: NexusGenInputs['userCreateWithoutCartInput'] | null; // userCreateWithoutCartInput
+  }
+  userCreateOneWithoutOrderInput: { // input type
+    connect?: NexusGenInputs['userWhereUniqueInput'] | null; // userWhereUniqueInput
+    create?: NexusGenInputs['userCreateWithoutOrderInput'] | null; // userCreateWithoutOrderInput
+  }
+  userCreateOneWithoutProduct_ratingInput: { // input type
+    connect?: NexusGenInputs['userWhereUniqueInput'] | null; // userWhereUniqueInput
+    create?: NexusGenInputs['userCreateWithoutProduct_ratingInput'] | null; // userCreateWithoutProduct_ratingInput
+  }
+  userCreateOneWithoutUser_addressInput: { // input type
+    connect?: NexusGenInputs['userWhereUniqueInput'] | null; // userWhereUniqueInput
+    create?: NexusGenInputs['userCreateWithoutUser_addressInput'] | null; // userCreateWithoutUser_addressInput
+  }
+  userCreateOneWithoutVoucherInput: { // input type
+    connect?: NexusGenInputs['userWhereUniqueInput'] | null; // userWhereUniqueInput
+    create?: NexusGenInputs['userCreateWithoutVoucherInput'] | null; // userCreateWithoutVoucherInput
+  }
+  userCreateOneWithoutWishlistInput: { // input type
+    connect?: NexusGenInputs['userWhereUniqueInput'] | null; // userWhereUniqueInput
+    create?: NexusGenInputs['userCreateWithoutWishlistInput'] | null; // userCreateWithoutWishlistInput
+  }
+  userCreateWithoutCartInput: { // input type
+    blocked?: boolean | null; // Boolean
+    full_name?: string | null; // String
+    mobile_no?: number | null; // Int
+    order?: NexusGenInputs['orderCreateManyWithoutUserInput'] | null; // orderCreateManyWithoutUserInput
+    product_rating?: NexusGenInputs['product_ratingCreateManyWithoutUserInput'] | null; // product_ratingCreateManyWithoutUserInput
+    user_address?: NexusGenInputs['user_addressCreateManyWithoutUserInput'] | null; // user_addressCreateManyWithoutUserInput
+    voucher?: NexusGenInputs['voucherCreateManyWithoutUserInput'] | null; // voucherCreateManyWithoutUserInput
+    wishlist?: NexusGenInputs['wishlistCreateManyWithoutUserInput'] | null; // wishlistCreateManyWithoutUserInput
+  }
+  userCreateWithoutOrderInput: { // input type
+    blocked?: boolean | null; // Boolean
+    cart?: NexusGenInputs['cartCreateManyWithoutUserInput'] | null; // cartCreateManyWithoutUserInput
+    full_name?: string | null; // String
+    mobile_no?: number | null; // Int
+    product_rating?: NexusGenInputs['product_ratingCreateManyWithoutUserInput'] | null; // product_ratingCreateManyWithoutUserInput
+    user_address?: NexusGenInputs['user_addressCreateManyWithoutUserInput'] | null; // user_addressCreateManyWithoutUserInput
+    voucher?: NexusGenInputs['voucherCreateManyWithoutUserInput'] | null; // voucherCreateManyWithoutUserInput
+    wishlist?: NexusGenInputs['wishlistCreateManyWithoutUserInput'] | null; // wishlistCreateManyWithoutUserInput
+  }
+  userCreateWithoutProduct_ratingInput: { // input type
+    blocked?: boolean | null; // Boolean
+    cart?: NexusGenInputs['cartCreateManyWithoutUserInput'] | null; // cartCreateManyWithoutUserInput
+    full_name?: string | null; // String
+    mobile_no?: number | null; // Int
+    order?: NexusGenInputs['orderCreateManyWithoutUserInput'] | null; // orderCreateManyWithoutUserInput
+    user_address?: NexusGenInputs['user_addressCreateManyWithoutUserInput'] | null; // user_addressCreateManyWithoutUserInput
+    voucher?: NexusGenInputs['voucherCreateManyWithoutUserInput'] | null; // voucherCreateManyWithoutUserInput
+    wishlist?: NexusGenInputs['wishlistCreateManyWithoutUserInput'] | null; // wishlistCreateManyWithoutUserInput
+  }
+  userCreateWithoutUser_addressInput: { // input type
+    blocked?: boolean | null; // Boolean
+    cart?: NexusGenInputs['cartCreateManyWithoutUserInput'] | null; // cartCreateManyWithoutUserInput
+    full_name?: string | null; // String
+    mobile_no?: number | null; // Int
+    order?: NexusGenInputs['orderCreateManyWithoutUserInput'] | null; // orderCreateManyWithoutUserInput
+    product_rating?: NexusGenInputs['product_ratingCreateManyWithoutUserInput'] | null; // product_ratingCreateManyWithoutUserInput
+    voucher?: NexusGenInputs['voucherCreateManyWithoutUserInput'] | null; // voucherCreateManyWithoutUserInput
+    wishlist?: NexusGenInputs['wishlistCreateManyWithoutUserInput'] | null; // wishlistCreateManyWithoutUserInput
+  }
+  userCreateWithoutVoucherInput: { // input type
+    blocked?: boolean | null; // Boolean
+    cart?: NexusGenInputs['cartCreateManyWithoutUserInput'] | null; // cartCreateManyWithoutUserInput
+    full_name?: string | null; // String
+    mobile_no?: number | null; // Int
+    order?: NexusGenInputs['orderCreateManyWithoutUserInput'] | null; // orderCreateManyWithoutUserInput
+    product_rating?: NexusGenInputs['product_ratingCreateManyWithoutUserInput'] | null; // product_ratingCreateManyWithoutUserInput
+    user_address?: NexusGenInputs['user_addressCreateManyWithoutUserInput'] | null; // user_addressCreateManyWithoutUserInput
+    wishlist?: NexusGenInputs['wishlistCreateManyWithoutUserInput'] | null; // wishlistCreateManyWithoutUserInput
+  }
+  userCreateWithoutWishlistInput: { // input type
+    blocked?: boolean | null; // Boolean
+    cart?: NexusGenInputs['cartCreateManyWithoutUserInput'] | null; // cartCreateManyWithoutUserInput
+    full_name?: string | null; // String
+    mobile_no?: number | null; // Int
+    order?: NexusGenInputs['orderCreateManyWithoutUserInput'] | null; // orderCreateManyWithoutUserInput
+    product_rating?: NexusGenInputs['product_ratingCreateManyWithoutUserInput'] | null; // product_ratingCreateManyWithoutUserInput
+    user_address?: NexusGenInputs['user_addressCreateManyWithoutUserInput'] | null; // user_addressCreateManyWithoutUserInput
+    voucher?: NexusGenInputs['voucherCreateManyWithoutUserInput'] | null; // voucherCreateManyWithoutUserInput
+  }
+  userOrderByInput: { // input type
+    blocked?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    full_name?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    mobile_no?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+  }
+  userUpdateInput: { // input type
+    blocked?: boolean | null; // Boolean
+    cart?: NexusGenInputs['cartUpdateManyWithoutUserInput'] | null; // cartUpdateManyWithoutUserInput
+    full_name?: string | null; // String
+    id?: number | null; // Int
+    mobile_no?: number | null; // Int
+    order?: NexusGenInputs['orderUpdateManyWithoutUserInput'] | null; // orderUpdateManyWithoutUserInput
+    product_rating?: NexusGenInputs['product_ratingUpdateManyWithoutUserInput'] | null; // product_ratingUpdateManyWithoutUserInput
+    user_address?: NexusGenInputs['user_addressUpdateManyWithoutUserInput'] | null; // user_addressUpdateManyWithoutUserInput
+    voucher?: NexusGenInputs['voucherUpdateManyWithoutUserInput'] | null; // voucherUpdateManyWithoutUserInput
+    wishlist?: NexusGenInputs['wishlistUpdateManyWithoutUserInput'] | null; // wishlistUpdateManyWithoutUserInput
+  }
+  userUpdateManyMutationInput: { // input type
+    blocked?: boolean | null; // Boolean
+    full_name?: string | null; // String
+    id?: number | null; // Int
+    mobile_no?: number | null; // Int
+  }
+  userUpdateOneRequiredWithoutCartInput: { // input type
+    connect?: NexusGenInputs['userWhereUniqueInput'] | null; // userWhereUniqueInput
+    create?: NexusGenInputs['userCreateWithoutCartInput'] | null; // userCreateWithoutCartInput
+    update?: NexusGenInputs['userUpdateWithoutCartDataInput'] | null; // userUpdateWithoutCartDataInput
+    upsert?: NexusGenInputs['userUpsertWithoutCartInput'] | null; // userUpsertWithoutCartInput
+  }
+  userUpdateOneRequiredWithoutOrderInput: { // input type
+    connect?: NexusGenInputs['userWhereUniqueInput'] | null; // userWhereUniqueInput
+    create?: NexusGenInputs['userCreateWithoutOrderInput'] | null; // userCreateWithoutOrderInput
+    update?: NexusGenInputs['userUpdateWithoutOrderDataInput'] | null; // userUpdateWithoutOrderDataInput
+    upsert?: NexusGenInputs['userUpsertWithoutOrderInput'] | null; // userUpsertWithoutOrderInput
+  }
+  userUpdateOneRequiredWithoutUser_addressInput: { // input type
+    connect?: NexusGenInputs['userWhereUniqueInput'] | null; // userWhereUniqueInput
+    create?: NexusGenInputs['userCreateWithoutUser_addressInput'] | null; // userCreateWithoutUser_addressInput
+    update?: NexusGenInputs['userUpdateWithoutUser_addressDataInput'] | null; // userUpdateWithoutUser_addressDataInput
+    upsert?: NexusGenInputs['userUpsertWithoutUser_addressInput'] | null; // userUpsertWithoutUser_addressInput
+  }
+  userUpdateOneRequiredWithoutWishlistInput: { // input type
+    connect?: NexusGenInputs['userWhereUniqueInput'] | null; // userWhereUniqueInput
+    create?: NexusGenInputs['userCreateWithoutWishlistInput'] | null; // userCreateWithoutWishlistInput
+    update?: NexusGenInputs['userUpdateWithoutWishlistDataInput'] | null; // userUpdateWithoutWishlistDataInput
+    upsert?: NexusGenInputs['userUpsertWithoutWishlistInput'] | null; // userUpsertWithoutWishlistInput
+  }
+  userUpdateOneWithoutProduct_ratingInput: { // input type
+    connect?: NexusGenInputs['userWhereUniqueInput'] | null; // userWhereUniqueInput
+    create?: NexusGenInputs['userCreateWithoutProduct_ratingInput'] | null; // userCreateWithoutProduct_ratingInput
+    delete?: boolean | null; // Boolean
+    disconnect?: boolean | null; // Boolean
+    update?: NexusGenInputs['userUpdateWithoutProduct_ratingDataInput'] | null; // userUpdateWithoutProduct_ratingDataInput
+    upsert?: NexusGenInputs['userUpsertWithoutProduct_ratingInput'] | null; // userUpsertWithoutProduct_ratingInput
+  }
+  userUpdateOneWithoutVoucherInput: { // input type
+    connect?: NexusGenInputs['userWhereUniqueInput'] | null; // userWhereUniqueInput
+    create?: NexusGenInputs['userCreateWithoutVoucherInput'] | null; // userCreateWithoutVoucherInput
+    delete?: boolean | null; // Boolean
+    disconnect?: boolean | null; // Boolean
+    update?: NexusGenInputs['userUpdateWithoutVoucherDataInput'] | null; // userUpdateWithoutVoucherDataInput
+    upsert?: NexusGenInputs['userUpsertWithoutVoucherInput'] | null; // userUpsertWithoutVoucherInput
+  }
+  userUpdateWithoutCartDataInput: { // input type
+    blocked?: boolean | null; // Boolean
+    full_name?: string | null; // String
+    id?: number | null; // Int
+    mobile_no?: number | null; // Int
+    order?: NexusGenInputs['orderUpdateManyWithoutUserInput'] | null; // orderUpdateManyWithoutUserInput
+    product_rating?: NexusGenInputs['product_ratingUpdateManyWithoutUserInput'] | null; // product_ratingUpdateManyWithoutUserInput
+    user_address?: NexusGenInputs['user_addressUpdateManyWithoutUserInput'] | null; // user_addressUpdateManyWithoutUserInput
+    voucher?: NexusGenInputs['voucherUpdateManyWithoutUserInput'] | null; // voucherUpdateManyWithoutUserInput
+    wishlist?: NexusGenInputs['wishlistUpdateManyWithoutUserInput'] | null; // wishlistUpdateManyWithoutUserInput
+  }
+  userUpdateWithoutOrderDataInput: { // input type
+    blocked?: boolean | null; // Boolean
+    cart?: NexusGenInputs['cartUpdateManyWithoutUserInput'] | null; // cartUpdateManyWithoutUserInput
+    full_name?: string | null; // String
+    id?: number | null; // Int
+    mobile_no?: number | null; // Int
+    product_rating?: NexusGenInputs['product_ratingUpdateManyWithoutUserInput'] | null; // product_ratingUpdateManyWithoutUserInput
+    user_address?: NexusGenInputs['user_addressUpdateManyWithoutUserInput'] | null; // user_addressUpdateManyWithoutUserInput
+    voucher?: NexusGenInputs['voucherUpdateManyWithoutUserInput'] | null; // voucherUpdateManyWithoutUserInput
+    wishlist?: NexusGenInputs['wishlistUpdateManyWithoutUserInput'] | null; // wishlistUpdateManyWithoutUserInput
+  }
+  userUpdateWithoutProduct_ratingDataInput: { // input type
+    blocked?: boolean | null; // Boolean
+    cart?: NexusGenInputs['cartUpdateManyWithoutUserInput'] | null; // cartUpdateManyWithoutUserInput
+    full_name?: string | null; // String
+    id?: number | null; // Int
+    mobile_no?: number | null; // Int
+    order?: NexusGenInputs['orderUpdateManyWithoutUserInput'] | null; // orderUpdateManyWithoutUserInput
+    user_address?: NexusGenInputs['user_addressUpdateManyWithoutUserInput'] | null; // user_addressUpdateManyWithoutUserInput
+    voucher?: NexusGenInputs['voucherUpdateManyWithoutUserInput'] | null; // voucherUpdateManyWithoutUserInput
+    wishlist?: NexusGenInputs['wishlistUpdateManyWithoutUserInput'] | null; // wishlistUpdateManyWithoutUserInput
+  }
+  userUpdateWithoutUser_addressDataInput: { // input type
+    blocked?: boolean | null; // Boolean
+    cart?: NexusGenInputs['cartUpdateManyWithoutUserInput'] | null; // cartUpdateManyWithoutUserInput
+    full_name?: string | null; // String
+    id?: number | null; // Int
+    mobile_no?: number | null; // Int
+    order?: NexusGenInputs['orderUpdateManyWithoutUserInput'] | null; // orderUpdateManyWithoutUserInput
+    product_rating?: NexusGenInputs['product_ratingUpdateManyWithoutUserInput'] | null; // product_ratingUpdateManyWithoutUserInput
+    voucher?: NexusGenInputs['voucherUpdateManyWithoutUserInput'] | null; // voucherUpdateManyWithoutUserInput
+    wishlist?: NexusGenInputs['wishlistUpdateManyWithoutUserInput'] | null; // wishlistUpdateManyWithoutUserInput
+  }
+  userUpdateWithoutVoucherDataInput: { // input type
+    blocked?: boolean | null; // Boolean
+    cart?: NexusGenInputs['cartUpdateManyWithoutUserInput'] | null; // cartUpdateManyWithoutUserInput
+    full_name?: string | null; // String
+    id?: number | null; // Int
+    mobile_no?: number | null; // Int
+    order?: NexusGenInputs['orderUpdateManyWithoutUserInput'] | null; // orderUpdateManyWithoutUserInput
+    product_rating?: NexusGenInputs['product_ratingUpdateManyWithoutUserInput'] | null; // product_ratingUpdateManyWithoutUserInput
+    user_address?: NexusGenInputs['user_addressUpdateManyWithoutUserInput'] | null; // user_addressUpdateManyWithoutUserInput
+    wishlist?: NexusGenInputs['wishlistUpdateManyWithoutUserInput'] | null; // wishlistUpdateManyWithoutUserInput
+  }
+  userUpdateWithoutWishlistDataInput: { // input type
+    blocked?: boolean | null; // Boolean
+    cart?: NexusGenInputs['cartUpdateManyWithoutUserInput'] | null; // cartUpdateManyWithoutUserInput
+    full_name?: string | null; // String
+    id?: number | null; // Int
+    mobile_no?: number | null; // Int
+    order?: NexusGenInputs['orderUpdateManyWithoutUserInput'] | null; // orderUpdateManyWithoutUserInput
+    product_rating?: NexusGenInputs['product_ratingUpdateManyWithoutUserInput'] | null; // product_ratingUpdateManyWithoutUserInput
+    user_address?: NexusGenInputs['user_addressUpdateManyWithoutUserInput'] | null; // user_addressUpdateManyWithoutUserInput
+    voucher?: NexusGenInputs['voucherUpdateManyWithoutUserInput'] | null; // voucherUpdateManyWithoutUserInput
+  }
+  userUpsertWithoutCartInput: { // input type
+    create: NexusGenInputs['userCreateWithoutCartInput']; // userCreateWithoutCartInput!
+    update: NexusGenInputs['userUpdateWithoutCartDataInput']; // userUpdateWithoutCartDataInput!
+  }
+  userUpsertWithoutOrderInput: { // input type
+    create: NexusGenInputs['userCreateWithoutOrderInput']; // userCreateWithoutOrderInput!
+    update: NexusGenInputs['userUpdateWithoutOrderDataInput']; // userUpdateWithoutOrderDataInput!
+  }
+  userUpsertWithoutProduct_ratingInput: { // input type
+    create: NexusGenInputs['userCreateWithoutProduct_ratingInput']; // userCreateWithoutProduct_ratingInput!
+    update: NexusGenInputs['userUpdateWithoutProduct_ratingDataInput']; // userUpdateWithoutProduct_ratingDataInput!
+  }
+  userUpsertWithoutUser_addressInput: { // input type
+    create: NexusGenInputs['userCreateWithoutUser_addressInput']; // userCreateWithoutUser_addressInput!
+    update: NexusGenInputs['userUpdateWithoutUser_addressDataInput']; // userUpdateWithoutUser_addressDataInput!
+  }
+  userUpsertWithoutVoucherInput: { // input type
+    create: NexusGenInputs['userCreateWithoutVoucherInput']; // userCreateWithoutVoucherInput!
+    update: NexusGenInputs['userUpdateWithoutVoucherDataInput']; // userUpdateWithoutVoucherDataInput!
+  }
+  userUpsertWithoutWishlistInput: { // input type
+    create: NexusGenInputs['userCreateWithoutWishlistInput']; // userCreateWithoutWishlistInput!
+    update: NexusGenInputs['userUpdateWithoutWishlistDataInput']; // userUpdateWithoutWishlistDataInput!
+  }
+  userWhereInput: { // input type
+    AND?: NexusGenInputs['userWhereInput'][] | null; // [userWhereInput!]
+    blocked?: NexusGenInputs['NullableBooleanFilter'] | null; // NullableBooleanFilter
+    cart?: NexusGenInputs['cartFilter'] | null; // cartFilter
+    full_name?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    mobile_no?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+    NOT?: NexusGenInputs['userWhereInput'][] | null; // [userWhereInput!]
+    OR?: NexusGenInputs['userWhereInput'][] | null; // [userWhereInput!]
+    order?: NexusGenInputs['orderFilter'] | null; // orderFilter
+    product_rating?: NexusGenInputs['product_ratingFilter'] | null; // product_ratingFilter
+    user_address?: NexusGenInputs['user_addressFilter'] | null; // user_addressFilter
+    voucher?: NexusGenInputs['voucherFilter'] | null; // voucherFilter
+    wishlist?: NexusGenInputs['wishlistFilter'] | null; // wishlistFilter
+  }
+  userWhereUniqueInput: { // input type
+    id?: number | null; // Int
+    mobile_no?: number | null; // Int
+  }
+  user_addressCreateInput: { // input type
+    alias?: string | null; // String
+    city?: string | null; // String
+    first_name?: string | null; // String
+    last_name?: string | null; // String
+    poc_no?: number | null; // Int
+    state?: string | null; // String
+    street_address?: string | null; // String
+    user: NexusGenInputs['userCreateOneWithoutUser_addressInput']; // userCreateOneWithoutUser_addressInput!
+    zip_code?: number | null; // Int
+  }
+  user_addressCreateManyWithoutUserInput: { // input type
+    connect?: NexusGenInputs['user_addressWhereUniqueInput'][] | null; // [user_addressWhereUniqueInput!]
+    create?: NexusGenInputs['user_addressCreateWithoutUserInput'][] | null; // [user_addressCreateWithoutUserInput!]
+  }
+  user_addressCreateWithoutUserInput: { // input type
+    alias?: string | null; // String
+    city?: string | null; // String
+    first_name?: string | null; // String
+    last_name?: string | null; // String
+    poc_no?: number | null; // Int
+    state?: string | null; // String
+    street_address?: string | null; // String
+    zip_code?: number | null; // Int
+  }
+  user_addressFilter: { // input type
+    every?: NexusGenInputs['user_addressWhereInput'] | null; // user_addressWhereInput
+    none?: NexusGenInputs['user_addressWhereInput'] | null; // user_addressWhereInput
+    some?: NexusGenInputs['user_addressWhereInput'] | null; // user_addressWhereInput
+  }
+  user_addressOrderByInput: { // input type
+    alias?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    city?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    first_name?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    last_name?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    poc_no?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    state?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    street_address?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    user_id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    zip_code?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+  }
+  user_addressScalarWhereInput: { // input type
+    alias?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    AND?: NexusGenInputs['user_addressScalarWhereInput'][] | null; // [user_addressScalarWhereInput!]
+    city?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    first_name?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    last_name?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    NOT?: NexusGenInputs['user_addressScalarWhereInput'][] | null; // [user_addressScalarWhereInput!]
+    OR?: NexusGenInputs['user_addressScalarWhereInput'][] | null; // [user_addressScalarWhereInput!]
+    poc_no?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+    state?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    street_address?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    user_id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    zip_code?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+  }
+  user_addressUpdateInput: { // input type
+    alias?: string | null; // String
+    city?: string | null; // String
+    first_name?: string | null; // String
+    id?: number | null; // Int
+    last_name?: string | null; // String
+    poc_no?: number | null; // Int
+    state?: string | null; // String
+    street_address?: string | null; // String
+    user?: NexusGenInputs['userUpdateOneRequiredWithoutUser_addressInput'] | null; // userUpdateOneRequiredWithoutUser_addressInput
+    zip_code?: number | null; // Int
+  }
+  user_addressUpdateManyDataInput: { // input type
+    alias?: string | null; // String
+    city?: string | null; // String
+    first_name?: string | null; // String
+    id?: number | null; // Int
+    last_name?: string | null; // String
+    poc_no?: number | null; // Int
+    state?: string | null; // String
+    street_address?: string | null; // String
+    zip_code?: number | null; // Int
+  }
+  user_addressUpdateManyMutationInput: { // input type
+    alias?: string | null; // String
+    city?: string | null; // String
+    first_name?: string | null; // String
+    id?: number | null; // Int
+    last_name?: string | null; // String
+    poc_no?: number | null; // Int
+    state?: string | null; // String
+    street_address?: string | null; // String
+    zip_code?: number | null; // Int
+  }
+  user_addressUpdateManyWithWhereNestedInput: { // input type
+    data: NexusGenInputs['user_addressUpdateManyDataInput']; // user_addressUpdateManyDataInput!
+    where: NexusGenInputs['user_addressScalarWhereInput']; // user_addressScalarWhereInput!
+  }
+  user_addressUpdateManyWithoutUserInput: { // input type
+    connect?: NexusGenInputs['user_addressWhereUniqueInput'][] | null; // [user_addressWhereUniqueInput!]
+    create?: NexusGenInputs['user_addressCreateWithoutUserInput'][] | null; // [user_addressCreateWithoutUserInput!]
+    delete?: NexusGenInputs['user_addressWhereUniqueInput'][] | null; // [user_addressWhereUniqueInput!]
+    deleteMany?: NexusGenInputs['user_addressScalarWhereInput'][] | null; // [user_addressScalarWhereInput!]
+    disconnect?: NexusGenInputs['user_addressWhereUniqueInput'][] | null; // [user_addressWhereUniqueInput!]
+    set?: NexusGenInputs['user_addressWhereUniqueInput'][] | null; // [user_addressWhereUniqueInput!]
+    update?: NexusGenInputs['user_addressUpdateWithWhereUniqueWithoutUserInput'][] | null; // [user_addressUpdateWithWhereUniqueWithoutUserInput!]
+    updateMany?: NexusGenInputs['user_addressUpdateManyWithWhereNestedInput'][] | null; // [user_addressUpdateManyWithWhereNestedInput!]
+    upsert?: NexusGenInputs['user_addressUpsertWithWhereUniqueWithoutUserInput'][] | null; // [user_addressUpsertWithWhereUniqueWithoutUserInput!]
+  }
+  user_addressUpdateWithWhereUniqueWithoutUserInput: { // input type
+    data: NexusGenInputs['user_addressUpdateWithoutUserDataInput']; // user_addressUpdateWithoutUserDataInput!
+    where: NexusGenInputs['user_addressWhereUniqueInput']; // user_addressWhereUniqueInput!
+  }
+  user_addressUpdateWithoutUserDataInput: { // input type
+    alias?: string | null; // String
+    city?: string | null; // String
+    first_name?: string | null; // String
+    id?: number | null; // Int
+    last_name?: string | null; // String
+    poc_no?: number | null; // Int
+    state?: string | null; // String
+    street_address?: string | null; // String
+    zip_code?: number | null; // Int
+  }
+  user_addressUpsertWithWhereUniqueWithoutUserInput: { // input type
+    create: NexusGenInputs['user_addressCreateWithoutUserInput']; // user_addressCreateWithoutUserInput!
+    update: NexusGenInputs['user_addressUpdateWithoutUserDataInput']; // user_addressUpdateWithoutUserDataInput!
+    where: NexusGenInputs['user_addressWhereUniqueInput']; // user_addressWhereUniqueInput!
+  }
+  user_addressWhereInput: { // input type
+    alias?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    AND?: NexusGenInputs['user_addressWhereInput'][] | null; // [user_addressWhereInput!]
+    city?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    first_name?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    last_name?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    NOT?: NexusGenInputs['user_addressWhereInput'][] | null; // [user_addressWhereInput!]
+    OR?: NexusGenInputs['user_addressWhereInput'][] | null; // [user_addressWhereInput!]
+    poc_no?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+    state?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    street_address?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+    user?: NexusGenInputs['userWhereInput'] | null; // userWhereInput
+    user_id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    zip_code?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+  }
+  user_addressWhereUniqueInput: { // input type
+    id?: number | null; // Int
+  }
+  voucherCreateInput: { // input type
+    cart?: NexusGenInputs['cartCreateManyWithoutVoucherInput'] | null; // cartCreateManyWithoutVoucherInput
+    cost?: number | null; // Int
+    user?: NexusGenInputs['userCreateOneWithoutVoucherInput'] | null; // userCreateOneWithoutVoucherInput
+    validity_date?: any | null; // DateTime
+    voucher_no?: string | null; // String
+  }
+  voucherCreateManyWithoutUserInput: { // input type
+    connect?: NexusGenInputs['voucherWhereUniqueInput'][] | null; // [voucherWhereUniqueInput!]
+    create?: NexusGenInputs['voucherCreateWithoutUserInput'][] | null; // [voucherCreateWithoutUserInput!]
+  }
+  voucherCreateOneWithoutCartInput: { // input type
+    connect?: NexusGenInputs['voucherWhereUniqueInput'] | null; // voucherWhereUniqueInput
+    create?: NexusGenInputs['voucherCreateWithoutCartInput'] | null; // voucherCreateWithoutCartInput
+  }
+  voucherCreateWithoutCartInput: { // input type
+    cost?: number | null; // Int
+    user?: NexusGenInputs['userCreateOneWithoutVoucherInput'] | null; // userCreateOneWithoutVoucherInput
+    validity_date?: any | null; // DateTime
+    voucher_no?: string | null; // String
+  }
+  voucherCreateWithoutUserInput: { // input type
+    cart?: NexusGenInputs['cartCreateManyWithoutVoucherInput'] | null; // cartCreateManyWithoutVoucherInput
+    cost?: number | null; // Int
+    validity_date?: any | null; // DateTime
+    voucher_no?: string | null; // String
+  }
+  voucherFilter: { // input type
+    every?: NexusGenInputs['voucherWhereInput'] | null; // voucherWhereInput
+    none?: NexusGenInputs['voucherWhereInput'] | null; // voucherWhereInput
+    some?: NexusGenInputs['voucherWhereInput'] | null; // voucherWhereInput
+  }
+  voucherOrderByInput: { // input type
+    cost?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    user_id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    validity_date?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    voucher_no?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+  }
+  voucherScalarWhereInput: { // input type
+    AND?: NexusGenInputs['voucherScalarWhereInput'][] | null; // [voucherScalarWhereInput!]
+    cart?: NexusGenInputs['cartFilter'] | null; // cartFilter
+    cost?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    NOT?: NexusGenInputs['voucherScalarWhereInput'][] | null; // [voucherScalarWhereInput!]
+    OR?: NexusGenInputs['voucherScalarWhereInput'][] | null; // [voucherScalarWhereInput!]
+    user_id?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+    validity_date?: NexusGenInputs['NullableDateTimeFilter'] | null; // NullableDateTimeFilter
+    voucher_no?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+  }
+  voucherUpdateInput: { // input type
+    cart?: NexusGenInputs['cartUpdateManyWithoutVoucherInput'] | null; // cartUpdateManyWithoutVoucherInput
+    cost?: number | null; // Int
+    id?: number | null; // Int
+    user?: NexusGenInputs['userUpdateOneWithoutVoucherInput'] | null; // userUpdateOneWithoutVoucherInput
+    validity_date?: any | null; // DateTime
+    voucher_no?: string | null; // String
+  }
+  voucherUpdateManyDataInput: { // input type
+    cost?: number | null; // Int
+    id?: number | null; // Int
+    validity_date?: any | null; // DateTime
+    voucher_no?: string | null; // String
+  }
+  voucherUpdateManyMutationInput: { // input type
+    cost?: number | null; // Int
+    id?: number | null; // Int
+    validity_date?: any | null; // DateTime
+    voucher_no?: string | null; // String
+  }
+  voucherUpdateManyWithWhereNestedInput: { // input type
+    data: NexusGenInputs['voucherUpdateManyDataInput']; // voucherUpdateManyDataInput!
+    where: NexusGenInputs['voucherScalarWhereInput']; // voucherScalarWhereInput!
+  }
+  voucherUpdateManyWithoutUserInput: { // input type
+    connect?: NexusGenInputs['voucherWhereUniqueInput'][] | null; // [voucherWhereUniqueInput!]
+    create?: NexusGenInputs['voucherCreateWithoutUserInput'][] | null; // [voucherCreateWithoutUserInput!]
+    delete?: NexusGenInputs['voucherWhereUniqueInput'][] | null; // [voucherWhereUniqueInput!]
+    deleteMany?: NexusGenInputs['voucherScalarWhereInput'][] | null; // [voucherScalarWhereInput!]
+    disconnect?: NexusGenInputs['voucherWhereUniqueInput'][] | null; // [voucherWhereUniqueInput!]
+    set?: NexusGenInputs['voucherWhereUniqueInput'][] | null; // [voucherWhereUniqueInput!]
+    update?: NexusGenInputs['voucherUpdateWithWhereUniqueWithoutUserInput'][] | null; // [voucherUpdateWithWhereUniqueWithoutUserInput!]
+    updateMany?: NexusGenInputs['voucherUpdateManyWithWhereNestedInput'][] | null; // [voucherUpdateManyWithWhereNestedInput!]
+    upsert?: NexusGenInputs['voucherUpsertWithWhereUniqueWithoutUserInput'][] | null; // [voucherUpsertWithWhereUniqueWithoutUserInput!]
+  }
+  voucherUpdateOneWithoutCartInput: { // input type
+    connect?: NexusGenInputs['voucherWhereUniqueInput'] | null; // voucherWhereUniqueInput
+    create?: NexusGenInputs['voucherCreateWithoutCartInput'] | null; // voucherCreateWithoutCartInput
+    delete?: boolean | null; // Boolean
+    disconnect?: boolean | null; // Boolean
+    update?: NexusGenInputs['voucherUpdateWithoutCartDataInput'] | null; // voucherUpdateWithoutCartDataInput
+    upsert?: NexusGenInputs['voucherUpsertWithoutCartInput'] | null; // voucherUpsertWithoutCartInput
+  }
+  voucherUpdateWithWhereUniqueWithoutUserInput: { // input type
+    data: NexusGenInputs['voucherUpdateWithoutUserDataInput']; // voucherUpdateWithoutUserDataInput!
+    where: NexusGenInputs['voucherWhereUniqueInput']; // voucherWhereUniqueInput!
+  }
+  voucherUpdateWithoutCartDataInput: { // input type
+    cost?: number | null; // Int
+    id?: number | null; // Int
+    user?: NexusGenInputs['userUpdateOneWithoutVoucherInput'] | null; // userUpdateOneWithoutVoucherInput
+    validity_date?: any | null; // DateTime
+    voucher_no?: string | null; // String
+  }
+  voucherUpdateWithoutUserDataInput: { // input type
+    cart?: NexusGenInputs['cartUpdateManyWithoutVoucherInput'] | null; // cartUpdateManyWithoutVoucherInput
+    cost?: number | null; // Int
+    id?: number | null; // Int
+    validity_date?: any | null; // DateTime
+    voucher_no?: string | null; // String
+  }
+  voucherUpsertWithWhereUniqueWithoutUserInput: { // input type
+    create: NexusGenInputs['voucherCreateWithoutUserInput']; // voucherCreateWithoutUserInput!
+    update: NexusGenInputs['voucherUpdateWithoutUserDataInput']; // voucherUpdateWithoutUserDataInput!
+    where: NexusGenInputs['voucherWhereUniqueInput']; // voucherWhereUniqueInput!
+  }
+  voucherUpsertWithoutCartInput: { // input type
+    create: NexusGenInputs['voucherCreateWithoutCartInput']; // voucherCreateWithoutCartInput!
+    update: NexusGenInputs['voucherUpdateWithoutCartDataInput']; // voucherUpdateWithoutCartDataInput!
+  }
+  voucherWhereInput: { // input type
+    AND?: NexusGenInputs['voucherWhereInput'][] | null; // [voucherWhereInput!]
+    cart?: NexusGenInputs['cartFilter'] | null; // cartFilter
+    cost?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    NOT?: NexusGenInputs['voucherWhereInput'][] | null; // [voucherWhereInput!]
+    OR?: NexusGenInputs['voucherWhereInput'][] | null; // [voucherWhereInput!]
+    user?: NexusGenInputs['userWhereInput'] | null; // userWhereInput
+    user_id?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+    validity_date?: NexusGenInputs['NullableDateTimeFilter'] | null; // NullableDateTimeFilter
+    voucher_no?: NexusGenInputs['NullableStringFilter'] | null; // NullableStringFilter
+  }
+  voucherWhereUniqueInput: { // input type
+    id?: number | null; // Int
+    voucher_no?: string | null; // String
+  }
+  wishlistCreateInput: { // input type
+    product_quantity?: NexusGenInputs['product_quantityCreateOneWithoutWishlistInput'] | null; // product_quantityCreateOneWithoutWishlistInput
+    user: NexusGenInputs['userCreateOneWithoutWishlistInput']; // userCreateOneWithoutWishlistInput!
+  }
+  wishlistCreateManyWithoutProduct_quantityInput: { // input type
+    connect?: NexusGenInputs['wishlistWhereUniqueInput'][] | null; // [wishlistWhereUniqueInput!]
+    create?: NexusGenInputs['wishlistCreateWithoutProduct_quantityInput'][] | null; // [wishlistCreateWithoutProduct_quantityInput!]
+  }
+  wishlistCreateManyWithoutUserInput: { // input type
+    connect?: NexusGenInputs['wishlistWhereUniqueInput'][] | null; // [wishlistWhereUniqueInput!]
+    create?: NexusGenInputs['wishlistCreateWithoutUserInput'][] | null; // [wishlistCreateWithoutUserInput!]
+  }
+  wishlistCreateWithoutProduct_quantityInput: { // input type
+    user: NexusGenInputs['userCreateOneWithoutWishlistInput']; // userCreateOneWithoutWishlistInput!
+  }
+  wishlistCreateWithoutUserInput: { // input type
+    product_quantity?: NexusGenInputs['product_quantityCreateOneWithoutWishlistInput'] | null; // product_quantityCreateOneWithoutWishlistInput
+  }
+  wishlistFilter: { // input type
+    every?: NexusGenInputs['wishlistWhereInput'] | null; // wishlistWhereInput
+    none?: NexusGenInputs['wishlistWhereInput'] | null; // wishlistWhereInput
+    some?: NexusGenInputs['wishlistWhereInput'] | null; // wishlistWhereInput
+  }
+  wishlistOrderByInput: { // input type
+    id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    product?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    user_id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+  }
+  wishlistScalarWhereInput: { // input type
+    AND?: NexusGenInputs['wishlistScalarWhereInput'][] | null; // [wishlistScalarWhereInput!]
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    NOT?: NexusGenInputs['wishlistScalarWhereInput'][] | null; // [wishlistScalarWhereInput!]
+    OR?: NexusGenInputs['wishlistScalarWhereInput'][] | null; // [wishlistScalarWhereInput!]
+    product?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+    user_id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+  }
+  wishlistUpdateInput: { // input type
+    id?: number | null; // Int
+    product_quantity?: NexusGenInputs['product_quantityUpdateOneWithoutWishlistInput'] | null; // product_quantityUpdateOneWithoutWishlistInput
+    user?: NexusGenInputs['userUpdateOneRequiredWithoutWishlistInput'] | null; // userUpdateOneRequiredWithoutWishlistInput
+  }
+  wishlistUpdateManyDataInput: { // input type
+    id?: number | null; // Int
+  }
+  wishlistUpdateManyMutationInput: { // input type
+    id?: number | null; // Int
+  }
+  wishlistUpdateManyWithWhereNestedInput: { // input type
+    data: NexusGenInputs['wishlistUpdateManyDataInput']; // wishlistUpdateManyDataInput!
+    where: NexusGenInputs['wishlistScalarWhereInput']; // wishlistScalarWhereInput!
+  }
+  wishlistUpdateManyWithoutProduct_quantityInput: { // input type
+    connect?: NexusGenInputs['wishlistWhereUniqueInput'][] | null; // [wishlistWhereUniqueInput!]
+    create?: NexusGenInputs['wishlistCreateWithoutProduct_quantityInput'][] | null; // [wishlistCreateWithoutProduct_quantityInput!]
+    delete?: NexusGenInputs['wishlistWhereUniqueInput'][] | null; // [wishlistWhereUniqueInput!]
+    deleteMany?: NexusGenInputs['wishlistScalarWhereInput'][] | null; // [wishlistScalarWhereInput!]
+    disconnect?: NexusGenInputs['wishlistWhereUniqueInput'][] | null; // [wishlistWhereUniqueInput!]
+    set?: NexusGenInputs['wishlistWhereUniqueInput'][] | null; // [wishlistWhereUniqueInput!]
+    update?: NexusGenInputs['wishlistUpdateWithWhereUniqueWithoutProduct_quantityInput'][] | null; // [wishlistUpdateWithWhereUniqueWithoutProduct_quantityInput!]
+    updateMany?: NexusGenInputs['wishlistUpdateManyWithWhereNestedInput'][] | null; // [wishlistUpdateManyWithWhereNestedInput!]
+    upsert?: NexusGenInputs['wishlistUpsertWithWhereUniqueWithoutProduct_quantityInput'][] | null; // [wishlistUpsertWithWhereUniqueWithoutProduct_quantityInput!]
+  }
+  wishlistUpdateManyWithoutUserInput: { // input type
+    connect?: NexusGenInputs['wishlistWhereUniqueInput'][] | null; // [wishlistWhereUniqueInput!]
+    create?: NexusGenInputs['wishlistCreateWithoutUserInput'][] | null; // [wishlistCreateWithoutUserInput!]
+    delete?: NexusGenInputs['wishlistWhereUniqueInput'][] | null; // [wishlistWhereUniqueInput!]
+    deleteMany?: NexusGenInputs['wishlistScalarWhereInput'][] | null; // [wishlistScalarWhereInput!]
+    disconnect?: NexusGenInputs['wishlistWhereUniqueInput'][] | null; // [wishlistWhereUniqueInput!]
+    set?: NexusGenInputs['wishlistWhereUniqueInput'][] | null; // [wishlistWhereUniqueInput!]
+    update?: NexusGenInputs['wishlistUpdateWithWhereUniqueWithoutUserInput'][] | null; // [wishlistUpdateWithWhereUniqueWithoutUserInput!]
+    updateMany?: NexusGenInputs['wishlistUpdateManyWithWhereNestedInput'][] | null; // [wishlistUpdateManyWithWhereNestedInput!]
+    upsert?: NexusGenInputs['wishlistUpsertWithWhereUniqueWithoutUserInput'][] | null; // [wishlistUpsertWithWhereUniqueWithoutUserInput!]
+  }
+  wishlistUpdateWithWhereUniqueWithoutProduct_quantityInput: { // input type
+    data: NexusGenInputs['wishlistUpdateWithoutProduct_quantityDataInput']; // wishlistUpdateWithoutProduct_quantityDataInput!
+    where: NexusGenInputs['wishlistWhereUniqueInput']; // wishlistWhereUniqueInput!
+  }
+  wishlistUpdateWithWhereUniqueWithoutUserInput: { // input type
+    data: NexusGenInputs['wishlistUpdateWithoutUserDataInput']; // wishlistUpdateWithoutUserDataInput!
+    where: NexusGenInputs['wishlistWhereUniqueInput']; // wishlistWhereUniqueInput!
+  }
+  wishlistUpdateWithoutProduct_quantityDataInput: { // input type
+    id?: number | null; // Int
+    user?: NexusGenInputs['userUpdateOneRequiredWithoutWishlistInput'] | null; // userUpdateOneRequiredWithoutWishlistInput
+  }
+  wishlistUpdateWithoutUserDataInput: { // input type
+    id?: number | null; // Int
+    product_quantity?: NexusGenInputs['product_quantityUpdateOneWithoutWishlistInput'] | null; // product_quantityUpdateOneWithoutWishlistInput
+  }
+  wishlistUpsertWithWhereUniqueWithoutProduct_quantityInput: { // input type
+    create: NexusGenInputs['wishlistCreateWithoutProduct_quantityInput']; // wishlistCreateWithoutProduct_quantityInput!
+    update: NexusGenInputs['wishlistUpdateWithoutProduct_quantityDataInput']; // wishlistUpdateWithoutProduct_quantityDataInput!
+    where: NexusGenInputs['wishlistWhereUniqueInput']; // wishlistWhereUniqueInput!
+  }
+  wishlistUpsertWithWhereUniqueWithoutUserInput: { // input type
+    create: NexusGenInputs['wishlistCreateWithoutUserInput']; // wishlistCreateWithoutUserInput!
+    update: NexusGenInputs['wishlistUpdateWithoutUserDataInput']; // wishlistUpdateWithoutUserDataInput!
+    where: NexusGenInputs['wishlistWhereUniqueInput']; // wishlistWhereUniqueInput!
+  }
+  wishlistWhereInput: { // input type
+    AND?: NexusGenInputs['wishlistWhereInput'][] | null; // [wishlistWhereInput!]
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    NOT?: NexusGenInputs['wishlistWhereInput'][] | null; // [wishlistWhereInput!]
+    OR?: NexusGenInputs['wishlistWhereInput'][] | null; // [wishlistWhereInput!]
+    product?: NexusGenInputs['NullableIntFilter'] | null; // NullableIntFilter
+    product_quantity?: NexusGenInputs['product_quantityWhereInput'] | null; // product_quantityWhereInput
+    user?: NexusGenInputs['userWhereInput'] | null; // userWhereInput
+    user_id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+  }
+  wishlistWhereUniqueInput: { // input type
+    id?: number | null; // Int
   }
 }
 
 export interface NexusGenEnums {
   OrderByArg: "asc" | "desc"
+  orders_status: "accepted" | "delivered" | "out_for_delivery" | "picked_up"
 }
 
 export interface NexusGenRootTypes {
@@ -91,30 +2897,557 @@ export interface NexusGenRootTypes {
   }
   Mutation: {};
   Query: {};
-  Subscription: {};
-  pokemon: { // root type
+  cart: { // root type
     id: number; // Int!
-    name: string; // String!
-    pokedex: number; // Int!
-    type: string; // String!
+    product?: number | null; // Int
+    shipping_cost?: number | null; // Int
+    total_cost?: number | null; // Int
+    total_discount?: number | null; // Int
+    user_id: number; // Int!
+    vouchers?: number | null; // Int
+  }
+  category: { // root type
+    grouped_under?: string | null; // String
+    icon?: string | null; // String
+    id: number; // Int!
+    name?: string | null; // String
+  }
+  driver: { // root type
+    approved?: boolean | null; // Boolean
+    blocked?: boolean | null; // Boolean
+    currently_delivering?: boolean | null; // Boolean
+    full_name?: string | null; // String
+    id: number; // Int!
+    mobile_no?: number | null; // Int
+  }
+  driver_document: { // root type
+    document?: string | null; // String
+    driver_id: number; // Int!
+    id: number; // Int!
+  }
+  order: { // root type
+    approved?: boolean | null; // Boolean
+    driver_id: number; // Int!
+    id: number; // Int!
+    order_date?: any | null; // DateTime
+    products: number; // Int!
+    shipping_cost?: number | null; // Int
+    shipping_provider?: string | null; // String
+    shipping_ref_no?: string | null; // String
+    status?: NexusGenEnums['orders_status'] | null; // orders_status
+    store_ids: number; // Int!
+    total_cost?: number | null; // Int
+    total_discount?: number | null; // Int
+    total_tax?: number | null; // Int
+    user_address?: string | null; // String
+    user_id: number; // Int!
+  }
+  product: { // root type
+    cost?: number | null; // Float
+    description?: string | null; // String
+    discount?: number | null; // Float
+    discounted_cost?: number | null; // Float
+    id: number; // Int!
+    mrp?: number | null; // Float
+    store_id: number; // Int!
+    tax?: number | null; // Float
+    title?: string | null; // String
+    total_cost?: number | null; // Float
+  }
+  product_categories_junction: { // root type
+    category_id: number; // Int!
+    id: number; // Int!
+    product_id: number; // Int!
+  }
+  product_image: { // root type
+    id: number; // Int!
+    image?: string | null; // String
+    product_id: number; // Int!
+  }
+  product_quantity: { // root type
+    id: number; // Int!
+    product_id: number; // Int!
+    product_qty?: number | null; // Int
+  }
+  product_rating: { // root type
+    id: number; // Int!
+    product_id: number; // Int!
+    rating?: number | null; // Float
+    user_id?: number | null; // Int
+  }
+  product_type: { // root type
+    id: number; // Int!
+    type?: string | null; // String
+    type_name?: string | null; // String
+  }
+  product_types_junction: { // root type
+    id: number; // Int!
+    product_id: number; // Int!
+    product_type_id: number; // Int!
+  }
+  store: { // root type
+    address?: string | null; // String
+    approved?: boolean | null; // Boolean
+    blocked?: boolean | null; // Boolean
+    id: number; // Int!
+    lat?: number | null; // Int
+    lng?: number | null; // Int
+    name?: string | null; // String
+  }
+  store_document: { // root type
+    document?: string | null; // String
+    id: number; // Int!
+    store_id: number; // Int!
+  }
+  user: { // root type
+    blocked?: boolean | null; // Boolean
+    full_name?: string | null; // String
+    id: number; // Int!
+    mobile_no?: number | null; // Int
+  }
+  user_address: { // root type
+    alias?: string | null; // String
+    city?: string | null; // String
+    first_name?: string | null; // String
+    id: number; // Int!
+    last_name?: string | null; // String
+    poc_no?: number | null; // Int
+    state?: string | null; // String
+    street_address?: string | null; // String
+    user_id: number; // Int!
+    zip_code?: number | null; // Int
+  }
+  voucher: { // root type
+    cost?: number | null; // Int
+    id: number; // Int!
+    user_id?: number | null; // Int
+    validity_date?: any | null; // DateTime
+    voucher_no?: string | null; // String
+  }
+  wishlist: { // root type
+    id: number; // Int!
+    product?: number | null; // Int
+    user_id: number; // Int!
   }
   String: string;
   Int: number;
   Float: number;
   Boolean: boolean;
   ID: string;
+  DateTime: any;
 }
 
 export interface NexusGenAllTypes extends NexusGenRootTypes {
   IntFilter: NexusGenInputs['IntFilter'];
-  StringFilter: NexusGenInputs['StringFilter'];
-  pokemonCreateInput: NexusGenInputs['pokemonCreateInput'];
-  pokemonOrderByInput: NexusGenInputs['pokemonOrderByInput'];
-  pokemonUpdateInput: NexusGenInputs['pokemonUpdateInput'];
-  pokemonUpdateManyMutationInput: NexusGenInputs['pokemonUpdateManyMutationInput'];
-  pokemonWhereInput: NexusGenInputs['pokemonWhereInput'];
-  pokemonWhereUniqueInput: NexusGenInputs['pokemonWhereUniqueInput'];
+  NullableBooleanFilter: NexusGenInputs['NullableBooleanFilter'];
+  NullableDateTimeFilter: NexusGenInputs['NullableDateTimeFilter'];
+  NullableFloatFilter: NexusGenInputs['NullableFloatFilter'];
+  NullableIntFilter: NexusGenInputs['NullableIntFilter'];
+  NullableStringFilter: NexusGenInputs['NullableStringFilter'];
+  cartCreateInput: NexusGenInputs['cartCreateInput'];
+  cartCreateManyWithoutProduct_quantityInput: NexusGenInputs['cartCreateManyWithoutProduct_quantityInput'];
+  cartCreateManyWithoutUserInput: NexusGenInputs['cartCreateManyWithoutUserInput'];
+  cartCreateManyWithoutVoucherInput: NexusGenInputs['cartCreateManyWithoutVoucherInput'];
+  cartCreateWithoutProduct_quantityInput: NexusGenInputs['cartCreateWithoutProduct_quantityInput'];
+  cartCreateWithoutUserInput: NexusGenInputs['cartCreateWithoutUserInput'];
+  cartCreateWithoutVoucherInput: NexusGenInputs['cartCreateWithoutVoucherInput'];
+  cartFilter: NexusGenInputs['cartFilter'];
+  cartOrderByInput: NexusGenInputs['cartOrderByInput'];
+  cartScalarWhereInput: NexusGenInputs['cartScalarWhereInput'];
+  cartUpdateInput: NexusGenInputs['cartUpdateInput'];
+  cartUpdateManyDataInput: NexusGenInputs['cartUpdateManyDataInput'];
+  cartUpdateManyMutationInput: NexusGenInputs['cartUpdateManyMutationInput'];
+  cartUpdateManyWithWhereNestedInput: NexusGenInputs['cartUpdateManyWithWhereNestedInput'];
+  cartUpdateManyWithoutProduct_quantityInput: NexusGenInputs['cartUpdateManyWithoutProduct_quantityInput'];
+  cartUpdateManyWithoutUserInput: NexusGenInputs['cartUpdateManyWithoutUserInput'];
+  cartUpdateManyWithoutVoucherInput: NexusGenInputs['cartUpdateManyWithoutVoucherInput'];
+  cartUpdateWithWhereUniqueWithoutProduct_quantityInput: NexusGenInputs['cartUpdateWithWhereUniqueWithoutProduct_quantityInput'];
+  cartUpdateWithWhereUniqueWithoutUserInput: NexusGenInputs['cartUpdateWithWhereUniqueWithoutUserInput'];
+  cartUpdateWithWhereUniqueWithoutVoucherInput: NexusGenInputs['cartUpdateWithWhereUniqueWithoutVoucherInput'];
+  cartUpdateWithoutProduct_quantityDataInput: NexusGenInputs['cartUpdateWithoutProduct_quantityDataInput'];
+  cartUpdateWithoutUserDataInput: NexusGenInputs['cartUpdateWithoutUserDataInput'];
+  cartUpdateWithoutVoucherDataInput: NexusGenInputs['cartUpdateWithoutVoucherDataInput'];
+  cartUpsertWithWhereUniqueWithoutProduct_quantityInput: NexusGenInputs['cartUpsertWithWhereUniqueWithoutProduct_quantityInput'];
+  cartUpsertWithWhereUniqueWithoutUserInput: NexusGenInputs['cartUpsertWithWhereUniqueWithoutUserInput'];
+  cartUpsertWithWhereUniqueWithoutVoucherInput: NexusGenInputs['cartUpsertWithWhereUniqueWithoutVoucherInput'];
+  cartWhereInput: NexusGenInputs['cartWhereInput'];
+  cartWhereUniqueInput: NexusGenInputs['cartWhereUniqueInput'];
+  categoryCreateInput: NexusGenInputs['categoryCreateInput'];
+  categoryCreateOneWithoutProduct_categories_junctionInput: NexusGenInputs['categoryCreateOneWithoutProduct_categories_junctionInput'];
+  categoryCreateWithoutProduct_categories_junctionInput: NexusGenInputs['categoryCreateWithoutProduct_categories_junctionInput'];
+  categoryOrderByInput: NexusGenInputs['categoryOrderByInput'];
+  categoryUpdateInput: NexusGenInputs['categoryUpdateInput'];
+  categoryUpdateManyMutationInput: NexusGenInputs['categoryUpdateManyMutationInput'];
+  categoryUpdateOneRequiredWithoutProduct_categories_junctionInput: NexusGenInputs['categoryUpdateOneRequiredWithoutProduct_categories_junctionInput'];
+  categoryUpdateWithoutProduct_categories_junctionDataInput: NexusGenInputs['categoryUpdateWithoutProduct_categories_junctionDataInput'];
+  categoryUpsertWithoutProduct_categories_junctionInput: NexusGenInputs['categoryUpsertWithoutProduct_categories_junctionInput'];
+  categoryWhereInput: NexusGenInputs['categoryWhereInput'];
+  categoryWhereUniqueInput: NexusGenInputs['categoryWhereUniqueInput'];
+  driverCreateInput: NexusGenInputs['driverCreateInput'];
+  driverCreateOneWithoutDriver_documentInput: NexusGenInputs['driverCreateOneWithoutDriver_documentInput'];
+  driverCreateOneWithoutOrderInput: NexusGenInputs['driverCreateOneWithoutOrderInput'];
+  driverCreateWithoutDriver_documentInput: NexusGenInputs['driverCreateWithoutDriver_documentInput'];
+  driverCreateWithoutOrderInput: NexusGenInputs['driverCreateWithoutOrderInput'];
+  driverOrderByInput: NexusGenInputs['driverOrderByInput'];
+  driverUpdateInput: NexusGenInputs['driverUpdateInput'];
+  driverUpdateManyMutationInput: NexusGenInputs['driverUpdateManyMutationInput'];
+  driverUpdateOneRequiredWithoutDriver_documentInput: NexusGenInputs['driverUpdateOneRequiredWithoutDriver_documentInput'];
+  driverUpdateOneRequiredWithoutOrderInput: NexusGenInputs['driverUpdateOneRequiredWithoutOrderInput'];
+  driverUpdateWithoutDriver_documentDataInput: NexusGenInputs['driverUpdateWithoutDriver_documentDataInput'];
+  driverUpdateWithoutOrderDataInput: NexusGenInputs['driverUpdateWithoutOrderDataInput'];
+  driverUpsertWithoutDriver_documentInput: NexusGenInputs['driverUpsertWithoutDriver_documentInput'];
+  driverUpsertWithoutOrderInput: NexusGenInputs['driverUpsertWithoutOrderInput'];
+  driverWhereInput: NexusGenInputs['driverWhereInput'];
+  driverWhereUniqueInput: NexusGenInputs['driverWhereUniqueInput'];
+  driver_documentCreateInput: NexusGenInputs['driver_documentCreateInput'];
+  driver_documentCreateManyWithoutDriverInput: NexusGenInputs['driver_documentCreateManyWithoutDriverInput'];
+  driver_documentCreateWithoutDriverInput: NexusGenInputs['driver_documentCreateWithoutDriverInput'];
+  driver_documentFilter: NexusGenInputs['driver_documentFilter'];
+  driver_documentOrderByInput: NexusGenInputs['driver_documentOrderByInput'];
+  driver_documentScalarWhereInput: NexusGenInputs['driver_documentScalarWhereInput'];
+  driver_documentUpdateInput: NexusGenInputs['driver_documentUpdateInput'];
+  driver_documentUpdateManyDataInput: NexusGenInputs['driver_documentUpdateManyDataInput'];
+  driver_documentUpdateManyMutationInput: NexusGenInputs['driver_documentUpdateManyMutationInput'];
+  driver_documentUpdateManyWithWhereNestedInput: NexusGenInputs['driver_documentUpdateManyWithWhereNestedInput'];
+  driver_documentUpdateManyWithoutDriverInput: NexusGenInputs['driver_documentUpdateManyWithoutDriverInput'];
+  driver_documentUpdateWithWhereUniqueWithoutDriverInput: NexusGenInputs['driver_documentUpdateWithWhereUniqueWithoutDriverInput'];
+  driver_documentUpdateWithoutDriverDataInput: NexusGenInputs['driver_documentUpdateWithoutDriverDataInput'];
+  driver_documentUpsertWithWhereUniqueWithoutDriverInput: NexusGenInputs['driver_documentUpsertWithWhereUniqueWithoutDriverInput'];
+  driver_documentWhereInput: NexusGenInputs['driver_documentWhereInput'];
+  driver_documentWhereUniqueInput: NexusGenInputs['driver_documentWhereUniqueInput'];
+  orderCreateInput: NexusGenInputs['orderCreateInput'];
+  orderCreateManyWithoutDriverInput: NexusGenInputs['orderCreateManyWithoutDriverInput'];
+  orderCreateManyWithoutProductInput: NexusGenInputs['orderCreateManyWithoutProductInput'];
+  orderCreateManyWithoutStoreInput: NexusGenInputs['orderCreateManyWithoutStoreInput'];
+  orderCreateManyWithoutUserInput: NexusGenInputs['orderCreateManyWithoutUserInput'];
+  orderCreateWithoutDriverInput: NexusGenInputs['orderCreateWithoutDriverInput'];
+  orderCreateWithoutProductInput: NexusGenInputs['orderCreateWithoutProductInput'];
+  orderCreateWithoutStoreInput: NexusGenInputs['orderCreateWithoutStoreInput'];
+  orderCreateWithoutUserInput: NexusGenInputs['orderCreateWithoutUserInput'];
+  orderFilter: NexusGenInputs['orderFilter'];
+  orderOrderByInput: NexusGenInputs['orderOrderByInput'];
+  orderScalarWhereInput: NexusGenInputs['orderScalarWhereInput'];
+  orderUpdateInput: NexusGenInputs['orderUpdateInput'];
+  orderUpdateManyDataInput: NexusGenInputs['orderUpdateManyDataInput'];
+  orderUpdateManyMutationInput: NexusGenInputs['orderUpdateManyMutationInput'];
+  orderUpdateManyWithWhereNestedInput: NexusGenInputs['orderUpdateManyWithWhereNestedInput'];
+  orderUpdateManyWithoutDriverInput: NexusGenInputs['orderUpdateManyWithoutDriverInput'];
+  orderUpdateManyWithoutProductInput: NexusGenInputs['orderUpdateManyWithoutProductInput'];
+  orderUpdateManyWithoutStoreInput: NexusGenInputs['orderUpdateManyWithoutStoreInput'];
+  orderUpdateManyWithoutUserInput: NexusGenInputs['orderUpdateManyWithoutUserInput'];
+  orderUpdateWithWhereUniqueWithoutDriverInput: NexusGenInputs['orderUpdateWithWhereUniqueWithoutDriverInput'];
+  orderUpdateWithWhereUniqueWithoutProductInput: NexusGenInputs['orderUpdateWithWhereUniqueWithoutProductInput'];
+  orderUpdateWithWhereUniqueWithoutStoreInput: NexusGenInputs['orderUpdateWithWhereUniqueWithoutStoreInput'];
+  orderUpdateWithWhereUniqueWithoutUserInput: NexusGenInputs['orderUpdateWithWhereUniqueWithoutUserInput'];
+  orderUpdateWithoutDriverDataInput: NexusGenInputs['orderUpdateWithoutDriverDataInput'];
+  orderUpdateWithoutProductDataInput: NexusGenInputs['orderUpdateWithoutProductDataInput'];
+  orderUpdateWithoutStoreDataInput: NexusGenInputs['orderUpdateWithoutStoreDataInput'];
+  orderUpdateWithoutUserDataInput: NexusGenInputs['orderUpdateWithoutUserDataInput'];
+  orderUpsertWithWhereUniqueWithoutDriverInput: NexusGenInputs['orderUpsertWithWhereUniqueWithoutDriverInput'];
+  orderUpsertWithWhereUniqueWithoutProductInput: NexusGenInputs['orderUpsertWithWhereUniqueWithoutProductInput'];
+  orderUpsertWithWhereUniqueWithoutStoreInput: NexusGenInputs['orderUpsertWithWhereUniqueWithoutStoreInput'];
+  orderUpsertWithWhereUniqueWithoutUserInput: NexusGenInputs['orderUpsertWithWhereUniqueWithoutUserInput'];
+  orderWhereInput: NexusGenInputs['orderWhereInput'];
+  orderWhereUniqueInput: NexusGenInputs['orderWhereUniqueInput'];
+  productCreateInput: NexusGenInputs['productCreateInput'];
+  productCreateManyWithoutStoreInput: NexusGenInputs['productCreateManyWithoutStoreInput'];
+  productCreateOneWithoutOrderInput: NexusGenInputs['productCreateOneWithoutOrderInput'];
+  productCreateOneWithoutProduct_categories_junctionInput: NexusGenInputs['productCreateOneWithoutProduct_categories_junctionInput'];
+  productCreateOneWithoutProduct_imageInput: NexusGenInputs['productCreateOneWithoutProduct_imageInput'];
+  productCreateOneWithoutProduct_quantityInput: NexusGenInputs['productCreateOneWithoutProduct_quantityInput'];
+  productCreateOneWithoutProduct_ratingInput: NexusGenInputs['productCreateOneWithoutProduct_ratingInput'];
+  productCreateOneWithoutProduct_types_junctionInput: NexusGenInputs['productCreateOneWithoutProduct_types_junctionInput'];
+  productCreateWithoutOrderInput: NexusGenInputs['productCreateWithoutOrderInput'];
+  productCreateWithoutProduct_categories_junctionInput: NexusGenInputs['productCreateWithoutProduct_categories_junctionInput'];
+  productCreateWithoutProduct_imageInput: NexusGenInputs['productCreateWithoutProduct_imageInput'];
+  productCreateWithoutProduct_quantityInput: NexusGenInputs['productCreateWithoutProduct_quantityInput'];
+  productCreateWithoutProduct_ratingInput: NexusGenInputs['productCreateWithoutProduct_ratingInput'];
+  productCreateWithoutProduct_types_junctionInput: NexusGenInputs['productCreateWithoutProduct_types_junctionInput'];
+  productCreateWithoutStoreInput: NexusGenInputs['productCreateWithoutStoreInput'];
+  productFilter: NexusGenInputs['productFilter'];
+  productOrderByInput: NexusGenInputs['productOrderByInput'];
+  productScalarWhereInput: NexusGenInputs['productScalarWhereInput'];
+  productUpdateInput: NexusGenInputs['productUpdateInput'];
+  productUpdateManyDataInput: NexusGenInputs['productUpdateManyDataInput'];
+  productUpdateManyMutationInput: NexusGenInputs['productUpdateManyMutationInput'];
+  productUpdateManyWithWhereNestedInput: NexusGenInputs['productUpdateManyWithWhereNestedInput'];
+  productUpdateManyWithoutStoreInput: NexusGenInputs['productUpdateManyWithoutStoreInput'];
+  productUpdateOneRequiredWithoutOrderInput: NexusGenInputs['productUpdateOneRequiredWithoutOrderInput'];
+  productUpdateOneRequiredWithoutProduct_categories_junctionInput: NexusGenInputs['productUpdateOneRequiredWithoutProduct_categories_junctionInput'];
+  productUpdateOneRequiredWithoutProduct_imageInput: NexusGenInputs['productUpdateOneRequiredWithoutProduct_imageInput'];
+  productUpdateOneRequiredWithoutProduct_quantityInput: NexusGenInputs['productUpdateOneRequiredWithoutProduct_quantityInput'];
+  productUpdateOneRequiredWithoutProduct_ratingInput: NexusGenInputs['productUpdateOneRequiredWithoutProduct_ratingInput'];
+  productUpdateOneRequiredWithoutProduct_types_junctionInput: NexusGenInputs['productUpdateOneRequiredWithoutProduct_types_junctionInput'];
+  productUpdateWithWhereUniqueWithoutStoreInput: NexusGenInputs['productUpdateWithWhereUniqueWithoutStoreInput'];
+  productUpdateWithoutOrderDataInput: NexusGenInputs['productUpdateWithoutOrderDataInput'];
+  productUpdateWithoutProduct_categories_junctionDataInput: NexusGenInputs['productUpdateWithoutProduct_categories_junctionDataInput'];
+  productUpdateWithoutProduct_imageDataInput: NexusGenInputs['productUpdateWithoutProduct_imageDataInput'];
+  productUpdateWithoutProduct_quantityDataInput: NexusGenInputs['productUpdateWithoutProduct_quantityDataInput'];
+  productUpdateWithoutProduct_ratingDataInput: NexusGenInputs['productUpdateWithoutProduct_ratingDataInput'];
+  productUpdateWithoutProduct_types_junctionDataInput: NexusGenInputs['productUpdateWithoutProduct_types_junctionDataInput'];
+  productUpdateWithoutStoreDataInput: NexusGenInputs['productUpdateWithoutStoreDataInput'];
+  productUpsertWithWhereUniqueWithoutStoreInput: NexusGenInputs['productUpsertWithWhereUniqueWithoutStoreInput'];
+  productUpsertWithoutOrderInput: NexusGenInputs['productUpsertWithoutOrderInput'];
+  productUpsertWithoutProduct_categories_junctionInput: NexusGenInputs['productUpsertWithoutProduct_categories_junctionInput'];
+  productUpsertWithoutProduct_imageInput: NexusGenInputs['productUpsertWithoutProduct_imageInput'];
+  productUpsertWithoutProduct_quantityInput: NexusGenInputs['productUpsertWithoutProduct_quantityInput'];
+  productUpsertWithoutProduct_ratingInput: NexusGenInputs['productUpsertWithoutProduct_ratingInput'];
+  productUpsertWithoutProduct_types_junctionInput: NexusGenInputs['productUpsertWithoutProduct_types_junctionInput'];
+  productWhereInput: NexusGenInputs['productWhereInput'];
+  productWhereUniqueInput: NexusGenInputs['productWhereUniqueInput'];
+  product_categories_junctionCreateInput: NexusGenInputs['product_categories_junctionCreateInput'];
+  product_categories_junctionCreateManyWithoutCategoryInput: NexusGenInputs['product_categories_junctionCreateManyWithoutCategoryInput'];
+  product_categories_junctionCreateManyWithoutProductInput: NexusGenInputs['product_categories_junctionCreateManyWithoutProductInput'];
+  product_categories_junctionCreateWithoutCategoryInput: NexusGenInputs['product_categories_junctionCreateWithoutCategoryInput'];
+  product_categories_junctionCreateWithoutProductInput: NexusGenInputs['product_categories_junctionCreateWithoutProductInput'];
+  product_categories_junctionFilter: NexusGenInputs['product_categories_junctionFilter'];
+  product_categories_junctionOrderByInput: NexusGenInputs['product_categories_junctionOrderByInput'];
+  product_categories_junctionScalarWhereInput: NexusGenInputs['product_categories_junctionScalarWhereInput'];
+  product_categories_junctionUpdateInput: NexusGenInputs['product_categories_junctionUpdateInput'];
+  product_categories_junctionUpdateManyDataInput: NexusGenInputs['product_categories_junctionUpdateManyDataInput'];
+  product_categories_junctionUpdateManyMutationInput: NexusGenInputs['product_categories_junctionUpdateManyMutationInput'];
+  product_categories_junctionUpdateManyWithWhereNestedInput: NexusGenInputs['product_categories_junctionUpdateManyWithWhereNestedInput'];
+  product_categories_junctionUpdateManyWithoutCategoryInput: NexusGenInputs['product_categories_junctionUpdateManyWithoutCategoryInput'];
+  product_categories_junctionUpdateManyWithoutProductInput: NexusGenInputs['product_categories_junctionUpdateManyWithoutProductInput'];
+  product_categories_junctionUpdateWithWhereUniqueWithoutCategoryInput: NexusGenInputs['product_categories_junctionUpdateWithWhereUniqueWithoutCategoryInput'];
+  product_categories_junctionUpdateWithWhereUniqueWithoutProductInput: NexusGenInputs['product_categories_junctionUpdateWithWhereUniqueWithoutProductInput'];
+  product_categories_junctionUpdateWithoutCategoryDataInput: NexusGenInputs['product_categories_junctionUpdateWithoutCategoryDataInput'];
+  product_categories_junctionUpdateWithoutProductDataInput: NexusGenInputs['product_categories_junctionUpdateWithoutProductDataInput'];
+  product_categories_junctionUpsertWithWhereUniqueWithoutCategoryInput: NexusGenInputs['product_categories_junctionUpsertWithWhereUniqueWithoutCategoryInput'];
+  product_categories_junctionUpsertWithWhereUniqueWithoutProductInput: NexusGenInputs['product_categories_junctionUpsertWithWhereUniqueWithoutProductInput'];
+  product_categories_junctionWhereInput: NexusGenInputs['product_categories_junctionWhereInput'];
+  product_categories_junctionWhereUniqueInput: NexusGenInputs['product_categories_junctionWhereUniqueInput'];
+  product_imageCreateInput: NexusGenInputs['product_imageCreateInput'];
+  product_imageCreateManyWithoutProductInput: NexusGenInputs['product_imageCreateManyWithoutProductInput'];
+  product_imageCreateWithoutProductInput: NexusGenInputs['product_imageCreateWithoutProductInput'];
+  product_imageFilter: NexusGenInputs['product_imageFilter'];
+  product_imageOrderByInput: NexusGenInputs['product_imageOrderByInput'];
+  product_imageScalarWhereInput: NexusGenInputs['product_imageScalarWhereInput'];
+  product_imageUpdateInput: NexusGenInputs['product_imageUpdateInput'];
+  product_imageUpdateManyDataInput: NexusGenInputs['product_imageUpdateManyDataInput'];
+  product_imageUpdateManyMutationInput: NexusGenInputs['product_imageUpdateManyMutationInput'];
+  product_imageUpdateManyWithWhereNestedInput: NexusGenInputs['product_imageUpdateManyWithWhereNestedInput'];
+  product_imageUpdateManyWithoutProductInput: NexusGenInputs['product_imageUpdateManyWithoutProductInput'];
+  product_imageUpdateWithWhereUniqueWithoutProductInput: NexusGenInputs['product_imageUpdateWithWhereUniqueWithoutProductInput'];
+  product_imageUpdateWithoutProductDataInput: NexusGenInputs['product_imageUpdateWithoutProductDataInput'];
+  product_imageUpsertWithWhereUniqueWithoutProductInput: NexusGenInputs['product_imageUpsertWithWhereUniqueWithoutProductInput'];
+  product_imageWhereInput: NexusGenInputs['product_imageWhereInput'];
+  product_imageWhereUniqueInput: NexusGenInputs['product_imageWhereUniqueInput'];
+  product_quantityCreateInput: NexusGenInputs['product_quantityCreateInput'];
+  product_quantityCreateManyWithoutProductInput: NexusGenInputs['product_quantityCreateManyWithoutProductInput'];
+  product_quantityCreateOneWithoutCartInput: NexusGenInputs['product_quantityCreateOneWithoutCartInput'];
+  product_quantityCreateOneWithoutWishlistInput: NexusGenInputs['product_quantityCreateOneWithoutWishlistInput'];
+  product_quantityCreateWithoutCartInput: NexusGenInputs['product_quantityCreateWithoutCartInput'];
+  product_quantityCreateWithoutProductInput: NexusGenInputs['product_quantityCreateWithoutProductInput'];
+  product_quantityCreateWithoutWishlistInput: NexusGenInputs['product_quantityCreateWithoutWishlistInput'];
+  product_quantityFilter: NexusGenInputs['product_quantityFilter'];
+  product_quantityOrderByInput: NexusGenInputs['product_quantityOrderByInput'];
+  product_quantityScalarWhereInput: NexusGenInputs['product_quantityScalarWhereInput'];
+  product_quantityUpdateInput: NexusGenInputs['product_quantityUpdateInput'];
+  product_quantityUpdateManyDataInput: NexusGenInputs['product_quantityUpdateManyDataInput'];
+  product_quantityUpdateManyMutationInput: NexusGenInputs['product_quantityUpdateManyMutationInput'];
+  product_quantityUpdateManyWithWhereNestedInput: NexusGenInputs['product_quantityUpdateManyWithWhereNestedInput'];
+  product_quantityUpdateManyWithoutProductInput: NexusGenInputs['product_quantityUpdateManyWithoutProductInput'];
+  product_quantityUpdateOneWithoutCartInput: NexusGenInputs['product_quantityUpdateOneWithoutCartInput'];
+  product_quantityUpdateOneWithoutWishlistInput: NexusGenInputs['product_quantityUpdateOneWithoutWishlistInput'];
+  product_quantityUpdateWithWhereUniqueWithoutProductInput: NexusGenInputs['product_quantityUpdateWithWhereUniqueWithoutProductInput'];
+  product_quantityUpdateWithoutCartDataInput: NexusGenInputs['product_quantityUpdateWithoutCartDataInput'];
+  product_quantityUpdateWithoutProductDataInput: NexusGenInputs['product_quantityUpdateWithoutProductDataInput'];
+  product_quantityUpdateWithoutWishlistDataInput: NexusGenInputs['product_quantityUpdateWithoutWishlistDataInput'];
+  product_quantityUpsertWithWhereUniqueWithoutProductInput: NexusGenInputs['product_quantityUpsertWithWhereUniqueWithoutProductInput'];
+  product_quantityUpsertWithoutCartInput: NexusGenInputs['product_quantityUpsertWithoutCartInput'];
+  product_quantityUpsertWithoutWishlistInput: NexusGenInputs['product_quantityUpsertWithoutWishlistInput'];
+  product_quantityWhereInput: NexusGenInputs['product_quantityWhereInput'];
+  product_quantityWhereUniqueInput: NexusGenInputs['product_quantityWhereUniqueInput'];
+  product_ratingCreateInput: NexusGenInputs['product_ratingCreateInput'];
+  product_ratingCreateManyWithoutProductInput: NexusGenInputs['product_ratingCreateManyWithoutProductInput'];
+  product_ratingCreateManyWithoutUserInput: NexusGenInputs['product_ratingCreateManyWithoutUserInput'];
+  product_ratingCreateWithoutProductInput: NexusGenInputs['product_ratingCreateWithoutProductInput'];
+  product_ratingCreateWithoutUserInput: NexusGenInputs['product_ratingCreateWithoutUserInput'];
+  product_ratingFilter: NexusGenInputs['product_ratingFilter'];
+  product_ratingOrderByInput: NexusGenInputs['product_ratingOrderByInput'];
+  product_ratingScalarWhereInput: NexusGenInputs['product_ratingScalarWhereInput'];
+  product_ratingUpdateInput: NexusGenInputs['product_ratingUpdateInput'];
+  product_ratingUpdateManyDataInput: NexusGenInputs['product_ratingUpdateManyDataInput'];
+  product_ratingUpdateManyMutationInput: NexusGenInputs['product_ratingUpdateManyMutationInput'];
+  product_ratingUpdateManyWithWhereNestedInput: NexusGenInputs['product_ratingUpdateManyWithWhereNestedInput'];
+  product_ratingUpdateManyWithoutProductInput: NexusGenInputs['product_ratingUpdateManyWithoutProductInput'];
+  product_ratingUpdateManyWithoutUserInput: NexusGenInputs['product_ratingUpdateManyWithoutUserInput'];
+  product_ratingUpdateWithWhereUniqueWithoutProductInput: NexusGenInputs['product_ratingUpdateWithWhereUniqueWithoutProductInput'];
+  product_ratingUpdateWithWhereUniqueWithoutUserInput: NexusGenInputs['product_ratingUpdateWithWhereUniqueWithoutUserInput'];
+  product_ratingUpdateWithoutProductDataInput: NexusGenInputs['product_ratingUpdateWithoutProductDataInput'];
+  product_ratingUpdateWithoutUserDataInput: NexusGenInputs['product_ratingUpdateWithoutUserDataInput'];
+  product_ratingUpsertWithWhereUniqueWithoutProductInput: NexusGenInputs['product_ratingUpsertWithWhereUniqueWithoutProductInput'];
+  product_ratingUpsertWithWhereUniqueWithoutUserInput: NexusGenInputs['product_ratingUpsertWithWhereUniqueWithoutUserInput'];
+  product_ratingWhereInput: NexusGenInputs['product_ratingWhereInput'];
+  product_ratingWhereUniqueInput: NexusGenInputs['product_ratingWhereUniqueInput'];
+  product_typeCreateInput: NexusGenInputs['product_typeCreateInput'];
+  product_typeCreateOneWithoutProduct_types_junctionInput: NexusGenInputs['product_typeCreateOneWithoutProduct_types_junctionInput'];
+  product_typeCreateWithoutProduct_types_junctionInput: NexusGenInputs['product_typeCreateWithoutProduct_types_junctionInput'];
+  product_typeOrderByInput: NexusGenInputs['product_typeOrderByInput'];
+  product_typeUpdateInput: NexusGenInputs['product_typeUpdateInput'];
+  product_typeUpdateManyMutationInput: NexusGenInputs['product_typeUpdateManyMutationInput'];
+  product_typeUpdateOneRequiredWithoutProduct_types_junctionInput: NexusGenInputs['product_typeUpdateOneRequiredWithoutProduct_types_junctionInput'];
+  product_typeUpdateWithoutProduct_types_junctionDataInput: NexusGenInputs['product_typeUpdateWithoutProduct_types_junctionDataInput'];
+  product_typeUpsertWithoutProduct_types_junctionInput: NexusGenInputs['product_typeUpsertWithoutProduct_types_junctionInput'];
+  product_typeWhereInput: NexusGenInputs['product_typeWhereInput'];
+  product_typeWhereUniqueInput: NexusGenInputs['product_typeWhereUniqueInput'];
+  product_types_junctionCreateInput: NexusGenInputs['product_types_junctionCreateInput'];
+  product_types_junctionCreateManyWithoutProductInput: NexusGenInputs['product_types_junctionCreateManyWithoutProductInput'];
+  product_types_junctionCreateManyWithoutProduct_typeInput: NexusGenInputs['product_types_junctionCreateManyWithoutProduct_typeInput'];
+  product_types_junctionCreateWithoutProductInput: NexusGenInputs['product_types_junctionCreateWithoutProductInput'];
+  product_types_junctionCreateWithoutProduct_typeInput: NexusGenInputs['product_types_junctionCreateWithoutProduct_typeInput'];
+  product_types_junctionFilter: NexusGenInputs['product_types_junctionFilter'];
+  product_types_junctionOrderByInput: NexusGenInputs['product_types_junctionOrderByInput'];
+  product_types_junctionScalarWhereInput: NexusGenInputs['product_types_junctionScalarWhereInput'];
+  product_types_junctionUpdateInput: NexusGenInputs['product_types_junctionUpdateInput'];
+  product_types_junctionUpdateManyDataInput: NexusGenInputs['product_types_junctionUpdateManyDataInput'];
+  product_types_junctionUpdateManyMutationInput: NexusGenInputs['product_types_junctionUpdateManyMutationInput'];
+  product_types_junctionUpdateManyWithWhereNestedInput: NexusGenInputs['product_types_junctionUpdateManyWithWhereNestedInput'];
+  product_types_junctionUpdateManyWithoutProductInput: NexusGenInputs['product_types_junctionUpdateManyWithoutProductInput'];
+  product_types_junctionUpdateManyWithoutProduct_typeInput: NexusGenInputs['product_types_junctionUpdateManyWithoutProduct_typeInput'];
+  product_types_junctionUpdateWithWhereUniqueWithoutProductInput: NexusGenInputs['product_types_junctionUpdateWithWhereUniqueWithoutProductInput'];
+  product_types_junctionUpdateWithWhereUniqueWithoutProduct_typeInput: NexusGenInputs['product_types_junctionUpdateWithWhereUniqueWithoutProduct_typeInput'];
+  product_types_junctionUpdateWithoutProductDataInput: NexusGenInputs['product_types_junctionUpdateWithoutProductDataInput'];
+  product_types_junctionUpdateWithoutProduct_typeDataInput: NexusGenInputs['product_types_junctionUpdateWithoutProduct_typeDataInput'];
+  product_types_junctionUpsertWithWhereUniqueWithoutProductInput: NexusGenInputs['product_types_junctionUpsertWithWhereUniqueWithoutProductInput'];
+  product_types_junctionUpsertWithWhereUniqueWithoutProduct_typeInput: NexusGenInputs['product_types_junctionUpsertWithWhereUniqueWithoutProduct_typeInput'];
+  product_types_junctionWhereInput: NexusGenInputs['product_types_junctionWhereInput'];
+  product_types_junctionWhereUniqueInput: NexusGenInputs['product_types_junctionWhereUniqueInput'];
+  storeCreateInput: NexusGenInputs['storeCreateInput'];
+  storeCreateOneWithoutOrderInput: NexusGenInputs['storeCreateOneWithoutOrderInput'];
+  storeCreateOneWithoutProductInput: NexusGenInputs['storeCreateOneWithoutProductInput'];
+  storeCreateOneWithoutStore_documentInput: NexusGenInputs['storeCreateOneWithoutStore_documentInput'];
+  storeCreateWithoutOrderInput: NexusGenInputs['storeCreateWithoutOrderInput'];
+  storeCreateWithoutProductInput: NexusGenInputs['storeCreateWithoutProductInput'];
+  storeCreateWithoutStore_documentInput: NexusGenInputs['storeCreateWithoutStore_documentInput'];
+  storeOrderByInput: NexusGenInputs['storeOrderByInput'];
+  storeUpdateInput: NexusGenInputs['storeUpdateInput'];
+  storeUpdateManyMutationInput: NexusGenInputs['storeUpdateManyMutationInput'];
+  storeUpdateOneRequiredWithoutOrderInput: NexusGenInputs['storeUpdateOneRequiredWithoutOrderInput'];
+  storeUpdateOneRequiredWithoutProductInput: NexusGenInputs['storeUpdateOneRequiredWithoutProductInput'];
+  storeUpdateOneRequiredWithoutStore_documentInput: NexusGenInputs['storeUpdateOneRequiredWithoutStore_documentInput'];
+  storeUpdateWithoutOrderDataInput: NexusGenInputs['storeUpdateWithoutOrderDataInput'];
+  storeUpdateWithoutProductDataInput: NexusGenInputs['storeUpdateWithoutProductDataInput'];
+  storeUpdateWithoutStore_documentDataInput: NexusGenInputs['storeUpdateWithoutStore_documentDataInput'];
+  storeUpsertWithoutOrderInput: NexusGenInputs['storeUpsertWithoutOrderInput'];
+  storeUpsertWithoutProductInput: NexusGenInputs['storeUpsertWithoutProductInput'];
+  storeUpsertWithoutStore_documentInput: NexusGenInputs['storeUpsertWithoutStore_documentInput'];
+  storeWhereInput: NexusGenInputs['storeWhereInput'];
+  storeWhereUniqueInput: NexusGenInputs['storeWhereUniqueInput'];
+  store_documentCreateInput: NexusGenInputs['store_documentCreateInput'];
+  store_documentCreateManyWithoutStoreInput: NexusGenInputs['store_documentCreateManyWithoutStoreInput'];
+  store_documentCreateWithoutStoreInput: NexusGenInputs['store_documentCreateWithoutStoreInput'];
+  store_documentFilter: NexusGenInputs['store_documentFilter'];
+  store_documentOrderByInput: NexusGenInputs['store_documentOrderByInput'];
+  store_documentScalarWhereInput: NexusGenInputs['store_documentScalarWhereInput'];
+  store_documentUpdateInput: NexusGenInputs['store_documentUpdateInput'];
+  store_documentUpdateManyDataInput: NexusGenInputs['store_documentUpdateManyDataInput'];
+  store_documentUpdateManyMutationInput: NexusGenInputs['store_documentUpdateManyMutationInput'];
+  store_documentUpdateManyWithWhereNestedInput: NexusGenInputs['store_documentUpdateManyWithWhereNestedInput'];
+  store_documentUpdateManyWithoutStoreInput: NexusGenInputs['store_documentUpdateManyWithoutStoreInput'];
+  store_documentUpdateWithWhereUniqueWithoutStoreInput: NexusGenInputs['store_documentUpdateWithWhereUniqueWithoutStoreInput'];
+  store_documentUpdateWithoutStoreDataInput: NexusGenInputs['store_documentUpdateWithoutStoreDataInput'];
+  store_documentUpsertWithWhereUniqueWithoutStoreInput: NexusGenInputs['store_documentUpsertWithWhereUniqueWithoutStoreInput'];
+  store_documentWhereInput: NexusGenInputs['store_documentWhereInput'];
+  store_documentWhereUniqueInput: NexusGenInputs['store_documentWhereUniqueInput'];
+  userCreateInput: NexusGenInputs['userCreateInput'];
+  userCreateOneWithoutCartInput: NexusGenInputs['userCreateOneWithoutCartInput'];
+  userCreateOneWithoutOrderInput: NexusGenInputs['userCreateOneWithoutOrderInput'];
+  userCreateOneWithoutProduct_ratingInput: NexusGenInputs['userCreateOneWithoutProduct_ratingInput'];
+  userCreateOneWithoutUser_addressInput: NexusGenInputs['userCreateOneWithoutUser_addressInput'];
+  userCreateOneWithoutVoucherInput: NexusGenInputs['userCreateOneWithoutVoucherInput'];
+  userCreateOneWithoutWishlistInput: NexusGenInputs['userCreateOneWithoutWishlistInput'];
+  userCreateWithoutCartInput: NexusGenInputs['userCreateWithoutCartInput'];
+  userCreateWithoutOrderInput: NexusGenInputs['userCreateWithoutOrderInput'];
+  userCreateWithoutProduct_ratingInput: NexusGenInputs['userCreateWithoutProduct_ratingInput'];
+  userCreateWithoutUser_addressInput: NexusGenInputs['userCreateWithoutUser_addressInput'];
+  userCreateWithoutVoucherInput: NexusGenInputs['userCreateWithoutVoucherInput'];
+  userCreateWithoutWishlistInput: NexusGenInputs['userCreateWithoutWishlistInput'];
+  userOrderByInput: NexusGenInputs['userOrderByInput'];
+  userUpdateInput: NexusGenInputs['userUpdateInput'];
+  userUpdateManyMutationInput: NexusGenInputs['userUpdateManyMutationInput'];
+  userUpdateOneRequiredWithoutCartInput: NexusGenInputs['userUpdateOneRequiredWithoutCartInput'];
+  userUpdateOneRequiredWithoutOrderInput: NexusGenInputs['userUpdateOneRequiredWithoutOrderInput'];
+  userUpdateOneRequiredWithoutUser_addressInput: NexusGenInputs['userUpdateOneRequiredWithoutUser_addressInput'];
+  userUpdateOneRequiredWithoutWishlistInput: NexusGenInputs['userUpdateOneRequiredWithoutWishlistInput'];
+  userUpdateOneWithoutProduct_ratingInput: NexusGenInputs['userUpdateOneWithoutProduct_ratingInput'];
+  userUpdateOneWithoutVoucherInput: NexusGenInputs['userUpdateOneWithoutVoucherInput'];
+  userUpdateWithoutCartDataInput: NexusGenInputs['userUpdateWithoutCartDataInput'];
+  userUpdateWithoutOrderDataInput: NexusGenInputs['userUpdateWithoutOrderDataInput'];
+  userUpdateWithoutProduct_ratingDataInput: NexusGenInputs['userUpdateWithoutProduct_ratingDataInput'];
+  userUpdateWithoutUser_addressDataInput: NexusGenInputs['userUpdateWithoutUser_addressDataInput'];
+  userUpdateWithoutVoucherDataInput: NexusGenInputs['userUpdateWithoutVoucherDataInput'];
+  userUpdateWithoutWishlistDataInput: NexusGenInputs['userUpdateWithoutWishlistDataInput'];
+  userUpsertWithoutCartInput: NexusGenInputs['userUpsertWithoutCartInput'];
+  userUpsertWithoutOrderInput: NexusGenInputs['userUpsertWithoutOrderInput'];
+  userUpsertWithoutProduct_ratingInput: NexusGenInputs['userUpsertWithoutProduct_ratingInput'];
+  userUpsertWithoutUser_addressInput: NexusGenInputs['userUpsertWithoutUser_addressInput'];
+  userUpsertWithoutVoucherInput: NexusGenInputs['userUpsertWithoutVoucherInput'];
+  userUpsertWithoutWishlistInput: NexusGenInputs['userUpsertWithoutWishlistInput'];
+  userWhereInput: NexusGenInputs['userWhereInput'];
+  userWhereUniqueInput: NexusGenInputs['userWhereUniqueInput'];
+  user_addressCreateInput: NexusGenInputs['user_addressCreateInput'];
+  user_addressCreateManyWithoutUserInput: NexusGenInputs['user_addressCreateManyWithoutUserInput'];
+  user_addressCreateWithoutUserInput: NexusGenInputs['user_addressCreateWithoutUserInput'];
+  user_addressFilter: NexusGenInputs['user_addressFilter'];
+  user_addressOrderByInput: NexusGenInputs['user_addressOrderByInput'];
+  user_addressScalarWhereInput: NexusGenInputs['user_addressScalarWhereInput'];
+  user_addressUpdateInput: NexusGenInputs['user_addressUpdateInput'];
+  user_addressUpdateManyDataInput: NexusGenInputs['user_addressUpdateManyDataInput'];
+  user_addressUpdateManyMutationInput: NexusGenInputs['user_addressUpdateManyMutationInput'];
+  user_addressUpdateManyWithWhereNestedInput: NexusGenInputs['user_addressUpdateManyWithWhereNestedInput'];
+  user_addressUpdateManyWithoutUserInput: NexusGenInputs['user_addressUpdateManyWithoutUserInput'];
+  user_addressUpdateWithWhereUniqueWithoutUserInput: NexusGenInputs['user_addressUpdateWithWhereUniqueWithoutUserInput'];
+  user_addressUpdateWithoutUserDataInput: NexusGenInputs['user_addressUpdateWithoutUserDataInput'];
+  user_addressUpsertWithWhereUniqueWithoutUserInput: NexusGenInputs['user_addressUpsertWithWhereUniqueWithoutUserInput'];
+  user_addressWhereInput: NexusGenInputs['user_addressWhereInput'];
+  user_addressWhereUniqueInput: NexusGenInputs['user_addressWhereUniqueInput'];
+  voucherCreateInput: NexusGenInputs['voucherCreateInput'];
+  voucherCreateManyWithoutUserInput: NexusGenInputs['voucherCreateManyWithoutUserInput'];
+  voucherCreateOneWithoutCartInput: NexusGenInputs['voucherCreateOneWithoutCartInput'];
+  voucherCreateWithoutCartInput: NexusGenInputs['voucherCreateWithoutCartInput'];
+  voucherCreateWithoutUserInput: NexusGenInputs['voucherCreateWithoutUserInput'];
+  voucherFilter: NexusGenInputs['voucherFilter'];
+  voucherOrderByInput: NexusGenInputs['voucherOrderByInput'];
+  voucherScalarWhereInput: NexusGenInputs['voucherScalarWhereInput'];
+  voucherUpdateInput: NexusGenInputs['voucherUpdateInput'];
+  voucherUpdateManyDataInput: NexusGenInputs['voucherUpdateManyDataInput'];
+  voucherUpdateManyMutationInput: NexusGenInputs['voucherUpdateManyMutationInput'];
+  voucherUpdateManyWithWhereNestedInput: NexusGenInputs['voucherUpdateManyWithWhereNestedInput'];
+  voucherUpdateManyWithoutUserInput: NexusGenInputs['voucherUpdateManyWithoutUserInput'];
+  voucherUpdateOneWithoutCartInput: NexusGenInputs['voucherUpdateOneWithoutCartInput'];
+  voucherUpdateWithWhereUniqueWithoutUserInput: NexusGenInputs['voucherUpdateWithWhereUniqueWithoutUserInput'];
+  voucherUpdateWithoutCartDataInput: NexusGenInputs['voucherUpdateWithoutCartDataInput'];
+  voucherUpdateWithoutUserDataInput: NexusGenInputs['voucherUpdateWithoutUserDataInput'];
+  voucherUpsertWithWhereUniqueWithoutUserInput: NexusGenInputs['voucherUpsertWithWhereUniqueWithoutUserInput'];
+  voucherUpsertWithoutCartInput: NexusGenInputs['voucherUpsertWithoutCartInput'];
+  voucherWhereInput: NexusGenInputs['voucherWhereInput'];
+  voucherWhereUniqueInput: NexusGenInputs['voucherWhereUniqueInput'];
+  wishlistCreateInput: NexusGenInputs['wishlistCreateInput'];
+  wishlistCreateManyWithoutProduct_quantityInput: NexusGenInputs['wishlistCreateManyWithoutProduct_quantityInput'];
+  wishlistCreateManyWithoutUserInput: NexusGenInputs['wishlistCreateManyWithoutUserInput'];
+  wishlistCreateWithoutProduct_quantityInput: NexusGenInputs['wishlistCreateWithoutProduct_quantityInput'];
+  wishlistCreateWithoutUserInput: NexusGenInputs['wishlistCreateWithoutUserInput'];
+  wishlistFilter: NexusGenInputs['wishlistFilter'];
+  wishlistOrderByInput: NexusGenInputs['wishlistOrderByInput'];
+  wishlistScalarWhereInput: NexusGenInputs['wishlistScalarWhereInput'];
+  wishlistUpdateInput: NexusGenInputs['wishlistUpdateInput'];
+  wishlistUpdateManyDataInput: NexusGenInputs['wishlistUpdateManyDataInput'];
+  wishlistUpdateManyMutationInput: NexusGenInputs['wishlistUpdateManyMutationInput'];
+  wishlistUpdateManyWithWhereNestedInput: NexusGenInputs['wishlistUpdateManyWithWhereNestedInput'];
+  wishlistUpdateManyWithoutProduct_quantityInput: NexusGenInputs['wishlistUpdateManyWithoutProduct_quantityInput'];
+  wishlistUpdateManyWithoutUserInput: NexusGenInputs['wishlistUpdateManyWithoutUserInput'];
+  wishlistUpdateWithWhereUniqueWithoutProduct_quantityInput: NexusGenInputs['wishlistUpdateWithWhereUniqueWithoutProduct_quantityInput'];
+  wishlistUpdateWithWhereUniqueWithoutUserInput: NexusGenInputs['wishlistUpdateWithWhereUniqueWithoutUserInput'];
+  wishlistUpdateWithoutProduct_quantityDataInput: NexusGenInputs['wishlistUpdateWithoutProduct_quantityDataInput'];
+  wishlistUpdateWithoutUserDataInput: NexusGenInputs['wishlistUpdateWithoutUserDataInput'];
+  wishlistUpsertWithWhereUniqueWithoutProduct_quantityInput: NexusGenInputs['wishlistUpsertWithWhereUniqueWithoutProduct_quantityInput'];
+  wishlistUpsertWithWhereUniqueWithoutUserInput: NexusGenInputs['wishlistUpsertWithWhereUniqueWithoutUserInput'];
+  wishlistWhereInput: NexusGenInputs['wishlistWhereInput'];
+  wishlistWhereUniqueInput: NexusGenInputs['wishlistWhereUniqueInput'];
   OrderByArg: NexusGenEnums['OrderByArg'];
+  orders_status: NexusGenEnums['orders_status'];
 }
 
 export interface NexusGenFieldTypes {
@@ -122,59 +3455,1036 @@ export interface NexusGenFieldTypes {
     count: number; // Int!
   }
   Mutation: { // field return type
-    createPokemon: NexusGenRootTypes['pokemon']; // pokemon!
-    deleteMany: NexusGenRootTypes['BatchPayload']; // BatchPayload!
-    deleteOnepokemon: NexusGenRootTypes['pokemon'] | null; // pokemon
-    updateMany: NexusGenRootTypes['BatchPayload']; // BatchPayload!
-    updateOnepokemon: NexusGenRootTypes['pokemon'] | null; // pokemon
-    upsertOnepokemon: NexusGenRootTypes['pokemon']; // pokemon!
+    createOnecart: NexusGenRootTypes['cart']; // cart!
+    createOnecategory: NexusGenRootTypes['category']; // category!
+    createOnedriver: NexusGenRootTypes['driver']; // driver!
+    createOnedriverDocument: NexusGenRootTypes['driver_document']; // driver_document!
+    createOneorder: NexusGenRootTypes['order']; // order!
+    createOneproduct: NexusGenRootTypes['product']; // product!
+    createOneproductCategoriesJunction: NexusGenRootTypes['product_categories_junction']; // product_categories_junction!
+    createOneproductImage: NexusGenRootTypes['product_image']; // product_image!
+    createOneproductQuantity: NexusGenRootTypes['product_quantity']; // product_quantity!
+    createOneproductRating: NexusGenRootTypes['product_rating']; // product_rating!
+    createOneproductType: NexusGenRootTypes['product_type']; // product_type!
+    createOneproductTypesJunction: NexusGenRootTypes['product_types_junction']; // product_types_junction!
+    createOnestore: NexusGenRootTypes['store']; // store!
+    createOnestoreDocument: NexusGenRootTypes['store_document']; // store_document!
+    createOneuser: NexusGenRootTypes['user']; // user!
+    createOneuserAddress: NexusGenRootTypes['user_address']; // user_address!
+    createOnevoucher: NexusGenRootTypes['voucher']; // voucher!
+    createOnewishlist: NexusGenRootTypes['wishlist']; // wishlist!
+    deleteManycart: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    deleteManycategory: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    deleteManydriver: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    deleteManydriverDocument: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    deleteManyorder: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    deleteManyproduct: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    deleteManyproductCategoriesJunction: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    deleteManyproductImage: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    deleteManyproductQuantity: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    deleteManyproductRating: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    deleteManyproductType: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    deleteManyproductTypesJunction: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    deleteManystore: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    deleteManystoreDocument: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    deleteManyuser: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    deleteManyuserAddress: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    deleteManyvoucher: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    deleteManywishlist: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    deleteOnecart: NexusGenRootTypes['cart'] | null; // cart
+    deleteOnecategory: NexusGenRootTypes['category'] | null; // category
+    deleteOnedriver: NexusGenRootTypes['driver'] | null; // driver
+    deleteOnedriverDocument: NexusGenRootTypes['driver_document'] | null; // driver_document
+    deleteOneorder: NexusGenRootTypes['order'] | null; // order
+    deleteOneproduct: NexusGenRootTypes['product'] | null; // product
+    deleteOneproductCategoriesJunction: NexusGenRootTypes['product_categories_junction'] | null; // product_categories_junction
+    deleteOneproductImage: NexusGenRootTypes['product_image'] | null; // product_image
+    deleteOneproductQuantity: NexusGenRootTypes['product_quantity'] | null; // product_quantity
+    deleteOneproductRating: NexusGenRootTypes['product_rating'] | null; // product_rating
+    deleteOneproductType: NexusGenRootTypes['product_type'] | null; // product_type
+    deleteOneproductTypesJunction: NexusGenRootTypes['product_types_junction'] | null; // product_types_junction
+    deleteOnestore: NexusGenRootTypes['store'] | null; // store
+    deleteOnestoreDocument: NexusGenRootTypes['store_document'] | null; // store_document
+    deleteOneuser: NexusGenRootTypes['user'] | null; // user
+    deleteOneuserAddress: NexusGenRootTypes['user_address'] | null; // user_address
+    deleteOnevoucher: NexusGenRootTypes['voucher'] | null; // voucher
+    deleteOnewishlist: NexusGenRootTypes['wishlist'] | null; // wishlist
+    updateManycart: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    updateManycategory: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    updateManydriver: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    updateManydriverDocument: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    updateManyorder: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    updateManyproduct: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    updateManyproductCategoriesJunction: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    updateManyproductImage: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    updateManyproductQuantity: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    updateManyproductRating: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    updateManyproductType: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    updateManyproductTypesJunction: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    updateManystore: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    updateManystoreDocument: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    updateManyuser: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    updateManyuserAddress: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    updateManyvoucher: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    updateManywishlist: NexusGenRootTypes['BatchPayload']; // BatchPayload!
+    updateOnecart: NexusGenRootTypes['cart'] | null; // cart
+    updateOnecategory: NexusGenRootTypes['category'] | null; // category
+    updateOnedriver: NexusGenRootTypes['driver'] | null; // driver
+    updateOnedriverDocument: NexusGenRootTypes['driver_document'] | null; // driver_document
+    updateOneorder: NexusGenRootTypes['order'] | null; // order
+    updateOneproduct: NexusGenRootTypes['product'] | null; // product
+    updateOneproductCategoriesJunction: NexusGenRootTypes['product_categories_junction'] | null; // product_categories_junction
+    updateOneproductImage: NexusGenRootTypes['product_image'] | null; // product_image
+    updateOneproductQuantity: NexusGenRootTypes['product_quantity'] | null; // product_quantity
+    updateOneproductRating: NexusGenRootTypes['product_rating'] | null; // product_rating
+    updateOneproductType: NexusGenRootTypes['product_type'] | null; // product_type
+    updateOneproductTypesJunction: NexusGenRootTypes['product_types_junction'] | null; // product_types_junction
+    updateOnestore: NexusGenRootTypes['store'] | null; // store
+    updateOnestoreDocument: NexusGenRootTypes['store_document'] | null; // store_document
+    updateOneuser: NexusGenRootTypes['user'] | null; // user
+    updateOneuserAddress: NexusGenRootTypes['user_address'] | null; // user_address
+    updateOnevoucher: NexusGenRootTypes['voucher'] | null; // voucher
+    updateOnewishlist: NexusGenRootTypes['wishlist'] | null; // wishlist
+    upsertOnecart: NexusGenRootTypes['cart']; // cart!
+    upsertOnecategory: NexusGenRootTypes['category']; // category!
+    upsertOnedriver: NexusGenRootTypes['driver']; // driver!
+    upsertOnedriverDocument: NexusGenRootTypes['driver_document']; // driver_document!
+    upsertOneorder: NexusGenRootTypes['order']; // order!
+    upsertOneproduct: NexusGenRootTypes['product']; // product!
+    upsertOneproductCategoriesJunction: NexusGenRootTypes['product_categories_junction']; // product_categories_junction!
+    upsertOneproductImage: NexusGenRootTypes['product_image']; // product_image!
+    upsertOneproductQuantity: NexusGenRootTypes['product_quantity']; // product_quantity!
+    upsertOneproductRating: NexusGenRootTypes['product_rating']; // product_rating!
+    upsertOneproductType: NexusGenRootTypes['product_type']; // product_type!
+    upsertOneproductTypesJunction: NexusGenRootTypes['product_types_junction']; // product_types_junction!
+    upsertOnestore: NexusGenRootTypes['store']; // store!
+    upsertOnestoreDocument: NexusGenRootTypes['store_document']; // store_document!
+    upsertOneuser: NexusGenRootTypes['user']; // user!
+    upsertOneuserAddress: NexusGenRootTypes['user_address']; // user_address!
+    upsertOnevoucher: NexusGenRootTypes['voucher']; // voucher!
+    upsertOnewishlist: NexusGenRootTypes['wishlist']; // wishlist!
   }
   Query: { // field return type
-    pokemon: NexusGenRootTypes['pokemon'][]; // [pokemon!]!
+    cart: NexusGenRootTypes['cart'] | null; // cart
+    carts: NexusGenRootTypes['cart'][]; // [cart!]!
+    categories: NexusGenRootTypes['category'][]; // [category!]!
+    category: NexusGenRootTypes['category'] | null; // category
+    driver: NexusGenRootTypes['driver'] | null; // driver
+    driverDocument: NexusGenRootTypes['driver_document'] | null; // driver_document
+    driverDocuments: NexusGenRootTypes['driver_document'][]; // [driver_document!]!
+    drivers: NexusGenRootTypes['driver'][]; // [driver!]!
+    order: NexusGenRootTypes['order'] | null; // order
+    orders: NexusGenRootTypes['order'][]; // [order!]!
+    product: NexusGenRootTypes['product'] | null; // product
+    productCategoriesJunction: NexusGenRootTypes['product_categories_junction'] | null; // product_categories_junction
+    productCategoriesJunctions: NexusGenRootTypes['product_categories_junction'][]; // [product_categories_junction!]!
+    productImage: NexusGenRootTypes['product_image'] | null; // product_image
+    productImages: NexusGenRootTypes['product_image'][]; // [product_image!]!
+    productQuantities: NexusGenRootTypes['product_quantity'][]; // [product_quantity!]!
+    productQuantity: NexusGenRootTypes['product_quantity'] | null; // product_quantity
+    productRating: NexusGenRootTypes['product_rating'] | null; // product_rating
+    productRatings: NexusGenRootTypes['product_rating'][]; // [product_rating!]!
+    products: NexusGenRootTypes['product'][]; // [product!]!
+    productType: NexusGenRootTypes['product_type'] | null; // product_type
+    productTypes: NexusGenRootTypes['product_type'][]; // [product_type!]!
+    productTypesJunction: NexusGenRootTypes['product_types_junction'] | null; // product_types_junction
+    productTypesJunctions: NexusGenRootTypes['product_types_junction'][]; // [product_types_junction!]!
+    store: NexusGenRootTypes['store'] | null; // store
+    storeDocument: NexusGenRootTypes['store_document'] | null; // store_document
+    storeDocuments: NexusGenRootTypes['store_document'][]; // [store_document!]!
+    stores: NexusGenRootTypes['store'][]; // [store!]!
+    user: NexusGenRootTypes['user'] | null; // user
+    userAddress: NexusGenRootTypes['user_address'] | null; // user_address
+    userAddresses: NexusGenRootTypes['user_address'][]; // [user_address!]!
+    users: NexusGenRootTypes['user'][]; // [user!]!
+    voucher: NexusGenRootTypes['voucher'] | null; // voucher
+    vouchers: NexusGenRootTypes['voucher'][]; // [voucher!]!
+    wishlist: NexusGenRootTypes['wishlist'] | null; // wishlist
+    wishlists: NexusGenRootTypes['wishlist'][]; // [wishlist!]!
   }
-  Subscription: { // field return type
-    newPokemon: NexusGenRootTypes['pokemon']; // pokemon!
-  }
-  pokemon: { // field return type
+  cart: { // field return type
     id: number; // Int!
-    name: string; // String!
-    pokedex: number; // Int!
-    type: string; // String!
+    product: number | null; // Int
+    product_quantity: NexusGenRootTypes['product_quantity'] | null; // product_quantity
+    shipping_cost: number | null; // Int
+    total_cost: number | null; // Int
+    total_discount: number | null; // Int
+    user: NexusGenRootTypes['user']; // user!
+    user_id: number; // Int!
+    voucher: NexusGenRootTypes['voucher'] | null; // voucher
+    vouchers: number | null; // Int
+  }
+  category: { // field return type
+    grouped_under: string | null; // String
+    icon: string | null; // String
+    id: number; // Int!
+    name: string | null; // String
+    product_categories_junction: NexusGenRootTypes['product_categories_junction'][]; // [product_categories_junction!]!
+  }
+  driver: { // field return type
+    approved: boolean | null; // Boolean
+    blocked: boolean | null; // Boolean
+    currently_delivering: boolean | null; // Boolean
+    driver_document: NexusGenRootTypes['driver_document'][]; // [driver_document!]!
+    full_name: string | null; // String
+    id: number; // Int!
+    mobile_no: number | null; // Int
+    order: NexusGenRootTypes['order'][]; // [order!]!
+  }
+  driver_document: { // field return type
+    document: string | null; // String
+    driver: NexusGenRootTypes['driver']; // driver!
+    driver_id: number; // Int!
+    id: number; // Int!
+  }
+  order: { // field return type
+    approved: boolean | null; // Boolean
+    driver: NexusGenRootTypes['driver']; // driver!
+    driver_id: number; // Int!
+    id: number; // Int!
+    order_date: any | null; // DateTime
+    product: NexusGenRootTypes['product']; // product!
+    products: number; // Int!
+    shipping_cost: number | null; // Int
+    shipping_provider: string | null; // String
+    shipping_ref_no: string | null; // String
+    status: NexusGenEnums['orders_status'] | null; // orders_status
+    store: NexusGenRootTypes['store']; // store!
+    store_ids: number; // Int!
+    total_cost: number | null; // Int
+    total_discount: number | null; // Int
+    total_tax: number | null; // Int
+    user: NexusGenRootTypes['user']; // user!
+    user_address: string | null; // String
+    user_id: number; // Int!
+  }
+  product: { // field return type
+    cost: number | null; // Float
+    description: string | null; // String
+    discount: number | null; // Float
+    discounted_cost: number | null; // Float
+    id: number; // Int!
+    mrp: number | null; // Float
+    order: NexusGenRootTypes['order'][]; // [order!]!
+    product_categories_junction: NexusGenRootTypes['product_categories_junction'][]; // [product_categories_junction!]!
+    product_image: NexusGenRootTypes['product_image'][]; // [product_image!]!
+    product_quantity: NexusGenRootTypes['product_quantity'][]; // [product_quantity!]!
+    product_rating: NexusGenRootTypes['product_rating'][]; // [product_rating!]!
+    product_types_junction: NexusGenRootTypes['product_types_junction'][]; // [product_types_junction!]!
+    store: NexusGenRootTypes['store']; // store!
+    store_id: number; // Int!
+    tax: number | null; // Float
+    title: string | null; // String
+    total_cost: number | null; // Float
+  }
+  product_categories_junction: { // field return type
+    category: NexusGenRootTypes['category']; // category!
+    category_id: number; // Int!
+    id: number; // Int!
+    product: NexusGenRootTypes['product']; // product!
+    product_id: number; // Int!
+  }
+  product_image: { // field return type
+    id: number; // Int!
+    image: string | null; // String
+    product: NexusGenRootTypes['product']; // product!
+    product_id: number; // Int!
+  }
+  product_quantity: { // field return type
+    cart: NexusGenRootTypes['cart'][]; // [cart!]!
+    id: number; // Int!
+    product: NexusGenRootTypes['product']; // product!
+    product_id: number; // Int!
+    product_qty: number | null; // Int
+    wishlist: NexusGenRootTypes['wishlist'][]; // [wishlist!]!
+  }
+  product_rating: { // field return type
+    id: number; // Int!
+    product: NexusGenRootTypes['product']; // product!
+    product_id: number; // Int!
+    rating: number | null; // Float
+    user: NexusGenRootTypes['user'] | null; // user
+    user_id: number | null; // Int
+  }
+  product_type: { // field return type
+    id: number; // Int!
+    product_types_junction: NexusGenRootTypes['product_types_junction'][]; // [product_types_junction!]!
+    type: string | null; // String
+    type_name: string | null; // String
+  }
+  product_types_junction: { // field return type
+    id: number; // Int!
+    product: NexusGenRootTypes['product']; // product!
+    product_id: number; // Int!
+    product_type: NexusGenRootTypes['product_type']; // product_type!
+    product_type_id: number; // Int!
+  }
+  store: { // field return type
+    address: string | null; // String
+    approved: boolean | null; // Boolean
+    blocked: boolean | null; // Boolean
+    id: number; // Int!
+    lat: number | null; // Int
+    lng: number | null; // Int
+    name: string | null; // String
+    order: NexusGenRootTypes['order'][]; // [order!]!
+    product: NexusGenRootTypes['product'][]; // [product!]!
+    store_document: NexusGenRootTypes['store_document'][]; // [store_document!]!
+  }
+  store_document: { // field return type
+    document: string | null; // String
+    id: number; // Int!
+    store: NexusGenRootTypes['store']; // store!
+    store_id: number; // Int!
+  }
+  user: { // field return type
+    blocked: boolean | null; // Boolean
+    cart: NexusGenRootTypes['cart'][]; // [cart!]!
+    full_name: string | null; // String
+    id: number; // Int!
+    mobile_no: number | null; // Int
+    order: NexusGenRootTypes['order'][]; // [order!]!
+    product_rating: NexusGenRootTypes['product_rating'][]; // [product_rating!]!
+    user_address: NexusGenRootTypes['user_address'][]; // [user_address!]!
+    voucher: NexusGenRootTypes['voucher'][]; // [voucher!]!
+    wishlist: NexusGenRootTypes['wishlist'][]; // [wishlist!]!
+  }
+  user_address: { // field return type
+    alias: string | null; // String
+    city: string | null; // String
+    first_name: string | null; // String
+    id: number; // Int!
+    last_name: string | null; // String
+    poc_no: number | null; // Int
+    state: string | null; // String
+    street_address: string | null; // String
+    user: NexusGenRootTypes['user']; // user!
+    user_id: number; // Int!
+    zip_code: number | null; // Int
+  }
+  voucher: { // field return type
+    cart: NexusGenRootTypes['cart'][]; // [cart!]!
+    cost: number | null; // Int
+    id: number; // Int!
+    user: NexusGenRootTypes['user'] | null; // user
+    user_id: number | null; // Int
+    validity_date: any | null; // DateTime
+    voucher_no: string | null; // String
+  }
+  wishlist: { // field return type
+    id: number; // Int!
+    product: number | null; // Int
+    product_quantity: NexusGenRootTypes['product_quantity'] | null; // product_quantity
+    user: NexusGenRootTypes['user']; // user!
+    user_id: number; // Int!
   }
 }
 
 export interface NexusGenArgTypes {
   Mutation: {
-    createPokemon: { // args
-      data: NexusGenInputs['pokemonCreateInput']; // pokemonCreateInput!
+    createOnecart: { // args
+      data: NexusGenInputs['cartCreateInput']; // cartCreateInput!
     }
-    deleteMany: { // args
-      where?: NexusGenInputs['pokemonWhereInput'] | null; // pokemonWhereInput
+    createOnecategory: { // args
+      data: NexusGenInputs['categoryCreateInput']; // categoryCreateInput!
     }
-    deleteOnepokemon: { // args
-      where: NexusGenInputs['pokemonWhereUniqueInput']; // pokemonWhereUniqueInput!
+    createOnedriver: { // args
+      data: NexusGenInputs['driverCreateInput']; // driverCreateInput!
     }
-    updateMany: { // args
-      data: NexusGenInputs['pokemonUpdateManyMutationInput']; // pokemonUpdateManyMutationInput!
-      where?: NexusGenInputs['pokemonWhereInput'] | null; // pokemonWhereInput
+    createOnedriverDocument: { // args
+      data: NexusGenInputs['driver_documentCreateInput']; // driver_documentCreateInput!
     }
-    updateOnepokemon: { // args
-      data: NexusGenInputs['pokemonUpdateInput']; // pokemonUpdateInput!
-      where: NexusGenInputs['pokemonWhereUniqueInput']; // pokemonWhereUniqueInput!
+    createOneorder: { // args
+      data: NexusGenInputs['orderCreateInput']; // orderCreateInput!
     }
-    upsertOnepokemon: { // args
-      create: NexusGenInputs['pokemonCreateInput']; // pokemonCreateInput!
-      update: NexusGenInputs['pokemonUpdateInput']; // pokemonUpdateInput!
-      where: NexusGenInputs['pokemonWhereUniqueInput']; // pokemonWhereUniqueInput!
+    createOneproduct: { // args
+      data: NexusGenInputs['productCreateInput']; // productCreateInput!
+    }
+    createOneproductCategoriesJunction: { // args
+      data: NexusGenInputs['product_categories_junctionCreateInput']; // product_categories_junctionCreateInput!
+    }
+    createOneproductImage: { // args
+      data: NexusGenInputs['product_imageCreateInput']; // product_imageCreateInput!
+    }
+    createOneproductQuantity: { // args
+      data: NexusGenInputs['product_quantityCreateInput']; // product_quantityCreateInput!
+    }
+    createOneproductRating: { // args
+      data: NexusGenInputs['product_ratingCreateInput']; // product_ratingCreateInput!
+    }
+    createOneproductType: { // args
+      data: NexusGenInputs['product_typeCreateInput']; // product_typeCreateInput!
+    }
+    createOneproductTypesJunction: { // args
+      data: NexusGenInputs['product_types_junctionCreateInput']; // product_types_junctionCreateInput!
+    }
+    createOnestore: { // args
+      data: NexusGenInputs['storeCreateInput']; // storeCreateInput!
+    }
+    createOnestoreDocument: { // args
+      data: NexusGenInputs['store_documentCreateInput']; // store_documentCreateInput!
+    }
+    createOneuser: { // args
+      data: NexusGenInputs['userCreateInput']; // userCreateInput!
+    }
+    createOneuserAddress: { // args
+      data: NexusGenInputs['user_addressCreateInput']; // user_addressCreateInput!
+    }
+    createOnevoucher: { // args
+      data: NexusGenInputs['voucherCreateInput']; // voucherCreateInput!
+    }
+    createOnewishlist: { // args
+      data: NexusGenInputs['wishlistCreateInput']; // wishlistCreateInput!
+    }
+    deleteManycart: { // args
+      where?: NexusGenInputs['cartWhereInput'] | null; // cartWhereInput
+    }
+    deleteManycategory: { // args
+      where?: NexusGenInputs['categoryWhereInput'] | null; // categoryWhereInput
+    }
+    deleteManydriver: { // args
+      where?: NexusGenInputs['driverWhereInput'] | null; // driverWhereInput
+    }
+    deleteManydriverDocument: { // args
+      where?: NexusGenInputs['driver_documentWhereInput'] | null; // driver_documentWhereInput
+    }
+    deleteManyorder: { // args
+      where?: NexusGenInputs['orderWhereInput'] | null; // orderWhereInput
+    }
+    deleteManyproduct: { // args
+      where?: NexusGenInputs['productWhereInput'] | null; // productWhereInput
+    }
+    deleteManyproductCategoriesJunction: { // args
+      where?: NexusGenInputs['product_categories_junctionWhereInput'] | null; // product_categories_junctionWhereInput
+    }
+    deleteManyproductImage: { // args
+      where?: NexusGenInputs['product_imageWhereInput'] | null; // product_imageWhereInput
+    }
+    deleteManyproductQuantity: { // args
+      where?: NexusGenInputs['product_quantityWhereInput'] | null; // product_quantityWhereInput
+    }
+    deleteManyproductRating: { // args
+      where?: NexusGenInputs['product_ratingWhereInput'] | null; // product_ratingWhereInput
+    }
+    deleteManyproductType: { // args
+      where?: NexusGenInputs['product_typeWhereInput'] | null; // product_typeWhereInput
+    }
+    deleteManyproductTypesJunction: { // args
+      where?: NexusGenInputs['product_types_junctionWhereInput'] | null; // product_types_junctionWhereInput
+    }
+    deleteManystore: { // args
+      where?: NexusGenInputs['storeWhereInput'] | null; // storeWhereInput
+    }
+    deleteManystoreDocument: { // args
+      where?: NexusGenInputs['store_documentWhereInput'] | null; // store_documentWhereInput
+    }
+    deleteManyuser: { // args
+      where?: NexusGenInputs['userWhereInput'] | null; // userWhereInput
+    }
+    deleteManyuserAddress: { // args
+      where?: NexusGenInputs['user_addressWhereInput'] | null; // user_addressWhereInput
+    }
+    deleteManyvoucher: { // args
+      where?: NexusGenInputs['voucherWhereInput'] | null; // voucherWhereInput
+    }
+    deleteManywishlist: { // args
+      where?: NexusGenInputs['wishlistWhereInput'] | null; // wishlistWhereInput
+    }
+    deleteOnecart: { // args
+      where: NexusGenInputs['cartWhereUniqueInput']; // cartWhereUniqueInput!
+    }
+    deleteOnecategory: { // args
+      where: NexusGenInputs['categoryWhereUniqueInput']; // categoryWhereUniqueInput!
+    }
+    deleteOnedriver: { // args
+      where: NexusGenInputs['driverWhereUniqueInput']; // driverWhereUniqueInput!
+    }
+    deleteOnedriverDocument: { // args
+      where: NexusGenInputs['driver_documentWhereUniqueInput']; // driver_documentWhereUniqueInput!
+    }
+    deleteOneorder: { // args
+      where: NexusGenInputs['orderWhereUniqueInput']; // orderWhereUniqueInput!
+    }
+    deleteOneproduct: { // args
+      where: NexusGenInputs['productWhereUniqueInput']; // productWhereUniqueInput!
+    }
+    deleteOneproductCategoriesJunction: { // args
+      where: NexusGenInputs['product_categories_junctionWhereUniqueInput']; // product_categories_junctionWhereUniqueInput!
+    }
+    deleteOneproductImage: { // args
+      where: NexusGenInputs['product_imageWhereUniqueInput']; // product_imageWhereUniqueInput!
+    }
+    deleteOneproductQuantity: { // args
+      where: NexusGenInputs['product_quantityWhereUniqueInput']; // product_quantityWhereUniqueInput!
+    }
+    deleteOneproductRating: { // args
+      where: NexusGenInputs['product_ratingWhereUniqueInput']; // product_ratingWhereUniqueInput!
+    }
+    deleteOneproductType: { // args
+      where: NexusGenInputs['product_typeWhereUniqueInput']; // product_typeWhereUniqueInput!
+    }
+    deleteOneproductTypesJunction: { // args
+      where: NexusGenInputs['product_types_junctionWhereUniqueInput']; // product_types_junctionWhereUniqueInput!
+    }
+    deleteOnestore: { // args
+      where: NexusGenInputs['storeWhereUniqueInput']; // storeWhereUniqueInput!
+    }
+    deleteOnestoreDocument: { // args
+      where: NexusGenInputs['store_documentWhereUniqueInput']; // store_documentWhereUniqueInput!
+    }
+    deleteOneuser: { // args
+      where: NexusGenInputs['userWhereUniqueInput']; // userWhereUniqueInput!
+    }
+    deleteOneuserAddress: { // args
+      where: NexusGenInputs['user_addressWhereUniqueInput']; // user_addressWhereUniqueInput!
+    }
+    deleteOnevoucher: { // args
+      where: NexusGenInputs['voucherWhereUniqueInput']; // voucherWhereUniqueInput!
+    }
+    deleteOnewishlist: { // args
+      where: NexusGenInputs['wishlistWhereUniqueInput']; // wishlistWhereUniqueInput!
+    }
+    updateManycart: { // args
+      data: NexusGenInputs['cartUpdateManyMutationInput']; // cartUpdateManyMutationInput!
+      where?: NexusGenInputs['cartWhereInput'] | null; // cartWhereInput
+    }
+    updateManycategory: { // args
+      data: NexusGenInputs['categoryUpdateManyMutationInput']; // categoryUpdateManyMutationInput!
+      where?: NexusGenInputs['categoryWhereInput'] | null; // categoryWhereInput
+    }
+    updateManydriver: { // args
+      data: NexusGenInputs['driverUpdateManyMutationInput']; // driverUpdateManyMutationInput!
+      where?: NexusGenInputs['driverWhereInput'] | null; // driverWhereInput
+    }
+    updateManydriverDocument: { // args
+      data: NexusGenInputs['driver_documentUpdateManyMutationInput']; // driver_documentUpdateManyMutationInput!
+      where?: NexusGenInputs['driver_documentWhereInput'] | null; // driver_documentWhereInput
+    }
+    updateManyorder: { // args
+      data: NexusGenInputs['orderUpdateManyMutationInput']; // orderUpdateManyMutationInput!
+      where?: NexusGenInputs['orderWhereInput'] | null; // orderWhereInput
+    }
+    updateManyproduct: { // args
+      data: NexusGenInputs['productUpdateManyMutationInput']; // productUpdateManyMutationInput!
+      where?: NexusGenInputs['productWhereInput'] | null; // productWhereInput
+    }
+    updateManyproductCategoriesJunction: { // args
+      data: NexusGenInputs['product_categories_junctionUpdateManyMutationInput']; // product_categories_junctionUpdateManyMutationInput!
+      where?: NexusGenInputs['product_categories_junctionWhereInput'] | null; // product_categories_junctionWhereInput
+    }
+    updateManyproductImage: { // args
+      data: NexusGenInputs['product_imageUpdateManyMutationInput']; // product_imageUpdateManyMutationInput!
+      where?: NexusGenInputs['product_imageWhereInput'] | null; // product_imageWhereInput
+    }
+    updateManyproductQuantity: { // args
+      data: NexusGenInputs['product_quantityUpdateManyMutationInput']; // product_quantityUpdateManyMutationInput!
+      where?: NexusGenInputs['product_quantityWhereInput'] | null; // product_quantityWhereInput
+    }
+    updateManyproductRating: { // args
+      data: NexusGenInputs['product_ratingUpdateManyMutationInput']; // product_ratingUpdateManyMutationInput!
+      where?: NexusGenInputs['product_ratingWhereInput'] | null; // product_ratingWhereInput
+    }
+    updateManyproductType: { // args
+      data: NexusGenInputs['product_typeUpdateManyMutationInput']; // product_typeUpdateManyMutationInput!
+      where?: NexusGenInputs['product_typeWhereInput'] | null; // product_typeWhereInput
+    }
+    updateManyproductTypesJunction: { // args
+      data: NexusGenInputs['product_types_junctionUpdateManyMutationInput']; // product_types_junctionUpdateManyMutationInput!
+      where?: NexusGenInputs['product_types_junctionWhereInput'] | null; // product_types_junctionWhereInput
+    }
+    updateManystore: { // args
+      data: NexusGenInputs['storeUpdateManyMutationInput']; // storeUpdateManyMutationInput!
+      where?: NexusGenInputs['storeWhereInput'] | null; // storeWhereInput
+    }
+    updateManystoreDocument: { // args
+      data: NexusGenInputs['store_documentUpdateManyMutationInput']; // store_documentUpdateManyMutationInput!
+      where?: NexusGenInputs['store_documentWhereInput'] | null; // store_documentWhereInput
+    }
+    updateManyuser: { // args
+      data: NexusGenInputs['userUpdateManyMutationInput']; // userUpdateManyMutationInput!
+      where?: NexusGenInputs['userWhereInput'] | null; // userWhereInput
+    }
+    updateManyuserAddress: { // args
+      data: NexusGenInputs['user_addressUpdateManyMutationInput']; // user_addressUpdateManyMutationInput!
+      where?: NexusGenInputs['user_addressWhereInput'] | null; // user_addressWhereInput
+    }
+    updateManyvoucher: { // args
+      data: NexusGenInputs['voucherUpdateManyMutationInput']; // voucherUpdateManyMutationInput!
+      where?: NexusGenInputs['voucherWhereInput'] | null; // voucherWhereInput
+    }
+    updateManywishlist: { // args
+      data: NexusGenInputs['wishlistUpdateManyMutationInput']; // wishlistUpdateManyMutationInput!
+      where?: NexusGenInputs['wishlistWhereInput'] | null; // wishlistWhereInput
+    }
+    updateOnecart: { // args
+      data: NexusGenInputs['cartUpdateInput']; // cartUpdateInput!
+      where: NexusGenInputs['cartWhereUniqueInput']; // cartWhereUniqueInput!
+    }
+    updateOnecategory: { // args
+      data: NexusGenInputs['categoryUpdateInput']; // categoryUpdateInput!
+      where: NexusGenInputs['categoryWhereUniqueInput']; // categoryWhereUniqueInput!
+    }
+    updateOnedriver: { // args
+      data: NexusGenInputs['driverUpdateInput']; // driverUpdateInput!
+      where: NexusGenInputs['driverWhereUniqueInput']; // driverWhereUniqueInput!
+    }
+    updateOnedriverDocument: { // args
+      data: NexusGenInputs['driver_documentUpdateInput']; // driver_documentUpdateInput!
+      where: NexusGenInputs['driver_documentWhereUniqueInput']; // driver_documentWhereUniqueInput!
+    }
+    updateOneorder: { // args
+      data: NexusGenInputs['orderUpdateInput']; // orderUpdateInput!
+      where: NexusGenInputs['orderWhereUniqueInput']; // orderWhereUniqueInput!
+    }
+    updateOneproduct: { // args
+      data: NexusGenInputs['productUpdateInput']; // productUpdateInput!
+      where: NexusGenInputs['productWhereUniqueInput']; // productWhereUniqueInput!
+    }
+    updateOneproductCategoriesJunction: { // args
+      data: NexusGenInputs['product_categories_junctionUpdateInput']; // product_categories_junctionUpdateInput!
+      where: NexusGenInputs['product_categories_junctionWhereUniqueInput']; // product_categories_junctionWhereUniqueInput!
+    }
+    updateOneproductImage: { // args
+      data: NexusGenInputs['product_imageUpdateInput']; // product_imageUpdateInput!
+      where: NexusGenInputs['product_imageWhereUniqueInput']; // product_imageWhereUniqueInput!
+    }
+    updateOneproductQuantity: { // args
+      data: NexusGenInputs['product_quantityUpdateInput']; // product_quantityUpdateInput!
+      where: NexusGenInputs['product_quantityWhereUniqueInput']; // product_quantityWhereUniqueInput!
+    }
+    updateOneproductRating: { // args
+      data: NexusGenInputs['product_ratingUpdateInput']; // product_ratingUpdateInput!
+      where: NexusGenInputs['product_ratingWhereUniqueInput']; // product_ratingWhereUniqueInput!
+    }
+    updateOneproductType: { // args
+      data: NexusGenInputs['product_typeUpdateInput']; // product_typeUpdateInput!
+      where: NexusGenInputs['product_typeWhereUniqueInput']; // product_typeWhereUniqueInput!
+    }
+    updateOneproductTypesJunction: { // args
+      data: NexusGenInputs['product_types_junctionUpdateInput']; // product_types_junctionUpdateInput!
+      where: NexusGenInputs['product_types_junctionWhereUniqueInput']; // product_types_junctionWhereUniqueInput!
+    }
+    updateOnestore: { // args
+      data: NexusGenInputs['storeUpdateInput']; // storeUpdateInput!
+      where: NexusGenInputs['storeWhereUniqueInput']; // storeWhereUniqueInput!
+    }
+    updateOnestoreDocument: { // args
+      data: NexusGenInputs['store_documentUpdateInput']; // store_documentUpdateInput!
+      where: NexusGenInputs['store_documentWhereUniqueInput']; // store_documentWhereUniqueInput!
+    }
+    updateOneuser: { // args
+      data: NexusGenInputs['userUpdateInput']; // userUpdateInput!
+      where: NexusGenInputs['userWhereUniqueInput']; // userWhereUniqueInput!
+    }
+    updateOneuserAddress: { // args
+      data: NexusGenInputs['user_addressUpdateInput']; // user_addressUpdateInput!
+      where: NexusGenInputs['user_addressWhereUniqueInput']; // user_addressWhereUniqueInput!
+    }
+    updateOnevoucher: { // args
+      data: NexusGenInputs['voucherUpdateInput']; // voucherUpdateInput!
+      where: NexusGenInputs['voucherWhereUniqueInput']; // voucherWhereUniqueInput!
+    }
+    updateOnewishlist: { // args
+      data: NexusGenInputs['wishlistUpdateInput']; // wishlistUpdateInput!
+      where: NexusGenInputs['wishlistWhereUniqueInput']; // wishlistWhereUniqueInput!
+    }
+    upsertOnecart: { // args
+      create: NexusGenInputs['cartCreateInput']; // cartCreateInput!
+      update: NexusGenInputs['cartUpdateInput']; // cartUpdateInput!
+      where: NexusGenInputs['cartWhereUniqueInput']; // cartWhereUniqueInput!
+    }
+    upsertOnecategory: { // args
+      create: NexusGenInputs['categoryCreateInput']; // categoryCreateInput!
+      update: NexusGenInputs['categoryUpdateInput']; // categoryUpdateInput!
+      where: NexusGenInputs['categoryWhereUniqueInput']; // categoryWhereUniqueInput!
+    }
+    upsertOnedriver: { // args
+      create: NexusGenInputs['driverCreateInput']; // driverCreateInput!
+      update: NexusGenInputs['driverUpdateInput']; // driverUpdateInput!
+      where: NexusGenInputs['driverWhereUniqueInput']; // driverWhereUniqueInput!
+    }
+    upsertOnedriverDocument: { // args
+      create: NexusGenInputs['driver_documentCreateInput']; // driver_documentCreateInput!
+      update: NexusGenInputs['driver_documentUpdateInput']; // driver_documentUpdateInput!
+      where: NexusGenInputs['driver_documentWhereUniqueInput']; // driver_documentWhereUniqueInput!
+    }
+    upsertOneorder: { // args
+      create: NexusGenInputs['orderCreateInput']; // orderCreateInput!
+      update: NexusGenInputs['orderUpdateInput']; // orderUpdateInput!
+      where: NexusGenInputs['orderWhereUniqueInput']; // orderWhereUniqueInput!
+    }
+    upsertOneproduct: { // args
+      create: NexusGenInputs['productCreateInput']; // productCreateInput!
+      update: NexusGenInputs['productUpdateInput']; // productUpdateInput!
+      where: NexusGenInputs['productWhereUniqueInput']; // productWhereUniqueInput!
+    }
+    upsertOneproductCategoriesJunction: { // args
+      create: NexusGenInputs['product_categories_junctionCreateInput']; // product_categories_junctionCreateInput!
+      update: NexusGenInputs['product_categories_junctionUpdateInput']; // product_categories_junctionUpdateInput!
+      where: NexusGenInputs['product_categories_junctionWhereUniqueInput']; // product_categories_junctionWhereUniqueInput!
+    }
+    upsertOneproductImage: { // args
+      create: NexusGenInputs['product_imageCreateInput']; // product_imageCreateInput!
+      update: NexusGenInputs['product_imageUpdateInput']; // product_imageUpdateInput!
+      where: NexusGenInputs['product_imageWhereUniqueInput']; // product_imageWhereUniqueInput!
+    }
+    upsertOneproductQuantity: { // args
+      create: NexusGenInputs['product_quantityCreateInput']; // product_quantityCreateInput!
+      update: NexusGenInputs['product_quantityUpdateInput']; // product_quantityUpdateInput!
+      where: NexusGenInputs['product_quantityWhereUniqueInput']; // product_quantityWhereUniqueInput!
+    }
+    upsertOneproductRating: { // args
+      create: NexusGenInputs['product_ratingCreateInput']; // product_ratingCreateInput!
+      update: NexusGenInputs['product_ratingUpdateInput']; // product_ratingUpdateInput!
+      where: NexusGenInputs['product_ratingWhereUniqueInput']; // product_ratingWhereUniqueInput!
+    }
+    upsertOneproductType: { // args
+      create: NexusGenInputs['product_typeCreateInput']; // product_typeCreateInput!
+      update: NexusGenInputs['product_typeUpdateInput']; // product_typeUpdateInput!
+      where: NexusGenInputs['product_typeWhereUniqueInput']; // product_typeWhereUniqueInput!
+    }
+    upsertOneproductTypesJunction: { // args
+      create: NexusGenInputs['product_types_junctionCreateInput']; // product_types_junctionCreateInput!
+      update: NexusGenInputs['product_types_junctionUpdateInput']; // product_types_junctionUpdateInput!
+      where: NexusGenInputs['product_types_junctionWhereUniqueInput']; // product_types_junctionWhereUniqueInput!
+    }
+    upsertOnestore: { // args
+      create: NexusGenInputs['storeCreateInput']; // storeCreateInput!
+      update: NexusGenInputs['storeUpdateInput']; // storeUpdateInput!
+      where: NexusGenInputs['storeWhereUniqueInput']; // storeWhereUniqueInput!
+    }
+    upsertOnestoreDocument: { // args
+      create: NexusGenInputs['store_documentCreateInput']; // store_documentCreateInput!
+      update: NexusGenInputs['store_documentUpdateInput']; // store_documentUpdateInput!
+      where: NexusGenInputs['store_documentWhereUniqueInput']; // store_documentWhereUniqueInput!
+    }
+    upsertOneuser: { // args
+      create: NexusGenInputs['userCreateInput']; // userCreateInput!
+      update: NexusGenInputs['userUpdateInput']; // userUpdateInput!
+      where: NexusGenInputs['userWhereUniqueInput']; // userWhereUniqueInput!
+    }
+    upsertOneuserAddress: { // args
+      create: NexusGenInputs['user_addressCreateInput']; // user_addressCreateInput!
+      update: NexusGenInputs['user_addressUpdateInput']; // user_addressUpdateInput!
+      where: NexusGenInputs['user_addressWhereUniqueInput']; // user_addressWhereUniqueInput!
+    }
+    upsertOnevoucher: { // args
+      create: NexusGenInputs['voucherCreateInput']; // voucherCreateInput!
+      update: NexusGenInputs['voucherUpdateInput']; // voucherUpdateInput!
+      where: NexusGenInputs['voucherWhereUniqueInput']; // voucherWhereUniqueInput!
+    }
+    upsertOnewishlist: { // args
+      create: NexusGenInputs['wishlistCreateInput']; // wishlistCreateInput!
+      update: NexusGenInputs['wishlistUpdateInput']; // wishlistUpdateInput!
+      where: NexusGenInputs['wishlistWhereUniqueInput']; // wishlistWhereUniqueInput!
     }
   }
   Query: {
-    pokemon: { // args
-      cursor?: NexusGenInputs['pokemonWhereUniqueInput'] | null; // pokemonWhereUniqueInput
-      orderBy?: NexusGenInputs['pokemonOrderByInput'] | null; // pokemonOrderByInput
+    cart: { // args
+      where: NexusGenInputs['cartWhereUniqueInput']; // cartWhereUniqueInput!
+    }
+    carts: { // args
+      cursor?: NexusGenInputs['cartWhereUniqueInput'] | null; // cartWhereUniqueInput
+      orderBy?: NexusGenInputs['cartOrderByInput'] | null; // cartOrderByInput
       skip?: number | null; // Int
       take?: number | null; // Int
-      where?: NexusGenInputs['pokemonWhereInput'] | null; // pokemonWhereInput
+      where?: NexusGenInputs['cartWhereInput'] | null; // cartWhereInput
+    }
+    categories: { // args
+      cursor?: NexusGenInputs['categoryWhereUniqueInput'] | null; // categoryWhereUniqueInput
+      orderBy?: NexusGenInputs['categoryOrderByInput'] | null; // categoryOrderByInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['categoryWhereInput'] | null; // categoryWhereInput
+    }
+    category: { // args
+      where: NexusGenInputs['categoryWhereUniqueInput']; // categoryWhereUniqueInput!
+    }
+    driver: { // args
+      where: NexusGenInputs['driverWhereUniqueInput']; // driverWhereUniqueInput!
+    }
+    driverDocument: { // args
+      where: NexusGenInputs['driver_documentWhereUniqueInput']; // driver_documentWhereUniqueInput!
+    }
+    driverDocuments: { // args
+      cursor?: NexusGenInputs['driver_documentWhereUniqueInput'] | null; // driver_documentWhereUniqueInput
+      orderBy?: NexusGenInputs['driver_documentOrderByInput'] | null; // driver_documentOrderByInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['driver_documentWhereInput'] | null; // driver_documentWhereInput
+    }
+    drivers: { // args
+      cursor?: NexusGenInputs['driverWhereUniqueInput'] | null; // driverWhereUniqueInput
+      orderBy?: NexusGenInputs['driverOrderByInput'] | null; // driverOrderByInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['driverWhereInput'] | null; // driverWhereInput
+    }
+    order: { // args
+      where: NexusGenInputs['orderWhereUniqueInput']; // orderWhereUniqueInput!
+    }
+    orders: { // args
+      cursor?: NexusGenInputs['orderWhereUniqueInput'] | null; // orderWhereUniqueInput
+      orderBy?: NexusGenInputs['orderOrderByInput'] | null; // orderOrderByInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['orderWhereInput'] | null; // orderWhereInput
+    }
+    product: { // args
+      where: NexusGenInputs['productWhereUniqueInput']; // productWhereUniqueInput!
+    }
+    productCategoriesJunction: { // args
+      where: NexusGenInputs['product_categories_junctionWhereUniqueInput']; // product_categories_junctionWhereUniqueInput!
+    }
+    productCategoriesJunctions: { // args
+      cursor?: NexusGenInputs['product_categories_junctionWhereUniqueInput'] | null; // product_categories_junctionWhereUniqueInput
+      orderBy?: NexusGenInputs['product_categories_junctionOrderByInput'] | null; // product_categories_junctionOrderByInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['product_categories_junctionWhereInput'] | null; // product_categories_junctionWhereInput
+    }
+    productImage: { // args
+      where: NexusGenInputs['product_imageWhereUniqueInput']; // product_imageWhereUniqueInput!
+    }
+    productImages: { // args
+      cursor?: NexusGenInputs['product_imageWhereUniqueInput'] | null; // product_imageWhereUniqueInput
+      orderBy?: NexusGenInputs['product_imageOrderByInput'] | null; // product_imageOrderByInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['product_imageWhereInput'] | null; // product_imageWhereInput
+    }
+    productQuantities: { // args
+      cursor?: NexusGenInputs['product_quantityWhereUniqueInput'] | null; // product_quantityWhereUniqueInput
+      orderBy?: NexusGenInputs['product_quantityOrderByInput'] | null; // product_quantityOrderByInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['product_quantityWhereInput'] | null; // product_quantityWhereInput
+    }
+    productQuantity: { // args
+      where: NexusGenInputs['product_quantityWhereUniqueInput']; // product_quantityWhereUniqueInput!
+    }
+    productRating: { // args
+      where: NexusGenInputs['product_ratingWhereUniqueInput']; // product_ratingWhereUniqueInput!
+    }
+    productRatings: { // args
+      cursor?: NexusGenInputs['product_ratingWhereUniqueInput'] | null; // product_ratingWhereUniqueInput
+      orderBy?: NexusGenInputs['product_ratingOrderByInput'] | null; // product_ratingOrderByInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['product_ratingWhereInput'] | null; // product_ratingWhereInput
+    }
+    products: { // args
+      cursor?: NexusGenInputs['productWhereUniqueInput'] | null; // productWhereUniqueInput
+      orderBy?: NexusGenInputs['productOrderByInput'] | null; // productOrderByInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['productWhereInput'] | null; // productWhereInput
+    }
+    productType: { // args
+      where: NexusGenInputs['product_typeWhereUniqueInput']; // product_typeWhereUniqueInput!
+    }
+    productTypes: { // args
+      cursor?: NexusGenInputs['product_typeWhereUniqueInput'] | null; // product_typeWhereUniqueInput
+      orderBy?: NexusGenInputs['product_typeOrderByInput'] | null; // product_typeOrderByInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['product_typeWhereInput'] | null; // product_typeWhereInput
+    }
+    productTypesJunction: { // args
+      where: NexusGenInputs['product_types_junctionWhereUniqueInput']; // product_types_junctionWhereUniqueInput!
+    }
+    productTypesJunctions: { // args
+      cursor?: NexusGenInputs['product_types_junctionWhereUniqueInput'] | null; // product_types_junctionWhereUniqueInput
+      orderBy?: NexusGenInputs['product_types_junctionOrderByInput'] | null; // product_types_junctionOrderByInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['product_types_junctionWhereInput'] | null; // product_types_junctionWhereInput
+    }
+    store: { // args
+      where: NexusGenInputs['storeWhereUniqueInput']; // storeWhereUniqueInput!
+    }
+    storeDocument: { // args
+      where: NexusGenInputs['store_documentWhereUniqueInput']; // store_documentWhereUniqueInput!
+    }
+    storeDocuments: { // args
+      cursor?: NexusGenInputs['store_documentWhereUniqueInput'] | null; // store_documentWhereUniqueInput
+      orderBy?: NexusGenInputs['store_documentOrderByInput'] | null; // store_documentOrderByInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['store_documentWhereInput'] | null; // store_documentWhereInput
+    }
+    stores: { // args
+      cursor?: NexusGenInputs['storeWhereUniqueInput'] | null; // storeWhereUniqueInput
+      orderBy?: NexusGenInputs['storeOrderByInput'] | null; // storeOrderByInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['storeWhereInput'] | null; // storeWhereInput
+    }
+    user: { // args
+      where: NexusGenInputs['userWhereUniqueInput']; // userWhereUniqueInput!
+    }
+    userAddress: { // args
+      where: NexusGenInputs['user_addressWhereUniqueInput']; // user_addressWhereUniqueInput!
+    }
+    userAddresses: { // args
+      cursor?: NexusGenInputs['user_addressWhereUniqueInput'] | null; // user_addressWhereUniqueInput
+      orderBy?: NexusGenInputs['user_addressOrderByInput'] | null; // user_addressOrderByInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['user_addressWhereInput'] | null; // user_addressWhereInput
+    }
+    users: { // args
+      cursor?: NexusGenInputs['userWhereUniqueInput'] | null; // userWhereUniqueInput
+      orderBy?: NexusGenInputs['userOrderByInput'] | null; // userOrderByInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['userWhereInput'] | null; // userWhereInput
+    }
+    voucher: { // args
+      where: NexusGenInputs['voucherWhereUniqueInput']; // voucherWhereUniqueInput!
+    }
+    vouchers: { // args
+      cursor?: NexusGenInputs['voucherWhereUniqueInput'] | null; // voucherWhereUniqueInput
+      orderBy?: NexusGenInputs['voucherOrderByInput'] | null; // voucherOrderByInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['voucherWhereInput'] | null; // voucherWhereInput
+    }
+    wishlist: { // args
+      where: NexusGenInputs['wishlistWhereUniqueInput']; // wishlistWhereUniqueInput!
+    }
+    wishlists: { // args
+      cursor?: NexusGenInputs['wishlistWhereUniqueInput'] | null; // wishlistWhereUniqueInput
+      orderBy?: NexusGenInputs['wishlistOrderByInput'] | null; // wishlistOrderByInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['wishlistWhereInput'] | null; // wishlistWhereInput
+    }
+  }
+  category: {
+    product_categories_junction: { // args
+      cursor?: NexusGenInputs['product_categories_junctionWhereUniqueInput'] | null; // product_categories_junctionWhereUniqueInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+    }
+  }
+  driver: {
+    driver_document: { // args
+      cursor?: NexusGenInputs['driver_documentWhereUniqueInput'] | null; // driver_documentWhereUniqueInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+    }
+    order: { // args
+      cursor?: NexusGenInputs['orderWhereUniqueInput'] | null; // orderWhereUniqueInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+    }
+  }
+  product: {
+    order: { // args
+      cursor?: NexusGenInputs['orderWhereUniqueInput'] | null; // orderWhereUniqueInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+    }
+    product_categories_junction: { // args
+      cursor?: NexusGenInputs['product_categories_junctionWhereUniqueInput'] | null; // product_categories_junctionWhereUniqueInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+    }
+    product_image: { // args
+      cursor?: NexusGenInputs['product_imageWhereUniqueInput'] | null; // product_imageWhereUniqueInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+    }
+    product_quantity: { // args
+      cursor?: NexusGenInputs['product_quantityWhereUniqueInput'] | null; // product_quantityWhereUniqueInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+    }
+    product_rating: { // args
+      cursor?: NexusGenInputs['product_ratingWhereUniqueInput'] | null; // product_ratingWhereUniqueInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+    }
+    product_types_junction: { // args
+      cursor?: NexusGenInputs['product_types_junctionWhereUniqueInput'] | null; // product_types_junctionWhereUniqueInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+    }
+  }
+  product_quantity: {
+    cart: { // args
+      cursor?: NexusGenInputs['cartWhereUniqueInput'] | null; // cartWhereUniqueInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+    }
+    wishlist: { // args
+      cursor?: NexusGenInputs['wishlistWhereUniqueInput'] | null; // wishlistWhereUniqueInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+    }
+  }
+  product_type: {
+    product_types_junction: { // args
+      cursor?: NexusGenInputs['product_types_junctionWhereUniqueInput'] | null; // product_types_junctionWhereUniqueInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+    }
+  }
+  store: {
+    order: { // args
+      cursor?: NexusGenInputs['orderWhereUniqueInput'] | null; // orderWhereUniqueInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+    }
+    product: { // args
+      cursor?: NexusGenInputs['productWhereUniqueInput'] | null; // productWhereUniqueInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+    }
+    store_document: { // args
+      cursor?: NexusGenInputs['store_documentWhereUniqueInput'] | null; // store_documentWhereUniqueInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+    }
+  }
+  user: {
+    cart: { // args
+      cursor?: NexusGenInputs['cartWhereUniqueInput'] | null; // cartWhereUniqueInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+    }
+    order: { // args
+      cursor?: NexusGenInputs['orderWhereUniqueInput'] | null; // orderWhereUniqueInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+    }
+    product_rating: { // args
+      cursor?: NexusGenInputs['product_ratingWhereUniqueInput'] | null; // product_ratingWhereUniqueInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+    }
+    user_address: { // args
+      cursor?: NexusGenInputs['user_addressWhereUniqueInput'] | null; // user_addressWhereUniqueInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+    }
+    voucher: { // args
+      cursor?: NexusGenInputs['voucherWhereUniqueInput'] | null; // voucherWhereUniqueInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+    }
+    wishlist: { // args
+      cursor?: NexusGenInputs['wishlistWhereUniqueInput'] | null; // wishlistWhereUniqueInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
+    }
+  }
+  voucher: {
+    cart: { // args
+      cursor?: NexusGenInputs['cartWhereUniqueInput'] | null; // cartWhereUniqueInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
     }
   }
 }
@@ -184,15 +4494,15 @@ export interface NexusGenAbstractResolveReturnTypes {
 
 export interface NexusGenInheritedFields {}
 
-export type NexusGenObjectNames = "BatchPayload" | "Mutation" | "Query" | "Subscription" | "pokemon";
+export type NexusGenObjectNames = "BatchPayload" | "Mutation" | "Query" | "cart" | "category" | "driver" | "driver_document" | "order" | "product" | "product_categories_junction" | "product_image" | "product_quantity" | "product_rating" | "product_type" | "product_types_junction" | "store" | "store_document" | "user" | "user_address" | "voucher" | "wishlist";
 
-export type NexusGenInputNames = "IntFilter" | "StringFilter" | "pokemonCreateInput" | "pokemonOrderByInput" | "pokemonUpdateInput" | "pokemonUpdateManyMutationInput" | "pokemonWhereInput" | "pokemonWhereUniqueInput";
+export type NexusGenInputNames = "IntFilter" | "NullableBooleanFilter" | "NullableDateTimeFilter" | "NullableFloatFilter" | "NullableIntFilter" | "NullableStringFilter" | "cartCreateInput" | "cartCreateManyWithoutProduct_quantityInput" | "cartCreateManyWithoutUserInput" | "cartCreateManyWithoutVoucherInput" | "cartCreateWithoutProduct_quantityInput" | "cartCreateWithoutUserInput" | "cartCreateWithoutVoucherInput" | "cartFilter" | "cartOrderByInput" | "cartScalarWhereInput" | "cartUpdateInput" | "cartUpdateManyDataInput" | "cartUpdateManyMutationInput" | "cartUpdateManyWithWhereNestedInput" | "cartUpdateManyWithoutProduct_quantityInput" | "cartUpdateManyWithoutUserInput" | "cartUpdateManyWithoutVoucherInput" | "cartUpdateWithWhereUniqueWithoutProduct_quantityInput" | "cartUpdateWithWhereUniqueWithoutUserInput" | "cartUpdateWithWhereUniqueWithoutVoucherInput" | "cartUpdateWithoutProduct_quantityDataInput" | "cartUpdateWithoutUserDataInput" | "cartUpdateWithoutVoucherDataInput" | "cartUpsertWithWhereUniqueWithoutProduct_quantityInput" | "cartUpsertWithWhereUniqueWithoutUserInput" | "cartUpsertWithWhereUniqueWithoutVoucherInput" | "cartWhereInput" | "cartWhereUniqueInput" | "categoryCreateInput" | "categoryCreateOneWithoutProduct_categories_junctionInput" | "categoryCreateWithoutProduct_categories_junctionInput" | "categoryOrderByInput" | "categoryUpdateInput" | "categoryUpdateManyMutationInput" | "categoryUpdateOneRequiredWithoutProduct_categories_junctionInput" | "categoryUpdateWithoutProduct_categories_junctionDataInput" | "categoryUpsertWithoutProduct_categories_junctionInput" | "categoryWhereInput" | "categoryWhereUniqueInput" | "driverCreateInput" | "driverCreateOneWithoutDriver_documentInput" | "driverCreateOneWithoutOrderInput" | "driverCreateWithoutDriver_documentInput" | "driverCreateWithoutOrderInput" | "driverOrderByInput" | "driverUpdateInput" | "driverUpdateManyMutationInput" | "driverUpdateOneRequiredWithoutDriver_documentInput" | "driverUpdateOneRequiredWithoutOrderInput" | "driverUpdateWithoutDriver_documentDataInput" | "driverUpdateWithoutOrderDataInput" | "driverUpsertWithoutDriver_documentInput" | "driverUpsertWithoutOrderInput" | "driverWhereInput" | "driverWhereUniqueInput" | "driver_documentCreateInput" | "driver_documentCreateManyWithoutDriverInput" | "driver_documentCreateWithoutDriverInput" | "driver_documentFilter" | "driver_documentOrderByInput" | "driver_documentScalarWhereInput" | "driver_documentUpdateInput" | "driver_documentUpdateManyDataInput" | "driver_documentUpdateManyMutationInput" | "driver_documentUpdateManyWithWhereNestedInput" | "driver_documentUpdateManyWithoutDriverInput" | "driver_documentUpdateWithWhereUniqueWithoutDriverInput" | "driver_documentUpdateWithoutDriverDataInput" | "driver_documentUpsertWithWhereUniqueWithoutDriverInput" | "driver_documentWhereInput" | "driver_documentWhereUniqueInput" | "orderCreateInput" | "orderCreateManyWithoutDriverInput" | "orderCreateManyWithoutProductInput" | "orderCreateManyWithoutStoreInput" | "orderCreateManyWithoutUserInput" | "orderCreateWithoutDriverInput" | "orderCreateWithoutProductInput" | "orderCreateWithoutStoreInput" | "orderCreateWithoutUserInput" | "orderFilter" | "orderOrderByInput" | "orderScalarWhereInput" | "orderUpdateInput" | "orderUpdateManyDataInput" | "orderUpdateManyMutationInput" | "orderUpdateManyWithWhereNestedInput" | "orderUpdateManyWithoutDriverInput" | "orderUpdateManyWithoutProductInput" | "orderUpdateManyWithoutStoreInput" | "orderUpdateManyWithoutUserInput" | "orderUpdateWithWhereUniqueWithoutDriverInput" | "orderUpdateWithWhereUniqueWithoutProductInput" | "orderUpdateWithWhereUniqueWithoutStoreInput" | "orderUpdateWithWhereUniqueWithoutUserInput" | "orderUpdateWithoutDriverDataInput" | "orderUpdateWithoutProductDataInput" | "orderUpdateWithoutStoreDataInput" | "orderUpdateWithoutUserDataInput" | "orderUpsertWithWhereUniqueWithoutDriverInput" | "orderUpsertWithWhereUniqueWithoutProductInput" | "orderUpsertWithWhereUniqueWithoutStoreInput" | "orderUpsertWithWhereUniqueWithoutUserInput" | "orderWhereInput" | "orderWhereUniqueInput" | "productCreateInput" | "productCreateManyWithoutStoreInput" | "productCreateOneWithoutOrderInput" | "productCreateOneWithoutProduct_categories_junctionInput" | "productCreateOneWithoutProduct_imageInput" | "productCreateOneWithoutProduct_quantityInput" | "productCreateOneWithoutProduct_ratingInput" | "productCreateOneWithoutProduct_types_junctionInput" | "productCreateWithoutOrderInput" | "productCreateWithoutProduct_categories_junctionInput" | "productCreateWithoutProduct_imageInput" | "productCreateWithoutProduct_quantityInput" | "productCreateWithoutProduct_ratingInput" | "productCreateWithoutProduct_types_junctionInput" | "productCreateWithoutStoreInput" | "productFilter" | "productOrderByInput" | "productScalarWhereInput" | "productUpdateInput" | "productUpdateManyDataInput" | "productUpdateManyMutationInput" | "productUpdateManyWithWhereNestedInput" | "productUpdateManyWithoutStoreInput" | "productUpdateOneRequiredWithoutOrderInput" | "productUpdateOneRequiredWithoutProduct_categories_junctionInput" | "productUpdateOneRequiredWithoutProduct_imageInput" | "productUpdateOneRequiredWithoutProduct_quantityInput" | "productUpdateOneRequiredWithoutProduct_ratingInput" | "productUpdateOneRequiredWithoutProduct_types_junctionInput" | "productUpdateWithWhereUniqueWithoutStoreInput" | "productUpdateWithoutOrderDataInput" | "productUpdateWithoutProduct_categories_junctionDataInput" | "productUpdateWithoutProduct_imageDataInput" | "productUpdateWithoutProduct_quantityDataInput" | "productUpdateWithoutProduct_ratingDataInput" | "productUpdateWithoutProduct_types_junctionDataInput" | "productUpdateWithoutStoreDataInput" | "productUpsertWithWhereUniqueWithoutStoreInput" | "productUpsertWithoutOrderInput" | "productUpsertWithoutProduct_categories_junctionInput" | "productUpsertWithoutProduct_imageInput" | "productUpsertWithoutProduct_quantityInput" | "productUpsertWithoutProduct_ratingInput" | "productUpsertWithoutProduct_types_junctionInput" | "productWhereInput" | "productWhereUniqueInput" | "product_categories_junctionCreateInput" | "product_categories_junctionCreateManyWithoutCategoryInput" | "product_categories_junctionCreateManyWithoutProductInput" | "product_categories_junctionCreateWithoutCategoryInput" | "product_categories_junctionCreateWithoutProductInput" | "product_categories_junctionFilter" | "product_categories_junctionOrderByInput" | "product_categories_junctionScalarWhereInput" | "product_categories_junctionUpdateInput" | "product_categories_junctionUpdateManyDataInput" | "product_categories_junctionUpdateManyMutationInput" | "product_categories_junctionUpdateManyWithWhereNestedInput" | "product_categories_junctionUpdateManyWithoutCategoryInput" | "product_categories_junctionUpdateManyWithoutProductInput" | "product_categories_junctionUpdateWithWhereUniqueWithoutCategoryInput" | "product_categories_junctionUpdateWithWhereUniqueWithoutProductInput" | "product_categories_junctionUpdateWithoutCategoryDataInput" | "product_categories_junctionUpdateWithoutProductDataInput" | "product_categories_junctionUpsertWithWhereUniqueWithoutCategoryInput" | "product_categories_junctionUpsertWithWhereUniqueWithoutProductInput" | "product_categories_junctionWhereInput" | "product_categories_junctionWhereUniqueInput" | "product_imageCreateInput" | "product_imageCreateManyWithoutProductInput" | "product_imageCreateWithoutProductInput" | "product_imageFilter" | "product_imageOrderByInput" | "product_imageScalarWhereInput" | "product_imageUpdateInput" | "product_imageUpdateManyDataInput" | "product_imageUpdateManyMutationInput" | "product_imageUpdateManyWithWhereNestedInput" | "product_imageUpdateManyWithoutProductInput" | "product_imageUpdateWithWhereUniqueWithoutProductInput" | "product_imageUpdateWithoutProductDataInput" | "product_imageUpsertWithWhereUniqueWithoutProductInput" | "product_imageWhereInput" | "product_imageWhereUniqueInput" | "product_quantityCreateInput" | "product_quantityCreateManyWithoutProductInput" | "product_quantityCreateOneWithoutCartInput" | "product_quantityCreateOneWithoutWishlistInput" | "product_quantityCreateWithoutCartInput" | "product_quantityCreateWithoutProductInput" | "product_quantityCreateWithoutWishlistInput" | "product_quantityFilter" | "product_quantityOrderByInput" | "product_quantityScalarWhereInput" | "product_quantityUpdateInput" | "product_quantityUpdateManyDataInput" | "product_quantityUpdateManyMutationInput" | "product_quantityUpdateManyWithWhereNestedInput" | "product_quantityUpdateManyWithoutProductInput" | "product_quantityUpdateOneWithoutCartInput" | "product_quantityUpdateOneWithoutWishlistInput" | "product_quantityUpdateWithWhereUniqueWithoutProductInput" | "product_quantityUpdateWithoutCartDataInput" | "product_quantityUpdateWithoutProductDataInput" | "product_quantityUpdateWithoutWishlistDataInput" | "product_quantityUpsertWithWhereUniqueWithoutProductInput" | "product_quantityUpsertWithoutCartInput" | "product_quantityUpsertWithoutWishlistInput" | "product_quantityWhereInput" | "product_quantityWhereUniqueInput" | "product_ratingCreateInput" | "product_ratingCreateManyWithoutProductInput" | "product_ratingCreateManyWithoutUserInput" | "product_ratingCreateWithoutProductInput" | "product_ratingCreateWithoutUserInput" | "product_ratingFilter" | "product_ratingOrderByInput" | "product_ratingScalarWhereInput" | "product_ratingUpdateInput" | "product_ratingUpdateManyDataInput" | "product_ratingUpdateManyMutationInput" | "product_ratingUpdateManyWithWhereNestedInput" | "product_ratingUpdateManyWithoutProductInput" | "product_ratingUpdateManyWithoutUserInput" | "product_ratingUpdateWithWhereUniqueWithoutProductInput" | "product_ratingUpdateWithWhereUniqueWithoutUserInput" | "product_ratingUpdateWithoutProductDataInput" | "product_ratingUpdateWithoutUserDataInput" | "product_ratingUpsertWithWhereUniqueWithoutProductInput" | "product_ratingUpsertWithWhereUniqueWithoutUserInput" | "product_ratingWhereInput" | "product_ratingWhereUniqueInput" | "product_typeCreateInput" | "product_typeCreateOneWithoutProduct_types_junctionInput" | "product_typeCreateWithoutProduct_types_junctionInput" | "product_typeOrderByInput" | "product_typeUpdateInput" | "product_typeUpdateManyMutationInput" | "product_typeUpdateOneRequiredWithoutProduct_types_junctionInput" | "product_typeUpdateWithoutProduct_types_junctionDataInput" | "product_typeUpsertWithoutProduct_types_junctionInput" | "product_typeWhereInput" | "product_typeWhereUniqueInput" | "product_types_junctionCreateInput" | "product_types_junctionCreateManyWithoutProductInput" | "product_types_junctionCreateManyWithoutProduct_typeInput" | "product_types_junctionCreateWithoutProductInput" | "product_types_junctionCreateWithoutProduct_typeInput" | "product_types_junctionFilter" | "product_types_junctionOrderByInput" | "product_types_junctionScalarWhereInput" | "product_types_junctionUpdateInput" | "product_types_junctionUpdateManyDataInput" | "product_types_junctionUpdateManyMutationInput" | "product_types_junctionUpdateManyWithWhereNestedInput" | "product_types_junctionUpdateManyWithoutProductInput" | "product_types_junctionUpdateManyWithoutProduct_typeInput" | "product_types_junctionUpdateWithWhereUniqueWithoutProductInput" | "product_types_junctionUpdateWithWhereUniqueWithoutProduct_typeInput" | "product_types_junctionUpdateWithoutProductDataInput" | "product_types_junctionUpdateWithoutProduct_typeDataInput" | "product_types_junctionUpsertWithWhereUniqueWithoutProductInput" | "product_types_junctionUpsertWithWhereUniqueWithoutProduct_typeInput" | "product_types_junctionWhereInput" | "product_types_junctionWhereUniqueInput" | "storeCreateInput" | "storeCreateOneWithoutOrderInput" | "storeCreateOneWithoutProductInput" | "storeCreateOneWithoutStore_documentInput" | "storeCreateWithoutOrderInput" | "storeCreateWithoutProductInput" | "storeCreateWithoutStore_documentInput" | "storeOrderByInput" | "storeUpdateInput" | "storeUpdateManyMutationInput" | "storeUpdateOneRequiredWithoutOrderInput" | "storeUpdateOneRequiredWithoutProductInput" | "storeUpdateOneRequiredWithoutStore_documentInput" | "storeUpdateWithoutOrderDataInput" | "storeUpdateWithoutProductDataInput" | "storeUpdateWithoutStore_documentDataInput" | "storeUpsertWithoutOrderInput" | "storeUpsertWithoutProductInput" | "storeUpsertWithoutStore_documentInput" | "storeWhereInput" | "storeWhereUniqueInput" | "store_documentCreateInput" | "store_documentCreateManyWithoutStoreInput" | "store_documentCreateWithoutStoreInput" | "store_documentFilter" | "store_documentOrderByInput" | "store_documentScalarWhereInput" | "store_documentUpdateInput" | "store_documentUpdateManyDataInput" | "store_documentUpdateManyMutationInput" | "store_documentUpdateManyWithWhereNestedInput" | "store_documentUpdateManyWithoutStoreInput" | "store_documentUpdateWithWhereUniqueWithoutStoreInput" | "store_documentUpdateWithoutStoreDataInput" | "store_documentUpsertWithWhereUniqueWithoutStoreInput" | "store_documentWhereInput" | "store_documentWhereUniqueInput" | "userCreateInput" | "userCreateOneWithoutCartInput" | "userCreateOneWithoutOrderInput" | "userCreateOneWithoutProduct_ratingInput" | "userCreateOneWithoutUser_addressInput" | "userCreateOneWithoutVoucherInput" | "userCreateOneWithoutWishlistInput" | "userCreateWithoutCartInput" | "userCreateWithoutOrderInput" | "userCreateWithoutProduct_ratingInput" | "userCreateWithoutUser_addressInput" | "userCreateWithoutVoucherInput" | "userCreateWithoutWishlistInput" | "userOrderByInput" | "userUpdateInput" | "userUpdateManyMutationInput" | "userUpdateOneRequiredWithoutCartInput" | "userUpdateOneRequiredWithoutOrderInput" | "userUpdateOneRequiredWithoutUser_addressInput" | "userUpdateOneRequiredWithoutWishlistInput" | "userUpdateOneWithoutProduct_ratingInput" | "userUpdateOneWithoutVoucherInput" | "userUpdateWithoutCartDataInput" | "userUpdateWithoutOrderDataInput" | "userUpdateWithoutProduct_ratingDataInput" | "userUpdateWithoutUser_addressDataInput" | "userUpdateWithoutVoucherDataInput" | "userUpdateWithoutWishlistDataInput" | "userUpsertWithoutCartInput" | "userUpsertWithoutOrderInput" | "userUpsertWithoutProduct_ratingInput" | "userUpsertWithoutUser_addressInput" | "userUpsertWithoutVoucherInput" | "userUpsertWithoutWishlistInput" | "userWhereInput" | "userWhereUniqueInput" | "user_addressCreateInput" | "user_addressCreateManyWithoutUserInput" | "user_addressCreateWithoutUserInput" | "user_addressFilter" | "user_addressOrderByInput" | "user_addressScalarWhereInput" | "user_addressUpdateInput" | "user_addressUpdateManyDataInput" | "user_addressUpdateManyMutationInput" | "user_addressUpdateManyWithWhereNestedInput" | "user_addressUpdateManyWithoutUserInput" | "user_addressUpdateWithWhereUniqueWithoutUserInput" | "user_addressUpdateWithoutUserDataInput" | "user_addressUpsertWithWhereUniqueWithoutUserInput" | "user_addressWhereInput" | "user_addressWhereUniqueInput" | "voucherCreateInput" | "voucherCreateManyWithoutUserInput" | "voucherCreateOneWithoutCartInput" | "voucherCreateWithoutCartInput" | "voucherCreateWithoutUserInput" | "voucherFilter" | "voucherOrderByInput" | "voucherScalarWhereInput" | "voucherUpdateInput" | "voucherUpdateManyDataInput" | "voucherUpdateManyMutationInput" | "voucherUpdateManyWithWhereNestedInput" | "voucherUpdateManyWithoutUserInput" | "voucherUpdateOneWithoutCartInput" | "voucherUpdateWithWhereUniqueWithoutUserInput" | "voucherUpdateWithoutCartDataInput" | "voucherUpdateWithoutUserDataInput" | "voucherUpsertWithWhereUniqueWithoutUserInput" | "voucherUpsertWithoutCartInput" | "voucherWhereInput" | "voucherWhereUniqueInput" | "wishlistCreateInput" | "wishlistCreateManyWithoutProduct_quantityInput" | "wishlistCreateManyWithoutUserInput" | "wishlistCreateWithoutProduct_quantityInput" | "wishlistCreateWithoutUserInput" | "wishlistFilter" | "wishlistOrderByInput" | "wishlistScalarWhereInput" | "wishlistUpdateInput" | "wishlistUpdateManyDataInput" | "wishlistUpdateManyMutationInput" | "wishlistUpdateManyWithWhereNestedInput" | "wishlistUpdateManyWithoutProduct_quantityInput" | "wishlistUpdateManyWithoutUserInput" | "wishlistUpdateWithWhereUniqueWithoutProduct_quantityInput" | "wishlistUpdateWithWhereUniqueWithoutUserInput" | "wishlistUpdateWithoutProduct_quantityDataInput" | "wishlistUpdateWithoutUserDataInput" | "wishlistUpsertWithWhereUniqueWithoutProduct_quantityInput" | "wishlistUpsertWithWhereUniqueWithoutUserInput" | "wishlistWhereInput" | "wishlistWhereUniqueInput";
 
-export type NexusGenEnumNames = "OrderByArg";
+export type NexusGenEnumNames = "OrderByArg" | "orders_status";
 
 export type NexusGenInterfaceNames = never;
 
-export type NexusGenScalarNames = "Boolean" | "Float" | "ID" | "Int" | "String";
+export type NexusGenScalarNames = "Boolean" | "DateTime" | "Float" | "ID" | "Int" | "String";
 
 export type NexusGenUnionNames = never;
 

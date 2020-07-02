@@ -7,9 +7,203 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model pokemon {
-  id      Int    @default(autoincrement()) @id
-  name    String @unique
-  pokedex Int    @unique
-  type    String
+model cart {
+  id               Int               @default(autoincrement()) @id
+  product          Int?
+  shipping_cost    Int?
+  total_cost       Int?
+  total_discount   Int?
+  user_id          Int
+  vouchers         Int?
+  product_quantity product_quantity? @relation(fields: [product], references: [id])
+  user             user              @relation(fields: [user_id], references: [id])
+  voucher          voucher?          @relation(fields: [vouchers], references: [id])
+}
+
+model category {
+  grouped_under               String?
+  icon                        String?
+  id                          Int                           @default(autoincrement()) @id
+  name                        String?
+  product_categories_junction product_categories_junction[]
+}
+
+model driver {
+  approved             Boolean?
+  blocked              Boolean?
+  currently_delivering Boolean?
+  full_name            String?
+  id                   Int               @default(autoincrement()) @id
+  mobile_no            Int?              @unique
+  driver_document      driver_document[]
+  order                order[]
+}
+
+model driver_document {
+  document  String?
+  driver_id Int
+  id        Int     @default(autoincrement()) @id
+  driver    driver  @relation(fields: [driver_id], references: [id])
+}
+
+model order {
+  approved          Boolean?
+  driver_id         Int
+  id                Int            @default(autoincrement()) @id
+  order_date        DateTime?
+  products          Int
+  shipping_cost     Int?
+  shipping_provider String?
+  shipping_ref_no   String?
+  status            orders_status?
+  store_ids         Int
+  total_cost        Int?
+  total_discount    Int?
+  total_tax         Int?
+  user_address      String?
+  user_id           Int
+  driver            driver         @relation(fields: [driver_id], references: [id])
+  product           product        @relation(fields: [products], references: [id])
+  store             store          @relation(fields: [store_ids], references: [id])
+  user              user           @relation(fields: [user_id], references: [id])
+}
+
+model product {
+  cost                        Float?
+  description                 String?
+  discount                    Float?
+  discounted_cost             Float?
+  id                          Int                           @default(autoincrement()) @id
+  mrp                         Float?
+  store_id                    Int
+  tax                         Float?
+  title                       String?
+  total_cost                  Float?
+  store                       store                         @relation(fields: [store_id], references: [id])
+  order                       order[]
+  product_categories_junction product_categories_junction[]
+  product_image               product_image[]
+  product_quantity            product_quantity[]
+  product_rating              product_rating[]
+  product_types_junction      product_types_junction[]
+}
+
+model product_categories_junction {
+  category_id Int
+  id          Int      @default(autoincrement()) @id
+  product_id  Int
+  category    category @relation(fields: [category_id], references: [id])
+  product     product  @relation(fields: [product_id], references: [id])
+}
+
+model product_image {
+  id         Int     @default(autoincrement()) @id
+  image      String?
+  product_id Int
+  product    product @relation(fields: [product_id], references: [id])
+}
+
+model product_quantity {
+  id          Int        @default(autoincrement()) @id
+  product_id  Int
+  product_qty Int?
+  product     product    @relation(fields: [product_id], references: [id])
+  cart        cart[]
+  wishlist    wishlist[]
+}
+
+model product_rating {
+  id         Int     @default(autoincrement()) @id
+  product_id Int
+  rating     Float?
+  user_id    Int?
+  product    product @relation(fields: [product_id], references: [id])
+  user       user?   @relation(fields: [user_id], references: [id])
+}
+
+model product_type {
+  id                     Int                      @default(autoincrement()) @id
+  type                   String?
+  type_name              String?
+  product_types_junction product_types_junction[]
+}
+
+model product_types_junction {
+  id              Int          @default(autoincrement()) @id
+  product_id      Int
+  product_type_id Int
+  product_type    product_type @relation(fields: [product_id], references: [id])
+  product         product      @relation(fields: [product_type_id], references: [id])
+}
+
+model store {
+  address        String?
+  approved       Boolean?
+  blocked        Boolean?
+  id             Int              @default(autoincrement()) @id
+  lat            Int?
+  lng            Int?
+  name           String?
+  order          order[]
+  product        product[]
+  store_document store_document[]
+}
+
+model store_document {
+  document String?
+  id       Int     @default(autoincrement()) @id
+  store_id Int
+  store    store   @relation(fields: [store_id], references: [id])
+}
+
+model user {
+  blocked        Boolean?
+  full_name      String?
+  id             Int              @default(autoincrement()) @id
+  mobile_no      Int?             @unique
+  cart           cart[]
+  order          order[]
+  product_rating product_rating[]
+  user_address   user_address[]
+  voucher        voucher[]
+  wishlist       wishlist[]
+}
+
+model user_address {
+  alias          String?
+  city           String?
+  first_name     String?
+  id             Int     @default(autoincrement()) @id
+  last_name      String?
+  poc_no         Int?
+  state          String?
+  street_address String?
+  user_id        Int
+  zip_code       Int?
+  user           user    @relation(fields: [user_id], references: [id])
+}
+
+model voucher {
+  cost          Int?
+  id            Int       @default(autoincrement()) @id
+  user_id       Int?
+  validity_date DateTime?
+  voucher_no    String?   @unique
+  user          user?     @relation(fields: [user_id], references: [id])
+  cart          cart[]
+}
+
+model wishlist {
+  id               Int               @default(autoincrement()) @id
+  product          Int?
+  user_id          Int
+  product_quantity product_quantity? @relation(fields: [product], references: [id])
+  user             user              @relation(fields: [user_id], references: [id])
+}
+
+enum orders_status {
+  accepted
+  delivered
+  out_for_delivery
+  picked_up
 }

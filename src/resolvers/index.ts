@@ -1,11 +1,10 @@
-import { Mutations } from './Mutations'
-import { Subscriptions } from './Subscriptions'
-import { Queries } from './Queries'
-import {Pokemon} from './pokemon';
+import * as Queries from './Queries'
+import * as Instances from './Instances'
+import * as Mutations from './Mutations'
 
-export const resolvers = {
-    Mutations,
-    Subscriptions,
+
+export {
     Queries,
-    Pokemon
+    Instances,
+    Mutations
 }

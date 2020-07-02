@@ -2,6 +2,575 @@
 ### Do not make changes to this file directly
 
 
+type BatchPayload {
+  count: Int!
+}
+
+type cart {
+  id: Int!
+  product: Int
+  product_quantity: product_quantity
+  shipping_cost: Int
+  total_cost: Int
+  total_discount: Int
+  user: user!
+  user_id: Int!
+  voucher: voucher
+  vouchers: Int
+}
+
+input cartCreateInput {
+  product_quantity: product_quantityCreateOneWithoutCartInput
+  shipping_cost: Int
+  total_cost: Int
+  total_discount: Int
+  user: userCreateOneWithoutCartInput!
+  voucher: voucherCreateOneWithoutCartInput
+}
+
+input cartCreateManyWithoutProduct_quantityInput {
+  connect: [cartWhereUniqueInput!]
+  create: [cartCreateWithoutProduct_quantityInput!]
+}
+
+input cartCreateManyWithoutUserInput {
+  connect: [cartWhereUniqueInput!]
+  create: [cartCreateWithoutUserInput!]
+}
+
+input cartCreateManyWithoutVoucherInput {
+  connect: [cartWhereUniqueInput!]
+  create: [cartCreateWithoutVoucherInput!]
+}
+
+input cartCreateWithoutProduct_quantityInput {
+  shipping_cost: Int
+  total_cost: Int
+  total_discount: Int
+  user: userCreateOneWithoutCartInput!
+  voucher: voucherCreateOneWithoutCartInput
+}
+
+input cartCreateWithoutUserInput {
+  product_quantity: product_quantityCreateOneWithoutCartInput
+  shipping_cost: Int
+  total_cost: Int
+  total_discount: Int
+  voucher: voucherCreateOneWithoutCartInput
+}
+
+input cartCreateWithoutVoucherInput {
+  product_quantity: product_quantityCreateOneWithoutCartInput
+  shipping_cost: Int
+  total_cost: Int
+  total_discount: Int
+  user: userCreateOneWithoutCartInput!
+}
+
+input cartFilter {
+  every: cartWhereInput
+  none: cartWhereInput
+  some: cartWhereInput
+}
+
+input cartOrderByInput {
+  id: OrderByArg
+  product: OrderByArg
+  shipping_cost: OrderByArg
+  total_cost: OrderByArg
+  total_discount: OrderByArg
+  user_id: OrderByArg
+  vouchers: OrderByArg
+}
+
+input cartScalarWhereInput {
+  AND: [cartScalarWhereInput!]
+  id: IntFilter
+  NOT: [cartScalarWhereInput!]
+  OR: [cartScalarWhereInput!]
+  product: NullableIntFilter
+  shipping_cost: NullableIntFilter
+  total_cost: NullableIntFilter
+  total_discount: NullableIntFilter
+  user_id: IntFilter
+  vouchers: NullableIntFilter
+}
+
+input cartUpdateInput {
+  id: Int
+  product_quantity: product_quantityUpdateOneWithoutCartInput
+  shipping_cost: Int
+  total_cost: Int
+  total_discount: Int
+  user: userUpdateOneRequiredWithoutCartInput
+  voucher: voucherUpdateOneWithoutCartInput
+}
+
+input cartUpdateManyDataInput {
+  id: Int
+  shipping_cost: Int
+  total_cost: Int
+  total_discount: Int
+}
+
+input cartUpdateManyMutationInput {
+  id: Int
+  shipping_cost: Int
+  total_cost: Int
+  total_discount: Int
+}
+
+input cartUpdateManyWithoutProduct_quantityInput {
+  connect: [cartWhereUniqueInput!]
+  create: [cartCreateWithoutProduct_quantityInput!]
+  delete: [cartWhereUniqueInput!]
+  deleteMany: [cartScalarWhereInput!]
+  disconnect: [cartWhereUniqueInput!]
+  set: [cartWhereUniqueInput!]
+  update: [cartUpdateWithWhereUniqueWithoutProduct_quantityInput!]
+  updateMany: [cartUpdateManyWithWhereNestedInput!]
+  upsert: [cartUpsertWithWhereUniqueWithoutProduct_quantityInput!]
+}
+
+input cartUpdateManyWithoutUserInput {
+  connect: [cartWhereUniqueInput!]
+  create: [cartCreateWithoutUserInput!]
+  delete: [cartWhereUniqueInput!]
+  deleteMany: [cartScalarWhereInput!]
+  disconnect: [cartWhereUniqueInput!]
+  set: [cartWhereUniqueInput!]
+  update: [cartUpdateWithWhereUniqueWithoutUserInput!]
+  updateMany: [cartUpdateManyWithWhereNestedInput!]
+  upsert: [cartUpsertWithWhereUniqueWithoutUserInput!]
+}
+
+input cartUpdateManyWithoutVoucherInput {
+  connect: [cartWhereUniqueInput!]
+  create: [cartCreateWithoutVoucherInput!]
+  delete: [cartWhereUniqueInput!]
+  deleteMany: [cartScalarWhereInput!]
+  disconnect: [cartWhereUniqueInput!]
+  set: [cartWhereUniqueInput!]
+  update: [cartUpdateWithWhereUniqueWithoutVoucherInput!]
+  updateMany: [cartUpdateManyWithWhereNestedInput!]
+  upsert: [cartUpsertWithWhereUniqueWithoutVoucherInput!]
+}
+
+input cartUpdateManyWithWhereNestedInput {
+  data: cartUpdateManyDataInput!
+  where: cartScalarWhereInput!
+}
+
+input cartUpdateWithoutProduct_quantityDataInput {
+  id: Int
+  shipping_cost: Int
+  total_cost: Int
+  total_discount: Int
+  user: userUpdateOneRequiredWithoutCartInput
+  voucher: voucherUpdateOneWithoutCartInput
+}
+
+input cartUpdateWithoutUserDataInput {
+  id: Int
+  product_quantity: product_quantityUpdateOneWithoutCartInput
+  shipping_cost: Int
+  total_cost: Int
+  total_discount: Int
+  voucher: voucherUpdateOneWithoutCartInput
+}
+
+input cartUpdateWithoutVoucherDataInput {
+  id: Int
+  product_quantity: product_quantityUpdateOneWithoutCartInput
+  shipping_cost: Int
+  total_cost: Int
+  total_discount: Int
+  user: userUpdateOneRequiredWithoutCartInput
+}
+
+input cartUpdateWithWhereUniqueWithoutProduct_quantityInput {
+  data: cartUpdateWithoutProduct_quantityDataInput!
+  where: cartWhereUniqueInput!
+}
+
+input cartUpdateWithWhereUniqueWithoutUserInput {
+  data: cartUpdateWithoutUserDataInput!
+  where: cartWhereUniqueInput!
+}
+
+input cartUpdateWithWhereUniqueWithoutVoucherInput {
+  data: cartUpdateWithoutVoucherDataInput!
+  where: cartWhereUniqueInput!
+}
+
+input cartUpsertWithWhereUniqueWithoutProduct_quantityInput {
+  create: cartCreateWithoutProduct_quantityInput!
+  update: cartUpdateWithoutProduct_quantityDataInput!
+  where: cartWhereUniqueInput!
+}
+
+input cartUpsertWithWhereUniqueWithoutUserInput {
+  create: cartCreateWithoutUserInput!
+  update: cartUpdateWithoutUserDataInput!
+  where: cartWhereUniqueInput!
+}
+
+input cartUpsertWithWhereUniqueWithoutVoucherInput {
+  create: cartCreateWithoutVoucherInput!
+  update: cartUpdateWithoutVoucherDataInput!
+  where: cartWhereUniqueInput!
+}
+
+input cartWhereInput {
+  AND: [cartWhereInput!]
+  id: IntFilter
+  NOT: [cartWhereInput!]
+  OR: [cartWhereInput!]
+  product: NullableIntFilter
+  product_quantity: product_quantityWhereInput
+  shipping_cost: NullableIntFilter
+  total_cost: NullableIntFilter
+  total_discount: NullableIntFilter
+  user: userWhereInput
+  user_id: IntFilter
+  voucher: voucherWhereInput
+  vouchers: NullableIntFilter
+}
+
+input cartWhereUniqueInput {
+  id: Int
+}
+
+type category {
+  grouped_under: String
+  icon: String
+  id: Int!
+  name: String
+  product_categories_junction(cursor: product_categories_junctionWhereUniqueInput, skip: Int, take: Int): [product_categories_junction!]!
+}
+
+input categoryCreateInput {
+  grouped_under: String
+  icon: String
+  name: String
+  product_categories_junction: product_categories_junctionCreateManyWithoutCategoryInput
+}
+
+input categoryCreateOneWithoutProduct_categories_junctionInput {
+  connect: categoryWhereUniqueInput
+  create: categoryCreateWithoutProduct_categories_junctionInput
+}
+
+input categoryCreateWithoutProduct_categories_junctionInput {
+  grouped_under: String
+  icon: String
+  name: String
+}
+
+input categoryOrderByInput {
+  grouped_under: OrderByArg
+  icon: OrderByArg
+  id: OrderByArg
+  name: OrderByArg
+}
+
+input categoryUpdateInput {
+  grouped_under: String
+  icon: String
+  id: Int
+  name: String
+  product_categories_junction: product_categories_junctionUpdateManyWithoutCategoryInput
+}
+
+input categoryUpdateManyMutationInput {
+  grouped_under: String
+  icon: String
+  id: Int
+  name: String
+}
+
+input categoryUpdateOneRequiredWithoutProduct_categories_junctionInput {
+  connect: categoryWhereUniqueInput
+  create: categoryCreateWithoutProduct_categories_junctionInput
+  update: categoryUpdateWithoutProduct_categories_junctionDataInput
+  upsert: categoryUpsertWithoutProduct_categories_junctionInput
+}
+
+input categoryUpdateWithoutProduct_categories_junctionDataInput {
+  grouped_under: String
+  icon: String
+  id: Int
+  name: String
+}
+
+input categoryUpsertWithoutProduct_categories_junctionInput {
+  create: categoryCreateWithoutProduct_categories_junctionInput!
+  update: categoryUpdateWithoutProduct_categories_junctionDataInput!
+}
+
+input categoryWhereInput {
+  AND: [categoryWhereInput!]
+  grouped_under: NullableStringFilter
+  icon: NullableStringFilter
+  id: IntFilter
+  name: NullableStringFilter
+  NOT: [categoryWhereInput!]
+  OR: [categoryWhereInput!]
+  product_categories_junction: product_categories_junctionFilter
+}
+
+input categoryWhereUniqueInput {
+  id: Int
+}
+
+scalar DateTime
+
+type driver {
+  approved: Boolean
+  blocked: Boolean
+  currently_delivering: Boolean
+  driver_document(cursor: driver_documentWhereUniqueInput, skip: Int, take: Int): [driver_document!]!
+  full_name: String
+  id: Int!
+  mobile_no: Int
+  order(cursor: orderWhereUniqueInput, skip: Int, take: Int): [order!]!
+}
+
+type driver_document {
+  document: String
+  driver: driver!
+  driver_id: Int!
+  id: Int!
+}
+
+input driver_documentCreateInput {
+  document: String
+  driver: driverCreateOneWithoutDriver_documentInput!
+}
+
+input driver_documentCreateManyWithoutDriverInput {
+  connect: [driver_documentWhereUniqueInput!]
+  create: [driver_documentCreateWithoutDriverInput!]
+}
+
+input driver_documentCreateWithoutDriverInput {
+  document: String
+}
+
+input driver_documentFilter {
+  every: driver_documentWhereInput
+  none: driver_documentWhereInput
+  some: driver_documentWhereInput
+}
+
+input driver_documentOrderByInput {
+  document: OrderByArg
+  driver_id: OrderByArg
+  id: OrderByArg
+}
+
+input driver_documentScalarWhereInput {
+  AND: [driver_documentScalarWhereInput!]
+  document: NullableStringFilter
+  driver_id: IntFilter
+  id: IntFilter
+  NOT: [driver_documentScalarWhereInput!]
+  OR: [driver_documentScalarWhereInput!]
+}
+
+input driver_documentUpdateInput {
+  document: String
+  driver: driverUpdateOneRequiredWithoutDriver_documentInput
+  id: Int
+}
+
+input driver_documentUpdateManyDataInput {
+  document: String
+  id: Int
+}
+
+input driver_documentUpdateManyMutationInput {
+  document: String
+  id: Int
+}
+
+input driver_documentUpdateManyWithoutDriverInput {
+  connect: [driver_documentWhereUniqueInput!]
+  create: [driver_documentCreateWithoutDriverInput!]
+  delete: [driver_documentWhereUniqueInput!]
+  deleteMany: [driver_documentScalarWhereInput!]
+  disconnect: [driver_documentWhereUniqueInput!]
+  set: [driver_documentWhereUniqueInput!]
+  update: [driver_documentUpdateWithWhereUniqueWithoutDriverInput!]
+  updateMany: [driver_documentUpdateManyWithWhereNestedInput!]
+  upsert: [driver_documentUpsertWithWhereUniqueWithoutDriverInput!]
+}
+
+input driver_documentUpdateManyWithWhereNestedInput {
+  data: driver_documentUpdateManyDataInput!
+  where: driver_documentScalarWhereInput!
+}
+
+input driver_documentUpdateWithoutDriverDataInput {
+  document: String
+  id: Int
+}
+
+input driver_documentUpdateWithWhereUniqueWithoutDriverInput {
+  data: driver_documentUpdateWithoutDriverDataInput!
+  where: driver_documentWhereUniqueInput!
+}
+
+input driver_documentUpsertWithWhereUniqueWithoutDriverInput {
+  create: driver_documentCreateWithoutDriverInput!
+  update: driver_documentUpdateWithoutDriverDataInput!
+  where: driver_documentWhereUniqueInput!
+}
+
+input driver_documentWhereInput {
+  AND: [driver_documentWhereInput!]
+  document: NullableStringFilter
+  driver: driverWhereInput
+  driver_id: IntFilter
+  id: IntFilter
+  NOT: [driver_documentWhereInput!]
+  OR: [driver_documentWhereInput!]
+}
+
+input driver_documentWhereUniqueInput {
+  id: Int
+}
+
+input driverCreateInput {
+  approved: Boolean
+  blocked: Boolean
+  currently_delivering: Boolean
+  driver_document: driver_documentCreateManyWithoutDriverInput
+  full_name: String
+  mobile_no: Int
+  order: orderCreateManyWithoutDriverInput
+}
+
+input driverCreateOneWithoutDriver_documentInput {
+  connect: driverWhereUniqueInput
+  create: driverCreateWithoutDriver_documentInput
+}
+
+input driverCreateOneWithoutOrderInput {
+  connect: driverWhereUniqueInput
+  create: driverCreateWithoutOrderInput
+}
+
+input driverCreateWithoutDriver_documentInput {
+  approved: Boolean
+  blocked: Boolean
+  currently_delivering: Boolean
+  full_name: String
+  mobile_no: Int
+  order: orderCreateManyWithoutDriverInput
+}
+
+input driverCreateWithoutOrderInput {
+  approved: Boolean
+  blocked: Boolean
+  currently_delivering: Boolean
+  driver_document: driver_documentCreateManyWithoutDriverInput
+  full_name: String
+  mobile_no: Int
+}
+
+input driverOrderByInput {
+  approved: OrderByArg
+  blocked: OrderByArg
+  currently_delivering: OrderByArg
+  full_name: OrderByArg
+  id: OrderByArg
+  mobile_no: OrderByArg
+}
+
+input driverUpdateInput {
+  approved: Boolean
+  blocked: Boolean
+  currently_delivering: Boolean
+  driver_document: driver_documentUpdateManyWithoutDriverInput
+  full_name: String
+  id: Int
+  mobile_no: Int
+  order: orderUpdateManyWithoutDriverInput
+}
+
+input driverUpdateManyMutationInput {
+  approved: Boolean
+  blocked: Boolean
+  currently_delivering: Boolean
+  full_name: String
+  id: Int
+  mobile_no: Int
+}
+
+input driverUpdateOneRequiredWithoutDriver_documentInput {
+  connect: driverWhereUniqueInput
+  create: driverCreateWithoutDriver_documentInput
+  update: driverUpdateWithoutDriver_documentDataInput
+  upsert: driverUpsertWithoutDriver_documentInput
+}
+
+input driverUpdateOneRequiredWithoutOrderInput {
+  connect: driverWhereUniqueInput
+  create: driverCreateWithoutOrderInput
+  update: driverUpdateWithoutOrderDataInput
+  upsert: driverUpsertWithoutOrderInput
+}
+
+input driverUpdateWithoutDriver_documentDataInput {
+  approved: Boolean
+  blocked: Boolean
+  currently_delivering: Boolean
+  full_name: String
+  id: Int
+  mobile_no: Int
+  order: orderUpdateManyWithoutDriverInput
+}
+
+input driverUpdateWithoutOrderDataInput {
+  approved: Boolean
+  blocked: Boolean
+  currently_delivering: Boolean
+  driver_document: driver_documentUpdateManyWithoutDriverInput
+  full_name: String
+  id: Int
+  mobile_no: Int
+}
+
+input driverUpsertWithoutDriver_documentInput {
+  create: driverCreateWithoutDriver_documentInput!
+  update: driverUpdateWithoutDriver_documentDataInput!
+}
+
+input driverUpsertWithoutOrderInput {
+  create: driverCreateWithoutOrderInput!
+  update: driverUpdateWithoutOrderDataInput!
+}
+
+input driverWhereInput {
+  AND: [driverWhereInput!]
+  approved: NullableBooleanFilter
+  blocked: NullableBooleanFilter
+  currently_delivering: NullableBooleanFilter
+  driver_document: driver_documentFilter
+  full_name: NullableStringFilter
+  id: IntFilter
+  mobile_no: NullableIntFilter
+  NOT: [driverWhereInput!]
+  OR: [driverWhereInput!]
+  order: orderFilter
+}
+
+input driverWhereUniqueInput {
+  id: Int
+  mobile_no: Int
+}
+
 input IntFilter {
   equals: Int
   gt: Int
@@ -14,74 +583,155 @@ input IntFilter {
 }
 
 type Mutation {
-  createPokemon(data: pokemonCreateInput!): pokemon!
-  deleteMany(where: pokemonWhereInput): pokemon!
-  deleteOnepokemon(where: pokemonWhereUniqueInput!): pokemon
-  updateMany(data: pokemonUpdateManyMutationInput!, where: pokemonWhereInput): pokemon!
-  updateOnepokemon(data: pokemonUpdateInput!, where: pokemonWhereUniqueInput!): pokemon
-  upsertOnepokemon(create: pokemonCreateInput!, update: pokemonUpdateInput!, where: pokemonWhereUniqueInput!): pokemon!
+  createOnecart(data: cartCreateInput!): cart!
+  createOnecategory(data: categoryCreateInput!): category!
+  createOnedriver(data: driverCreateInput!): driver!
+  createOnedriverDocument(data: driver_documentCreateInput!): driver_document!
+  createOneorder(data: orderCreateInput!): order!
+  createOneproduct(data: productCreateInput!): product!
+  createOneproductCategoriesJunction(data: product_categories_junctionCreateInput!): product_categories_junction!
+  createOneproductImage(data: product_imageCreateInput!): product_image!
+  createOneproductQuantity(data: product_quantityCreateInput!): product_quantity!
+  createOneproductRating(data: product_ratingCreateInput!): product_rating!
+  createOneproductType(data: product_typeCreateInput!): product_type!
+  createOneproductTypesJunction(data: product_types_junctionCreateInput!): product_types_junction!
+  createOnestore(data: storeCreateInput!): store!
+  createOnestoreDocument(data: store_documentCreateInput!): store_document!
+  createOneuser(data: userCreateInput!): user!
+  createOneuserAddress(data: user_addressCreateInput!): user_address!
+  createOnevoucher(data: voucherCreateInput!): voucher!
+  createOnewishlist(data: wishlistCreateInput!): wishlist!
+  deleteManycart(where: cartWhereInput): BatchPayload!
+  deleteManycategory(where: categoryWhereInput): BatchPayload!
+  deleteManydriver(where: driverWhereInput): BatchPayload!
+  deleteManydriverDocument(where: driver_documentWhereInput): BatchPayload!
+  deleteManyorder(where: orderWhereInput): BatchPayload!
+  deleteManyproduct(where: productWhereInput): BatchPayload!
+  deleteManyproductCategoriesJunction(where: product_categories_junctionWhereInput): BatchPayload!
+  deleteManyproductImage(where: product_imageWhereInput): BatchPayload!
+  deleteManyproductQuantity(where: product_quantityWhereInput): BatchPayload!
+  deleteManyproductRating(where: product_ratingWhereInput): BatchPayload!
+  deleteManyproductType(where: product_typeWhereInput): BatchPayload!
+  deleteManyproductTypesJunction(where: product_types_junctionWhereInput): BatchPayload!
+  deleteManystore(where: storeWhereInput): BatchPayload!
+  deleteManystoreDocument(where: store_documentWhereInput): BatchPayload!
+  deleteManyuser(where: userWhereInput): BatchPayload!
+  deleteManyuserAddress(where: user_addressWhereInput): BatchPayload!
+  deleteManyvoucher(where: voucherWhereInput): BatchPayload!
+  deleteManywishlist(where: wishlistWhereInput): BatchPayload!
+  deleteOnecart(where: cartWhereUniqueInput!): cart
+  deleteOnecategory(where: categoryWhereUniqueInput!): category
+  deleteOnedriver(where: driverWhereUniqueInput!): driver
+  deleteOnedriverDocument(where: driver_documentWhereUniqueInput!): driver_document
+  deleteOneorder(where: orderWhereUniqueInput!): order
+  deleteOneproduct(where: productWhereUniqueInput!): product
+  deleteOneproductCategoriesJunction(where: product_categories_junctionWhereUniqueInput!): product_categories_junction
+  deleteOneproductImage(where: product_imageWhereUniqueInput!): product_image
+  deleteOneproductQuantity(where: product_quantityWhereUniqueInput!): product_quantity
+  deleteOneproductRating(where: product_ratingWhereUniqueInput!): product_rating
+  deleteOneproductType(where: product_typeWhereUniqueInput!): product_type
+  deleteOneproductTypesJunction(where: product_types_junctionWhereUniqueInput!): product_types_junction
+  deleteOnestore(where: storeWhereUniqueInput!): store
+  deleteOnestoreDocument(where: store_documentWhereUniqueInput!): store_document
+  deleteOneuser(where: userWhereUniqueInput!): user
+  deleteOneuserAddress(where: user_addressWhereUniqueInput!): user_address
+  deleteOnevoucher(where: voucherWhereUniqueInput!): voucher
+  deleteOnewishlist(where: wishlistWhereUniqueInput!): wishlist
+  updateManycart(data: cartUpdateManyMutationInput!, where: cartWhereInput): BatchPayload!
+  updateManycategory(data: categoryUpdateManyMutationInput!, where: categoryWhereInput): BatchPayload!
+  updateManydriver(data: driverUpdateManyMutationInput!, where: driverWhereInput): BatchPayload!
+  updateManydriverDocument(data: driver_documentUpdateManyMutationInput!, where: driver_documentWhereInput): BatchPayload!
+  updateManyorder(data: orderUpdateManyMutationInput!, where: orderWhereInput): BatchPayload!
+  updateManyproduct(data: productUpdateManyMutationInput!, where: productWhereInput): BatchPayload!
+  updateManyproductCategoriesJunction(data: product_categories_junctionUpdateManyMutationInput!, where: product_categories_junctionWhereInput): BatchPayload!
+  updateManyproductImage(data: product_imageUpdateManyMutationInput!, where: product_imageWhereInput): BatchPayload!
+  updateManyproductQuantity(data: product_quantityUpdateManyMutationInput!, where: product_quantityWhereInput): BatchPayload!
+  updateManyproductRating(data: product_ratingUpdateManyMutationInput!, where: product_ratingWhereInput): BatchPayload!
+  updateManyproductType(data: product_typeUpdateManyMutationInput!, where: product_typeWhereInput): BatchPayload!
+  updateManyproductTypesJunction(data: product_types_junctionUpdateManyMutationInput!, where: product_types_junctionWhereInput): BatchPayload!
+  updateManystore(data: storeUpdateManyMutationInput!, where: storeWhereInput): BatchPayload!
+  updateManystoreDocument(data: store_documentUpdateManyMutationInput!, where: store_documentWhereInput): BatchPayload!
+  updateManyuser(data: userUpdateManyMutationInput!, where: userWhereInput): BatchPayload!
+  updateManyuserAddress(data: user_addressUpdateManyMutationInput!, where: user_addressWhereInput): BatchPayload!
+  updateManyvoucher(data: voucherUpdateManyMutationInput!, where: voucherWhereInput): BatchPayload!
+  updateManywishlist(data: wishlistUpdateManyMutationInput!, where: wishlistWhereInput): BatchPayload!
+  updateOnecart(data: cartUpdateInput!, where: cartWhereUniqueInput!): cart
+  updateOnecategory(data: categoryUpdateInput!, where: categoryWhereUniqueInput!): category
+  updateOnedriver(data: driverUpdateInput!, where: driverWhereUniqueInput!): driver
+  updateOnedriverDocument(data: driver_documentUpdateInput!, where: driver_documentWhereUniqueInput!): driver_document
+  updateOneorder(data: orderUpdateInput!, where: orderWhereUniqueInput!): order
+  updateOneproduct(data: productUpdateInput!, where: productWhereUniqueInput!): product
+  updateOneproductCategoriesJunction(data: product_categories_junctionUpdateInput!, where: product_categories_junctionWhereUniqueInput!): product_categories_junction
+  updateOneproductImage(data: product_imageUpdateInput!, where: product_imageWhereUniqueInput!): product_image
+  updateOneproductQuantity(data: product_quantityUpdateInput!, where: product_quantityWhereUniqueInput!): product_quantity
+  updateOneproductRating(data: product_ratingUpdateInput!, where: product_ratingWhereUniqueInput!): product_rating
+  updateOneproductType(data: product_typeUpdateInput!, where: product_typeWhereUniqueInput!): product_type
+  updateOneproductTypesJunction(data: product_types_junctionUpdateInput!, where: product_types_junctionWhereUniqueInput!): product_types_junction
+  updateOnestore(data: storeUpdateInput!, where: storeWhereUniqueInput!): store
+  updateOnestoreDocument(data: store_documentUpdateInput!, where: store_documentWhereUniqueInput!): store_document
+  updateOneuser(data: userUpdateInput!, where: userWhereUniqueInput!): user
+  updateOneuserAddress(data: user_addressUpdateInput!, where: user_addressWhereUniqueInput!): user_address
+  updateOnevoucher(data: voucherUpdateInput!, where: voucherWhereUniqueInput!): voucher
+  updateOnewishlist(data: wishlistUpdateInput!, where: wishlistWhereUniqueInput!): wishlist
+  upsertOnecart(create: cartCreateInput!, update: cartUpdateInput!, where: cartWhereUniqueInput!): cart!
+  upsertOnecategory(create: categoryCreateInput!, update: categoryUpdateInput!, where: categoryWhereUniqueInput!): category!
+  upsertOnedriver(create: driverCreateInput!, update: driverUpdateInput!, where: driverWhereUniqueInput!): driver!
+  upsertOnedriverDocument(create: driver_documentCreateInput!, update: driver_documentUpdateInput!, where: driver_documentWhereUniqueInput!): driver_document!
+  upsertOneorder(create: orderCreateInput!, update: orderUpdateInput!, where: orderWhereUniqueInput!): order!
+  upsertOneproduct(create: productCreateInput!, update: productUpdateInput!, where: productWhereUniqueInput!): product!
+  upsertOneproductCategoriesJunction(create: product_categories_junctionCreateInput!, update: product_categories_junctionUpdateInput!, where: product_categories_junctionWhereUniqueInput!): product_categories_junction!
+  upsertOneproductImage(create: product_imageCreateInput!, update: product_imageUpdateInput!, where: product_imageWhereUniqueInput!): product_image!
+  upsertOneproductQuantity(create: product_quantityCreateInput!, update: product_quantityUpdateInput!, where: product_quantityWhereUniqueInput!): product_quantity!
+  upsertOneproductRating(create: product_ratingCreateInput!, update: product_ratingUpdateInput!, where: product_ratingWhereUniqueInput!): product_rating!
+  upsertOneproductType(create: product_typeCreateInput!, update: product_typeUpdateInput!, where: product_typeWhereUniqueInput!): product_type!
+  upsertOneproductTypesJunction(create: product_types_junctionCreateInput!, update: product_types_junctionUpdateInput!, where: product_types_junctionWhereUniqueInput!): product_types_junction!
+  upsertOnestore(create: storeCreateInput!, update: storeUpdateInput!, where: storeWhereUniqueInput!): store!
+  upsertOnestoreDocument(create: store_documentCreateInput!, update: store_documentUpdateInput!, where: store_documentWhereUniqueInput!): store_document!
+  upsertOneuser(create: userCreateInput!, update: userUpdateInput!, where: userWhereUniqueInput!): user!
+  upsertOneuserAddress(create: user_addressCreateInput!, update: user_addressUpdateInput!, where: user_addressWhereUniqueInput!): user_address!
+  upsertOnevoucher(create: voucherCreateInput!, update: voucherUpdateInput!, where: voucherWhereUniqueInput!): voucher!
+  upsertOnewishlist(create: wishlistCreateInput!, update: wishlistUpdateInput!, where: wishlistWhereUniqueInput!): wishlist!
 }
 
-enum OrderByArg {
-  asc
-  desc
+input NullableBooleanFilter {
+  equals: Boolean
+  not: Boolean
 }
 
-type pokemon {
-  id: Int!
-  name: String!
-  pokedex: Int!
-  type: String!
+input NullableDateTimeFilter {
+  equals: DateTime
+  gt: DateTime
+  gte: DateTime
+  in: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  not: DateTime
+  notIn: [DateTime!]
 }
 
-input pokemonCreateInput {
-  name: String!
-  pokedex: Int!
-  type: String!
+input NullableFloatFilter {
+  equals: Float
+  gt: Float
+  gte: Float
+  in: [Float!]
+  lt: Float
+  lte: Float
+  not: Float
+  notIn: [Float!]
 }
 
-input pokemonOrderByInput {
-  id: OrderByArg
-  name: OrderByArg
-  pokedex: OrderByArg
-  type: OrderByArg
+input NullableIntFilter {
+  equals: Int
+  gt: Int
+  gte: Int
+  in: [Int!]
+  lt: Int
+  lte: Int
+  not: Int
+  notIn: [Int!]
 }
 
-input pokemonUpdateInput {
-  id: Int
-  name: String
-  pokedex: Int
-  type: String
-}
-
-input pokemonUpdateManyMutationInput {
-  id: Int
-  name: String
-  pokedex: Int
-  type: String
-}
-
-input pokemonWhereInput {
-  AND: [pokemonWhereInput!]
-  id: IntFilter
-  name: StringFilter
-  NOT: [pokemonWhereInput!]
-  OR: [pokemonWhereInput!]
-  pokedex: IntFilter
-  type: StringFilter
-}
-
-input pokemonWhereUniqueInput {
-  id: Int
-  name: String
-  pokedex: Int
-}
-
-type Query {
-  pokemon(cursor: pokemonWhereUniqueInput, orderBy: pokemonOrderByInput, skip: Int, take: Int, where: pokemonWhereInput): [pokemon!]!
-}
-
-input StringFilter {
+input NullableStringFilter {
   contains: String
   endsWith: String
   equals: String
@@ -95,6 +745,2894 @@ input StringFilter {
   startsWith: String
 }
 
-type Subscription {
-  newPokemon: pokemon!
+type order {
+  approved: Boolean
+  driver: driver!
+  driver_id: Int!
+  id: Int!
+  order_date: DateTime
+  product: product!
+  products: Int!
+  shipping_cost: Int
+  shipping_provider: String
+  shipping_ref_no: String
+  status: orders_status
+  store: store!
+  store_ids: Int!
+  total_cost: Int
+  total_discount: Int
+  total_tax: Int
+  user: user!
+  user_address: String
+  user_id: Int!
+}
+
+enum OrderByArg {
+  asc
+  desc
+}
+
+input orderCreateInput {
+  approved: Boolean
+  driver: driverCreateOneWithoutOrderInput!
+  order_date: DateTime
+  product: productCreateOneWithoutOrderInput!
+  shipping_cost: Int
+  shipping_provider: String
+  shipping_ref_no: String
+  status: orders_status
+  store: storeCreateOneWithoutOrderInput!
+  total_cost: Int
+  total_discount: Int
+  total_tax: Int
+  user: userCreateOneWithoutOrderInput!
+  user_address: String
+}
+
+input orderCreateManyWithoutDriverInput {
+  connect: [orderWhereUniqueInput!]
+  create: [orderCreateWithoutDriverInput!]
+}
+
+input orderCreateManyWithoutProductInput {
+  connect: [orderWhereUniqueInput!]
+  create: [orderCreateWithoutProductInput!]
+}
+
+input orderCreateManyWithoutStoreInput {
+  connect: [orderWhereUniqueInput!]
+  create: [orderCreateWithoutStoreInput!]
+}
+
+input orderCreateManyWithoutUserInput {
+  connect: [orderWhereUniqueInput!]
+  create: [orderCreateWithoutUserInput!]
+}
+
+input orderCreateWithoutDriverInput {
+  approved: Boolean
+  order_date: DateTime
+  product: productCreateOneWithoutOrderInput!
+  shipping_cost: Int
+  shipping_provider: String
+  shipping_ref_no: String
+  status: orders_status
+  store: storeCreateOneWithoutOrderInput!
+  total_cost: Int
+  total_discount: Int
+  total_tax: Int
+  user: userCreateOneWithoutOrderInput!
+  user_address: String
+}
+
+input orderCreateWithoutProductInput {
+  approved: Boolean
+  driver: driverCreateOneWithoutOrderInput!
+  order_date: DateTime
+  shipping_cost: Int
+  shipping_provider: String
+  shipping_ref_no: String
+  status: orders_status
+  store: storeCreateOneWithoutOrderInput!
+  total_cost: Int
+  total_discount: Int
+  total_tax: Int
+  user: userCreateOneWithoutOrderInput!
+  user_address: String
+}
+
+input orderCreateWithoutStoreInput {
+  approved: Boolean
+  driver: driverCreateOneWithoutOrderInput!
+  order_date: DateTime
+  product: productCreateOneWithoutOrderInput!
+  shipping_cost: Int
+  shipping_provider: String
+  shipping_ref_no: String
+  status: orders_status
+  total_cost: Int
+  total_discount: Int
+  total_tax: Int
+  user: userCreateOneWithoutOrderInput!
+  user_address: String
+}
+
+input orderCreateWithoutUserInput {
+  approved: Boolean
+  driver: driverCreateOneWithoutOrderInput!
+  order_date: DateTime
+  product: productCreateOneWithoutOrderInput!
+  shipping_cost: Int
+  shipping_provider: String
+  shipping_ref_no: String
+  status: orders_status
+  store: storeCreateOneWithoutOrderInput!
+  total_cost: Int
+  total_discount: Int
+  total_tax: Int
+  user_address: String
+}
+
+input orderFilter {
+  every: orderWhereInput
+  none: orderWhereInput
+  some: orderWhereInput
+}
+
+input orderOrderByInput {
+  approved: OrderByArg
+  driver_id: OrderByArg
+  id: OrderByArg
+  order_date: OrderByArg
+  products: OrderByArg
+  shipping_cost: OrderByArg
+  shipping_provider: OrderByArg
+  shipping_ref_no: OrderByArg
+  status: OrderByArg
+  store_ids: OrderByArg
+  total_cost: OrderByArg
+  total_discount: OrderByArg
+  total_tax: OrderByArg
+  user_address: OrderByArg
+  user_id: OrderByArg
+}
+
+enum orders_status {
+  accepted
+  delivered
+  out_for_delivery
+  picked_up
+}
+
+input orderScalarWhereInput {
+  AND: [orderScalarWhereInput!]
+  approved: NullableBooleanFilter
+  driver_id: IntFilter
+  id: IntFilter
+  NOT: [orderScalarWhereInput!]
+  OR: [orderScalarWhereInput!]
+  order_date: NullableDateTimeFilter
+  products: IntFilter
+  shipping_cost: NullableIntFilter
+  shipping_provider: NullableStringFilter
+  shipping_ref_no: NullableStringFilter
+  status: orders_status
+  store_ids: IntFilter
+  total_cost: NullableIntFilter
+  total_discount: NullableIntFilter
+  total_tax: NullableIntFilter
+  user_address: NullableStringFilter
+  user_id: IntFilter
+}
+
+input orderUpdateInput {
+  approved: Boolean
+  driver: driverUpdateOneRequiredWithoutOrderInput
+  id: Int
+  order_date: DateTime
+  product: productUpdateOneRequiredWithoutOrderInput
+  shipping_cost: Int
+  shipping_provider: String
+  shipping_ref_no: String
+  status: orders_status
+  store: storeUpdateOneRequiredWithoutOrderInput
+  total_cost: Int
+  total_discount: Int
+  total_tax: Int
+  user: userUpdateOneRequiredWithoutOrderInput
+  user_address: String
+}
+
+input orderUpdateManyDataInput {
+  approved: Boolean
+  id: Int
+  order_date: DateTime
+  shipping_cost: Int
+  shipping_provider: String
+  shipping_ref_no: String
+  status: orders_status
+  total_cost: Int
+  total_discount: Int
+  total_tax: Int
+  user_address: String
+}
+
+input orderUpdateManyMutationInput {
+  approved: Boolean
+  id: Int
+  order_date: DateTime
+  shipping_cost: Int
+  shipping_provider: String
+  shipping_ref_no: String
+  status: orders_status
+  total_cost: Int
+  total_discount: Int
+  total_tax: Int
+  user_address: String
+}
+
+input orderUpdateManyWithoutDriverInput {
+  connect: [orderWhereUniqueInput!]
+  create: [orderCreateWithoutDriverInput!]
+  delete: [orderWhereUniqueInput!]
+  deleteMany: [orderScalarWhereInput!]
+  disconnect: [orderWhereUniqueInput!]
+  set: [orderWhereUniqueInput!]
+  update: [orderUpdateWithWhereUniqueWithoutDriverInput!]
+  updateMany: [orderUpdateManyWithWhereNestedInput!]
+  upsert: [orderUpsertWithWhereUniqueWithoutDriverInput!]
+}
+
+input orderUpdateManyWithoutProductInput {
+  connect: [orderWhereUniqueInput!]
+  create: [orderCreateWithoutProductInput!]
+  delete: [orderWhereUniqueInput!]
+  deleteMany: [orderScalarWhereInput!]
+  disconnect: [orderWhereUniqueInput!]
+  set: [orderWhereUniqueInput!]
+  update: [orderUpdateWithWhereUniqueWithoutProductInput!]
+  updateMany: [orderUpdateManyWithWhereNestedInput!]
+  upsert: [orderUpsertWithWhereUniqueWithoutProductInput!]
+}
+
+input orderUpdateManyWithoutStoreInput {
+  connect: [orderWhereUniqueInput!]
+  create: [orderCreateWithoutStoreInput!]
+  delete: [orderWhereUniqueInput!]
+  deleteMany: [orderScalarWhereInput!]
+  disconnect: [orderWhereUniqueInput!]
+  set: [orderWhereUniqueInput!]
+  update: [orderUpdateWithWhereUniqueWithoutStoreInput!]
+  updateMany: [orderUpdateManyWithWhereNestedInput!]
+  upsert: [orderUpsertWithWhereUniqueWithoutStoreInput!]
+}
+
+input orderUpdateManyWithoutUserInput {
+  connect: [orderWhereUniqueInput!]
+  create: [orderCreateWithoutUserInput!]
+  delete: [orderWhereUniqueInput!]
+  deleteMany: [orderScalarWhereInput!]
+  disconnect: [orderWhereUniqueInput!]
+  set: [orderWhereUniqueInput!]
+  update: [orderUpdateWithWhereUniqueWithoutUserInput!]
+  updateMany: [orderUpdateManyWithWhereNestedInput!]
+  upsert: [orderUpsertWithWhereUniqueWithoutUserInput!]
+}
+
+input orderUpdateManyWithWhereNestedInput {
+  data: orderUpdateManyDataInput!
+  where: orderScalarWhereInput!
+}
+
+input orderUpdateWithoutDriverDataInput {
+  approved: Boolean
+  id: Int
+  order_date: DateTime
+  product: productUpdateOneRequiredWithoutOrderInput
+  shipping_cost: Int
+  shipping_provider: String
+  shipping_ref_no: String
+  status: orders_status
+  store: storeUpdateOneRequiredWithoutOrderInput
+  total_cost: Int
+  total_discount: Int
+  total_tax: Int
+  user: userUpdateOneRequiredWithoutOrderInput
+  user_address: String
+}
+
+input orderUpdateWithoutProductDataInput {
+  approved: Boolean
+  driver: driverUpdateOneRequiredWithoutOrderInput
+  id: Int
+  order_date: DateTime
+  shipping_cost: Int
+  shipping_provider: String
+  shipping_ref_no: String
+  status: orders_status
+  store: storeUpdateOneRequiredWithoutOrderInput
+  total_cost: Int
+  total_discount: Int
+  total_tax: Int
+  user: userUpdateOneRequiredWithoutOrderInput
+  user_address: String
+}
+
+input orderUpdateWithoutStoreDataInput {
+  approved: Boolean
+  driver: driverUpdateOneRequiredWithoutOrderInput
+  id: Int
+  order_date: DateTime
+  product: productUpdateOneRequiredWithoutOrderInput
+  shipping_cost: Int
+  shipping_provider: String
+  shipping_ref_no: String
+  status: orders_status
+  total_cost: Int
+  total_discount: Int
+  total_tax: Int
+  user: userUpdateOneRequiredWithoutOrderInput
+  user_address: String
+}
+
+input orderUpdateWithoutUserDataInput {
+  approved: Boolean
+  driver: driverUpdateOneRequiredWithoutOrderInput
+  id: Int
+  order_date: DateTime
+  product: productUpdateOneRequiredWithoutOrderInput
+  shipping_cost: Int
+  shipping_provider: String
+  shipping_ref_no: String
+  status: orders_status
+  store: storeUpdateOneRequiredWithoutOrderInput
+  total_cost: Int
+  total_discount: Int
+  total_tax: Int
+  user_address: String
+}
+
+input orderUpdateWithWhereUniqueWithoutDriverInput {
+  data: orderUpdateWithoutDriverDataInput!
+  where: orderWhereUniqueInput!
+}
+
+input orderUpdateWithWhereUniqueWithoutProductInput {
+  data: orderUpdateWithoutProductDataInput!
+  where: orderWhereUniqueInput!
+}
+
+input orderUpdateWithWhereUniqueWithoutStoreInput {
+  data: orderUpdateWithoutStoreDataInput!
+  where: orderWhereUniqueInput!
+}
+
+input orderUpdateWithWhereUniqueWithoutUserInput {
+  data: orderUpdateWithoutUserDataInput!
+  where: orderWhereUniqueInput!
+}
+
+input orderUpsertWithWhereUniqueWithoutDriverInput {
+  create: orderCreateWithoutDriverInput!
+  update: orderUpdateWithoutDriverDataInput!
+  where: orderWhereUniqueInput!
+}
+
+input orderUpsertWithWhereUniqueWithoutProductInput {
+  create: orderCreateWithoutProductInput!
+  update: orderUpdateWithoutProductDataInput!
+  where: orderWhereUniqueInput!
+}
+
+input orderUpsertWithWhereUniqueWithoutStoreInput {
+  create: orderCreateWithoutStoreInput!
+  update: orderUpdateWithoutStoreDataInput!
+  where: orderWhereUniqueInput!
+}
+
+input orderUpsertWithWhereUniqueWithoutUserInput {
+  create: orderCreateWithoutUserInput!
+  update: orderUpdateWithoutUserDataInput!
+  where: orderWhereUniqueInput!
+}
+
+input orderWhereInput {
+  AND: [orderWhereInput!]
+  approved: NullableBooleanFilter
+  driver: driverWhereInput
+  driver_id: IntFilter
+  id: IntFilter
+  NOT: [orderWhereInput!]
+  OR: [orderWhereInput!]
+  order_date: NullableDateTimeFilter
+  product: productWhereInput
+  products: IntFilter
+  shipping_cost: NullableIntFilter
+  shipping_provider: NullableStringFilter
+  shipping_ref_no: NullableStringFilter
+  status: orders_status
+  store: storeWhereInput
+  store_ids: IntFilter
+  total_cost: NullableIntFilter
+  total_discount: NullableIntFilter
+  total_tax: NullableIntFilter
+  user: userWhereInput
+  user_address: NullableStringFilter
+  user_id: IntFilter
+}
+
+input orderWhereUniqueInput {
+  id: Int
+}
+
+type product {
+  cost: Float
+  description: String
+  discount: Float
+  discounted_cost: Float
+  id: Int!
+  mrp: Float
+  order(cursor: orderWhereUniqueInput, skip: Int, take: Int): [order!]!
+  product_categories_junction(cursor: product_categories_junctionWhereUniqueInput, skip: Int, take: Int): [product_categories_junction!]!
+  product_image(cursor: product_imageWhereUniqueInput, skip: Int, take: Int): [product_image!]!
+  product_quantity(cursor: product_quantityWhereUniqueInput, skip: Int, take: Int): [product_quantity!]!
+  product_rating(cursor: product_ratingWhereUniqueInput, skip: Int, take: Int): [product_rating!]!
+  product_types_junction(cursor: product_types_junctionWhereUniqueInput, skip: Int, take: Int): [product_types_junction!]!
+  store: store!
+  store_id: Int!
+  tax: Float
+  title: String
+  total_cost: Float
+}
+
+type product_categories_junction {
+  category: category!
+  category_id: Int!
+  id: Int!
+  product: product!
+  product_id: Int!
+}
+
+input product_categories_junctionCreateInput {
+  category: categoryCreateOneWithoutProduct_categories_junctionInput!
+  product: productCreateOneWithoutProduct_categories_junctionInput!
+}
+
+input product_categories_junctionCreateManyWithoutCategoryInput {
+  connect: [product_categories_junctionWhereUniqueInput!]
+  create: [product_categories_junctionCreateWithoutCategoryInput!]
+}
+
+input product_categories_junctionCreateManyWithoutProductInput {
+  connect: [product_categories_junctionWhereUniqueInput!]
+  create: [product_categories_junctionCreateWithoutProductInput!]
+}
+
+input product_categories_junctionCreateWithoutCategoryInput {
+  product: productCreateOneWithoutProduct_categories_junctionInput!
+}
+
+input product_categories_junctionCreateWithoutProductInput {
+  category: categoryCreateOneWithoutProduct_categories_junctionInput!
+}
+
+input product_categories_junctionFilter {
+  every: product_categories_junctionWhereInput
+  none: product_categories_junctionWhereInput
+  some: product_categories_junctionWhereInput
+}
+
+input product_categories_junctionOrderByInput {
+  category_id: OrderByArg
+  id: OrderByArg
+  product_id: OrderByArg
+}
+
+input product_categories_junctionScalarWhereInput {
+  AND: [product_categories_junctionScalarWhereInput!]
+  category_id: IntFilter
+  id: IntFilter
+  NOT: [product_categories_junctionScalarWhereInput!]
+  OR: [product_categories_junctionScalarWhereInput!]
+  product_id: IntFilter
+}
+
+input product_categories_junctionUpdateInput {
+  category: categoryUpdateOneRequiredWithoutProduct_categories_junctionInput
+  id: Int
+  product: productUpdateOneRequiredWithoutProduct_categories_junctionInput
+}
+
+input product_categories_junctionUpdateManyDataInput {
+  id: Int
+}
+
+input product_categories_junctionUpdateManyMutationInput {
+  id: Int
+}
+
+input product_categories_junctionUpdateManyWithoutCategoryInput {
+  connect: [product_categories_junctionWhereUniqueInput!]
+  create: [product_categories_junctionCreateWithoutCategoryInput!]
+  delete: [product_categories_junctionWhereUniqueInput!]
+  deleteMany: [product_categories_junctionScalarWhereInput!]
+  disconnect: [product_categories_junctionWhereUniqueInput!]
+  set: [product_categories_junctionWhereUniqueInput!]
+  update: [product_categories_junctionUpdateWithWhereUniqueWithoutCategoryInput!]
+  updateMany: [product_categories_junctionUpdateManyWithWhereNestedInput!]
+  upsert: [product_categories_junctionUpsertWithWhereUniqueWithoutCategoryInput!]
+}
+
+input product_categories_junctionUpdateManyWithoutProductInput {
+  connect: [product_categories_junctionWhereUniqueInput!]
+  create: [product_categories_junctionCreateWithoutProductInput!]
+  delete: [product_categories_junctionWhereUniqueInput!]
+  deleteMany: [product_categories_junctionScalarWhereInput!]
+  disconnect: [product_categories_junctionWhereUniqueInput!]
+  set: [product_categories_junctionWhereUniqueInput!]
+  update: [product_categories_junctionUpdateWithWhereUniqueWithoutProductInput!]
+  updateMany: [product_categories_junctionUpdateManyWithWhereNestedInput!]
+  upsert: [product_categories_junctionUpsertWithWhereUniqueWithoutProductInput!]
+}
+
+input product_categories_junctionUpdateManyWithWhereNestedInput {
+  data: product_categories_junctionUpdateManyDataInput!
+  where: product_categories_junctionScalarWhereInput!
+}
+
+input product_categories_junctionUpdateWithoutCategoryDataInput {
+  id: Int
+  product: productUpdateOneRequiredWithoutProduct_categories_junctionInput
+}
+
+input product_categories_junctionUpdateWithoutProductDataInput {
+  category: categoryUpdateOneRequiredWithoutProduct_categories_junctionInput
+  id: Int
+}
+
+input product_categories_junctionUpdateWithWhereUniqueWithoutCategoryInput {
+  data: product_categories_junctionUpdateWithoutCategoryDataInput!
+  where: product_categories_junctionWhereUniqueInput!
+}
+
+input product_categories_junctionUpdateWithWhereUniqueWithoutProductInput {
+  data: product_categories_junctionUpdateWithoutProductDataInput!
+  where: product_categories_junctionWhereUniqueInput!
+}
+
+input product_categories_junctionUpsertWithWhereUniqueWithoutCategoryInput {
+  create: product_categories_junctionCreateWithoutCategoryInput!
+  update: product_categories_junctionUpdateWithoutCategoryDataInput!
+  where: product_categories_junctionWhereUniqueInput!
+}
+
+input product_categories_junctionUpsertWithWhereUniqueWithoutProductInput {
+  create: product_categories_junctionCreateWithoutProductInput!
+  update: product_categories_junctionUpdateWithoutProductDataInput!
+  where: product_categories_junctionWhereUniqueInput!
+}
+
+input product_categories_junctionWhereInput {
+  AND: [product_categories_junctionWhereInput!]
+  category: categoryWhereInput
+  category_id: IntFilter
+  id: IntFilter
+  NOT: [product_categories_junctionWhereInput!]
+  OR: [product_categories_junctionWhereInput!]
+  product: productWhereInput
+  product_id: IntFilter
+}
+
+input product_categories_junctionWhereUniqueInput {
+  id: Int
+}
+
+type product_image {
+  id: Int!
+  image: String
+  product: product!
+  product_id: Int!
+}
+
+input product_imageCreateInput {
+  image: String
+  product: productCreateOneWithoutProduct_imageInput!
+}
+
+input product_imageCreateManyWithoutProductInput {
+  connect: [product_imageWhereUniqueInput!]
+  create: [product_imageCreateWithoutProductInput!]
+}
+
+input product_imageCreateWithoutProductInput {
+  image: String
+}
+
+input product_imageFilter {
+  every: product_imageWhereInput
+  none: product_imageWhereInput
+  some: product_imageWhereInput
+}
+
+input product_imageOrderByInput {
+  id: OrderByArg
+  image: OrderByArg
+  product_id: OrderByArg
+}
+
+input product_imageScalarWhereInput {
+  AND: [product_imageScalarWhereInput!]
+  id: IntFilter
+  image: NullableStringFilter
+  NOT: [product_imageScalarWhereInput!]
+  OR: [product_imageScalarWhereInput!]
+  product_id: IntFilter
+}
+
+input product_imageUpdateInput {
+  id: Int
+  image: String
+  product: productUpdateOneRequiredWithoutProduct_imageInput
+}
+
+input product_imageUpdateManyDataInput {
+  id: Int
+  image: String
+}
+
+input product_imageUpdateManyMutationInput {
+  id: Int
+  image: String
+}
+
+input product_imageUpdateManyWithoutProductInput {
+  connect: [product_imageWhereUniqueInput!]
+  create: [product_imageCreateWithoutProductInput!]
+  delete: [product_imageWhereUniqueInput!]
+  deleteMany: [product_imageScalarWhereInput!]
+  disconnect: [product_imageWhereUniqueInput!]
+  set: [product_imageWhereUniqueInput!]
+  update: [product_imageUpdateWithWhereUniqueWithoutProductInput!]
+  updateMany: [product_imageUpdateManyWithWhereNestedInput!]
+  upsert: [product_imageUpsertWithWhereUniqueWithoutProductInput!]
+}
+
+input product_imageUpdateManyWithWhereNestedInput {
+  data: product_imageUpdateManyDataInput!
+  where: product_imageScalarWhereInput!
+}
+
+input product_imageUpdateWithoutProductDataInput {
+  id: Int
+  image: String
+}
+
+input product_imageUpdateWithWhereUniqueWithoutProductInput {
+  data: product_imageUpdateWithoutProductDataInput!
+  where: product_imageWhereUniqueInput!
+}
+
+input product_imageUpsertWithWhereUniqueWithoutProductInput {
+  create: product_imageCreateWithoutProductInput!
+  update: product_imageUpdateWithoutProductDataInput!
+  where: product_imageWhereUniqueInput!
+}
+
+input product_imageWhereInput {
+  AND: [product_imageWhereInput!]
+  id: IntFilter
+  image: NullableStringFilter
+  NOT: [product_imageWhereInput!]
+  OR: [product_imageWhereInput!]
+  product: productWhereInput
+  product_id: IntFilter
+}
+
+input product_imageWhereUniqueInput {
+  id: Int
+}
+
+type product_quantity {
+  cart(cursor: cartWhereUniqueInput, skip: Int, take: Int): [cart!]!
+  id: Int!
+  product: product!
+  product_id: Int!
+  product_qty: Int
+  wishlist(cursor: wishlistWhereUniqueInput, skip: Int, take: Int): [wishlist!]!
+}
+
+input product_quantityCreateInput {
+  cart: cartCreateManyWithoutProduct_quantityInput
+  product: productCreateOneWithoutProduct_quantityInput!
+  product_qty: Int
+  wishlist: wishlistCreateManyWithoutProduct_quantityInput
+}
+
+input product_quantityCreateManyWithoutProductInput {
+  connect: [product_quantityWhereUniqueInput!]
+  create: [product_quantityCreateWithoutProductInput!]
+}
+
+input product_quantityCreateOneWithoutCartInput {
+  connect: product_quantityWhereUniqueInput
+  create: product_quantityCreateWithoutCartInput
+}
+
+input product_quantityCreateOneWithoutWishlistInput {
+  connect: product_quantityWhereUniqueInput
+  create: product_quantityCreateWithoutWishlistInput
+}
+
+input product_quantityCreateWithoutCartInput {
+  product: productCreateOneWithoutProduct_quantityInput!
+  product_qty: Int
+  wishlist: wishlistCreateManyWithoutProduct_quantityInput
+}
+
+input product_quantityCreateWithoutProductInput {
+  cart: cartCreateManyWithoutProduct_quantityInput
+  product_qty: Int
+  wishlist: wishlistCreateManyWithoutProduct_quantityInput
+}
+
+input product_quantityCreateWithoutWishlistInput {
+  cart: cartCreateManyWithoutProduct_quantityInput
+  product: productCreateOneWithoutProduct_quantityInput!
+  product_qty: Int
+}
+
+input product_quantityFilter {
+  every: product_quantityWhereInput
+  none: product_quantityWhereInput
+  some: product_quantityWhereInput
+}
+
+input product_quantityOrderByInput {
+  id: OrderByArg
+  product_id: OrderByArg
+  product_qty: OrderByArg
+}
+
+input product_quantityScalarWhereInput {
+  AND: [product_quantityScalarWhereInput!]
+  cart: cartFilter
+  id: IntFilter
+  NOT: [product_quantityScalarWhereInput!]
+  OR: [product_quantityScalarWhereInput!]
+  product_id: IntFilter
+  product_qty: NullableIntFilter
+  wishlist: wishlistFilter
+}
+
+input product_quantityUpdateInput {
+  cart: cartUpdateManyWithoutProduct_quantityInput
+  id: Int
+  product: productUpdateOneRequiredWithoutProduct_quantityInput
+  product_qty: Int
+  wishlist: wishlistUpdateManyWithoutProduct_quantityInput
+}
+
+input product_quantityUpdateManyDataInput {
+  id: Int
+  product_qty: Int
+}
+
+input product_quantityUpdateManyMutationInput {
+  id: Int
+  product_qty: Int
+}
+
+input product_quantityUpdateManyWithoutProductInput {
+  connect: [product_quantityWhereUniqueInput!]
+  create: [product_quantityCreateWithoutProductInput!]
+  delete: [product_quantityWhereUniqueInput!]
+  deleteMany: [product_quantityScalarWhereInput!]
+  disconnect: [product_quantityWhereUniqueInput!]
+  set: [product_quantityWhereUniqueInput!]
+  update: [product_quantityUpdateWithWhereUniqueWithoutProductInput!]
+  updateMany: [product_quantityUpdateManyWithWhereNestedInput!]
+  upsert: [product_quantityUpsertWithWhereUniqueWithoutProductInput!]
+}
+
+input product_quantityUpdateManyWithWhereNestedInput {
+  data: product_quantityUpdateManyDataInput!
+  where: product_quantityScalarWhereInput!
+}
+
+input product_quantityUpdateOneWithoutCartInput {
+  connect: product_quantityWhereUniqueInput
+  create: product_quantityCreateWithoutCartInput
+  delete: Boolean
+  disconnect: Boolean
+  update: product_quantityUpdateWithoutCartDataInput
+  upsert: product_quantityUpsertWithoutCartInput
+}
+
+input product_quantityUpdateOneWithoutWishlistInput {
+  connect: product_quantityWhereUniqueInput
+  create: product_quantityCreateWithoutWishlistInput
+  delete: Boolean
+  disconnect: Boolean
+  update: product_quantityUpdateWithoutWishlistDataInput
+  upsert: product_quantityUpsertWithoutWishlistInput
+}
+
+input product_quantityUpdateWithoutCartDataInput {
+  id: Int
+  product: productUpdateOneRequiredWithoutProduct_quantityInput
+  product_qty: Int
+  wishlist: wishlistUpdateManyWithoutProduct_quantityInput
+}
+
+input product_quantityUpdateWithoutProductDataInput {
+  cart: cartUpdateManyWithoutProduct_quantityInput
+  id: Int
+  product_qty: Int
+  wishlist: wishlistUpdateManyWithoutProduct_quantityInput
+}
+
+input product_quantityUpdateWithoutWishlistDataInput {
+  cart: cartUpdateManyWithoutProduct_quantityInput
+  id: Int
+  product: productUpdateOneRequiredWithoutProduct_quantityInput
+  product_qty: Int
+}
+
+input product_quantityUpdateWithWhereUniqueWithoutProductInput {
+  data: product_quantityUpdateWithoutProductDataInput!
+  where: product_quantityWhereUniqueInput!
+}
+
+input product_quantityUpsertWithoutCartInput {
+  create: product_quantityCreateWithoutCartInput!
+  update: product_quantityUpdateWithoutCartDataInput!
+}
+
+input product_quantityUpsertWithoutWishlistInput {
+  create: product_quantityCreateWithoutWishlistInput!
+  update: product_quantityUpdateWithoutWishlistDataInput!
+}
+
+input product_quantityUpsertWithWhereUniqueWithoutProductInput {
+  create: product_quantityCreateWithoutProductInput!
+  update: product_quantityUpdateWithoutProductDataInput!
+  where: product_quantityWhereUniqueInput!
+}
+
+input product_quantityWhereInput {
+  AND: [product_quantityWhereInput!]
+  cart: cartFilter
+  id: IntFilter
+  NOT: [product_quantityWhereInput!]
+  OR: [product_quantityWhereInput!]
+  product: productWhereInput
+  product_id: IntFilter
+  product_qty: NullableIntFilter
+  wishlist: wishlistFilter
+}
+
+input product_quantityWhereUniqueInput {
+  id: Int
+}
+
+type product_rating {
+  id: Int!
+  product: product!
+  product_id: Int!
+  rating: Float
+  user: user
+  user_id: Int
+}
+
+input product_ratingCreateInput {
+  product: productCreateOneWithoutProduct_ratingInput!
+  rating: Float
+  user: userCreateOneWithoutProduct_ratingInput
+}
+
+input product_ratingCreateManyWithoutProductInput {
+  connect: [product_ratingWhereUniqueInput!]
+  create: [product_ratingCreateWithoutProductInput!]
+}
+
+input product_ratingCreateManyWithoutUserInput {
+  connect: [product_ratingWhereUniqueInput!]
+  create: [product_ratingCreateWithoutUserInput!]
+}
+
+input product_ratingCreateWithoutProductInput {
+  rating: Float
+  user: userCreateOneWithoutProduct_ratingInput
+}
+
+input product_ratingCreateWithoutUserInput {
+  product: productCreateOneWithoutProduct_ratingInput!
+  rating: Float
+}
+
+input product_ratingFilter {
+  every: product_ratingWhereInput
+  none: product_ratingWhereInput
+  some: product_ratingWhereInput
+}
+
+input product_ratingOrderByInput {
+  id: OrderByArg
+  product_id: OrderByArg
+  rating: OrderByArg
+  user_id: OrderByArg
+}
+
+input product_ratingScalarWhereInput {
+  AND: [product_ratingScalarWhereInput!]
+  id: IntFilter
+  NOT: [product_ratingScalarWhereInput!]
+  OR: [product_ratingScalarWhereInput!]
+  product_id: IntFilter
+  rating: NullableFloatFilter
+  user_id: NullableIntFilter
+}
+
+input product_ratingUpdateInput {
+  id: Int
+  product: productUpdateOneRequiredWithoutProduct_ratingInput
+  rating: Float
+  user: userUpdateOneWithoutProduct_ratingInput
+}
+
+input product_ratingUpdateManyDataInput {
+  id: Int
+  rating: Float
+}
+
+input product_ratingUpdateManyMutationInput {
+  id: Int
+  rating: Float
+}
+
+input product_ratingUpdateManyWithoutProductInput {
+  connect: [product_ratingWhereUniqueInput!]
+  create: [product_ratingCreateWithoutProductInput!]
+  delete: [product_ratingWhereUniqueInput!]
+  deleteMany: [product_ratingScalarWhereInput!]
+  disconnect: [product_ratingWhereUniqueInput!]
+  set: [product_ratingWhereUniqueInput!]
+  update: [product_ratingUpdateWithWhereUniqueWithoutProductInput!]
+  updateMany: [product_ratingUpdateManyWithWhereNestedInput!]
+  upsert: [product_ratingUpsertWithWhereUniqueWithoutProductInput!]
+}
+
+input product_ratingUpdateManyWithoutUserInput {
+  connect: [product_ratingWhereUniqueInput!]
+  create: [product_ratingCreateWithoutUserInput!]
+  delete: [product_ratingWhereUniqueInput!]
+  deleteMany: [product_ratingScalarWhereInput!]
+  disconnect: [product_ratingWhereUniqueInput!]
+  set: [product_ratingWhereUniqueInput!]
+  update: [product_ratingUpdateWithWhereUniqueWithoutUserInput!]
+  updateMany: [product_ratingUpdateManyWithWhereNestedInput!]
+  upsert: [product_ratingUpsertWithWhereUniqueWithoutUserInput!]
+}
+
+input product_ratingUpdateManyWithWhereNestedInput {
+  data: product_ratingUpdateManyDataInput!
+  where: product_ratingScalarWhereInput!
+}
+
+input product_ratingUpdateWithoutProductDataInput {
+  id: Int
+  rating: Float
+  user: userUpdateOneWithoutProduct_ratingInput
+}
+
+input product_ratingUpdateWithoutUserDataInput {
+  id: Int
+  product: productUpdateOneRequiredWithoutProduct_ratingInput
+  rating: Float
+}
+
+input product_ratingUpdateWithWhereUniqueWithoutProductInput {
+  data: product_ratingUpdateWithoutProductDataInput!
+  where: product_ratingWhereUniqueInput!
+}
+
+input product_ratingUpdateWithWhereUniqueWithoutUserInput {
+  data: product_ratingUpdateWithoutUserDataInput!
+  where: product_ratingWhereUniqueInput!
+}
+
+input product_ratingUpsertWithWhereUniqueWithoutProductInput {
+  create: product_ratingCreateWithoutProductInput!
+  update: product_ratingUpdateWithoutProductDataInput!
+  where: product_ratingWhereUniqueInput!
+}
+
+input product_ratingUpsertWithWhereUniqueWithoutUserInput {
+  create: product_ratingCreateWithoutUserInput!
+  update: product_ratingUpdateWithoutUserDataInput!
+  where: product_ratingWhereUniqueInput!
+}
+
+input product_ratingWhereInput {
+  AND: [product_ratingWhereInput!]
+  id: IntFilter
+  NOT: [product_ratingWhereInput!]
+  OR: [product_ratingWhereInput!]
+  product: productWhereInput
+  product_id: IntFilter
+  rating: NullableFloatFilter
+  user: userWhereInput
+  user_id: NullableIntFilter
+}
+
+input product_ratingWhereUniqueInput {
+  id: Int
+}
+
+type product_type {
+  id: Int!
+  product_types_junction(cursor: product_types_junctionWhereUniqueInput, skip: Int, take: Int): [product_types_junction!]!
+  type: String
+  type_name: String
+}
+
+input product_typeCreateInput {
+  product_types_junction: product_types_junctionCreateManyWithoutProduct_typeInput
+  type: String
+  type_name: String
+}
+
+input product_typeCreateOneWithoutProduct_types_junctionInput {
+  connect: product_typeWhereUniqueInput
+  create: product_typeCreateWithoutProduct_types_junctionInput
+}
+
+input product_typeCreateWithoutProduct_types_junctionInput {
+  type: String
+  type_name: String
+}
+
+input product_typeOrderByInput {
+  id: OrderByArg
+  type: OrderByArg
+  type_name: OrderByArg
+}
+
+type product_types_junction {
+  id: Int!
+  product: product!
+  product_id: Int!
+  product_type: product_type!
+  product_type_id: Int!
+}
+
+input product_types_junctionCreateInput {
+  product: productCreateOneWithoutProduct_types_junctionInput!
+  product_type: product_typeCreateOneWithoutProduct_types_junctionInput!
+}
+
+input product_types_junctionCreateManyWithoutProduct_typeInput {
+  connect: [product_types_junctionWhereUniqueInput!]
+  create: [product_types_junctionCreateWithoutProduct_typeInput!]
+}
+
+input product_types_junctionCreateManyWithoutProductInput {
+  connect: [product_types_junctionWhereUniqueInput!]
+  create: [product_types_junctionCreateWithoutProductInput!]
+}
+
+input product_types_junctionCreateWithoutProduct_typeInput {
+  product: productCreateOneWithoutProduct_types_junctionInput!
+}
+
+input product_types_junctionCreateWithoutProductInput {
+  product_type: product_typeCreateOneWithoutProduct_types_junctionInput!
+}
+
+input product_types_junctionFilter {
+  every: product_types_junctionWhereInput
+  none: product_types_junctionWhereInput
+  some: product_types_junctionWhereInput
+}
+
+input product_types_junctionOrderByInput {
+  id: OrderByArg
+  product_id: OrderByArg
+  product_type_id: OrderByArg
+}
+
+input product_types_junctionScalarWhereInput {
+  AND: [product_types_junctionScalarWhereInput!]
+  id: IntFilter
+  NOT: [product_types_junctionScalarWhereInput!]
+  OR: [product_types_junctionScalarWhereInput!]
+  product_id: IntFilter
+  product_type_id: IntFilter
+}
+
+input product_types_junctionUpdateInput {
+  id: Int
+  product: productUpdateOneRequiredWithoutProduct_types_junctionInput
+  product_type: product_typeUpdateOneRequiredWithoutProduct_types_junctionInput
+}
+
+input product_types_junctionUpdateManyDataInput {
+  id: Int
+}
+
+input product_types_junctionUpdateManyMutationInput {
+  id: Int
+}
+
+input product_types_junctionUpdateManyWithoutProduct_typeInput {
+  connect: [product_types_junctionWhereUniqueInput!]
+  create: [product_types_junctionCreateWithoutProduct_typeInput!]
+  delete: [product_types_junctionWhereUniqueInput!]
+  deleteMany: [product_types_junctionScalarWhereInput!]
+  disconnect: [product_types_junctionWhereUniqueInput!]
+  set: [product_types_junctionWhereUniqueInput!]
+  update: [product_types_junctionUpdateWithWhereUniqueWithoutProduct_typeInput!]
+  updateMany: [product_types_junctionUpdateManyWithWhereNestedInput!]
+  upsert: [product_types_junctionUpsertWithWhereUniqueWithoutProduct_typeInput!]
+}
+
+input product_types_junctionUpdateManyWithoutProductInput {
+  connect: [product_types_junctionWhereUniqueInput!]
+  create: [product_types_junctionCreateWithoutProductInput!]
+  delete: [product_types_junctionWhereUniqueInput!]
+  deleteMany: [product_types_junctionScalarWhereInput!]
+  disconnect: [product_types_junctionWhereUniqueInput!]
+  set: [product_types_junctionWhereUniqueInput!]
+  update: [product_types_junctionUpdateWithWhereUniqueWithoutProductInput!]
+  updateMany: [product_types_junctionUpdateManyWithWhereNestedInput!]
+  upsert: [product_types_junctionUpsertWithWhereUniqueWithoutProductInput!]
+}
+
+input product_types_junctionUpdateManyWithWhereNestedInput {
+  data: product_types_junctionUpdateManyDataInput!
+  where: product_types_junctionScalarWhereInput!
+}
+
+input product_types_junctionUpdateWithoutProduct_typeDataInput {
+  id: Int
+  product: productUpdateOneRequiredWithoutProduct_types_junctionInput
+}
+
+input product_types_junctionUpdateWithoutProductDataInput {
+  id: Int
+  product_type: product_typeUpdateOneRequiredWithoutProduct_types_junctionInput
+}
+
+input product_types_junctionUpdateWithWhereUniqueWithoutProduct_typeInput {
+  data: product_types_junctionUpdateWithoutProduct_typeDataInput!
+  where: product_types_junctionWhereUniqueInput!
+}
+
+input product_types_junctionUpdateWithWhereUniqueWithoutProductInput {
+  data: product_types_junctionUpdateWithoutProductDataInput!
+  where: product_types_junctionWhereUniqueInput!
+}
+
+input product_types_junctionUpsertWithWhereUniqueWithoutProduct_typeInput {
+  create: product_types_junctionCreateWithoutProduct_typeInput!
+  update: product_types_junctionUpdateWithoutProduct_typeDataInput!
+  where: product_types_junctionWhereUniqueInput!
+}
+
+input product_types_junctionUpsertWithWhereUniqueWithoutProductInput {
+  create: product_types_junctionCreateWithoutProductInput!
+  update: product_types_junctionUpdateWithoutProductDataInput!
+  where: product_types_junctionWhereUniqueInput!
+}
+
+input product_types_junctionWhereInput {
+  AND: [product_types_junctionWhereInput!]
+  id: IntFilter
+  NOT: [product_types_junctionWhereInput!]
+  OR: [product_types_junctionWhereInput!]
+  product: productWhereInput
+  product_id: IntFilter
+  product_type: product_typeWhereInput
+  product_type_id: IntFilter
+}
+
+input product_types_junctionWhereUniqueInput {
+  id: Int
+}
+
+input product_typeUpdateInput {
+  id: Int
+  product_types_junction: product_types_junctionUpdateManyWithoutProduct_typeInput
+  type: String
+  type_name: String
+}
+
+input product_typeUpdateManyMutationInput {
+  id: Int
+  type: String
+  type_name: String
+}
+
+input product_typeUpdateOneRequiredWithoutProduct_types_junctionInput {
+  connect: product_typeWhereUniqueInput
+  create: product_typeCreateWithoutProduct_types_junctionInput
+  update: product_typeUpdateWithoutProduct_types_junctionDataInput
+  upsert: product_typeUpsertWithoutProduct_types_junctionInput
+}
+
+input product_typeUpdateWithoutProduct_types_junctionDataInput {
+  id: Int
+  type: String
+  type_name: String
+}
+
+input product_typeUpsertWithoutProduct_types_junctionInput {
+  create: product_typeCreateWithoutProduct_types_junctionInput!
+  update: product_typeUpdateWithoutProduct_types_junctionDataInput!
+}
+
+input product_typeWhereInput {
+  AND: [product_typeWhereInput!]
+  id: IntFilter
+  NOT: [product_typeWhereInput!]
+  OR: [product_typeWhereInput!]
+  product_types_junction: product_types_junctionFilter
+  type: NullableStringFilter
+  type_name: NullableStringFilter
+}
+
+input product_typeWhereUniqueInput {
+  id: Int
+}
+
+input productCreateInput {
+  cost: Float
+  description: String
+  discount: Float
+  discounted_cost: Float
+  mrp: Float
+  order: orderCreateManyWithoutProductInput
+  product_categories_junction: product_categories_junctionCreateManyWithoutProductInput
+  product_image: product_imageCreateManyWithoutProductInput
+  product_quantity: product_quantityCreateManyWithoutProductInput
+  product_rating: product_ratingCreateManyWithoutProductInput
+  product_types_junction: product_types_junctionCreateManyWithoutProductInput
+  store: storeCreateOneWithoutProductInput!
+  tax: Float
+  title: String
+  total_cost: Float
+}
+
+input productCreateManyWithoutStoreInput {
+  connect: [productWhereUniqueInput!]
+  create: [productCreateWithoutStoreInput!]
+}
+
+input productCreateOneWithoutOrderInput {
+  connect: productWhereUniqueInput
+  create: productCreateWithoutOrderInput
+}
+
+input productCreateOneWithoutProduct_categories_junctionInput {
+  connect: productWhereUniqueInput
+  create: productCreateWithoutProduct_categories_junctionInput
+}
+
+input productCreateOneWithoutProduct_imageInput {
+  connect: productWhereUniqueInput
+  create: productCreateWithoutProduct_imageInput
+}
+
+input productCreateOneWithoutProduct_quantityInput {
+  connect: productWhereUniqueInput
+  create: productCreateWithoutProduct_quantityInput
+}
+
+input productCreateOneWithoutProduct_ratingInput {
+  connect: productWhereUniqueInput
+  create: productCreateWithoutProduct_ratingInput
+}
+
+input productCreateOneWithoutProduct_types_junctionInput {
+  connect: productWhereUniqueInput
+  create: productCreateWithoutProduct_types_junctionInput
+}
+
+input productCreateWithoutOrderInput {
+  cost: Float
+  description: String
+  discount: Float
+  discounted_cost: Float
+  mrp: Float
+  product_categories_junction: product_categories_junctionCreateManyWithoutProductInput
+  product_image: product_imageCreateManyWithoutProductInput
+  product_quantity: product_quantityCreateManyWithoutProductInput
+  product_rating: product_ratingCreateManyWithoutProductInput
+  product_types_junction: product_types_junctionCreateManyWithoutProductInput
+  store: storeCreateOneWithoutProductInput!
+  tax: Float
+  title: String
+  total_cost: Float
+}
+
+input productCreateWithoutProduct_categories_junctionInput {
+  cost: Float
+  description: String
+  discount: Float
+  discounted_cost: Float
+  mrp: Float
+  order: orderCreateManyWithoutProductInput
+  product_image: product_imageCreateManyWithoutProductInput
+  product_quantity: product_quantityCreateManyWithoutProductInput
+  product_rating: product_ratingCreateManyWithoutProductInput
+  product_types_junction: product_types_junctionCreateManyWithoutProductInput
+  store: storeCreateOneWithoutProductInput!
+  tax: Float
+  title: String
+  total_cost: Float
+}
+
+input productCreateWithoutProduct_imageInput {
+  cost: Float
+  description: String
+  discount: Float
+  discounted_cost: Float
+  mrp: Float
+  order: orderCreateManyWithoutProductInput
+  product_categories_junction: product_categories_junctionCreateManyWithoutProductInput
+  product_quantity: product_quantityCreateManyWithoutProductInput
+  product_rating: product_ratingCreateManyWithoutProductInput
+  product_types_junction: product_types_junctionCreateManyWithoutProductInput
+  store: storeCreateOneWithoutProductInput!
+  tax: Float
+  title: String
+  total_cost: Float
+}
+
+input productCreateWithoutProduct_quantityInput {
+  cost: Float
+  description: String
+  discount: Float
+  discounted_cost: Float
+  mrp: Float
+  order: orderCreateManyWithoutProductInput
+  product_categories_junction: product_categories_junctionCreateManyWithoutProductInput
+  product_image: product_imageCreateManyWithoutProductInput
+  product_rating: product_ratingCreateManyWithoutProductInput
+  product_types_junction: product_types_junctionCreateManyWithoutProductInput
+  store: storeCreateOneWithoutProductInput!
+  tax: Float
+  title: String
+  total_cost: Float
+}
+
+input productCreateWithoutProduct_ratingInput {
+  cost: Float
+  description: String
+  discount: Float
+  discounted_cost: Float
+  mrp: Float
+  order: orderCreateManyWithoutProductInput
+  product_categories_junction: product_categories_junctionCreateManyWithoutProductInput
+  product_image: product_imageCreateManyWithoutProductInput
+  product_quantity: product_quantityCreateManyWithoutProductInput
+  product_types_junction: product_types_junctionCreateManyWithoutProductInput
+  store: storeCreateOneWithoutProductInput!
+  tax: Float
+  title: String
+  total_cost: Float
+}
+
+input productCreateWithoutProduct_types_junctionInput {
+  cost: Float
+  description: String
+  discount: Float
+  discounted_cost: Float
+  mrp: Float
+  order: orderCreateManyWithoutProductInput
+  product_categories_junction: product_categories_junctionCreateManyWithoutProductInput
+  product_image: product_imageCreateManyWithoutProductInput
+  product_quantity: product_quantityCreateManyWithoutProductInput
+  product_rating: product_ratingCreateManyWithoutProductInput
+  store: storeCreateOneWithoutProductInput!
+  tax: Float
+  title: String
+  total_cost: Float
+}
+
+input productCreateWithoutStoreInput {
+  cost: Float
+  description: String
+  discount: Float
+  discounted_cost: Float
+  mrp: Float
+  order: orderCreateManyWithoutProductInput
+  product_categories_junction: product_categories_junctionCreateManyWithoutProductInput
+  product_image: product_imageCreateManyWithoutProductInput
+  product_quantity: product_quantityCreateManyWithoutProductInput
+  product_rating: product_ratingCreateManyWithoutProductInput
+  product_types_junction: product_types_junctionCreateManyWithoutProductInput
+  tax: Float
+  title: String
+  total_cost: Float
+}
+
+input productFilter {
+  every: productWhereInput
+  none: productWhereInput
+  some: productWhereInput
+}
+
+input productOrderByInput {
+  cost: OrderByArg
+  description: OrderByArg
+  discount: OrderByArg
+  discounted_cost: OrderByArg
+  id: OrderByArg
+  mrp: OrderByArg
+  store_id: OrderByArg
+  tax: OrderByArg
+  title: OrderByArg
+  total_cost: OrderByArg
+}
+
+input productScalarWhereInput {
+  AND: [productScalarWhereInput!]
+  cost: NullableFloatFilter
+  description: NullableStringFilter
+  discount: NullableFloatFilter
+  discounted_cost: NullableFloatFilter
+  id: IntFilter
+  mrp: NullableFloatFilter
+  NOT: [productScalarWhereInput!]
+  OR: [productScalarWhereInput!]
+  order: orderFilter
+  product_categories_junction: product_categories_junctionFilter
+  product_image: product_imageFilter
+  product_quantity: product_quantityFilter
+  product_rating: product_ratingFilter
+  product_types_junction: product_types_junctionFilter
+  store_id: IntFilter
+  tax: NullableFloatFilter
+  title: NullableStringFilter
+  total_cost: NullableFloatFilter
+}
+
+input productUpdateInput {
+  cost: Float
+  description: String
+  discount: Float
+  discounted_cost: Float
+  id: Int
+  mrp: Float
+  order: orderUpdateManyWithoutProductInput
+  product_categories_junction: product_categories_junctionUpdateManyWithoutProductInput
+  product_image: product_imageUpdateManyWithoutProductInput
+  product_quantity: product_quantityUpdateManyWithoutProductInput
+  product_rating: product_ratingUpdateManyWithoutProductInput
+  product_types_junction: product_types_junctionUpdateManyWithoutProductInput
+  store: storeUpdateOneRequiredWithoutProductInput
+  tax: Float
+  title: String
+  total_cost: Float
+}
+
+input productUpdateManyDataInput {
+  cost: Float
+  description: String
+  discount: Float
+  discounted_cost: Float
+  id: Int
+  mrp: Float
+  tax: Float
+  title: String
+  total_cost: Float
+}
+
+input productUpdateManyMutationInput {
+  cost: Float
+  description: String
+  discount: Float
+  discounted_cost: Float
+  id: Int
+  mrp: Float
+  tax: Float
+  title: String
+  total_cost: Float
+}
+
+input productUpdateManyWithoutStoreInput {
+  connect: [productWhereUniqueInput!]
+  create: [productCreateWithoutStoreInput!]
+  delete: [productWhereUniqueInput!]
+  deleteMany: [productScalarWhereInput!]
+  disconnect: [productWhereUniqueInput!]
+  set: [productWhereUniqueInput!]
+  update: [productUpdateWithWhereUniqueWithoutStoreInput!]
+  updateMany: [productUpdateManyWithWhereNestedInput!]
+  upsert: [productUpsertWithWhereUniqueWithoutStoreInput!]
+}
+
+input productUpdateManyWithWhereNestedInput {
+  data: productUpdateManyDataInput!
+  where: productScalarWhereInput!
+}
+
+input productUpdateOneRequiredWithoutOrderInput {
+  connect: productWhereUniqueInput
+  create: productCreateWithoutOrderInput
+  update: productUpdateWithoutOrderDataInput
+  upsert: productUpsertWithoutOrderInput
+}
+
+input productUpdateOneRequiredWithoutProduct_categories_junctionInput {
+  connect: productWhereUniqueInput
+  create: productCreateWithoutProduct_categories_junctionInput
+  update: productUpdateWithoutProduct_categories_junctionDataInput
+  upsert: productUpsertWithoutProduct_categories_junctionInput
+}
+
+input productUpdateOneRequiredWithoutProduct_imageInput {
+  connect: productWhereUniqueInput
+  create: productCreateWithoutProduct_imageInput
+  update: productUpdateWithoutProduct_imageDataInput
+  upsert: productUpsertWithoutProduct_imageInput
+}
+
+input productUpdateOneRequiredWithoutProduct_quantityInput {
+  connect: productWhereUniqueInput
+  create: productCreateWithoutProduct_quantityInput
+  update: productUpdateWithoutProduct_quantityDataInput
+  upsert: productUpsertWithoutProduct_quantityInput
+}
+
+input productUpdateOneRequiredWithoutProduct_ratingInput {
+  connect: productWhereUniqueInput
+  create: productCreateWithoutProduct_ratingInput
+  update: productUpdateWithoutProduct_ratingDataInput
+  upsert: productUpsertWithoutProduct_ratingInput
+}
+
+input productUpdateOneRequiredWithoutProduct_types_junctionInput {
+  connect: productWhereUniqueInput
+  create: productCreateWithoutProduct_types_junctionInput
+  update: productUpdateWithoutProduct_types_junctionDataInput
+  upsert: productUpsertWithoutProduct_types_junctionInput
+}
+
+input productUpdateWithoutOrderDataInput {
+  cost: Float
+  description: String
+  discount: Float
+  discounted_cost: Float
+  id: Int
+  mrp: Float
+  product_categories_junction: product_categories_junctionUpdateManyWithoutProductInput
+  product_image: product_imageUpdateManyWithoutProductInput
+  product_quantity: product_quantityUpdateManyWithoutProductInput
+  product_rating: product_ratingUpdateManyWithoutProductInput
+  product_types_junction: product_types_junctionUpdateManyWithoutProductInput
+  store: storeUpdateOneRequiredWithoutProductInput
+  tax: Float
+  title: String
+  total_cost: Float
+}
+
+input productUpdateWithoutProduct_categories_junctionDataInput {
+  cost: Float
+  description: String
+  discount: Float
+  discounted_cost: Float
+  id: Int
+  mrp: Float
+  order: orderUpdateManyWithoutProductInput
+  product_image: product_imageUpdateManyWithoutProductInput
+  product_quantity: product_quantityUpdateManyWithoutProductInput
+  product_rating: product_ratingUpdateManyWithoutProductInput
+  product_types_junction: product_types_junctionUpdateManyWithoutProductInput
+  store: storeUpdateOneRequiredWithoutProductInput
+  tax: Float
+  title: String
+  total_cost: Float
+}
+
+input productUpdateWithoutProduct_imageDataInput {
+  cost: Float
+  description: String
+  discount: Float
+  discounted_cost: Float
+  id: Int
+  mrp: Float
+  order: orderUpdateManyWithoutProductInput
+  product_categories_junction: product_categories_junctionUpdateManyWithoutProductInput
+  product_quantity: product_quantityUpdateManyWithoutProductInput
+  product_rating: product_ratingUpdateManyWithoutProductInput
+  product_types_junction: product_types_junctionUpdateManyWithoutProductInput
+  store: storeUpdateOneRequiredWithoutProductInput
+  tax: Float
+  title: String
+  total_cost: Float
+}
+
+input productUpdateWithoutProduct_quantityDataInput {
+  cost: Float
+  description: String
+  discount: Float
+  discounted_cost: Float
+  id: Int
+  mrp: Float
+  order: orderUpdateManyWithoutProductInput
+  product_categories_junction: product_categories_junctionUpdateManyWithoutProductInput
+  product_image: product_imageUpdateManyWithoutProductInput
+  product_rating: product_ratingUpdateManyWithoutProductInput
+  product_types_junction: product_types_junctionUpdateManyWithoutProductInput
+  store: storeUpdateOneRequiredWithoutProductInput
+  tax: Float
+  title: String
+  total_cost: Float
+}
+
+input productUpdateWithoutProduct_ratingDataInput {
+  cost: Float
+  description: String
+  discount: Float
+  discounted_cost: Float
+  id: Int
+  mrp: Float
+  order: orderUpdateManyWithoutProductInput
+  product_categories_junction: product_categories_junctionUpdateManyWithoutProductInput
+  product_image: product_imageUpdateManyWithoutProductInput
+  product_quantity: product_quantityUpdateManyWithoutProductInput
+  product_types_junction: product_types_junctionUpdateManyWithoutProductInput
+  store: storeUpdateOneRequiredWithoutProductInput
+  tax: Float
+  title: String
+  total_cost: Float
+}
+
+input productUpdateWithoutProduct_types_junctionDataInput {
+  cost: Float
+  description: String
+  discount: Float
+  discounted_cost: Float
+  id: Int
+  mrp: Float
+  order: orderUpdateManyWithoutProductInput
+  product_categories_junction: product_categories_junctionUpdateManyWithoutProductInput
+  product_image: product_imageUpdateManyWithoutProductInput
+  product_quantity: product_quantityUpdateManyWithoutProductInput
+  product_rating: product_ratingUpdateManyWithoutProductInput
+  store: storeUpdateOneRequiredWithoutProductInput
+  tax: Float
+  title: String
+  total_cost: Float
+}
+
+input productUpdateWithoutStoreDataInput {
+  cost: Float
+  description: String
+  discount: Float
+  discounted_cost: Float
+  id: Int
+  mrp: Float
+  order: orderUpdateManyWithoutProductInput
+  product_categories_junction: product_categories_junctionUpdateManyWithoutProductInput
+  product_image: product_imageUpdateManyWithoutProductInput
+  product_quantity: product_quantityUpdateManyWithoutProductInput
+  product_rating: product_ratingUpdateManyWithoutProductInput
+  product_types_junction: product_types_junctionUpdateManyWithoutProductInput
+  tax: Float
+  title: String
+  total_cost: Float
+}
+
+input productUpdateWithWhereUniqueWithoutStoreInput {
+  data: productUpdateWithoutStoreDataInput!
+  where: productWhereUniqueInput!
+}
+
+input productUpsertWithoutOrderInput {
+  create: productCreateWithoutOrderInput!
+  update: productUpdateWithoutOrderDataInput!
+}
+
+input productUpsertWithoutProduct_categories_junctionInput {
+  create: productCreateWithoutProduct_categories_junctionInput!
+  update: productUpdateWithoutProduct_categories_junctionDataInput!
+}
+
+input productUpsertWithoutProduct_imageInput {
+  create: productCreateWithoutProduct_imageInput!
+  update: productUpdateWithoutProduct_imageDataInput!
+}
+
+input productUpsertWithoutProduct_quantityInput {
+  create: productCreateWithoutProduct_quantityInput!
+  update: productUpdateWithoutProduct_quantityDataInput!
+}
+
+input productUpsertWithoutProduct_ratingInput {
+  create: productCreateWithoutProduct_ratingInput!
+  update: productUpdateWithoutProduct_ratingDataInput!
+}
+
+input productUpsertWithoutProduct_types_junctionInput {
+  create: productCreateWithoutProduct_types_junctionInput!
+  update: productUpdateWithoutProduct_types_junctionDataInput!
+}
+
+input productUpsertWithWhereUniqueWithoutStoreInput {
+  create: productCreateWithoutStoreInput!
+  update: productUpdateWithoutStoreDataInput!
+  where: productWhereUniqueInput!
+}
+
+input productWhereInput {
+  AND: [productWhereInput!]
+  cost: NullableFloatFilter
+  description: NullableStringFilter
+  discount: NullableFloatFilter
+  discounted_cost: NullableFloatFilter
+  id: IntFilter
+  mrp: NullableFloatFilter
+  NOT: [productWhereInput!]
+  OR: [productWhereInput!]
+  order: orderFilter
+  product_categories_junction: product_categories_junctionFilter
+  product_image: product_imageFilter
+  product_quantity: product_quantityFilter
+  product_rating: product_ratingFilter
+  product_types_junction: product_types_junctionFilter
+  store: storeWhereInput
+  store_id: IntFilter
+  tax: NullableFloatFilter
+  title: NullableStringFilter
+  total_cost: NullableFloatFilter
+}
+
+input productWhereUniqueInput {
+  id: Int
+}
+
+type Query {
+  cart(where: cartWhereUniqueInput!): cart
+  carts(cursor: cartWhereUniqueInput, orderBy: cartOrderByInput, skip: Int, take: Int, where: cartWhereInput): [cart!]!
+  categories(cursor: categoryWhereUniqueInput, orderBy: categoryOrderByInput, skip: Int, take: Int, where: categoryWhereInput): [category!]!
+  category(where: categoryWhereUniqueInput!): category
+  driver(where: driverWhereUniqueInput!): driver
+  driverDocument(where: driver_documentWhereUniqueInput!): driver_document
+  driverDocuments(cursor: driver_documentWhereUniqueInput, orderBy: driver_documentOrderByInput, skip: Int, take: Int, where: driver_documentWhereInput): [driver_document!]!
+  drivers(cursor: driverWhereUniqueInput, orderBy: driverOrderByInput, skip: Int, take: Int, where: driverWhereInput): [driver!]!
+  order(where: orderWhereUniqueInput!): order
+  orders(cursor: orderWhereUniqueInput, orderBy: orderOrderByInput, skip: Int, take: Int, where: orderWhereInput): [order!]!
+  product(where: productWhereUniqueInput!): product
+  productCategoriesJunction(where: product_categories_junctionWhereUniqueInput!): product_categories_junction
+  productCategoriesJunctions(cursor: product_categories_junctionWhereUniqueInput, orderBy: product_categories_junctionOrderByInput, skip: Int, take: Int, where: product_categories_junctionWhereInput): [product_categories_junction!]!
+  productImage(where: product_imageWhereUniqueInput!): product_image
+  productImages(cursor: product_imageWhereUniqueInput, orderBy: product_imageOrderByInput, skip: Int, take: Int, where: product_imageWhereInput): [product_image!]!
+  productQuantities(cursor: product_quantityWhereUniqueInput, orderBy: product_quantityOrderByInput, skip: Int, take: Int, where: product_quantityWhereInput): [product_quantity!]!
+  productQuantity(where: product_quantityWhereUniqueInput!): product_quantity
+  productRating(where: product_ratingWhereUniqueInput!): product_rating
+  productRatings(cursor: product_ratingWhereUniqueInput, orderBy: product_ratingOrderByInput, skip: Int, take: Int, where: product_ratingWhereInput): [product_rating!]!
+  products(cursor: productWhereUniqueInput, orderBy: productOrderByInput, skip: Int, take: Int, where: productWhereInput): [product!]!
+  productType(where: product_typeWhereUniqueInput!): product_type
+  productTypes(cursor: product_typeWhereUniqueInput, orderBy: product_typeOrderByInput, skip: Int, take: Int, where: product_typeWhereInput): [product_type!]!
+  productTypesJunction(where: product_types_junctionWhereUniqueInput!): product_types_junction
+  productTypesJunctions(cursor: product_types_junctionWhereUniqueInput, orderBy: product_types_junctionOrderByInput, skip: Int, take: Int, where: product_types_junctionWhereInput): [product_types_junction!]!
+  store(where: storeWhereUniqueInput!): store
+  storeDocument(where: store_documentWhereUniqueInput!): store_document
+  storeDocuments(cursor: store_documentWhereUniqueInput, orderBy: store_documentOrderByInput, skip: Int, take: Int, where: store_documentWhereInput): [store_document!]!
+  stores(cursor: storeWhereUniqueInput, orderBy: storeOrderByInput, skip: Int, take: Int, where: storeWhereInput): [store!]!
+  user(where: userWhereUniqueInput!): user
+  userAddress(where: user_addressWhereUniqueInput!): user_address
+  userAddresses(cursor: user_addressWhereUniqueInput, orderBy: user_addressOrderByInput, skip: Int, take: Int, where: user_addressWhereInput): [user_address!]!
+  users(cursor: userWhereUniqueInput, orderBy: userOrderByInput, skip: Int, take: Int, where: userWhereInput): [user!]!
+  voucher(where: voucherWhereUniqueInput!): voucher
+  vouchers(cursor: voucherWhereUniqueInput, orderBy: voucherOrderByInput, skip: Int, take: Int, where: voucherWhereInput): [voucher!]!
+  wishlist(where: wishlistWhereUniqueInput!): wishlist
+  wishlists(cursor: wishlistWhereUniqueInput, orderBy: wishlistOrderByInput, skip: Int, take: Int, where: wishlistWhereInput): [wishlist!]!
+}
+
+type store {
+  address: String
+  approved: Boolean
+  blocked: Boolean
+  id: Int!
+  lat: Int
+  lng: Int
+  name: String
+  order(cursor: orderWhereUniqueInput, skip: Int, take: Int): [order!]!
+  product(cursor: productWhereUniqueInput, skip: Int, take: Int): [product!]!
+  store_document(cursor: store_documentWhereUniqueInput, skip: Int, take: Int): [store_document!]!
+}
+
+type store_document {
+  document: String
+  id: Int!
+  store: store!
+  store_id: Int!
+}
+
+input store_documentCreateInput {
+  document: String
+  store: storeCreateOneWithoutStore_documentInput!
+}
+
+input store_documentCreateManyWithoutStoreInput {
+  connect: [store_documentWhereUniqueInput!]
+  create: [store_documentCreateWithoutStoreInput!]
+}
+
+input store_documentCreateWithoutStoreInput {
+  document: String
+}
+
+input store_documentFilter {
+  every: store_documentWhereInput
+  none: store_documentWhereInput
+  some: store_documentWhereInput
+}
+
+input store_documentOrderByInput {
+  document: OrderByArg
+  id: OrderByArg
+  store_id: OrderByArg
+}
+
+input store_documentScalarWhereInput {
+  AND: [store_documentScalarWhereInput!]
+  document: NullableStringFilter
+  id: IntFilter
+  NOT: [store_documentScalarWhereInput!]
+  OR: [store_documentScalarWhereInput!]
+  store_id: IntFilter
+}
+
+input store_documentUpdateInput {
+  document: String
+  id: Int
+  store: storeUpdateOneRequiredWithoutStore_documentInput
+}
+
+input store_documentUpdateManyDataInput {
+  document: String
+  id: Int
+}
+
+input store_documentUpdateManyMutationInput {
+  document: String
+  id: Int
+}
+
+input store_documentUpdateManyWithoutStoreInput {
+  connect: [store_documentWhereUniqueInput!]
+  create: [store_documentCreateWithoutStoreInput!]
+  delete: [store_documentWhereUniqueInput!]
+  deleteMany: [store_documentScalarWhereInput!]
+  disconnect: [store_documentWhereUniqueInput!]
+  set: [store_documentWhereUniqueInput!]
+  update: [store_documentUpdateWithWhereUniqueWithoutStoreInput!]
+  updateMany: [store_documentUpdateManyWithWhereNestedInput!]
+  upsert: [store_documentUpsertWithWhereUniqueWithoutStoreInput!]
+}
+
+input store_documentUpdateManyWithWhereNestedInput {
+  data: store_documentUpdateManyDataInput!
+  where: store_documentScalarWhereInput!
+}
+
+input store_documentUpdateWithoutStoreDataInput {
+  document: String
+  id: Int
+}
+
+input store_documentUpdateWithWhereUniqueWithoutStoreInput {
+  data: store_documentUpdateWithoutStoreDataInput!
+  where: store_documentWhereUniqueInput!
+}
+
+input store_documentUpsertWithWhereUniqueWithoutStoreInput {
+  create: store_documentCreateWithoutStoreInput!
+  update: store_documentUpdateWithoutStoreDataInput!
+  where: store_documentWhereUniqueInput!
+}
+
+input store_documentWhereInput {
+  AND: [store_documentWhereInput!]
+  document: NullableStringFilter
+  id: IntFilter
+  NOT: [store_documentWhereInput!]
+  OR: [store_documentWhereInput!]
+  store: storeWhereInput
+  store_id: IntFilter
+}
+
+input store_documentWhereUniqueInput {
+  id: Int
+}
+
+input storeCreateInput {
+  address: String
+  approved: Boolean
+  blocked: Boolean
+  lat: Int
+  lng: Int
+  name: String
+  order: orderCreateManyWithoutStoreInput
+  product: productCreateManyWithoutStoreInput
+  store_document: store_documentCreateManyWithoutStoreInput
+}
+
+input storeCreateOneWithoutOrderInput {
+  connect: storeWhereUniqueInput
+  create: storeCreateWithoutOrderInput
+}
+
+input storeCreateOneWithoutProductInput {
+  connect: storeWhereUniqueInput
+  create: storeCreateWithoutProductInput
+}
+
+input storeCreateOneWithoutStore_documentInput {
+  connect: storeWhereUniqueInput
+  create: storeCreateWithoutStore_documentInput
+}
+
+input storeCreateWithoutOrderInput {
+  address: String
+  approved: Boolean
+  blocked: Boolean
+  lat: Int
+  lng: Int
+  name: String
+  product: productCreateManyWithoutStoreInput
+  store_document: store_documentCreateManyWithoutStoreInput
+}
+
+input storeCreateWithoutProductInput {
+  address: String
+  approved: Boolean
+  blocked: Boolean
+  lat: Int
+  lng: Int
+  name: String
+  order: orderCreateManyWithoutStoreInput
+  store_document: store_documentCreateManyWithoutStoreInput
+}
+
+input storeCreateWithoutStore_documentInput {
+  address: String
+  approved: Boolean
+  blocked: Boolean
+  lat: Int
+  lng: Int
+  name: String
+  order: orderCreateManyWithoutStoreInput
+  product: productCreateManyWithoutStoreInput
+}
+
+input storeOrderByInput {
+  address: OrderByArg
+  approved: OrderByArg
+  blocked: OrderByArg
+  id: OrderByArg
+  lat: OrderByArg
+  lng: OrderByArg
+  name: OrderByArg
+}
+
+input storeUpdateInput {
+  address: String
+  approved: Boolean
+  blocked: Boolean
+  id: Int
+  lat: Int
+  lng: Int
+  name: String
+  order: orderUpdateManyWithoutStoreInput
+  product: productUpdateManyWithoutStoreInput
+  store_document: store_documentUpdateManyWithoutStoreInput
+}
+
+input storeUpdateManyMutationInput {
+  address: String
+  approved: Boolean
+  blocked: Boolean
+  id: Int
+  lat: Int
+  lng: Int
+  name: String
+}
+
+input storeUpdateOneRequiredWithoutOrderInput {
+  connect: storeWhereUniqueInput
+  create: storeCreateWithoutOrderInput
+  update: storeUpdateWithoutOrderDataInput
+  upsert: storeUpsertWithoutOrderInput
+}
+
+input storeUpdateOneRequiredWithoutProductInput {
+  connect: storeWhereUniqueInput
+  create: storeCreateWithoutProductInput
+  update: storeUpdateWithoutProductDataInput
+  upsert: storeUpsertWithoutProductInput
+}
+
+input storeUpdateOneRequiredWithoutStore_documentInput {
+  connect: storeWhereUniqueInput
+  create: storeCreateWithoutStore_documentInput
+  update: storeUpdateWithoutStore_documentDataInput
+  upsert: storeUpsertWithoutStore_documentInput
+}
+
+input storeUpdateWithoutOrderDataInput {
+  address: String
+  approved: Boolean
+  blocked: Boolean
+  id: Int
+  lat: Int
+  lng: Int
+  name: String
+  product: productUpdateManyWithoutStoreInput
+  store_document: store_documentUpdateManyWithoutStoreInput
+}
+
+input storeUpdateWithoutProductDataInput {
+  address: String
+  approved: Boolean
+  blocked: Boolean
+  id: Int
+  lat: Int
+  lng: Int
+  name: String
+  order: orderUpdateManyWithoutStoreInput
+  store_document: store_documentUpdateManyWithoutStoreInput
+}
+
+input storeUpdateWithoutStore_documentDataInput {
+  address: String
+  approved: Boolean
+  blocked: Boolean
+  id: Int
+  lat: Int
+  lng: Int
+  name: String
+  order: orderUpdateManyWithoutStoreInput
+  product: productUpdateManyWithoutStoreInput
+}
+
+input storeUpsertWithoutOrderInput {
+  create: storeCreateWithoutOrderInput!
+  update: storeUpdateWithoutOrderDataInput!
+}
+
+input storeUpsertWithoutProductInput {
+  create: storeCreateWithoutProductInput!
+  update: storeUpdateWithoutProductDataInput!
+}
+
+input storeUpsertWithoutStore_documentInput {
+  create: storeCreateWithoutStore_documentInput!
+  update: storeUpdateWithoutStore_documentDataInput!
+}
+
+input storeWhereInput {
+  address: NullableStringFilter
+  AND: [storeWhereInput!]
+  approved: NullableBooleanFilter
+  blocked: NullableBooleanFilter
+  id: IntFilter
+  lat: NullableIntFilter
+  lng: NullableIntFilter
+  name: NullableStringFilter
+  NOT: [storeWhereInput!]
+  OR: [storeWhereInput!]
+  order: orderFilter
+  product: productFilter
+  store_document: store_documentFilter
+}
+
+input storeWhereUniqueInput {
+  id: Int
+}
+
+type user {
+  blocked: Boolean
+  cart(cursor: cartWhereUniqueInput, skip: Int, take: Int): [cart!]!
+  full_name: String
+  id: Int!
+  mobile_no: Int
+  order(cursor: orderWhereUniqueInput, skip: Int, take: Int): [order!]!
+  product_rating(cursor: product_ratingWhereUniqueInput, skip: Int, take: Int): [product_rating!]!
+  user_address(cursor: user_addressWhereUniqueInput, skip: Int, take: Int): [user_address!]!
+  voucher(cursor: voucherWhereUniqueInput, skip: Int, take: Int): [voucher!]!
+  wishlist(cursor: wishlistWhereUniqueInput, skip: Int, take: Int): [wishlist!]!
+}
+
+type user_address {
+  alias: String
+  city: String
+  first_name: String
+  id: Int!
+  last_name: String
+  poc_no: Int
+  state: String
+  street_address: String
+  user: user!
+  user_id: Int!
+  zip_code: Int
+}
+
+input user_addressCreateInput {
+  alias: String
+  city: String
+  first_name: String
+  last_name: String
+  poc_no: Int
+  state: String
+  street_address: String
+  user: userCreateOneWithoutUser_addressInput!
+  zip_code: Int
+}
+
+input user_addressCreateManyWithoutUserInput {
+  connect: [user_addressWhereUniqueInput!]
+  create: [user_addressCreateWithoutUserInput!]
+}
+
+input user_addressCreateWithoutUserInput {
+  alias: String
+  city: String
+  first_name: String
+  last_name: String
+  poc_no: Int
+  state: String
+  street_address: String
+  zip_code: Int
+}
+
+input user_addressFilter {
+  every: user_addressWhereInput
+  none: user_addressWhereInput
+  some: user_addressWhereInput
+}
+
+input user_addressOrderByInput {
+  alias: OrderByArg
+  city: OrderByArg
+  first_name: OrderByArg
+  id: OrderByArg
+  last_name: OrderByArg
+  poc_no: OrderByArg
+  state: OrderByArg
+  street_address: OrderByArg
+  user_id: OrderByArg
+  zip_code: OrderByArg
+}
+
+input user_addressScalarWhereInput {
+  alias: NullableStringFilter
+  AND: [user_addressScalarWhereInput!]
+  city: NullableStringFilter
+  first_name: NullableStringFilter
+  id: IntFilter
+  last_name: NullableStringFilter
+  NOT: [user_addressScalarWhereInput!]
+  OR: [user_addressScalarWhereInput!]
+  poc_no: NullableIntFilter
+  state: NullableStringFilter
+  street_address: NullableStringFilter
+  user_id: IntFilter
+  zip_code: NullableIntFilter
+}
+
+input user_addressUpdateInput {
+  alias: String
+  city: String
+  first_name: String
+  id: Int
+  last_name: String
+  poc_no: Int
+  state: String
+  street_address: String
+  user: userUpdateOneRequiredWithoutUser_addressInput
+  zip_code: Int
+}
+
+input user_addressUpdateManyDataInput {
+  alias: String
+  city: String
+  first_name: String
+  id: Int
+  last_name: String
+  poc_no: Int
+  state: String
+  street_address: String
+  zip_code: Int
+}
+
+input user_addressUpdateManyMutationInput {
+  alias: String
+  city: String
+  first_name: String
+  id: Int
+  last_name: String
+  poc_no: Int
+  state: String
+  street_address: String
+  zip_code: Int
+}
+
+input user_addressUpdateManyWithoutUserInput {
+  connect: [user_addressWhereUniqueInput!]
+  create: [user_addressCreateWithoutUserInput!]
+  delete: [user_addressWhereUniqueInput!]
+  deleteMany: [user_addressScalarWhereInput!]
+  disconnect: [user_addressWhereUniqueInput!]
+  set: [user_addressWhereUniqueInput!]
+  update: [user_addressUpdateWithWhereUniqueWithoutUserInput!]
+  updateMany: [user_addressUpdateManyWithWhereNestedInput!]
+  upsert: [user_addressUpsertWithWhereUniqueWithoutUserInput!]
+}
+
+input user_addressUpdateManyWithWhereNestedInput {
+  data: user_addressUpdateManyDataInput!
+  where: user_addressScalarWhereInput!
+}
+
+input user_addressUpdateWithoutUserDataInput {
+  alias: String
+  city: String
+  first_name: String
+  id: Int
+  last_name: String
+  poc_no: Int
+  state: String
+  street_address: String
+  zip_code: Int
+}
+
+input user_addressUpdateWithWhereUniqueWithoutUserInput {
+  data: user_addressUpdateWithoutUserDataInput!
+  where: user_addressWhereUniqueInput!
+}
+
+input user_addressUpsertWithWhereUniqueWithoutUserInput {
+  create: user_addressCreateWithoutUserInput!
+  update: user_addressUpdateWithoutUserDataInput!
+  where: user_addressWhereUniqueInput!
+}
+
+input user_addressWhereInput {
+  alias: NullableStringFilter
+  AND: [user_addressWhereInput!]
+  city: NullableStringFilter
+  first_name: NullableStringFilter
+  id: IntFilter
+  last_name: NullableStringFilter
+  NOT: [user_addressWhereInput!]
+  OR: [user_addressWhereInput!]
+  poc_no: NullableIntFilter
+  state: NullableStringFilter
+  street_address: NullableStringFilter
+  user: userWhereInput
+  user_id: IntFilter
+  zip_code: NullableIntFilter
+}
+
+input user_addressWhereUniqueInput {
+  id: Int
+}
+
+input userCreateInput {
+  blocked: Boolean
+  cart: cartCreateManyWithoutUserInput
+  full_name: String
+  mobile_no: Int
+  order: orderCreateManyWithoutUserInput
+  product_rating: product_ratingCreateManyWithoutUserInput
+  user_address: user_addressCreateManyWithoutUserInput
+  voucher: voucherCreateManyWithoutUserInput
+  wishlist: wishlistCreateManyWithoutUserInput
+}
+
+input userCreateOneWithoutCartInput {
+  connect: userWhereUniqueInput
+  create: userCreateWithoutCartInput
+}
+
+input userCreateOneWithoutOrderInput {
+  connect: userWhereUniqueInput
+  create: userCreateWithoutOrderInput
+}
+
+input userCreateOneWithoutProduct_ratingInput {
+  connect: userWhereUniqueInput
+  create: userCreateWithoutProduct_ratingInput
+}
+
+input userCreateOneWithoutUser_addressInput {
+  connect: userWhereUniqueInput
+  create: userCreateWithoutUser_addressInput
+}
+
+input userCreateOneWithoutVoucherInput {
+  connect: userWhereUniqueInput
+  create: userCreateWithoutVoucherInput
+}
+
+input userCreateOneWithoutWishlistInput {
+  connect: userWhereUniqueInput
+  create: userCreateWithoutWishlistInput
+}
+
+input userCreateWithoutCartInput {
+  blocked: Boolean
+  full_name: String
+  mobile_no: Int
+  order: orderCreateManyWithoutUserInput
+  product_rating: product_ratingCreateManyWithoutUserInput
+  user_address: user_addressCreateManyWithoutUserInput
+  voucher: voucherCreateManyWithoutUserInput
+  wishlist: wishlistCreateManyWithoutUserInput
+}
+
+input userCreateWithoutOrderInput {
+  blocked: Boolean
+  cart: cartCreateManyWithoutUserInput
+  full_name: String
+  mobile_no: Int
+  product_rating: product_ratingCreateManyWithoutUserInput
+  user_address: user_addressCreateManyWithoutUserInput
+  voucher: voucherCreateManyWithoutUserInput
+  wishlist: wishlistCreateManyWithoutUserInput
+}
+
+input userCreateWithoutProduct_ratingInput {
+  blocked: Boolean
+  cart: cartCreateManyWithoutUserInput
+  full_name: String
+  mobile_no: Int
+  order: orderCreateManyWithoutUserInput
+  user_address: user_addressCreateManyWithoutUserInput
+  voucher: voucherCreateManyWithoutUserInput
+  wishlist: wishlistCreateManyWithoutUserInput
+}
+
+input userCreateWithoutUser_addressInput {
+  blocked: Boolean
+  cart: cartCreateManyWithoutUserInput
+  full_name: String
+  mobile_no: Int
+  order: orderCreateManyWithoutUserInput
+  product_rating: product_ratingCreateManyWithoutUserInput
+  voucher: voucherCreateManyWithoutUserInput
+  wishlist: wishlistCreateManyWithoutUserInput
+}
+
+input userCreateWithoutVoucherInput {
+  blocked: Boolean
+  cart: cartCreateManyWithoutUserInput
+  full_name: String
+  mobile_no: Int
+  order: orderCreateManyWithoutUserInput
+  product_rating: product_ratingCreateManyWithoutUserInput
+  user_address: user_addressCreateManyWithoutUserInput
+  wishlist: wishlistCreateManyWithoutUserInput
+}
+
+input userCreateWithoutWishlistInput {
+  blocked: Boolean
+  cart: cartCreateManyWithoutUserInput
+  full_name: String
+  mobile_no: Int
+  order: orderCreateManyWithoutUserInput
+  product_rating: product_ratingCreateManyWithoutUserInput
+  user_address: user_addressCreateManyWithoutUserInput
+  voucher: voucherCreateManyWithoutUserInput
+}
+
+input userOrderByInput {
+  blocked: OrderByArg
+  full_name: OrderByArg
+  id: OrderByArg
+  mobile_no: OrderByArg
+}
+
+input userUpdateInput {
+  blocked: Boolean
+  cart: cartUpdateManyWithoutUserInput
+  full_name: String
+  id: Int
+  mobile_no: Int
+  order: orderUpdateManyWithoutUserInput
+  product_rating: product_ratingUpdateManyWithoutUserInput
+  user_address: user_addressUpdateManyWithoutUserInput
+  voucher: voucherUpdateManyWithoutUserInput
+  wishlist: wishlistUpdateManyWithoutUserInput
+}
+
+input userUpdateManyMutationInput {
+  blocked: Boolean
+  full_name: String
+  id: Int
+  mobile_no: Int
+}
+
+input userUpdateOneRequiredWithoutCartInput {
+  connect: userWhereUniqueInput
+  create: userCreateWithoutCartInput
+  update: userUpdateWithoutCartDataInput
+  upsert: userUpsertWithoutCartInput
+}
+
+input userUpdateOneRequiredWithoutOrderInput {
+  connect: userWhereUniqueInput
+  create: userCreateWithoutOrderInput
+  update: userUpdateWithoutOrderDataInput
+  upsert: userUpsertWithoutOrderInput
+}
+
+input userUpdateOneRequiredWithoutUser_addressInput {
+  connect: userWhereUniqueInput
+  create: userCreateWithoutUser_addressInput
+  update: userUpdateWithoutUser_addressDataInput
+  upsert: userUpsertWithoutUser_addressInput
+}
+
+input userUpdateOneRequiredWithoutWishlistInput {
+  connect: userWhereUniqueInput
+  create: userCreateWithoutWishlistInput
+  update: userUpdateWithoutWishlistDataInput
+  upsert: userUpsertWithoutWishlistInput
+}
+
+input userUpdateOneWithoutProduct_ratingInput {
+  connect: userWhereUniqueInput
+  create: userCreateWithoutProduct_ratingInput
+  delete: Boolean
+  disconnect: Boolean
+  update: userUpdateWithoutProduct_ratingDataInput
+  upsert: userUpsertWithoutProduct_ratingInput
+}
+
+input userUpdateOneWithoutVoucherInput {
+  connect: userWhereUniqueInput
+  create: userCreateWithoutVoucherInput
+  delete: Boolean
+  disconnect: Boolean
+  update: userUpdateWithoutVoucherDataInput
+  upsert: userUpsertWithoutVoucherInput
+}
+
+input userUpdateWithoutCartDataInput {
+  blocked: Boolean
+  full_name: String
+  id: Int
+  mobile_no: Int
+  order: orderUpdateManyWithoutUserInput
+  product_rating: product_ratingUpdateManyWithoutUserInput
+  user_address: user_addressUpdateManyWithoutUserInput
+  voucher: voucherUpdateManyWithoutUserInput
+  wishlist: wishlistUpdateManyWithoutUserInput
+}
+
+input userUpdateWithoutOrderDataInput {
+  blocked: Boolean
+  cart: cartUpdateManyWithoutUserInput
+  full_name: String
+  id: Int
+  mobile_no: Int
+  product_rating: product_ratingUpdateManyWithoutUserInput
+  user_address: user_addressUpdateManyWithoutUserInput
+  voucher: voucherUpdateManyWithoutUserInput
+  wishlist: wishlistUpdateManyWithoutUserInput
+}
+
+input userUpdateWithoutProduct_ratingDataInput {
+  blocked: Boolean
+  cart: cartUpdateManyWithoutUserInput
+  full_name: String
+  id: Int
+  mobile_no: Int
+  order: orderUpdateManyWithoutUserInput
+  user_address: user_addressUpdateManyWithoutUserInput
+  voucher: voucherUpdateManyWithoutUserInput
+  wishlist: wishlistUpdateManyWithoutUserInput
+}
+
+input userUpdateWithoutUser_addressDataInput {
+  blocked: Boolean
+  cart: cartUpdateManyWithoutUserInput
+  full_name: String
+  id: Int
+  mobile_no: Int
+  order: orderUpdateManyWithoutUserInput
+  product_rating: product_ratingUpdateManyWithoutUserInput
+  voucher: voucherUpdateManyWithoutUserInput
+  wishlist: wishlistUpdateManyWithoutUserInput
+}
+
+input userUpdateWithoutVoucherDataInput {
+  blocked: Boolean
+  cart: cartUpdateManyWithoutUserInput
+  full_name: String
+  id: Int
+  mobile_no: Int
+  order: orderUpdateManyWithoutUserInput
+  product_rating: product_ratingUpdateManyWithoutUserInput
+  user_address: user_addressUpdateManyWithoutUserInput
+  wishlist: wishlistUpdateManyWithoutUserInput
+}
+
+input userUpdateWithoutWishlistDataInput {
+  blocked: Boolean
+  cart: cartUpdateManyWithoutUserInput
+  full_name: String
+  id: Int
+  mobile_no: Int
+  order: orderUpdateManyWithoutUserInput
+  product_rating: product_ratingUpdateManyWithoutUserInput
+  user_address: user_addressUpdateManyWithoutUserInput
+  voucher: voucherUpdateManyWithoutUserInput
+}
+
+input userUpsertWithoutCartInput {
+  create: userCreateWithoutCartInput!
+  update: userUpdateWithoutCartDataInput!
+}
+
+input userUpsertWithoutOrderInput {
+  create: userCreateWithoutOrderInput!
+  update: userUpdateWithoutOrderDataInput!
+}
+
+input userUpsertWithoutProduct_ratingInput {
+  create: userCreateWithoutProduct_ratingInput!
+  update: userUpdateWithoutProduct_ratingDataInput!
+}
+
+input userUpsertWithoutUser_addressInput {
+  create: userCreateWithoutUser_addressInput!
+  update: userUpdateWithoutUser_addressDataInput!
+}
+
+input userUpsertWithoutVoucherInput {
+  create: userCreateWithoutVoucherInput!
+  update: userUpdateWithoutVoucherDataInput!
+}
+
+input userUpsertWithoutWishlistInput {
+  create: userCreateWithoutWishlistInput!
+  update: userUpdateWithoutWishlistDataInput!
+}
+
+input userWhereInput {
+  AND: [userWhereInput!]
+  blocked: NullableBooleanFilter
+  cart: cartFilter
+  full_name: NullableStringFilter
+  id: IntFilter
+  mobile_no: NullableIntFilter
+  NOT: [userWhereInput!]
+  OR: [userWhereInput!]
+  order: orderFilter
+  product_rating: product_ratingFilter
+  user_address: user_addressFilter
+  voucher: voucherFilter
+  wishlist: wishlistFilter
+}
+
+input userWhereUniqueInput {
+  id: Int
+  mobile_no: Int
+}
+
+type voucher {
+  cart(cursor: cartWhereUniqueInput, skip: Int, take: Int): [cart!]!
+  cost: Int
+  id: Int!
+  user: user
+  user_id: Int
+  validity_date: DateTime
+  voucher_no: String
+}
+
+input voucherCreateInput {
+  cart: cartCreateManyWithoutVoucherInput
+  cost: Int
+  user: userCreateOneWithoutVoucherInput
+  validity_date: DateTime
+  voucher_no: String
+}
+
+input voucherCreateManyWithoutUserInput {
+  connect: [voucherWhereUniqueInput!]
+  create: [voucherCreateWithoutUserInput!]
+}
+
+input voucherCreateOneWithoutCartInput {
+  connect: voucherWhereUniqueInput
+  create: voucherCreateWithoutCartInput
+}
+
+input voucherCreateWithoutCartInput {
+  cost: Int
+  user: userCreateOneWithoutVoucherInput
+  validity_date: DateTime
+  voucher_no: String
+}
+
+input voucherCreateWithoutUserInput {
+  cart: cartCreateManyWithoutVoucherInput
+  cost: Int
+  validity_date: DateTime
+  voucher_no: String
+}
+
+input voucherFilter {
+  every: voucherWhereInput
+  none: voucherWhereInput
+  some: voucherWhereInput
+}
+
+input voucherOrderByInput {
+  cost: OrderByArg
+  id: OrderByArg
+  user_id: OrderByArg
+  validity_date: OrderByArg
+  voucher_no: OrderByArg
+}
+
+input voucherScalarWhereInput {
+  AND: [voucherScalarWhereInput!]
+  cart: cartFilter
+  cost: NullableIntFilter
+  id: IntFilter
+  NOT: [voucherScalarWhereInput!]
+  OR: [voucherScalarWhereInput!]
+  user_id: NullableIntFilter
+  validity_date: NullableDateTimeFilter
+  voucher_no: NullableStringFilter
+}
+
+input voucherUpdateInput {
+  cart: cartUpdateManyWithoutVoucherInput
+  cost: Int
+  id: Int
+  user: userUpdateOneWithoutVoucherInput
+  validity_date: DateTime
+  voucher_no: String
+}
+
+input voucherUpdateManyDataInput {
+  cost: Int
+  id: Int
+  validity_date: DateTime
+  voucher_no: String
+}
+
+input voucherUpdateManyMutationInput {
+  cost: Int
+  id: Int
+  validity_date: DateTime
+  voucher_no: String
+}
+
+input voucherUpdateManyWithoutUserInput {
+  connect: [voucherWhereUniqueInput!]
+  create: [voucherCreateWithoutUserInput!]
+  delete: [voucherWhereUniqueInput!]
+  deleteMany: [voucherScalarWhereInput!]
+  disconnect: [voucherWhereUniqueInput!]
+  set: [voucherWhereUniqueInput!]
+  update: [voucherUpdateWithWhereUniqueWithoutUserInput!]
+  updateMany: [voucherUpdateManyWithWhereNestedInput!]
+  upsert: [voucherUpsertWithWhereUniqueWithoutUserInput!]
+}
+
+input voucherUpdateManyWithWhereNestedInput {
+  data: voucherUpdateManyDataInput!
+  where: voucherScalarWhereInput!
+}
+
+input voucherUpdateOneWithoutCartInput {
+  connect: voucherWhereUniqueInput
+  create: voucherCreateWithoutCartInput
+  delete: Boolean
+  disconnect: Boolean
+  update: voucherUpdateWithoutCartDataInput
+  upsert: voucherUpsertWithoutCartInput
+}
+
+input voucherUpdateWithoutCartDataInput {
+  cost: Int
+  id: Int
+  user: userUpdateOneWithoutVoucherInput
+  validity_date: DateTime
+  voucher_no: String
+}
+
+input voucherUpdateWithoutUserDataInput {
+  cart: cartUpdateManyWithoutVoucherInput
+  cost: Int
+  id: Int
+  validity_date: DateTime
+  voucher_no: String
+}
+
+input voucherUpdateWithWhereUniqueWithoutUserInput {
+  data: voucherUpdateWithoutUserDataInput!
+  where: voucherWhereUniqueInput!
+}
+
+input voucherUpsertWithoutCartInput {
+  create: voucherCreateWithoutCartInput!
+  update: voucherUpdateWithoutCartDataInput!
+}
+
+input voucherUpsertWithWhereUniqueWithoutUserInput {
+  create: voucherCreateWithoutUserInput!
+  update: voucherUpdateWithoutUserDataInput!
+  where: voucherWhereUniqueInput!
+}
+
+input voucherWhereInput {
+  AND: [voucherWhereInput!]
+  cart: cartFilter
+  cost: NullableIntFilter
+  id: IntFilter
+  NOT: [voucherWhereInput!]
+  OR: [voucherWhereInput!]
+  user: userWhereInput
+  user_id: NullableIntFilter
+  validity_date: NullableDateTimeFilter
+  voucher_no: NullableStringFilter
+}
+
+input voucherWhereUniqueInput {
+  id: Int
+  voucher_no: String
+}
+
+type wishlist {
+  id: Int!
+  product: Int
+  product_quantity: product_quantity
+  user: user!
+  user_id: Int!
+}
+
+input wishlistCreateInput {
+  product_quantity: product_quantityCreateOneWithoutWishlistInput
+  user: userCreateOneWithoutWishlistInput!
+}
+
+input wishlistCreateManyWithoutProduct_quantityInput {
+  connect: [wishlistWhereUniqueInput!]
+  create: [wishlistCreateWithoutProduct_quantityInput!]
+}
+
+input wishlistCreateManyWithoutUserInput {
+  connect: [wishlistWhereUniqueInput!]
+  create: [wishlistCreateWithoutUserInput!]
+}
+
+input wishlistCreateWithoutProduct_quantityInput {
+  user: userCreateOneWithoutWishlistInput!
+}
+
+input wishlistCreateWithoutUserInput {
+  product_quantity: product_quantityCreateOneWithoutWishlistInput
+}
+
+input wishlistFilter {
+  every: wishlistWhereInput
+  none: wishlistWhereInput
+  some: wishlistWhereInput
+}
+
+input wishlistOrderByInput {
+  id: OrderByArg
+  product: OrderByArg
+  user_id: OrderByArg
+}
+
+input wishlistScalarWhereInput {
+  AND: [wishlistScalarWhereInput!]
+  id: IntFilter
+  NOT: [wishlistScalarWhereInput!]
+  OR: [wishlistScalarWhereInput!]
+  product: NullableIntFilter
+  user_id: IntFilter
+}
+
+input wishlistUpdateInput {
+  id: Int
+  product_quantity: product_quantityUpdateOneWithoutWishlistInput
+  user: userUpdateOneRequiredWithoutWishlistInput
+}
+
+input wishlistUpdateManyDataInput {
+  id: Int
+}
+
+input wishlistUpdateManyMutationInput {
+  id: Int
+}
+
+input wishlistUpdateManyWithoutProduct_quantityInput {
+  connect: [wishlistWhereUniqueInput!]
+  create: [wishlistCreateWithoutProduct_quantityInput!]
+  delete: [wishlistWhereUniqueInput!]
+  deleteMany: [wishlistScalarWhereInput!]
+  disconnect: [wishlistWhereUniqueInput!]
+  set: [wishlistWhereUniqueInput!]
+  update: [wishlistUpdateWithWhereUniqueWithoutProduct_quantityInput!]
+  updateMany: [wishlistUpdateManyWithWhereNestedInput!]
+  upsert: [wishlistUpsertWithWhereUniqueWithoutProduct_quantityInput!]
+}
+
+input wishlistUpdateManyWithoutUserInput {
+  connect: [wishlistWhereUniqueInput!]
+  create: [wishlistCreateWithoutUserInput!]
+  delete: [wishlistWhereUniqueInput!]
+  deleteMany: [wishlistScalarWhereInput!]
+  disconnect: [wishlistWhereUniqueInput!]
+  set: [wishlistWhereUniqueInput!]
+  update: [wishlistUpdateWithWhereUniqueWithoutUserInput!]
+  updateMany: [wishlistUpdateManyWithWhereNestedInput!]
+  upsert: [wishlistUpsertWithWhereUniqueWithoutUserInput!]
+}
+
+input wishlistUpdateManyWithWhereNestedInput {
+  data: wishlistUpdateManyDataInput!
+  where: wishlistScalarWhereInput!
+}
+
+input wishlistUpdateWithoutProduct_quantityDataInput {
+  id: Int
+  user: userUpdateOneRequiredWithoutWishlistInput
+}
+
+input wishlistUpdateWithoutUserDataInput {
+  id: Int
+  product_quantity: product_quantityUpdateOneWithoutWishlistInput
+}
+
+input wishlistUpdateWithWhereUniqueWithoutProduct_quantityInput {
+  data: wishlistUpdateWithoutProduct_quantityDataInput!
+  where: wishlistWhereUniqueInput!
+}
+
+input wishlistUpdateWithWhereUniqueWithoutUserInput {
+  data: wishlistUpdateWithoutUserDataInput!
+  where: wishlistWhereUniqueInput!
+}
+
+input wishlistUpsertWithWhereUniqueWithoutProduct_quantityInput {
+  create: wishlistCreateWithoutProduct_quantityInput!
+  update: wishlistUpdateWithoutProduct_quantityDataInput!
+  where: wishlistWhereUniqueInput!
+}
+
+input wishlistUpsertWithWhereUniqueWithoutUserInput {
+  create: wishlistCreateWithoutUserInput!
+  update: wishlistUpdateWithoutUserDataInput!
+  where: wishlistWhereUniqueInput!
+}
+
+input wishlistWhereInput {
+  AND: [wishlistWhereInput!]
+  id: IntFilter
+  NOT: [wishlistWhereInput!]
+  OR: [wishlistWhereInput!]
+  product: NullableIntFilter
+  product_quantity: product_quantityWhereInput
+  user: userWhereInput
+  user_id: IntFilter
+}
+
+input wishlistWhereUniqueInput {
+  id: Int
 }
