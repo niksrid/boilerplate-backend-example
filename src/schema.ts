@@ -1,13 +1,12 @@
 import { intArg, makeSchema, objectType, subscriptionField } from '@nexus/schema'
-import { nexusPrismaPlugin } from 'nexus-prisma'
 import * as allTypes from './resolvers';
 import { Context } from './types';
 import { join } from 'path';
-
+import { nexusSchemaPrisma } from 'nexus-plugin-prisma/schema'
 
 export const schema = makeSchema({
   types: [allTypes],
-  plugins: [nexusPrismaPlugin({experimentalCRUD:true, prismaClient: (ctx:Context) => ctx.prisma})],
+  plugins: [nexusSchemaPrisma({experimentalCRUD:true, prismaClient: (ctx:Context) => ctx.prisma})],
   outputs: {
     schema: __dirname + '/../schema.graphql',
     typegen: __dirname + '/generated/nexus.ts',
@@ -24,5 +23,5 @@ export const schema = makeSchema({
       },
     ],
     contextType: 'ctx.Context',
-  },
+  }
 })
