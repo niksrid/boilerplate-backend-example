@@ -1,4 +1,4 @@
-import { NexusPrismaTypes } from 'nexus-prisma-typegen'
+import { NexusPrismaOutputs } from 'typegen-nexus-plugin-prisma'
 import { keys } from 'ts-transformer-keys'
 import * as fs from 'fs'
 import * as path from 'path'
@@ -134,12 +134,12 @@ fs.writeFile(
 }
 
 function generateMutations() {
-  const a = keys<NexusPrismaTypes['Mutation']>('test')
+  const a = keys<NexusPrismaOutputs['Mutation']>('test')
   return rawGenCrud(a, false)
 }
 
 function generateQueries() {
-  const a = keys<NexusPrismaTypes['Query']>('test')
+  const a = keys<NexusPrismaOutputs['Query']>('test')
   return rawGenCrud(a, true)
 }
 
@@ -179,7 +179,7 @@ function rawGenCrud(a: any, isQuery: boolean) {
 
 
 function rawGenInstances() {
-  let a = keys<NexusPrismaTypes>()
+  let a = keys<NexusPrismaOutputs>()
   a.splice(0,2);
   const modelLineTemplate = `t.model.$type()`
   let parentObj = {};

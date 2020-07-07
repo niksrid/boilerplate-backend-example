@@ -1,42 +1,58 @@
 
-import * as cartQuery from './cart.queries';
-import * as categoryQuery from './category.queries';
-import * as driverQuery from './driver.queries';
-import * as driverDocumentQuery from './driverDocument.queries';
-import * as orderQuery from './order.queries';
-import * as productQuery from './product.queries';
-import * as productCategoriesJunctionQuery from './productCategoriesJunction.queries';
-import * as productImageQuery from './productImage.queries';
-import * as productQuantityQuery from './productQuantity.queries';
-import * as productRatingQuery from './productRating.queries';
-import * as productTypeQuery from './productType.queries';
-import * as productTypesJunctionQuery from './productTypesJunction.queries';
-import * as storeQuery from './store.queries';
-import * as storeDocumentQuery from './storeDocument.queries';
+import * as bookingQuery from './booking.queries';
+import * as classProfileQuery from './classProfile.queries';
+import * as featureQuery from './feature.queries';
+import * as gymQuery from './gym.queries';
+import * as gymClassQuery from './gymClass.queries';
+import * as gymFeaturesQuery from './gymFeatures.queries';
+import * as gymMembershipQuery from './gymMembership.queries';
+import * as gymPackageQuery from './gymPackage.queries';
+import * as gymPromocodeQuery from './gymPromocode.queries';
+import * as gymReviewsQuery from './gymReviews.queries';
+import * as gymTimingsQuery from './gymTimings.queries';
+import * as instructorQuery from './instructor.queries';
+import * as instructorFeaturesQuery from './instructorFeatures.queries';
+import * as instructorPackageQuery from './instructorPackage.queries';
+import * as instructorReviewsQuery from './instructorReviews.queries';
+import * as instructorTimeslotsQuery from './instructorTimeslots.queries';
+import * as instructorTimingsQuery from './instructorTimings.queries';
+import * as instructorVenuesQuery from './instructorVenues.queries';
+import * as reviewQuery from './review.queries';
+import * as timeslotQuery from './timeslot.queries';
+import * as timingQuery from './timing.queries';
 import * as userQuery from './user.queries';
-import * as userAddressQuery from './userAddress.queries';
-import * as voucherQuery from './voucher.queries';
-import * as wishlistQuery from './wishlist.queries';
+import * as userMembershipsQuery from './userMemberships.queries';
+import * as venueQuery from './venue.queries';
+import * as walletQuery from './wallet.queries';
+import * as walletTransactionQuery from './walletTransaction.queries';
 
 export const Queries = {
-  ...cartQuery,
-...categoryQuery,
-...driverQuery,
-...driverDocumentQuery,
-...orderQuery,
-...productQuery,
-...productCategoriesJunctionQuery,
-...productImageQuery,
-...productQuantityQuery,
-...productRatingQuery,
-...productTypeQuery,
-...productTypesJunctionQuery,
-...storeQuery,
-...storeDocumentQuery,
+  ...bookingQuery,
+...classProfileQuery,
+...featureQuery,
+...gymQuery,
+...gymClassQuery,
+...gymFeaturesQuery,
+...gymMembershipQuery,
+...gymPackageQuery,
+...gymPromocodeQuery,
+...gymReviewsQuery,
+...gymTimingsQuery,
+...instructorQuery,
+...instructorFeaturesQuery,
+...instructorPackageQuery,
+...instructorReviewsQuery,
+...instructorTimeslotsQuery,
+...instructorTimingsQuery,
+...instructorVenuesQuery,
+...reviewQuery,
+...timeslotQuery,
+...timingQuery,
 ...userQuery,
-...userAddressQuery,
-...voucherQuery,
-...wishlistQuery,
+...userMembershipsQuery,
+...venueQuery,
+...walletQuery,
+...walletTransactionQuery,
 }
 
     

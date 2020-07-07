@@ -4,15 +4,15 @@ export const user = objectType({
     name:'user',
     definition(t){
      t.model.blocked()
-	t.model.full_name()
+	t.model.date_of_birth()
+	t.model.email()
+	t.model.first_name()
 	t.model.id()
+	t.model.last_name()
 	t.model.mobile_no()
-	t.model.cart()
-	t.model.order()
-	t.model.product_rating()
-	t.model.user_address()
-	t.model.voucher()
-	t.model.wishlist()
+	t.model.booking()
+	t.model.user_memberships()
+	t.model.wallet()
     }
   })
 
